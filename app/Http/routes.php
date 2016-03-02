@@ -13,11 +13,11 @@
 
 
 Route::get('/', function () {
-    return view('ukhti');
+    return view('layout');
 });
 
-Route::get('coba/', function () {
-	return view('coba');
+Route::get('/about', function () {
+	return view('layout');
 });
 
 /*
