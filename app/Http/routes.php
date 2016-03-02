@@ -17,7 +17,23 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-	return view('layout');
+	return view('about');
+});
+
+Route::get('/toko', function () {
+	return view('toko');
+});
+
+Route::get('/hadits', function () {
+	return view('hadits');
+});
+
+Route::get('/artikel', function () {
+	return view('artikel');
+});
+
+Route::get('/tutorial', function () {
+	return view('tutorial');
 });
 
 /*
