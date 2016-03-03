@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('layout');
+    return view('ukhti');
 });
 
 Route::get('/about', function () {
@@ -34,6 +34,54 @@ Route::get('/artikel', function () {
 
 Route::get('/tutorial', function () {
 	return view('tutorial');
+});
+
+Route::get('/signIn', function () {
+	return view('signIn');
+});
+
+Route::get('/signUp', function () {
+	return view('signUp');
+});
+
+Route::get('/profilU', function () {
+	return view('profilU');
+});
+
+Route::get('/tutorial/isi-tutorial', function () {
+	return view('tutorial/isi-tutorial');
+});
+
+Route::get('/artikel/isi-artikel', function () {
+	return view('artikel/isi-artikel');
+});
+
+Route::get('/toko/pakaian', function () {
+	return view('toko/pakaian');
+});
+
+Route::get('/toko/makanan', function () {
+	return view('toko/makanan');
+});
+
+Route::get('/toko/sepatu', function () {
+	return view('toko/sepatu');
+});
+
+Route::get('/toko/kerudung', function () {
+	return view('toko/kerudung');
+});
+
+Route::get('/toko/tas', function () {
+	return view('toko/tas');
+});
+
+Route::get('/toko/aksesoris', function () {
+	return view('toko/aksesoris');
+});
+
+Route::get('/toko/dll', function () {
+	return view('toko/dll');
 });
 
 /*
