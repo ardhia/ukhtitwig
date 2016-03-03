@@ -57,31 +57,31 @@ Route::get('/artikel/isi-artikel', function () {
 });
 
 Route::get('/toko/pakaian', function () {
-	return view('toko/pakaian');
+	return view('pakaian');
 });
 
 Route::get('/toko/makanan', function () {
-	return view('toko/makanan');
+	return view('makanan');
 });
 
 Route::get('/toko/sepatu', function () {
-	return view('toko/sepatu');
+	return view('sepatu');
 });
 
 Route::get('/toko/kerudung', function () {
-	return view('toko/kerudung');
+	return view('kerudung');
 });
 
 Route::get('/toko/tas', function () {
-	return view('toko/tas');
+	return view('tas');
 });
 
 Route::get('/toko/aksesoris', function () {
-	return view('toko/aksesoris');
+	return view('aksesoris');
 });
 
 Route::get('/toko/dll', function () {
-	return view('toko/dll');
+	return view('dll');
 });
 
 /*
