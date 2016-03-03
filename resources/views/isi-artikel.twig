@@ -1,5 +1,22 @@
 {% extends 'layout' %}
 {% block isi %}
+		<div id="bar">
+			<div class="search">
+				<form>
+					<input type="text" name="input-search" placeholder="Search" class="text"></input>
+					<input type="submit" name="search" value="" class="submit"></input>
+				</form>
+			</div>
+			<div class="_breadcrumb">
+				<!-- another version - flat style with animated hover effect -->
+				<div class="breadcrumb flat">
+					<a href="index.php">Home</a>
+					<a href="artikel.php">Artikel</a>
+					<a href="#" class="active">Judul Artikel</a>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper">
 			<div class="wrap">
 				<div class="content">
 					<div id="tulis">
@@ -28,4 +45,5 @@
 					</div>
 				</div>
 			</div>
+		</div>
 {% endblock %}
