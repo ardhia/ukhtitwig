@@ -1249,7 +1249,6 @@ body {
 
 .breadcrumb {
 	display: inline-block;
-	box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.35);
 	overflow: hidden;
 	border-radius: 5px;
 	counter-reset: flag;
@@ -1332,8 +1331,3 @@ body {
 .flat a:hover:after, .flat a.active:after{
 	background: #CAF4FF;
 }
-
-
-
-
-
