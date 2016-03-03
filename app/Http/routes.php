@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('ukhti');
 })->name('/');
 
+Route::get('/user_profilU', function () {
+    return view('user_profilU');
+})->name('user_profilU');
+
 Route::get('/about', function () {
 	return view('about');
 })->name('about');
