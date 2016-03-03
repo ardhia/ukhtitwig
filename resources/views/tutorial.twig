@@ -1,10 +1,26 @@
 {% extends 'layout' %}
 {% block isi %}
+	<div id="bar">
+		<div class="search">
+			<form>
+				<input type="text" name="input-search" placeholder="Search" class="text"></input>
+				<input type="submit" name="search" value="" class="submit"></input>
+			</form>
+		</div>
+		<div class="_breadcrumb">
+			<!-- another version - flat style with animated hover effect -->
+			<div class="breadcrumb flat">
+				<a href="index.php">Home</a>
+				<a href="#" class="active">Tutorial</a>
+			</div>
+		</div>
+	</div>
+		<div id="wrapper">
 			<div class="wrap">
 				<div class="content">
 					<div id="artikel">
 						<div class="judul-artikel">
-							Lorem ipsum dolor sit amet
+						Lorem ipsum dolor sit amet
 						</div>
 						<div class="out-artikel">
 							<div id="photo-artikel"></div>
@@ -35,6 +51,11 @@
 							</div>
 						</div>
 					</div>
+				<div class="rightKet">
+					<div id="arsip">
+						<div class="judul">Keterangan</div>
+						<div class="isi ket"> Assalamualaikum Ukhti ^^ laman ini berisi tentang berbagai macam tutorial. Semoga bermanfaat ^^</div>
+ 					</div>
 				</div>
 				<div class="rightKet">
 					<div id="arsip">
@@ -45,4 +66,5 @@
 					</div>
 				</div>
 			</div>
-{% endblock %}
+		</div>
+	{% endblock %}
