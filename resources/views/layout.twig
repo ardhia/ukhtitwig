@@ -26,24 +26,24 @@
 				<a href="/"><div id="logo">Ukhti</div></a>
 				<div id="log">
 					<ul>
-						<li><a href="about">About</a></li>
-						<li><a href="signUp">Sign Up</a></li>
-						<li><a href="signIn">Sign In</a></li>
+						<li><a href="{{route('about')}}">About</a></li>
+						<li><a href="{{route('signUp')}}">Sign Up</a></li>
+						<li><a href="{{route('signIn')}}">Sign In</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="nav">
 				<ul>
-					<div class="nav-in"><li><a href="toko">Toko</a></li></div>
-					<div class="nav-in"><li><a href="artikel">Artikel</a></li></div>
-					<div class="nav-in"><li><a href="tutorial">Tutorial</a></li></div>
-					<div class="nav-in"><li><a href="hadits">Hadits</a></li></div>
+					<div class="nav-in"><li><a href="{{route('toko')}}">Toko</a></li></div>
+					<div class="nav-in"><li><a href="{{route('artikel')}}">Artikel</a></li></div>
+					<div class="nav-in"><li><a href="{{route('tutorial')}}">Tutorial</a></li></div>
+					<div class="nav-in"><li><a href="{{route('hadits')}}">Hadits</a></li></div>
 				</ul>
 			</div>
 		</div>
 		{{ block('isi') }}
 		<div id="footer">
-			<div id="logoF"><a href="index.php"> Ukhti </a></div>
+			<div id="logoF"><a href="{{route('/')}}"> Ukhti </a></div>
 			<div class="info">
 				<div id="kontak">
 					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>
