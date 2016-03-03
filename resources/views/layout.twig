@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ukhti</title>
-	<script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
+	<script type="text/javascript" src="{{asset('js/jquery-1.9.0.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.nivo.slider.js')}}"></script>
+	<link href="assets/js/nivo-slider.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href="{{asset('js/default.css')}}" rel="stylesheet" type="text/css" />
+	<title> Ukhti </title>
+	<script type="text/javascript">
+			$(window).load(function() {
+				$('#slider').nivoSlider();
+			});
+	</script>
+    <link rel="stylesheet" href="{{asset('images/themes/default/default.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('images/themes/light/light.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('images/themes/dark/dark.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('images/themes/bar/bar.css')}}" type="text/css" media="screen" />
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+	<script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
 </head>
 <body>
 	<div class="all-wrapper">
@@ -12,18 +26,18 @@
 				<a href="index.php"><div id="logo">Ukhti</div></a>
 				<div id="log">
 					<ul>
-						<li><a href="about.php">About</a></li>
-						<li><a href="logUp.php">Log Up</a></li>
-						<li><a href="logIn.php">Log In</a></li>
+						<li><a href="about">About</a></li>
+						<li><a href="signUp">Sign Up</a></li>
+						<li><a href="signIn">Sign In</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="nav">
 				<ul>
-					<div class="nav-in"><li><a href="jubel.php">Toko</a></li></div>
-					<div class="nav-in"><li><a href="artikel.php">Artikel</a></li></div>
-					<div class="nav-in"><li><a href="tutorial.php">Tutorial</a></li></div>
-					<div class="nav-in"><li><a href="hadits.php">Hadits</a></li></div>
+					<div class="nav-in"><li><a href="toko">Toko</a></li></div>
+					<div class="nav-in"><li><a href="artikel">Artikel</a></li></div>
+					<div class="nav-in"><li><a href="tutorial">Tutorial</a></li></div>
+					<div class="nav-in"><li><a href="hadits">Hadits</a></li></div>
 				</ul>
 			</div>
 		</div>
