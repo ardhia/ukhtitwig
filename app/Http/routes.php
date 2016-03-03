@@ -49,11 +49,11 @@ Route::get('/profilU', function () {
 });
 
 Route::get('/tutorial/isi-tutorial', function () {
-	return view('tutorial/isi-tutorial');
+	return view('isi-tutorial');
 });
 
 Route::get('/artikel/isi-artikel', function () {
-	return view('artikel/isi-artikel');
+	return view('isi-artikel');
 });
 
 Route::get('/toko/pakaian', function () {
