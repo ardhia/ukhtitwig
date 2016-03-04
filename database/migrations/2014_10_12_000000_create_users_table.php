@@ -23,7 +23,29 @@ class CreateUsersTable extends Migration
 
         Schema::create('signUp', function (Blueprint $table) {
             $table->increments('id');
-            $table->
+            $table->text('nama_lengkap');
+            $table->string('username');
+            $table->text('tempat_lahir');
+            $table->date('tanggal_lahir');
+            $table->text('jenis_kelamin');
+            $table->string('status');
+            $table->string('email');
+            $table->string('al_email');
+            $table->string('password');
+        });
+
+        Schema::create('signIn', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email');
+            $table->string('password');
+        });
+
+        Schema::create('admin', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('username');
+            $table->string('email');
+            $table->string('al_email');
+            $table->string('password');
         });
     }
 
