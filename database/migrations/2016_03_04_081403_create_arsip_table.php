@@ -12,10 +12,10 @@ class CreateArsipTable extends Migration
      */
     public function up()
     {
-        Schema::('Arsip', function(Blueprint $table) {
+        Schema::create('Arsip', function(Blueprint $table) {
             $table->date('Tanggal');
             $table->string('Username', 20);
-            $table->string('Judul', 500);
+            $table->string('Judul', 400);
         });
     }
 
