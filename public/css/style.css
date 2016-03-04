@@ -931,53 +931,53 @@ body {
 
 #icon-fb {
 	width: 22%;
-	height: 42px;
+	height: 35px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/fb.png);
-        -webkit-background-size: 100% 42px;
-        -moz-background-size: 100% 42px;
-        -o-background-size: 100% 42px;
-        background-size: 100% 42px;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
 	border-radius: 8px;
 }
 
 #icon-twitt {
 	width: 22%;
-	height: 42px;
+	height: 35px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/twitt.png);
-        -webkit-background-size: 100% 42px;
-        -moz-background-size: 100% 42px;
-        -o-background-size: 100% 42px;
-        background-size: 100% 42px;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
 	border-radius: 8px;
 }
 
 #icon-g {
 	width: 22%;
-	height: 42px;
+	height: 35px;
 	float: left;
 	margin-right: 3%;
-	background: url(../images/g+.png);
-        -webkit-background-size: 100% 42px;
-        -moz-background-size: 100% 42px;
-        -o-background-size: 100% 42px;
-        background-size: 100% 42px;
+	background: url(../images/g.png);
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
 	border-radius: 8px;
 }
 
 #icon-kontak {
 	width: 22%;
-	height: 42px;
+	height: 35px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/kontak.png);
-        -webkit-background-size: 100% 42px;
-        -moz-background-size: 100% 42px;
-        -o-background-size: 100% 42px;
-        background-size: 100% 42px;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
 	border-radius: 8px;
 }
 
@@ -1079,8 +1079,8 @@ body {
 }
 
 .text1 {
-	width: 56%;
-	height: 32px;
+	width: 54%;
+	height: auto;
 	border-top-left-radius: 6px;
 	border: solid #00C9FF 1px;
 	padding: 6px;
@@ -1093,7 +1093,7 @@ body {
 
 .text2 {
 	width: 33%;
-	height: 32px;
+	height: auto;
 	border-radius: 6px;
 	border: solid #00C9FF 1px;
 	padding: 6px;
@@ -1117,7 +1117,7 @@ body {
 }
 
 .input-subscribe {
-	width: 98%;
+	width: 91.5%;
 	padding: 10px;
 	border: solid #FF81E5 1px;
 	border-radius: 4px;

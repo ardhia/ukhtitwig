@@ -1,6 +1,7 @@
 {% extends 'layout' %}
 {% block isi %}
 	<div id="bar">
+		<div id="bar">
 			<div class="search">
 				<form>
 					<input type="text" name="input-search" placeholder="Search" class="text"></input>
@@ -12,6 +13,8 @@
 				<div class="breadcrumb flat">
 					<a href="ukhti">Home</a>
 					<a href="#" class="active">Artikel</a>
+					<a href="{{route('/')}}">Home</a>
+					<a href="#" class="active">Tutorial</a>
 				</div>
 			</div>
 		</div>
@@ -66,4 +69,4 @@
 				</div>
 			</div>
 		</div>
-	{% endblock %}
+{% endblock %}
