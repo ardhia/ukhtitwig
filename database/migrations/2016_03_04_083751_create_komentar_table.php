@@ -12,9 +12,9 @@ class CreateKomentarTable extends Migration
      */
     public function up()
     {
-        Schema::create ('Komentar', function (Blueprint $table) {
+        Schema::('Komentar', function (Blueprint $table) {
             $table->date('Tanggal');
-            $table->string('Nama_Pengunjung', 100);
+            $table->string('Nama_Pengunjung', 200);
             $table->string('Isi_Komentar', 5000);
         });
     }
