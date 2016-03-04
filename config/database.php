@@ -45,8 +45,6 @@ return [
     */
 
     'connections' => [
-
-<<<<<<< HEAD
         /*'sqlite' => [
 =======
        /* 'sqlite' => [
