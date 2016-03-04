@@ -12,7 +12,7 @@ class CreateHaditsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Hadits', function (Blueprint $table) {
+         Schema::create('Hadits', function (Blueprint $table) {
             $table->string('Isi_Hadits', 5000);
             $table->string('Sumber_HR', 1000);
             $table->string('Jenis_Hadits', 1000);
