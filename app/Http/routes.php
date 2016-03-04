@@ -16,10 +16,6 @@ Route::get('/', function () {
     return view('ukhti');
 })->name('/');
 
-Route::get('/user_profilU', function () {
-    return view('user_profilU');
-})->name('user_profilU');
-
 Route::get('/about', function () {
 	return view('about');
 })->name('about');
@@ -92,6 +88,33 @@ Route::get('/toko/aksesoris', function () {
 Route::get('/toko/dll', function () {
 	return view('dll');
 })->name('toko.dll');
+
+
+/*User Route*/
+
+Route::get('/user_profilU', function () {
+    return view('user_profilU');
+})->name('user_profilU');
+
+Route::get('/user_profilU/user_insertArtikel', function () {
+    return view('user_insertArtikel');
+})->name('user_profilU.user_insertArtikel');
+
+Route::get('/user_profilU/user_insertToko', function () {
+    return view('user_insertToko');
+})->name('user_profilU.user_insertToko');
+
+Route::get('/user_profilU/user_insertTutorial', function () {
+    return view('user_insertTutorial');
+})->name('user_profilU.user_insertTutorial');
+
+
+/*Admin Route*/
+
+Route::get('/admin_form', function () {
+    return view('admin_form');
+})->name('admin_form');
+
 
 
 /*
