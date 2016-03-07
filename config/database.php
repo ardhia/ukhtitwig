@@ -46,9 +46,7 @@ return [
 
     'connections' => [
         /*'sqlite' => [
-=======
        /* 'sqlite' => [
->>>>>>> d4ccdd79a058d85446d8ae13333c1d960b8e2e8b
             'driver'   => 'sqlite',
             'database' => database_path('database.sqlite'),
             'prefix'   => '',
