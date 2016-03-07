@@ -109,6 +109,7 @@ Route::get('/user_profilU/user_insertTutorial', function () {
 })->name('user_profilU.user_insertTutorial');
 
 
+
 /*Admin Route*/
 
 Route::get('/admin_form', function () {

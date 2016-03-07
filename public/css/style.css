@@ -58,7 +58,6 @@ body {
 	width: 100%;
 	height: auto;
 	float: left;
-	margin-bottom: 278px;
 	background: RGBA(255, 255, 255, 0.79);
 	border-radius: 0px 0px 23px 23px;
 }
@@ -110,6 +109,7 @@ body {
 .nav {
 	width: 30%;
 	float: left;
+	margin-top: 278px;
 	height: auto;
 	padding: 8px 16px 0px 9%;
 	border-radius: 0px 16px 0px 0px;
@@ -762,6 +762,13 @@ body {
 	margin-left: 1%;
 }
 
+.toolbar-toko {
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+	background: pink;
+	float: left;
+}
 
 
  /*log-in*/
@@ -1240,7 +1247,59 @@ body {
 	border-radius: 8px;
 }
 
+.judultoko{
+	width: 100%;
+	height: 30px;
+	float: left;
+}
 
+.edit-photo{
+	width: 87%;
+	height: 30px;
+	float: left;
+	margin-top: 5px;
+}
+
+.text-area {
+	width: 94%;
+	height: 400px;
+	float: left;
+	margin-top: 10px;
+	padding: 3%;
+}
+
+.edit {
+	width: 10%;
+	height: 40px;
+	float: right;
+	margin: 5px 5px 0px 5px;
+	border-radius: 8px;
+}
+
+.simpan {
+	width: 10%;
+	height: 40px;
+	float: right;
+	margin: 5px 5px 0px 5px;
+	border-radius: 8px;
+}
+
+.publish {
+	width: 10%;
+	height: 40px;
+	float: right;
+	margin: 5px 5px 0px 5px;
+	border-radius: 8px;
+}
+
+.brows-toko {
+	float: left;
+	width: 10%;
+	height: 36px;
+	margin-top: 5px;
+	margin-left: 27px;
+	border-radius: 8px;
+}
 
 /* Breadcrumbs .... */
 
