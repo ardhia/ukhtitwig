@@ -1,3 +1,6 @@
+{% extends 'layout' %}
+{% block 'style' %}
+<style>
 /* CSS Document */
 /* GLOBAL RESET START */
 	body, html  { height: 100%; }
@@ -58,6 +61,7 @@ body {
 	width: 100%;
 	height: auto;
 	float: left;
+	margin-bottom: 278px;
 	background: RGBA(255, 255, 255, 0.79);
 	border-radius: 0px 0px 23px 23px;
 }
@@ -109,9 +113,7 @@ body {
 .nav {
 	width: 30%;
 	float: left;
-	margin-top: 278px;
 	height: auto;
-	margin-top: 278px;
 	padding: 8px 16px 0px 9%;
 	border-radius: 0px 16px 0px 0px;
 }
@@ -763,13 +765,6 @@ body {
 	margin-left: 1%;
 }
 
-.toolbar-toko {
-	width: 100%;
-	height: 50px;
-	margin-top: 10px;
-	background: pink;
-	float: left;
-}
 
 
  /*log-in*/
@@ -794,34 +789,27 @@ body {
 	width: 80%;
 	height: auto;
 	float: left;
-	background: url('../images/signUp.png');
-	font-family: "Handlee";
-	background-size: 100%;
 	margin: 0px 10%;
-	border-bottom: solid 1px #FF99F8;
-}
-
-.sign_title {
-	width: 100%;
-	height: auto;
-	float: left;
-	color: #FF00ED;
-	font-size: 27px;
-	padding: 30px 4% 2px;
 }
 
 .out-logup1 {
-	width: 48%;
+	background: #A3ECFF;
+	width: 70%;
 	height: auto;
 	float: left;
-	margin: 30px 28% 0px 24%;
+	margin: 30px 15% 0px 15%;
+	border-radius: 15px;
+	border: solid 3px #05C1FF;
+	box-shadow: 0px 0px 11px 0px #05C1FF;
 }
 
 #daftar-logup {
+	background:#A3ECFF;
 	width: 43%;
 	height: auto;
 	float: left;
 	margin: 10px 0px 10px 0px;
+	font-family: "Handlee";
 	font-size: 20px;
 }
 
@@ -834,18 +822,22 @@ body {
 }
 
 #titikdua{
+	background: #A3ECFF;
 	width: 7%;
 	height: auto;
 	float: left;
 	margin: 10px 0px;
+	font-family: "Handlee";
 }
 
 #kolom-logup {
+	background: #A3ECFF;
 	width: 50%;
 	height: auto;
 	float: left;
-	margin: 10px 0px;
-	padding-top: 2%;
+	margin: 10px 0px 10px 0px;
+	font-family: "Handlee";
+	padding-top: 2%
 }
 
 /*tampilan admin*/
@@ -942,53 +934,53 @@ body {
 
 #icon-fb {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/fb.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
 #icon-twitt {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/twitt.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
 #icon-g {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
-	background: url(../images/g.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+	background: url(../images/g+.png);
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
 #icon-kontak {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/kontak.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
@@ -1090,8 +1082,8 @@ body {
 }
 
 .text1 {
-	width: 54%;
-	height: auto;
+	width: 56%;
+	height: 32px;
 	border-top-left-radius: 6px;
 	border: solid #00C9FF 1px;
 	padding: 6px;
@@ -1104,7 +1096,7 @@ body {
 
 .text2 {
 	width: 33%;
-	height: auto;
+	height: 32px;
 	border-radius: 6px;
 	border: solid #00C9FF 1px;
 	padding: 6px;
@@ -1128,7 +1120,7 @@ body {
 }
 
 .input-subscribe {
-	width: 91.5%;
+	width: 98%;
 	padding: 10px;
 	border: solid #FF81E5 1px;
 	border-radius: 4px;
@@ -1232,7 +1224,7 @@ body {
 .daftar {
 	width: 40%;
 	height: 40px;
-	margin: 70px 7% 10px;
+	margin: 36px 7% 10px;
 	font-size: 20px;
 	border-radius: 8px;
 	background: #A3ECFF;
@@ -1251,121 +1243,8 @@ body {
 	border-radius: 8px;
 }
 
-.judultoko{
-	width: 100%;
-	height: 30px;
-	float: left;
-}
 
-.edit-photo{
-	width: 87%;
-	height: 30px;
-	float: left;
-	margin-top: 5px;
-}
 
-.text-area {
-	width: 94%;
-	height: 400px;
-	float: left;
-	margin-top: 10px;
-	padding: 3%;
-}
-
-.edit {
-	width: 10%;
-	height: 40px;
-	float: right;
-	margin: 5px 5px 0px 5px;
-	border-radius: 8px;
-}
-
-.simpan {
-	width: 10%;
-	height: 40px;
-	float: right;
-	margin: 5px 5px 0px 5px;
-	border-radius: 8px;
-}
-
-.publish {
-	width: 10%;
-	height: 40px;
-	float: right;
-	margin: 5px 5px 0px 5px;
-	border-radius: 8px;
-}
-
-.brows-toko {
-	float: left;
-	width: 10%;
-	height: 36px;
-	margin-top: 5px;
-	margin-left: 27px;
-	border-radius: 8px;
-}
-/*user_insertArtikel*/
-
-.bungkus-art {
-	width: 100%;
-	height: auto;
-	float: left;
-}
-
-.bungkus-tool-judul{
-	width: 100%;
-	height: auto;
-	float: left;
-}
-
-.judul-art {
-	width: 99%;
-	height: 36px;
-}
-
-#toolbar1 {
-	width: 99.5%;
-	height: 42px;
-	background: pink;
-	margin: 7px 0% 5px;
-	float: left;
-}
-
-.bungkus-isi-disimpub {
-	width: 100%;
-	height: auto;
-	float: left;
-}
-
-.isi-art {
-	width: 99%;
-	height: 420px;
-}
-
-.ditsimpub {
-	width: 16%;
-	height: 30px;
-	margin: 13px 80% 3px;
-	float: left;
-}
-
-.edit {
-	height: 30px;
-	border-radius: 4px;	
-	font-family: "Handlee";
-}
-
-.simpan {
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
-}
-
-.publish {
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
-}
 /* Breadcrumbs .... */
 
 /*custom font*/
@@ -1373,6 +1252,7 @@ body {
 
 .breadcrumb {
 	display: inline-block;
+	box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.35);
 	overflow: hidden;
 	border-radius: 5px;
 	counter-reset: flag;
@@ -1455,3 +1335,11 @@ body {
 .flat a:hover:after, .flat a.active:after{
 	background: #CAF4FF;
 }
+
+
+
+
+
+</style>
+    
+{% endblock %}

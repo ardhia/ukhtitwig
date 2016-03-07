@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insert Toko</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+</head>
+<body>
+	<div class="all-wrapper">
+	    <div class="log">
+	    	<a href="/"><div id="logo">Ukhti</div></a>
+	    	<div id="log">
+	    		<ul>
+	    			<div><li><a href="{{route('about')}}">About</a></li></div>
+	    			<div><li><a href="{{route('signUp')}}">Sign Up</a></li></div>
+	    			<div><li><a href="{{route('signIn')}}">Sign In</a></li></div>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <div id="wrapper">
+	    	<form>
+	    		<input type="text" name="judul_toko" placeholder="Judul" class="judultoko"></input>
+	    		<input type="text" name="edit_photo" placeholder="Photo" class="edit-photo"></input>
+	    	</form>
+			<input type="submit" name="brows-toko" value="Brows" class="brows-toko"></input>
+	    	<div class="toolbar-toko"></div>
+	    	<textarea class="text-area"></textarea>
+			<input type="submit" name="edit" value="Edit" class="edit"></input>
+			<input type="submit" name="simpan" value="Simpat" class="simpan"></input>
+			<input type="submit" name="publish" value="Publish" class="publish"></input>
+	    </div>
+	</div>
+</div>
+</body>
+</html>
