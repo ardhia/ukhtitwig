@@ -786,27 +786,34 @@ body {
 	width: 80%;
 	height: auto;
 	float: left;
+	background: url('../images/signUp.png');
+	font-family: "Handlee";
+	background-size: 100%;
 	margin: 0px 10%;
+	border-bottom: solid 1px #FF99F8;
+}
+
+.sign_title {
+	width: 100%;
+	height: auto;
+	float: left;
+	color: #FF00ED;
+	font-size: 27px;
+	padding: 30px 4% 2px;
 }
 
 .out-logup1 {
-	background: #A3ECFF;
-	width: 70%;
+	width: 48%;
 	height: auto;
 	float: left;
-	margin: 30px 15% 0px 15%;
-	border-radius: 15px;
-	border: solid 3px #05C1FF;
-	box-shadow: 0px 0px 11px 0px #05C1FF;
+	margin: 30px 28% 0px 24%;
 }
 
 #daftar-logup {
-	background:#A3ECFF;
 	width: 43%;
 	height: auto;
 	float: left;
 	margin: 10px 0px 10px 0px;
-	font-family: "Handlee";
 	font-size: 20px;
 }
 
@@ -819,22 +826,18 @@ body {
 }
 
 #titikdua{
-	background: #A3ECFF;
 	width: 7%;
 	height: auto;
 	float: left;
 	margin: 10px 0px;
-	font-family: "Handlee";
 }
 
 #kolom-logup {
-	background: #A3ECFF;
 	width: 50%;
 	height: auto;
 	float: left;
-	margin: 10px 0px 10px 0px;
-	font-family: "Handlee";
-	padding-top: 2%
+	margin: 10px 0px;
+	padding-top: 2%;
 }
 
 /*tampilan admin*/
@@ -1221,7 +1224,7 @@ body {
 .daftar {
 	width: 40%;
 	height: 40px;
-	margin: 36px 7% 10px;
+	margin: 70px 7% 10px;
 	font-size: 20px;
 	border-radius: 8px;
 	background: #A3ECFF;
