@@ -1,3 +1,6 @@
+{% extends 'layout' %}
+{% block 'style' %}
+<style>
 /* CSS Document */
 /* GLOBAL RESET START */
 	body, html  { height: 100%; }
@@ -58,6 +61,7 @@ body {
 	width: 100%;
 	height: auto;
 	float: left;
+	margin-bottom: 278px;
 	background: RGBA(255, 255, 255, 0.79);
 	border-radius: 0px 0px 23px 23px;
 }
@@ -110,7 +114,6 @@ body {
 	width: 30%;
 	float: left;
 	height: auto;
-	margin-top: 278px;
 	padding: 8px 16px 0px 9%;
 	border-radius: 0px 16px 0px 0px;
 }
@@ -931,53 +934,53 @@ body {
 
 #icon-fb {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/fb.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
 #icon-twitt {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/twitt.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
 #icon-g {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
-	background: url(../images/g.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+	background: url(../images/g+.png);
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
 #icon-kontak {
 	width: 22%;
-	height: 35px;
+	height: 42px;
 	float: left;
 	margin-right: 3%;
 	background: url(../images/kontak.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+        -webkit-background-size: 100% 42px;
+        -moz-background-size: 100% 42px;
+        -o-background-size: 100% 42px;
+        background-size: 100% 42px;
 	border-radius: 8px;
 }
 
@@ -1079,8 +1082,8 @@ body {
 }
 
 .text1 {
-	width: 54%;
-	height: auto;
+	width: 56%;
+	height: 32px;
 	border-top-left-radius: 6px;
 	border: solid #00C9FF 1px;
 	padding: 6px;
@@ -1093,7 +1096,7 @@ body {
 
 .text2 {
 	width: 33%;
-	height: auto;
+	height: 32px;
 	border-radius: 6px;
 	border: solid #00C9FF 1px;
 	padding: 6px;
@@ -1117,7 +1120,7 @@ body {
 }
 
 .input-subscribe {
-	width: 91.5%;
+	width: 98%;
 	padding: 10px;
 	border: solid #FF81E5 1px;
 	border-radius: 4px;
@@ -1240,68 +1243,8 @@ body {
 	border-radius: 8px;
 }
 
-/*user_insertArtikel*/
 
-.bungkus-art {
-	width: 100%;
-	height: auto;
-	float: left;
-}
 
-.bungkus-tool-judul{
-	width: 100%;
-	height: auto;
-	float: left;
-}
-
-.judul-art {
-	width: 99%;
-	height: 36px;
-}
-
-#toolbar1 {
-	width: 99.5%;
-	height: 42px;
-	background: pink;
-	margin: 7px 0% 5px;
-	float: left;
-}
-
-.bungkus-isi-disimpub {
-	width: 100%;
-	height: auto;
-	float: left;
-}
-
-.isi-art {
-	width: 99%;
-	height: 420px;
-}
-
-.ditsimpub {
-	width: 16%;
-	height: 30px;
-	margin: 13px 80% 3px;
-	float: left;
-}
-
-.edit {
-	height: 30px;
-	border-radius: 4px;	
-	font-family: "Handlee";
-}
-
-.simpan {
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
-}
-
-.publish {
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
-}
 /* Breadcrumbs .... */
 
 /*custom font*/
@@ -1309,6 +1252,7 @@ body {
 
 .breadcrumb {
 	display: inline-block;
+	box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.35);
 	overflow: hidden;
 	border-radius: 5px;
 	counter-reset: flag;
@@ -1391,3 +1335,11 @@ body {
 .flat a:hover:after, .flat a.active:after{
 	background: #CAF4FF;
 }
+
+
+
+
+
+</style>
+    
+{% endblock %}

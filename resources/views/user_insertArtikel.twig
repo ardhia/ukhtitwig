@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+</head>
+<body>
+	<div class="all-wrapper">
+		<div class="log">
+			<a href="/"><div id="logo">Ukhti</div></a>
+			<div id="log">
+				<ul>
+					<li><a href="{{route('about')}}">About</a></li>
+					<li><a href="{{route('signUp')}}">Sign Up</a></li>
+					<li><a href="{{route('signIn')}}">Sign In</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="wrapper">
+			<div class="bungkus-art">
+				<div class="bungkus-tool-judul">
+					<form> <input type="text" name="judul-art" placeholder="Judul" class="judul-art"> </input></form>
+					<div id="toolbar1"></div>
+				</div>
+				<div class="bungkus-isi-disimpub">
+					<textarea class="isi-art"></textarea>
+					<div class="ditsimpub">
+						<form>
+							<input type="submit" name="edit" value="Edit" class="edit"></input>
+							<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
+							<input type="submit" name="publish" value="Publish" class="publish"></input>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
