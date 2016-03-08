@@ -11,7 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
 
 Route::get('/', function () {
     return view('ukhti');
@@ -117,7 +116,6 @@ Route::get('/admin_form', function () {
     return view('admin_form');
 })->name('admin_form');
 
-=======
 /*route get pengunjung*/
 Route::get('/', 'PagesController@home')->name('/');
 Route::get('/about', 'PagesController@about')->name('about');
@@ -162,9 +160,9 @@ Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTuto
 /*Admin get Route*/
 Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 /*Admin get Route END*/
->>>>>>> 71adebcf8a1e585e294f0c059ebd4a7a3fb8adb5
 
-
+/*pesan*/
+Route::get('/pesan', 'PagesController@pesan')->name('pesan');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

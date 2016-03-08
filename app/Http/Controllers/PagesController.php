@@ -108,4 +108,9 @@ class PagesController extends Controller
     	return view('admin_form');
     }
 
+    //pesan
+    public function pesan() {
+        return view('pesan');
+    }
+
 }
