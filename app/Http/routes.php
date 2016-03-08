@@ -48,13 +48,6 @@ Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTuto
 /*Admin get Route*/
 Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 /*Admin get Route END*/
-
-/*
-|--------------------------------------------------------------------------
-|  Route Post
-|--------------------------------------------------------------------------
-*/
-
 Route::post('/signUp', 'signUpController@signUp');
 
 

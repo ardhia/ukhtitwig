@@ -847,6 +847,38 @@ body {
 	padding-top: 2%;
 }
 
+/*pesan*/
+.out-pesan {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.out-pesan1 {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.photo-pesan {
+	width: 8%;
+    height: 80px;
+    float: left;
+    background: pink;
+    margin: 8px 2%;
+    border-radius: 50px;
+}
+
+.isi-pesan {
+	width: 82%;
+	height: 60px;
+	float: left;
+	background: cyan;
+	margin: 8px 2%;
+	padding: 1%;
+	border-radius: 30px;
+}
+
+
 /*tampilan admin*/
 .out-admin {
 	height: auto;
