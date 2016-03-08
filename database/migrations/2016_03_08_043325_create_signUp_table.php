@@ -23,7 +23,9 @@ class CreateSignUpTable extends Migration
             $table->string('email');
             $table->string('al_email');
             $table->string('password');
-        }); 
+            $table->timestamps();
+        });
+        
     }
 
     /**
@@ -33,6 +35,6 @@ class CreateSignUpTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('signUp');
     }
 }
