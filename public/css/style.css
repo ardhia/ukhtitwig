@@ -796,9 +796,8 @@ body {
 	float: left;
 	background: url('../images/signUp.png');
 	font-family: "Handlee";
-	background-size: 100%;
+	background-size: 100% 100%;
 	margin: 0px 10%;
-	border-bottom: solid 1px #FF99F8;
 }
 
 .sign_title {
@@ -1232,13 +1231,12 @@ body {
 .daftar {
 	width: 40%;
 	height: 40px;
-	margin: 70px 7% 10px;
+	margin: 68px 7% 15px;
 	font-size: 20px;
 	border-radius: 8px;
 	background: #A3ECFF;
 	text-decoration: none;
 	color: #2A00FF;
-	box-shadow: 0px 0px 10px 1px #05C1FF;
 	border: solid 3px #05C1FF;
 	font-family: "Handlee";
 	display: block;
