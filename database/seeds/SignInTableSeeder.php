@@ -11,6 +11,9 @@ class SignInTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('signIn')->insert([
+			'email' =>  'ardhia.marliana@gmail.com',
+			'password' =>  'abcd',
+        	]);
     }
 }
