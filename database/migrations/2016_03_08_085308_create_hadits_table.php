@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTutorialTable extends Migration
+class CreateHaditsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class CreateTutorialTable extends Migration
      */
     public function up()
     {
-        Schema::create('tutorial',function (Blueprint $table) {
-            $table->string('Isi_Tutorial', 10000);
-            $table->string('Komentar_Tutorial', 1000);
-            $table->integer('Banyaknya_Pengunjung');
-            $table->integer('Banyaknya_like');
+        Schema:: create('Hadits', function (Blueprint $table) {
+            $table->text('Isi_Hadits');
+            $table->text('Sumber_HR');
+            $table->text('Jenis_Hadits');
+            $table->text('Komentar_Hadits');
+
+            $table->timestamps();
         });
     }
 
