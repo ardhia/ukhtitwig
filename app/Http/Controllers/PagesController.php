@@ -56,6 +56,10 @@ class PagesController extends Controller
     }
 
     //class sub pengunjung toko
+    public function listket_toko () {
+        return view('listket_toko');
+    }
+
     public function pakaian () {
     	return view('pakaian');
     }

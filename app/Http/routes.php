@@ -41,6 +41,7 @@ Route::get('/toko/dll', 'PagesController@dll')->name('toko.dll');
 Route::get('/user_profilU', 'PagesController@user_profilU')->name('user_profilU');
 Route::get('/user_profilU/user_insertArtikel', 'PagesController@user_insertArtikel')->name('user_profilU.user_insertArtikel');
 Route::get('/user_profilU/user_insertToko', 'PagesController@user_insertToko')->name('user_profilU.user_insertToko');
+Route::get('/user_profilU/listket_toko', 'PagesController@listket_toko')->name('user_profilU.listket_toko');
 Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
 /*User get Route END*/
 
