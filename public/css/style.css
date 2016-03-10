@@ -1373,25 +1373,28 @@ body {
 }
 
 .ditsimpub {
-	width: 16%;
+	width: 25%;
 	height: 30px;
-	margin: 13px 80% 3px;
+	margin: 19px 74% 3px;
 	float: left;
 }
 
 .edit {
+	width: 29%;
 	height: 30px;
 	border-radius: 4px;	
 	font-family: "Handlee";
 }
 
 .simpan {
+	width: 29%;
 	height: 30px;
 	border-radius: 4px;
 	font-family: "Handlee";
 }
 
 .publish {
+	width: 29%;
 	height: 30px;
 	border-radius: 4px;
 	font-family: "Handlee";
