@@ -13,7 +13,7 @@ Route::get('/toko', 'PagesController@toko')->name('toko');
 Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'PagesController@artikel')->name('artikel');
 Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
-Route::get('/signIn', 'PagesController@signIn')->name('signIn');
+Route::get('/signIn', 'SignInController@tampilSignIn')->name('signIn');
 Route::get('/signUp', 'SignUpController@tampilSignUp')->name('signUp');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 /*route get pengunjung END*/
@@ -55,6 +55,7 @@ Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 
 //Route POST
 Route::post('/signUp', 'signUpController@prosesSignUp')->name('signUpPost');
+Route::post('/signIn', 'SignInController@prosesSignIn')->name('signInPost');
 
 
 
