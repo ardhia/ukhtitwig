@@ -10,13 +10,10 @@ class ArtikelTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
-    	DB::table('Artikel')->insert ([
-        	'Username' => 'Rina12',
+    {
+         DB::table('artikel')->insert ([
+        	'Judul_Artikel' => 'Manfaat',
         	'Isi_Artikel' => 'Manfaat sholat bagi kesehatan',
-        	'Komentar_Artikel' => 'waaahh bermanfaat sekaliii :D',
-        	'Banyak_Pengunjung' => '10000',
-        	'Banyak_like' => '5000',
         	]);
     }
 }

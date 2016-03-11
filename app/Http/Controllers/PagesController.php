@@ -94,9 +94,6 @@ class PagesController extends Controller
     	return view('user_profilU');
     }
 
-    public function user_insertArtikel () {
-    	return view('user_insertArtikel');
-    }
     
     public function user_insertToko () {
     	return view('user_insertToko');

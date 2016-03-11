@@ -13,12 +13,8 @@ class CreateArtikelTable extends Migration
     public function up()
     {
         Schema::create('artikel', function (Blueprint $table){
-            $table->increments('No_Artikel');
-            $table->string('Username');
+            $table->text('Judul_Artikel');
             $table->text('Isi_Artikel');
-            $table->text('Komentar_Artikel');
-            $table->integer('Banyak_pengunjung');
-            $table->integer('Banyak_like');
 
             $table->timestamps();
         });
@@ -32,6 +28,6 @@ class CreateArtikelTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('artikel');
     }
 }
