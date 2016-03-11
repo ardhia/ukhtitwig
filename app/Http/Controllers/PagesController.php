@@ -32,13 +32,6 @@ class PagesController extends Controller
     	return view('tutorial');
     }
 
-    public function signIn () {
-    	return view('signIn');
-    }
-
-    public function signUp () {
-    	return view('signUp');
-    }
 
     public function profilU () {
     	return view('profilU');

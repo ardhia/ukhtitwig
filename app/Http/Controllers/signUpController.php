@@ -2,26 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\SignUp;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use Illuminate\Support\Facades\Input;
+use Redirect;
 
 
-class signUpController extends Controller
+class SignUpController extends Controller
 {
-    public function signUp () {
-        $signUp = new App\signUp;
-        $signUp->nama_lengkap   = Input::get('nama_lengkap');
-        $signUp->username       = Input::get('username');
-        $signUp->tempat_lahir   = Input::get('tempat_lahir');
-        $signUp->tanggal_lahir  = Input::get('tanggal_lahir');
-        $signUp->jenis_kelamin  = Input::get('jenis_kelamin');
-        $signUp->status         = Input::get('status');
-        $signUp->email          = Input::get('email');
-        $signUp->al_email       = Input::get('al_email');
-        $signUp->password       = Hash::make(Input::get('password'));
+
+    public function tampilSignUp () {
+        return view('signUp');
+    }
+
+    public function prosesSignUp (Request $request) {
+        $signUp = new SignUp;
+        $signUp->nama_lengkap = $request->input('nama_lengkap');
+        $signUp->username = $request->input('username');
+        $signUp->tempat_lahir = $request->input('tempat_lahir');
+        $signUp->tanggal_lahir = $request->input('tanggal_lahir');
+        $signUp->jenis_kelamin = $request->input('jenis_kelamin');
+        $signUp->status = $request->input('status');
+        $signUp->email = $request->input('email');
+        $signUp->al_email = $request->input('al_email');
+        $signUp->password = $request->input('password');
         $signUp->save();
 
-    return Redirect::to('signUp');
+        return Redirect::to('signUp');
     }
 }

@@ -11,8 +11,8 @@ Route::get('/toko', 'PagesController@toko')->name('toko');
 Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'PagesController@artikel')->name('artikel');
 Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
-Route::get('/signIn', 'PagesController@signIn')->name('signIn');
-Route::get('/signUp', 'PagesController@signUp')->name('signUp');
+Route::get('/signIn', 'SignInController@tampilSignIn')->name('signIn');
+Route::get('/signUp', 'SignUpController@tampilSignUp')->name('signUp');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 /*route get pengunjung END*/
 
@@ -41,8 +41,6 @@ Route::get('/toko/dll', 'PagesController@dll')->name('toko.dll');
 Route::get('/user_profilU', 'PagesController@user_profilU')->name('user_profilU');
 Route::get('/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
 Route::get('/user_profilU/user_insertToko', 'PagesController@user_insertToko')->name('user_profilU.user_insertToko');
-Route::get('/user_profilU/listket_toko', 'PagesController@listket_toko')->name('user_profilU.listket_toko');
-Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
 /*User get Route END*/
 
 
@@ -51,9 +49,6 @@ Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 /*Admin get Route END*/
 Route::post('/signUp', 'signUpController@signUp');
 
-
-
-Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 
 
 

@@ -4,7 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class signIn extends Model
+class SignIn extends Model
 {
-    //
+    protected $table = 'signin';
+
+    protected $fillable = [
+        'email', 'password',
+    ];
 }

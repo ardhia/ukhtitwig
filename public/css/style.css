@@ -1409,6 +1409,11 @@ body {
 	height: 36px;
 }
 
+.Judul_Tutorial {
+	width: 99%;
+	height: 36px;
+}
+
 #toolbar1 {
 	width: 99.5%;
 	height: 42px;
@@ -1428,26 +1433,34 @@ body {
 	height: 420px;
 }
 
+.Isi_Tutorial {
+	width: 99%;
+	height: 420px;
+}
+
 .ditsimpub {
-	width: 16%;
+	width: 25%;
 	height: 30px;
-	margin: 13px 80% 3px;
+	margin: 19px 74% 3px;
 	float: left;
 }
 
 .edit {
+	width: 29%;
 	height: 30px;
 	border-radius: 4px;	
 	font-family: "Handlee";
 }
 
 .simpan {
+	width: 29%;
 	height: 30px;
 	border-radius: 4px;
 	font-family: "Handlee";
 }
 
 .publish {
+	width: 29%;
 	height: 30px;
 	border-radius: 4px;
 	font-family: "Handlee";
