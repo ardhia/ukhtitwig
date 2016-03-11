@@ -13,8 +13,8 @@ Route::get('/toko', 'PagesController@toko')->name('toko');
 Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'PagesController@artikel')->name('artikel');
 Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
-Route::get('/signIn', 'PagesController@signIn')->name('signIn');
-Route::get('/signUp', 'PagesController@signUp')->name('signUp');
+Route::get('/signIn', 'SignInController@tampilSignIn')->name('signIn');
+Route::get('/signUp', 'SignUpController@tampilSignUp')->name('signUp');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 /*route get pengunjung END*/
 
@@ -55,32 +55,8 @@ Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 
 
 //Route POST
-Route::post('/signUp', function(Request $request) {
-   	$signUp = new App\signUp;
-   	$signUp->nama_lengkap = $request->input('nama_lengkap');
-   	$signUp->username = $request->input('username');
-   	$signUp->tempat_lahir = $request->input('tempat_lahir');
-   	$signUp->tanggal_lahir = $request->input('tanggal_lahir');
-   	$signUp->jenis_kelamin = $request->input('jenis_kelamin');
-   	$signUp->status = $request->input('status');
-   	$signUp->email = $request->input('email');
-   	$signUp->al_email = $request->input('al_email');
-   	$signUp->password = $request->input('password');
-   	$signUp->save();
-   	/*-------------
-   	$signUp->nama_lengkap	= \Input::get('nama_lengkap');
-   	$signUp->username 		= \Input::get('username');
-   	$signUp->tempat_lahir	= \Input::get('tempat_lahir');
-   	$signUp->tanggal_lahir	= \Input::get('tanggal_lahir');
-   	$signUp->jenis_kelamin	= \Input::get('jenis_kelamin');
-   	$signUp->status    		= \Input::get('status');
-   	$signUp->email    		= \Input::get('email');
-   	$signUp->al_email    	= \Input::get('al_email');
-   	$signUp->password 		= \Hash::make(\Input::get('password'));
-   	$signUp->save();-----------------------*/
-
-   	return Redirect::to('signUp');
-});
+Route::post('/signUp', 'signUpController@prosesSignUp')->name('signUpPost');
+Route::post('/signIn', 'SignInController@prosesSignIn')->name('signInPost');
 
 Route::post('/user_profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
 
