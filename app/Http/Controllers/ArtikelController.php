@@ -18,6 +18,6 @@ class ArtikelController extends Controller
 	    $artikel->Judul_Artikel = $request->input('Judul_Artikel');
 	    $artikel->Isi_Artikel = $request->input('Isi_Artikel');
 	    $artikel->save();
-	 	return Redirect::to('/user_profilU/User_insertArtikel');
+	 	return Redirect::to('/user_profilU/user_insertArtikel');
 	}
 }

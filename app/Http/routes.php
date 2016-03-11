@@ -49,6 +49,8 @@ Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 /*Admin get Route END*/
 Route::post('/signUp', 'signUpController@signUp');
 
+Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+
 
 
 
