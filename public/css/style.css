@@ -1353,6 +1353,11 @@ body {
 	height: 36px;
 }
 
+.Judul_Tutorial {
+	width: 99%;
+	height: 36px;
+}
+
 #toolbar1 {
 	width: 99.5%;
 	height: 42px;
@@ -1368,6 +1373,11 @@ body {
 }
 
 .isi-art {
+	width: 99%;
+	height: 420px;
+}
+
+.Isi_Tutorial {
 	width: 99%;
 	height: 420px;
 }
