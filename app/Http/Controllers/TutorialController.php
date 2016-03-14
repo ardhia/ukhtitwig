@@ -6,11 +6,24 @@ use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
 use App\User_insertTutorial;
+use DB;
 
 class TutorialController extends Controller
 {
     public function tampilUser_insertTutorial () {
     	return view('user_insertTutorial');
+    }
+
+    public function tampilIsiTutorial () {
+    	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
+
+    	return view('isi-tutorial', ['tutorial' => $tutorial]);
+    }
+
+      public function tampilTutorial () {
+    	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
+
+    	return view('tutorial', ['tutorial' => $daftartutorial]);
     }
 
     public function prosesUser_insertTutorial (Request $request) {

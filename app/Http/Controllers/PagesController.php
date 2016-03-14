@@ -28,10 +28,6 @@ class PagesController extends Controller
     	return view('artikel');
     }
 
-    public function tutorial () {
-    	return view('tutorial');
-    }
-
 
     public function profilU () {
     	return view('profilU');

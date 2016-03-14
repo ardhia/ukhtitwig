@@ -11,5 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //$this->call(TutorialTableSeeder::class);
+        //$this->call(KerudungTableSeeder::class);
+        $this->call(DllTableSeeder::class);
     }
+
 }
