@@ -11,5 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+    	//$this->call(MakananTableSeeder::class);
+    	//$this->call(PakaianTableSeeder::class);
+    	//$this->call(AksesorisTableSeeder::class);
+    	//$this->call(SepatuTableSeeder::class);
+    	$this->call(TasTableSeeder::class);
+
+
     }
 }

@@ -21,7 +21,9 @@
 				<div class="content">
 					<div id="tulis">
 						<div class="tanggal">02 februari 2016</div>
-						<div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+						{% for judul in Judul_Artikel %}
+						<div class="title">{{judul.Judul_Artikel}}</div>
+						{% endfor %}
 					</div>
 					<div id="out-tulisan">
 						<div class="foto1"></div>

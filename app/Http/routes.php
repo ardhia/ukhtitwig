@@ -9,7 +9,7 @@ Route::get('/', 'PagesController@home')->name('/');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/toko', 'PagesController@toko')->name('toko');
 Route::get('/hadits', 'PagesController@hadits')->name('hadits');
-Route::get('/artikel', 'PagesController@artikel')->name('artikel');
+Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
 Route::get('/signIn', 'SignInController@tampilSignIn')->name('signIn');
 Route::get('/signUp', 'SignUpController@tampilSignUp')->name('signUp');
@@ -18,7 +18,7 @@ Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 
 
 /*route get sub artikel pengunjung*/
-Route::get('/artikel/isi-artikel', 'PagesController@isi_artikel')->name('artikel.isi-artikel');
+Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
 /*route get sub artikel pengunjung END*/
 
 
@@ -51,6 +51,11 @@ Route::post('/signUp', 'signUpController@signUp');
 
 Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 
+
+/*nyobain collaps*/
+Route::get('coba', function(){
+	return view('coba');
+});
 
 
 
