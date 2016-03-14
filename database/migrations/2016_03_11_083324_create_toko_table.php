@@ -12,13 +12,12 @@ class CreateTokoTable extends Migration
      */
     public function up()
     {
-        Schema::create('toko', function (Blueprint $table){
-            $table->increments('No_Toko');
-            $table->text('Nama_Barang');
-            $table->integer('Harga');
-            $table->text('Jenis_Barang');
-            $table->text('Ket_Barang');
-
+        Schema::create('toko', function (Blueprint $table) {
+            $table->increments('idToko');
+            $table->text('judulToko');
+            $table->string('photoToko');
+            $table->text('harga');
+            $table->text('jb');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateTokoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('toko');
     }
 }

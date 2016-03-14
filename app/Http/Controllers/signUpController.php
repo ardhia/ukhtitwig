@@ -12,7 +12,24 @@ class SignUpController extends Controller
 {
 
     public function tampilSignUp () {
-        return view('signUp');
+
+        $siswa_siswa = [
+            [
+                'nama' => 'ardhia',
+                'alamat' => 'Padalarang'
+            ],
+            [
+                'nama' => 'ardhia 1',
+                'alamat' => 'Padalarang'
+            ],
+            [
+                'nama' => 'RINA',
+                'alamat' => 'Padalarang'
+            ]
+        ];
+
+
+        return view('signUp', ['siswa_siswa' => $siswa_siswa]);
     }
 
     public function prosesSignUp (Request $request) {
