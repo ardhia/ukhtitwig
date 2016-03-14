@@ -47,7 +47,21 @@ Route::get('/user_profilU/user_insertToko', 'PagesController@user_insertToko')->
 /*Admin get Route*/
 Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 /*Admin get Route END*/
-Route::post('/signUp', 'signUpController@signUp');
+
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin')->name('tampilkanSignIn');
+Route::post('auth/login', 'Auth\AuthController@postLogin')->name('memprosesSignIn');
+Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logoutUser');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister')->name('tampilkanSignUp');
+Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
+
+Route::get('profile', [
+    'middleware' => 'auth',
+    'uses' => 'ProfileController@show'
+]);
 
 Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 
