@@ -146,30 +146,30 @@ Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTuto
 
 //Home About Profil
 Route::get('admin', 'PagesController@homeAdmin')->name('/homeAdmin');
-Route::get('/about', 'PagesController@aboutAdmin')->name('aboutAdmin');
-Route::get('/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
-Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
+Route::get('admin/about', 'PagesController@aboutAdmin')->name('aboutAdmin');
+Route::get('admin/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
+Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
 
 //Toko
-Route::get('/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
-Route::get('/toko/pakaian', 'TokoController@tampilPakaianAdmin')->name('toko.pakaianAdmin');
-Route::get('/toko/makanan', 'TokoController@tampilMakananAdmin')->name('toko.makananAdmin');
-Route::get('/toko/sepatu', 'TokoController@tampilSepatuAdmin')->name('toko.sepatuAdmin');
-Route::get('/toko/kerudung', 'TokoController@tampilKerudungAdmin')->name('toko.kerudungAdmin');
-Route::get('/toko/tas', 'TokoController@tampilTasAdmin')->name('toko.tasAdmin');
-Route::get('/toko/aksesoris', 'TokoController@tampilAksesorisAdmin')->name('toko.aksesorisAdmin');
-Route::get('/toko/dll', 'TokoController@tampilDllAdmin')->name('toko.dllAdmin');
+Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
+Route::get('admin/toko/pakaian', 'TokoController@tampilPakaianAdmin')->name('toko.pakaianAdmin');
+Route::get('admin/toko/makanan', 'TokoController@tampilMakananAdmin')->name('toko.makananAdmin');
+Route::get('admin/toko/sepatu', 'TokoController@tampilSepatuAdmin')->name('toko.sepatuAdmin');
+Route::get('admin/toko/kerudung', 'TokoController@tampilKerudungAdmin')->name('toko.kerudungAdmin');
+Route::get('admin/toko/tas', 'TokoController@tampilTasAdmin')->name('toko.tasAdmin');
+Route::get('admin/toko/aksesoris', 'TokoController@tampilAksesorisAdmin')->name('toko.aksesorisAdmin');
+Route::get('admin/toko/dll', 'TokoController@tampilDllAdmin')->name('toko.dllAdmin');
 
 //Hadits
-Route::get('/hadits', 'PagesController@haditsAdmin')->name('haditsAdmin');
+Route::get('admin/hadits', 'PagesController@haditsAdmin')->name('haditsAdmin');
 
 //Artikel
-Route::get('auth/artikel', 'ArtikelController@tampilArtikelAdmin')->name('artikelAdmin');
-Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelAdmin')->name('artikel.isi-artikelAdmin');
+Route::get('admin/artikel', 'ArtikelController@tampilArtikelAdmin')->name('artikelAdmin');
+Route::get('admin/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelAdmin')->name('artikel.isi-artikelAdmin');
 
 //Tutorial
-Route::get('/tutorial', 'PagesController@tutorialAdmin')->name('tutorialAdmin');
-Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorialAdmin')->name('tutorial.isi-tutorialAdmin');
+Route::get('admin/tutorial', 'PagesController@tutorialAdmin')->name('tutorialAdmin');
+Route::get('admin/tutorial/isi-tutorial', 'PagesController@isi_tutorialAdmin')->name('tutorial.isi-tutorialAdmin');
 
 /*
 |
