@@ -16,12 +16,6 @@
 //Home About Profil
 Route::get('/', 'PagesController@home')->name('/');
 Route::get('/about', 'PagesController@about')->name('about');
-Route::get('/toko', 'PagesController@toko')->name('toko');
-Route::get('/hadits', 'PagesController@hadits')->name('hadits');
-Route::get('/artikel', 'PagesController@artikel')->name('artikel');
-Route::get('/tutorial', 'TutorialController@tampilTutorial')->name('tutorial');
-Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
-Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 
 //Toko
@@ -41,16 +35,14 @@ Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
 
-
-/*route get sub tutorial pengunjung*/
-Route::get('/tutorial/isi-tutorial', 'TutorialController@tampilIsiTutorial')->name('tutorial.isi-tutorial');
-
-/*route get sub tutorial pengunjung END*/
-
 //Tutorial
-Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
-Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorial')->name('tutorial.isi-tutorial');
-
+Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
+Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
+/*
+|--------------------------------------------------------------------------
+| END YOOOOOOOOOOO!!! >o<
+|--------------------------------------------------------------------------
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -73,21 +65,6 @@ Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorial')->name('tuto
 |--------------------------------------------------------------------------
 */
 
-
-/*route get sub toko pengunjung*/
-Route::get('/toko/pakaian', 'PagesController@pakaian')->name('toko.pakaian');
-Route::get('/toko/makanan', 'PagesController@makanan')->name('toko.makanan');
-Route::get('/toko/sepatu', 'PagesController@sepatu')->name('toko.sepatu');
-Route::get('/toko/kerudung', 'PagesController@kerudung')->name('toko.kerudung');
-Route::get('/toko/tas', 'PagesController@tas')->name('toko.tas');
-Route::get('/toko/aksesoris', 'PagesController@aksesoris')->name('toko.aksesoris');
-Route::get('/toko/dll', 'PagesController@dll')->name('toko.dll');
-/*route get sub toko pengunjung END*/
-
-/*User get Route*/
-Route::get('/user_profilU', 'PagesController@user_profilU')->name('user_profilU');
-
-Route::get('/user_profilU/user_insertArtikel', 'PagesController@user_insertArtikel')->name('user_profilU.user_insertArtikel');
 //Home About Profil
 Route::get('auth', 'PagesController@homeUser')->name('homeUser');
 Route::get('auth/about', 'PagesController@aboutUser')->name('aboutUser');
@@ -112,16 +89,15 @@ Route::get('auth/artikel', 'ArtikelController@tampilArtikelUser')->name('artikel
 Route::get('auth/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelUser')->name('artikel.isi-artikelUser');
 Route::get('auth/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
 
-/*Admin get Route*/
-Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
-/*Admin get Route END*/
-Route::post('/SignUp','signUpController@signUp');
-
 //Tutorial
-Route::get('auth/tutorial', 'PagesController@tutorialUser')->name('tutorialUser');
-Route::get('auth/tutorial/isi-tutorial', 'PagesController@isi_tutorialUser')->name('tutorial.isi-tutorialUser');
-Route::get('auth/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
-
+Route::get('auth/tutorial', 'TutorialController@tutorialUser')->name('tutorialUser');
+Route::get('auth/tutorial/isi-tutorial', 'TutorialController@isi_tutorialUser')->name('tutorial.isi-tutorialUser');
+Route::get('auth/user_profilU/user_insertTutorial', 'TutorialController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
+/*
+|--------------------------------------------------------------------------
+| END YOOOOOOOOOOO!!! >o<
+|--------------------------------------------------------------------------
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -168,9 +144,13 @@ Route::get('admin/artikel', 'ArtikelController@tampilArtikelAdmin')->name('artik
 Route::get('admin/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelAdmin')->name('artikel.isi-artikelAdmin');
 
 //Tutorial
-Route::get('admin/tutorial', 'PagesController@tutorialAdmin')->name('tutorialAdmin');
-Route::get('admin/tutorial/isi-tutorial', 'PagesController@isi_tutorialAdmin')->name('tutorial.isi-tutorialAdmin');
-
+Route::get('admin/tutorial', 'TutorialController@tutorialAdmin')->name('tutorialAdmin');
+Route::get('admin/tutorial/isi-tutorial', 'TutorialController@isi_tutorialAdmin')->name('tutorial.isi-tutorialAdmin');
+/*
+|--------------------------------------------------------------------------
+| END YOOOOOOOOOOO!!! >o<
+|--------------------------------------------------------------------------
+*/
 /*
 |
 |
@@ -188,8 +168,13 @@ Route::get('admin/tutorial/isi-tutorial', 'PagesController@isi_tutorialAdmin')->
 | Routes File POST Halaman User
 |--------------------------------------------------------------------------
 */
-
-Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+Route::post('auth/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+Route::post('auth/user_profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
+/*
+|--------------------------------------------------------------------------
+| END YOOOOOOOOOOO!!! >o<
+|--------------------------------------------------------------------------
+*/
 
 /*
 |
@@ -206,6 +191,12 @@ Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_in
 |
 |--------------------------------------------------------------------------
 | Routes File POST Halaman Admin
+|--------------------------------------------------------------------------
+*/
+//isian disini
+/*
+|--------------------------------------------------------------------------
+| END YOOOOOOOOOOO!!! >o<
 |--------------------------------------------------------------------------
 */
 
@@ -237,23 +228,6 @@ Route::get('profile', [
     'middleware' => 'auth',
     'uses' => 'ProfileController@show'
 ]);
-
-
-
-//Route POST
-Route::post('/signUp', 'signUpController@prosesSignUp')->name('signUpPost');
-Route::post('/signIn', 'SignInController@prosesSignIn')->name('signInPost');
-Route::post('/user_profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
-Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
-
-
-/*nyobain collaps*/
-Route::get('coba', function(){
-	return view('coba');
-});
-
-
-
 
 /*
 |--------------------------------------------------------------------------
