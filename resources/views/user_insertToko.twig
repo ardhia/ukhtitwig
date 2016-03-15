@@ -18,12 +18,12 @@
 	    	</div>
 	    </div>
 	    <div id="wrapper">
-	    	<form>
-	    		<input type="text" name="judul_toko" placeholder="Judul" class="judultoko"></input>
-	    		<input type="text" name="edit_photo" placeholder="Photo" class="edit-photo"></input>
-				<input type="submit" name="brows-toko" value="Brows" class="brows-toko"></input>
-	    		<input type="text" name="harga" placeholder="Harga" class="harga-jenis"></input>
-	    		<input type="text" name="jb" placeholder="Jenis Barang" class="harga-jenis"></input>
+	    	<form enctype="multipart/form-data" method="POST" action="">
+	    		<input type="text" name="judulToko" placeholder="Judul" class="insertToko"></input>
+	    		<input type="text" name="photoToko" placeholder="Photo" class="edit-photo"></input>
+				<input type="file" name="brows-toko" value="Brows" class="brows-toko"></input>
+	    		<input type="text" name="harga" placeholder="Harga" class="insertToko"></input>
+	    		<input type="text" name="jb" placeholder="Jenis Barang" class="insertToko"></input>
 	    	</form>
 	    	<div class="insert-ket-toko">Keterangan Barang:</div>
 	    	<textarea class="text-area"></textarea>

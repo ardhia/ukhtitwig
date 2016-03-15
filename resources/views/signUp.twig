@@ -32,6 +32,12 @@
 					<div class="titik">:</div>
 				</div>
 				<div id="kolom-logup">
+				<ul>
+					{% for item in siswa_siswa %}
+					<li>{{item.nama}} - {{item.alamat}}</li>
+					    
+					{% endfor %}
+				</ul>
 					<form method="POST" action="{{route('signUpPost')}}">
 						<input type="text" name="nama_lengkap" placeholder="Nama Lengkap" class="nama-logup"></input>
 						<input type="text" name="username" placeholder="Username" class="nama-logup"></input>

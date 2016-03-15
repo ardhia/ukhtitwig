@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArsipTable extends Migration
+class UpdateArtikelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,8 @@ class CreateArsipTable extends Migration
      */
     public function up()
     {
-        Schema::create('arsip', function (Blueprint $table){
-            $table->increments('No');
-            $table->date('Tanggal');
-            $table->string('Username');
-            $table->text('Judul');
-            $table->timestamps();
+        Schema::table('artikel', function ($table) {
+            $table->string('Photo');
         });
     }
 

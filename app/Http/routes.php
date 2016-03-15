@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Input;
-use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -13,6 +11,8 @@ Route::get('/toko', 'PagesController@toko')->name('toko');
 Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'PagesController@artikel')->name('artikel');
 Route::get('/tutorial', 'TutorialController@tampilTutorial')->name('tutorial');
+Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
+Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
 Route::get('/signIn', 'SignInController@tampilSignIn')->name('signIn');
 Route::get('/signUp', 'SignUpController@tampilSignUp')->name('signUp');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
@@ -20,7 +20,7 @@ Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 
 
 /*route get sub artikel pengunjung*/
-Route::get('/artikel/isi-artikel', 'PagesController@isi_artikel')->name('artikel.isi-artikel');
+Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
 /*route get sub artikel pengunjung END*/
 
 
@@ -44,9 +44,8 @@ Route::get('/toko/dll', 'PagesController@dll')->name('toko.dll');
 Route::get('/user_profilU', 'PagesController@user_profilU')->name('user_profilU');
 
 Route::get('/user_profilU/user_insertArtikel', 'PagesController@user_insertArtikel')->name('user_profilU.user_insertArtikel');
+Route::get('/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
 Route::get('/user_profilU/user_insertToko', 'PagesController@user_insertToko')->name('user_profilU.user_insertToko');
-Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
-
 /*User get Route END*/
 
 /*Admin get Route*/
@@ -54,11 +53,34 @@ Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
 /*Admin get Route END*/
 Route::post('/SignUp','signUpController@signUp');
 
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin')->name('tampilkanSignIn');
+Route::post('auth/login', 'Auth\AuthController@postLogin')->name('memprosesSignIn');
+Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logoutUser');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister')->name('tampilkanSignUp');
+Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
+
+Route::get('profile', [
+    'middleware' => 'auth',
+    'uses' => 'ProfileController@show'
+]);
+
 
 //Route POST
 Route::post('/signUp', 'signUpController@prosesSignUp')->name('signUpPost');
 Route::post('/signIn', 'SignInController@prosesSignIn')->name('signInPost');
 Route::post('/user_profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
+Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+
+
+/*nyobain collaps*/
+Route::get('coba', function(){
+	return view('coba');
+});
+
+
 
 /*
 |--------------------------------------------------------------------------

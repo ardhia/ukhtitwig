@@ -24,8 +24,12 @@ class PagesController extends Controller
     	return view('hadits');
     }
 
+
     public function artikel () {
     	return view('artikel');
+  
+    public function tutorial () {
+    	return view('tutorial');
     }
 
 
