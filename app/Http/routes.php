@@ -62,32 +62,32 @@ Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorial')->name('tuto
 
 //Home About Profil
 Route::get('auth', 'PagesController@homeUser')->name('homeUser');
-Route::get('/about', 'PagesController@aboutUser')->name('aboutUser');
-Route::get('/profilU', 'PagesController@profilUser')->name('profilUser');
+Route::get('auth/about', 'PagesController@aboutUser')->name('aboutUser');
+Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
 
 //Toko
-Route::get('/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
-Route::get('/toko/pakaian', 'TokoController@tampilPakaianUser')->name('toko.pakaianUser');
-Route::get('/toko/makanan', 'TokoController@tampilMakananUser')->name('toko.makananUser');
-Route::get('/toko/sepatu', 'TokoController@tampilSepatuUser')->name('toko.sepatuUser');
-Route::get('/toko/kerudung', 'TokoController@tampilKerudungUser')->name('toko.kerudungUser');
-Route::get('/toko/tas', 'TokoController@tampilTasUser')->name('toko.tasUser');
-Route::get('/toko/aksesoris', 'TokoController@tampilAksesorisUser')->name('toko.aksesorisUser');
-Route::get('/toko/dll', 'TokoController@tampilDllUser')->name('toko.dllUser');
-Route::get('/user_profilU/user_insertToko', 'TokoController@user_insertToko')->name('user_profilU.user_insertToko');
+Route::get('auth/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
+Route::get('auth/toko/pakaian', 'TokoController@tampilPakaianUser')->name('toko.pakaianUser');
+Route::get('auth/toko/makanan', 'TokoController@tampilMakananUser')->name('toko.makananUser');
+Route::get('auth/toko/sepatu', 'TokoController@tampilSepatuUser')->name('toko.sepatuUser');
+Route::get('auth/toko/kerudung', 'TokoController@tampilKerudungUser')->name('toko.kerudungUser');
+Route::get('auth/toko/tas', 'TokoController@tampilTasUser')->name('toko.tasUser');
+Route::get('auth/toko/aksesoris', 'TokoController@tampilAksesorisUser')->name('toko.aksesorisUser');
+Route::get('auth/toko/dll', 'TokoController@tampilDllUser')->name('toko.dllUser');
+Route::get('auth/user_profilU/user_insertToko', 'TokoController@user_insertToko')->name('user_profilU.user_insertToko');
 
 //Hadits
-Route::get('/hadits', 'PagesController@haditsUser')->name('haditsUser');
+Route::get('auth/hadits', 'PagesController@haditsUser')->name('haditsUser');
 
 //Artikel
-Route::get('/artikel', 'ArtikelController@tampilArtikelUser')->name('artikelUser');
-Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelUser')->name('artikel.isi-artikelUser');
-Route::get('/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
+Route::get('auth/artikel', 'ArtikelController@tampilArtikelUser')->name('artikelUser');
+Route::get('auth/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelUser')->name('artikel.isi-artikelUser');
+Route::get('auth/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
 
 //Tutorial
-Route::get('/tutorial', 'PagesController@tutorialUser')->name('tutorialUser');
-Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorialUser')->name('tutorial.isi-tutorialUser');
-Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
+Route::get('auth/tutorial', 'PagesController@tutorialUser')->name('tutorialUser');
+Route::get('auth/tutorial/isi-tutorial', 'PagesController@isi_tutorialUser')->name('tutorial.isi-tutorialUser');
+Route::get('auth/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
 
 
 /*

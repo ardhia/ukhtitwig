@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
 
+
+
+
 class TokoController extends Controller
 {
     public function uploadPhoto (Request $request){

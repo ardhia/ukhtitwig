@@ -9,9 +9,39 @@ use App\User_insertTutorial;
 
 class TutorialController extends Controller
 {
-    public function tampilUser_insertTutorial () {
-    	return view('user_insertTutorial');
-    }
+
+	//PUBLIK
+	public function tutorial () {
+		return view('auth/tutorial');
+	}
+
+	public function isi_tutorial () {
+		return view('auth/tutorial/isi-tutorial');
+	}
+	//END
+
+	//USER
+	public function tutorialUser () {
+		return view('auth/tutorial');
+	}
+
+	public function isi_tutorialUser (){
+		return view('auth/tutorial/isi_tutorial');
+	}
+
+	public function user_insertTutorial (){
+		return view('auth/user_profilU/user_insertTutorial');
+	}
+
+	//ADMIN
+
+	public function tutorialAdmin (){
+		return view('auth/tutorial');
+	}
+
+	public function isi_tutorialAdmin (){
+		return view('auth/tutorial/isi-tutorial');
+	}
 
     public function prosesUser_insertTutorial (Request $request) {
 		$user_insertTutorial= new User_insertTutorial;
@@ -19,6 +49,7 @@ class TutorialController extends Controller
 		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
 		$user_insertTutorial->save();
 
-		return Redirect::to('/user_profilU/user_insertTutorial');
+		return Redirect::to('auth/user_profilU/user_insertTutorial');
 	}
+	//END
 }
