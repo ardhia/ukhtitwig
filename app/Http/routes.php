@@ -11,8 +11,6 @@ Route::get('/toko', 'PagesController@toko')->name('toko');
 Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
-Route::get('/signIn', 'SignInController@tampilSignIn')->name('signIn');
-Route::get('/signUp', 'SignUpController@tampilSignUp')->name('signUp');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 /*route get pengunjung END*/
 

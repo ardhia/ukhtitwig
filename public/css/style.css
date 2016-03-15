@@ -782,6 +782,11 @@ body {
 	float: left;
 	border-radius: 10px;
 }
+
+.remember {
+	margin-left: 39%;
+	margin-top: 25px;
+}
 /*log-up*/
 .out-logup {
 	width: 80%;
