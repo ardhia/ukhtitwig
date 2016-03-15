@@ -16,8 +16,13 @@ class PagesController extends Controller
     public function about () {
     	return view('about');
     }
+
     public function profilU () {
     	return view('profilU');
+    }
+
+    public function hadits () {
+        return view('hadits');
     }
     //END
 /*
@@ -37,6 +42,10 @@ class PagesController extends Controller
     public function profilUser () {
         return view('auth/profilU');
     }
+
+    public function haditsUser () {
+        return view('haditsUser');
+    }
     //END
 /*
 |
@@ -54,6 +63,10 @@ class PagesController extends Controller
 
     public function profilAdmin () {
         return view('admin/profilU');
+    }
+
+    public function haditsAdmin () {
+        return view('haditsAdmin');
     }
     //END
 }
