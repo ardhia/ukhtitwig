@@ -13,11 +13,11 @@ class TutorialController extends Controller
 
 	//PUBLIK
 	public function tutorial () {
-		return view('auth/tutorial');
+		return view('tutorial');
 	}
 
 	public function isi_tutorial () {
-		return view('auth/tutorial/isi-tutorial');
+		return view('tutorial/isi-tutorial');
 	}
 	//END
 
@@ -37,11 +37,11 @@ class TutorialController extends Controller
 	//ADMIN
 
 	public function tutorialAdmin (){
-		return view('auth/tutorial');
+		return view('admin/tutorial');
 	}
 
 	public function isi_tutorialAdmin (){
-		return view('auth/tutorial/isi-tutorial');
+		return view('admin/tutorial/isi-tutorial');
 	}
 
     public function tampilIsiTutorial () {
