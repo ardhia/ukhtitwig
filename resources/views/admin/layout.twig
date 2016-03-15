@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script type="text/javascript" src="{{asset('js/jquery-1.9.0.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.nivo.slider.js')}}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{{asset('js/nivo-slider.css')}}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href="{{asset('js/default.css')}}" rel="stylesheet" type="text/css" />
+	<title> Ukhti </title>
+	<script type="text/javascript">
+			$(window).load(function() {
+				$('#slider').nivoSlider();
+			});
+	</script>
+    <link rel="stylesheet" href="{{asset('images/themes/default/default.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('images/themes/light/light.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('images/themes/dark/dark.css')}}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('images/themes/bar/bar.css')}}" type="text/css" media="screen" />
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="all-wrapper">
+		<div id="header">
+			<div class="log">
+				<a href="/"><div id="logo">Ukhti</div></a>
+				<div id="log">
+					<ul>
+						<li><a href="{{route('about')}}">About</a></li>
+						<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
+						<li><a href="{{route('tampilkanSignIn')}}">Sign In</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nav">
+				<ul>
+					<div class="nav-in"><li><a href="{{route('toko')}}">Toko</a></li></div>
+					<div class="nav-in"><li><a href="{{route('artikel')}}">Artikel</a></li></div>
+					<div class="nav-in"><li><a href="{{route('tutorial')}}">Tutorial</a></li></div>
+					<div class="nav-in"><li><a href="{{route('hadits')}}">Hadits</a></li></div>
+				</ul>
+			</div>
+		</div>
+		{{ block('isi') }}
+		<div id="footer">
+			<div id="logoF"><a href="{{route('/')}}"> Ukhti </a></div>
+			<div class="info">
+				<div id="kontak">
+					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>
+					<a href=""><div id="icon-twitt"></div></a>
+					<div id="icon-g"></div>
+					<div id="icon-kontak"></div>
+				</div>
+				<div id="subscribe">
+					<div class="judul-subscribe">Berlangganan Artikel di Ukhti Yuu..</div>
+					<form class="form-subscribe">
+						<input name="mail" placeholder="Your E-mail Address" class="input-subscribe" type="email">
+						<input name="subscribe" value="Subscribe Now!" class="submit-subscribe" type="submit">
+					</form>
+				</div>
+			</div>
+			<div class="info1">
+				<div id="judul">Partner</div>
+				<div id="out-logo">
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+					<div class="logoP"></div>
+				</div>
+			</div>
+			<div class="info">
+				<div id="judul">About Ukhti</div>
+				<div id="aboutringkasan">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			<div class="copyright">Ukhti &copy 2016</div>
+		</div>
+	</div>
+</body>
+</html>

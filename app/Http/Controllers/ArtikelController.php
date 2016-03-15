@@ -33,4 +33,8 @@ class ArtikelController extends Controller
 	    $artikel->save();
 	 	return Redirect::to('/user_profilU/user_insertArtikel');
 	}
+
+    public function tampilArtikelUser () {
+        return view('auth/artikel');
+    }
 }

@@ -4,48 +4,184 @@
 |--------------------------------------------------------------------------
 | Routes File
 |--------------------------------------------------------------------------
-/*route get pengunjung*/
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes File Get Halaman Pengunjung
+|--------------------------------------------------------------------------
+*/
+
+//Home About Profil
 Route::get('/', 'PagesController@home')->name('/');
 Route::get('/about', 'PagesController@about')->name('about');
-Route::get('/toko', 'PagesController@toko')->name('toko');
-Route::get('/hadits', 'PagesController@hadits')->name('hadits');
-Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
-Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
-/*route get pengunjung END*/
 
+//Toko
+Route::get('/toko', 'TokoController@tampilToko')->name('toko');
+Route::get('/toko/pakaian', 'TokoController@tampilPakaian')->name('toko.pakaian');
+Route::get('/toko/makanan', 'TokoController@tampilMakanan')->name('toko.makanan');
+Route::get('/toko/sepatu', 'TokoController@tampilSepatu')->name('toko.sepatu');
+Route::get('/toko/kerudung', 'TokoController@tampilKerudung')->name('toko.kerudung');
+Route::get('/toko/tas', 'TokoController@tampilTas')->name('toko.tas');
+Route::get('/toko/aksesoris', 'TokoController@tampilAksesoris')->name('toko.aksesoris');
+Route::get('/toko/dll', 'TokoController@tampilDll')->name('toko.dll');
 
-/*route get sub artikel pengunjung*/
+//Hadits
+Route::get('/hadits', 'PagesController@hadits')->name('hadits');
+
+//Artikel
+Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
-/*route get sub artikel pengunjung END*/
 
-
-/*route get sub tutorial pengunjung*/
+//Tutorial
+Route::get('/tutorial', 'PagesController@tutorial')->name('tutorial');
 Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorial')->name('tutorial.isi-tutorial');
-/*route get sub tutorial pengunjung END*/
 
+/*
+|--------------------------------------------------------------------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|--------------------------------------------------------------------------
+| Routes File Get Halaman User
+|--------------------------------------------------------------------------
+*/
 
-/*route get sub toko pengunjung*/
-Route::get('/toko/pakaian', 'PagesController@pakaian')->name('toko.pakaian');
-Route::get('/toko/makanan', 'PagesController@makanan')->name('toko.makanan');
-Route::get('/toko/sepatu', 'PagesController@sepatu')->name('toko.sepatu');
-Route::get('/toko/kerudung', 'PagesController@kerudung')->name('toko.kerudung');
-Route::get('/toko/tas', 'PagesController@tas')->name('toko.tas');
-Route::get('/toko/aksesoris', 'PagesController@aksesoris')->name('toko.aksesoris');
-Route::get('/toko/dll', 'PagesController@dll')->name('toko.dll');
-/*route get sub toko pengunjung END*/
+//Home About Profil
+Route::get('auth', 'PagesController@homeUser')->name('homeUser');
+Route::get('/about', 'PagesController@aboutUser')->name('aboutUser');
+Route::get('/profilU', 'PagesController@profilUser')->name('profilUser');
 
-/*User get Route*/
-Route::get('/user_profilU', 'PagesController@user_profilU')->name('user_profilU');
+//Toko
+Route::get('/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
+Route::get('/toko/pakaian', 'TokoController@tampilPakaianUser')->name('toko.pakaianUser');
+Route::get('/toko/makanan', 'TokoController@tampilMakananUser')->name('toko.makananUser');
+Route::get('/toko/sepatu', 'TokoController@tampilSepatuUser')->name('toko.sepatuUser');
+Route::get('/toko/kerudung', 'TokoController@tampilKerudungUser')->name('toko.kerudungUser');
+Route::get('/toko/tas', 'TokoController@tampilTasUser')->name('toko.tasUser');
+Route::get('/toko/aksesoris', 'TokoController@tampilAksesorisUser')->name('toko.aksesorisUser');
+Route::get('/toko/dll', 'TokoController@tampilDllUser')->name('toko.dllUser');
+Route::get('/user_profilU/user_insertToko', 'TokoController@user_insertToko')->name('user_profilU.user_insertToko');
+
+//Hadits
+Route::get('/hadits', 'PagesController@haditsUser')->name('haditsUser');
+
+//Artikel
+Route::get('/artikel', 'ArtikelController@tampilArtikelUser')->name('artikelUser');
+Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelUser')->name('artikel.isi-artikelUser');
 Route::get('/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
-Route::get('/user_profilU/user_insertToko', 'PagesController@user_insertToko')->name('user_profilU.user_insertToko');
-/*User get Route END*/
+
+//Tutorial
+Route::get('/tutorial', 'PagesController@tutorialUser')->name('tutorialUser');
+Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorialUser')->name('tutorial.isi-tutorialUser');
+Route::get('/user_profilU/user_insertTutorial', 'PagesController@user_insertTutorial')->name('user_profilU.user_insertTutorial');
 
 
-/*Admin get Route*/
+/*
+|--------------------------------------------------------------------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|--------------------------------------------------------------------------
+| Routes File Get Halaman Admin
+|--------------------------------------------------------------------------
+*/
+
+//Home About Profil
+Route::get('admin', 'PagesController@homeAdmin')->name('/homeAdmin');
+Route::get('/about', 'PagesController@aboutAdmin')->name('aboutAdmin');
+Route::get('/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
 Route::get('/admin_form', 'PagesController@admin_form')->name('admin_form');
-/*Admin get Route END*/
 
+//Toko
+Route::get('/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
+Route::get('/toko/pakaian', 'TokoController@tampilPakaianAdmin')->name('toko.pakaianAdmin');
+Route::get('/toko/makanan', 'TokoController@tampilMakananAdmin')->name('toko.makananAdmin');
+Route::get('/toko/sepatu', 'TokoController@tampilSepatuAdmin')->name('toko.sepatuAdmin');
+Route::get('/toko/kerudung', 'TokoController@tampilKerudungAdmin')->name('toko.kerudungAdmin');
+Route::get('/toko/tas', 'TokoController@tampilTasAdmin')->name('toko.tasAdmin');
+Route::get('/toko/aksesoris', 'TokoController@tampilAksesorisAdmin')->name('toko.aksesorisAdmin');
+Route::get('/toko/dll', 'TokoController@tampilDllAdmin')->name('toko.dllAdmin');
+
+//Hadits
+Route::get('/hadits', 'PagesController@haditsAdmin')->name('haditsAdmin');
+
+//Artikel
+Route::get('auth/artikel', 'ArtikelController@tampilArtikelAdmin')->name('artikelAdmin');
+Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelAdmin')->name('artikel.isi-artikelAdmin');
+
+//Tutorial
+Route::get('/tutorial', 'PagesController@tutorialAdmin')->name('tutorialAdmin');
+Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorialAdmin')->name('tutorial.isi-tutorialAdmin');
+
+/*
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|--------------------------------------------------------------------------
+| Routes File POST Halaman User
+|--------------------------------------------------------------------------
+*/
+
+Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+
+/*
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|--------------------------------------------------------------------------
+| Routes File POST Halaman Admin
+|--------------------------------------------------------------------------
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| Authentication routes & Registration routes
+|--------------------------------------------------------------------------
+*/
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin')->name('tampilkanSignIn');
@@ -56,20 +192,17 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logoutUser');
 Route::get('auth/register', 'Auth\AuthController@getRegister')->name('tampilkanSignUp');
 Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
 
+/*
+|--------------------------------------------------------------------------
+| END Authentication routes & Registration routes
+|--------------------------------------------------------------------------
+*/
+
+
 Route::get('profile', [
     'middleware' => 'auth',
     'uses' => 'ProfileController@show'
 ]);
-
-Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
-
-
-/*nyobain collaps*/
-Route::get('coba', function(){
-	return view('coba');
-});
-
-
 
 /*
 |--------------------------------------------------------------------------
