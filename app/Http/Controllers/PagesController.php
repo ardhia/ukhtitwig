@@ -7,6 +7,7 @@ use App\Http\Requests;
 
 class PagesController extends Controller
 {
+
 	//Publik
     public function home () {
     	return view('ukhti');
@@ -15,7 +16,6 @@ class PagesController extends Controller
     public function about () {
     	return view('about');
     }
-
     public function profilU () {
     	return view('profilU');
     }
