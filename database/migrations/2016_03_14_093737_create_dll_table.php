@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTutorialTable extends Migration
+class CreateDllTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,14 @@ class CreateTutorialTable extends Migration
      */
     public function up()
     {
-        Schema::create('tutorial', function(Blueprint $table) {
-            $table->increments('No');
-            $table->text('Judul_Tutorial');
-            $table->text('Isi_Tutorial');
+        Schema::create('dll', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('Judul');
+            $table->string('Photo');
+            $table->integer('Harga');
+            $table->text('Jenis_Barang');
+            $table->text('Keterangan');
+
             $table->timestamps();
         });
     }
