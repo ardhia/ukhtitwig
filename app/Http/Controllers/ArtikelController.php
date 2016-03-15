@@ -10,31 +10,64 @@ use DB;
 
 class ArtikelController extends Controller
 {
-    public function tampilUser_insertArtikel () {
-    	return view('user_insertArtikel');
-    }
 
-    public function tampilIsiArtikel () {
-    	$artikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
-    	
-    	return view('isi-artikel', ['artikel' => $artikel]);
-    }
-
+    //Publik
     public function tampilArtikel () {
     	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
     	
     	return view('artikel', ['artikel' => $daftarartikel]);
     }
 
-    public function prosesUser_insertArtikel (Request $request){
-	    $artikel = new User_insertArtikel;
-	    $artikel->Judul_Artikel = $request->input('Judul_Artikel');
-	    $artikel->Isi_Artikel = $request->input('Isi_Artikel');
-	    $artikel->save();
-	 	return Redirect::to('/user_profilU/user_insertArtikel');
-	}
-
-    public function tampilArtikelUser () {
-        return view('auth/artikel');
+    public function tampilIsiArtikel () {
+        return view('isi-artikel');
     }
+    //END
+/*
+|
+|
+|
+*/
+    //User
+
+    //get
+    public function tampilArtikelUser () {
+        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
+        
+        return view('auth/artikel', ['artikel' => $daftarartikel]);
+    }
+
+    public function tampilIsiArtikelUser () {
+        return view('auth/isi-artikel');
+    }
+
+    public function tampilUser_insertArtikel () {
+        return view('user_insertArtikel');
+    }
+
+    //post
+    public function prosesUser_insertArtikel (Request $request){
+        $artikel = new User_insertArtikel;
+        $artikel->Judul_Artikel = $request->input('Judul_Artikel');
+        $artikel->Isi_Artikel = $request->input('Isi_Artikel');
+        $artikel->save();
+
+        return Redirect::to('auth/user_profilU/user_insertArtikel');
+    }
+    //END
+/*
+|
+|
+|
+*/
+    //Admin
+    public function tampilArtikelAdmin () {
+        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
+        
+        return view('admin/artikel', ['artikel' => $daftarartikel]);
+    }
+
+    public function tampilIsiArtikelAdmin () {
+        return view('admin/isi-artikel');
+    }
+    //END
 }

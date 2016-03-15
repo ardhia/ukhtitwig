@@ -156,7 +156,7 @@ Route::get('/tutorial/isi-tutorial', 'PagesController@isi_tutorialAdmin')->name(
 |--------------------------------------------------------------------------
 */
 
-Route::post('/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+Route::post('auth/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 
 /*
 |
