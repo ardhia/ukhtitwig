@@ -12,7 +12,7 @@ class CreateKerudungTable extends Migration
      */
     public function up()
     {
-        Schema::create('kerudung', function (Blueprint $table){
+         Schema::create('kerudung', function (Blueprint $table){
             $table->increments('Id');
             $table->text('Judul');
             $table->string('Photo');
