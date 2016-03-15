@@ -35,7 +35,6 @@ Route::get('/hadits', 'PagesController@hadits')->name('hadits');
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
 
-
 //Tutorial
 Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
 Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
@@ -66,8 +65,7 @@ Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('t
 |--------------------------------------------------------------------------
 */
 
-
-//Home About Profil
+Route::get('/user_profilU/user_insertArtikel', 'PagesController@user_insertArtikel')->name('user_profilU.user_insertArtikel');//Home About Profil
 Route::get('auth', 'PagesController@homeUser')->name('homeUser');
 Route::get('auth/about', 'PagesController@aboutUser')->name('aboutUser');
 Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
@@ -90,7 +88,6 @@ Route::get('auth/hadits', 'PagesController@haditsUser')->name('haditsUser');
 Route::get('auth/artikel', 'ArtikelController@tampilArtikelUser')->name('artikelUser');
 Route::get('auth/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelUser')->name('artikel.isi-artikelUser');
 Route::get('auth/user_profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('user_profilU.user_insertArtikel');
-
 
 //Tutorial
 Route::get('auth/tutorial', 'TutorialController@tutorialUser')->name('tutorialUser');
@@ -172,6 +169,12 @@ Route::get('admin/tutorial/isi-tutorial', 'TutorialController@isi_tutorialAdmin'
 |--------------------------------------------------------------------------
 */
 Route::post('auth/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+Route::post('auth/user_profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
+/*
+|--------------------------------------------------------------------------
+| END YOOOOOOOOOOO!!! >o<
+|--------------------------------------------------------------------------
+*/
 
 /*
 |
@@ -225,7 +228,6 @@ Route::get('profile', [
     'middleware' => 'auth',
     'uses' => 'ProfileController@show'
 ]);
-
 
 /*
 |--------------------------------------------------------------------------
