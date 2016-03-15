@@ -168,6 +168,7 @@ Route::get('admin/tutorial/isi-tutorial', 'TutorialController@isi_tutorialAdmin'
 | Routes File POST Halaman User
 |--------------------------------------------------------------------------
 */
+<<<<<<< HEAD
 Route::post('auth/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 Route::post('auth/user_profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
 /*
@@ -175,6 +176,10 @@ Route::post('auth/user_profilU/user_insertTutorial', 'TutorialController@prosesU
 | END YOOOOOOOOOOO!!! >o<
 |--------------------------------------------------------------------------
 */
+=======
+
+Route::post('auth/user_profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
+>>>>>>> 01737913d5e6ebab700c2b7735c7ccd5e8da0cab
 
 /*
 |
