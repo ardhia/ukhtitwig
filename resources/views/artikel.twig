@@ -26,9 +26,8 @@
 							<div class="out-artikel">
 								<div id="photo-artikel"></div>
 								<div id="artikelnya"> 
-								{{isi.Isi_Artikel | str_words(30) }}
 									{% autoescape %}
-									{{isi.Isi_Artikel | raw }}
+									{{isi.Isi_Artikel | str_words(30) | raw }}
 									{% endautoescape %}
 								</div>
 							</div>
