@@ -3,6 +3,8 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<script type="text/javascript" src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+	<script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
 	<div class="all-wrapper">
@@ -19,19 +21,17 @@
 		<div id="wrapper">
 			<div class="bungkus-art">
 				<form method="post" action="{{route('prosesTutorial')}}"> 
-					<div class="bungkus-tool-judul">
-						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="Judul_Tutorial"> </input>
-						<div id="toolbar1"></div>
-					</div>
-					<div class="bungkus-isi-disimpub">
-						<textarea name="Isi_Tutorial" class="Isi_Tutorial"></textarea>
-						<div class="ditsimpub">
-								<input type="submit" name="edit" value="Edit" class="edit"></input>
-								<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
-								<input type="submit" name="publish" value="Publish" class="publish"></input>
+				<div class="bungkus-tool-judul">
+						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="Judul-Tutorial"> </input>
+						<div class="bungkus-isiArtikel">
+							<textarea name="Isi_Tutorial" class="Isi_Artikel"></textarea>
 						</div>
+						<input type="submit" name="edit" value="Edit" class="edit"></input>
+						<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
+						<input type="submit" name="publish" value="Publish" class="publish"></input>
 					</div>
 				</form>
+			</div>
 			</div>
 		</div>
 	</div>

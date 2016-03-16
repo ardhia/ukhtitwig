@@ -1405,24 +1405,23 @@ body {
 	height: 36px;
 }
 
-.Judul_Tutorial {
+.Judul-Tutorial {
 	width: 99%;
 	height: 36px;
 }
 
-#toolbar1 {
+.bungkus-isiArtikel {
+	width: 100%;
+	margin-top: 5%;
+}
+
+/*#toolbar1 {
 	width: 99.5%;
 	height: 42px;
 	background: pink;
 	margin: 7px 0% 5px;
 	float: left;
-}
-
-.bungkus-isi-disimpub {
-	width: 100%;
-	height: auto;
-	float: left;
-}
+}*/
 
 .isi-art {
 	width: 99%;
@@ -1434,6 +1433,10 @@ body {
 	height: 420px;
 }
 
+.bungkus-isiTutorial{
+	width: 100%;
+	margin-top: 5%;
+}
 .ditsimpub {
 	width: 25%;
 	height: 30px;
