@@ -15,6 +15,5 @@ class TutorialTableSeeder extends Seeder
     		'Judul_Tutorial' => 'Tutorial Memakai Pashmina Yang Syar`i',
         	'Isi_Tutorial' => 'Assalamualaikum ukhti, kali ini Annisa mau memberikan sedikit tutorial tentang memakai pashmina yang syar`i dan tentunya nyaman sekaligus cantik hehe.',
     		]);
-
     }
 }
