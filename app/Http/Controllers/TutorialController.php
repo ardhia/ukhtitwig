@@ -34,6 +34,15 @@ class TutorialController extends Controller
 		return view('auth/user_insertTutorial');
 	}
 
+    public function prosesUser_insertTutorial (Request $request) {
+		$user_insertTutorial= new User_insertTutorial;
+		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
+		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+		$user_insertTutorial->save();
+
+		return Redirect::to('auth/profilU/user_insertTutorial');
+	}
+
 	//ADMIN
 
 	public function tutorialAdmin (){
@@ -55,14 +64,5 @@ class TutorialController extends Controller
 
     	return view('admin/tutorial', ['tutorial' => $daftartutorial]);
     }
-
-    public function prosesUser_insertTutorial (Request $request) {
-		$user_insertTutorial= new User_insertTutorial;
-		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
-		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
-		$user_insertTutorial->save();
-
-		return Redirect::to('auth/user_profilU/user_insertTutorial');
-	}
 	//END
 }
