@@ -1405,14 +1405,18 @@ body {
 	height: 36px;
 }
 
-.Judul_Tutorial {
+.Judul-Tutorial {
 	width: 99%;
 	height: 36px;
 }
 
 .bungkus-isiArtikel {
 	width: 100%;
+<<<<<<< .mine
 	margin-top: 10%;
+=======
+	margin-top: 5%;
+>>>>>>> .theirs
 }
 
 /*#toolbar1 {
