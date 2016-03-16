@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
+use App\User_insertToko;
+use Illuminate\Support\Facades\Input;
+use DB;
 
 
 
@@ -17,11 +20,7 @@ class TokoController extends Controller
 	public function tampilToko (){
 		return view('toko');
 	}
-
-	public function tampilPakaian (){
-		return view('pakaian');
-	}
-
+	
 	public function tampilMakanan (){
 		return view('makanan');
 	}
@@ -50,10 +49,6 @@ class TokoController extends Controller
 	//USER
 	public function tampilTokoUser (){
 		return view('auth\toko');
-	}
-
-	public function tampilPakaianUser (){
-		return view('auth\pakaian');
 	}
 
 	public function tampilMakananUser (){
@@ -86,10 +81,14 @@ class TokoController extends Controller
 
     //post
     public function prosesUser_insertToko (Request $request){
-        $artikel = new User_insertArtikel;
-        $artikel->Judul_Artikel = $request->input('Judul_Artikel');
-        $artikel->Isi_Artikel = $request->input('Isi_Artikel');
-        $artikel->save();
+        $toko = new User_insertToko;
+        $file = Request::file('photo');
+        $toko->judulToko = $request->input('judulToko');
+        $toko->photoToko = $request->input('photoToko');
+        $toko->harga = $request->input('harga');
+        $toko->jb = $request->input('jb');
+        $toko->ketToko = $request->input('ketToko');
+        $toko->save();
 
         return Redirect::to('auth/profilU/user_insertArtikel');
     }
@@ -98,10 +97,6 @@ class TokoController extends Controller
 	//ADMIN
 	public function tampilTokoAdmin (){
 		return view('admin\toko');
-	}
-
-	public function tampilPakaianAdmin (){
-		return view('admin\pakainan');
 	}
 
 	public function tampilMakananAdmin (){
@@ -132,4 +127,9 @@ class TokoController extends Controller
     	$file = $request->file('photo');
     }
     //END
+
+
+
+
+    //image
 }
