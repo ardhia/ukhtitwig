@@ -20,7 +20,7 @@ Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 
 //Toko
 Route::get('/toko', 'TokoController@tampilToko')->name('toko');
-Route::get('/toko/pakaian', 'TokoController@tampilPakaian')->name('toko.pakaian');
+Route::get('/toko/pakaian', 'PakaianController@tampilPakaian')->name('toko.pakaian');
 Route::get('/toko/makanan', 'TokoController@tampilMakanan')->name('toko.makanan');
 Route::get('/toko/sepatu', 'TokoController@tampilSepatu')->name('toko.sepatu');
 Route::get('/toko/kerudung', 'TokoController@tampilKerudung')->name('toko.kerudung');
@@ -72,7 +72,7 @@ Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
 
 //Toko
 Route::get('auth/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
-Route::get('auth/toko/pakaian', 'TokoController@tampilPakaianUser')->name('toko.pakaianUser');
+Route::get('auth/toko/pakaian', 'PakaianController@tampilPakaianUser')->name('toko.pakaianUser');
 Route::get('auth/toko/makanan', 'TokoController@tampilMakananUser')->name('toko.makananUser');
 Route::get('auth/toko/sepatu', 'TokoController@tampilSepatuUser')->name('toko.sepatuUser');
 Route::get('auth/toko/kerudung', 'TokoController@tampilKerudungUser')->name('toko.kerudungUser');
@@ -128,7 +128,7 @@ Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form')
 
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
-Route::get('admin/toko/pakaian', 'TokoController@tampilPakaianAdmin')->name('toko.pakaianAdmin');
+Route::get('admin/toko/pakaian', 'PakaianController@tampilPakaianAdmin')->name('toko.pakaianAdmin');
 Route::get('admin/toko/makanan', 'TokoController@tampilMakananAdmin')->name('toko.makananAdmin');
 Route::get('admin/toko/sepatu', 'TokoController@tampilSepatuAdmin')->name('toko.sepatuAdmin');
 Route::get('admin/toko/kerudung', 'TokoController@tampilKerudungAdmin')->name('toko.kerudungAdmin');

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class UpdateTokoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,8 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('description');
-            $table->string('filePath');
-            $table->timestamps();
+        Schema::table('toko', function ($table){
+            $table->text('ketToko');
         });
     }
 
@@ -28,6 +24,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('images');
+        //
     }
 }
