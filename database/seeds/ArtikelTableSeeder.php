@@ -11,7 +11,7 @@ class ArtikelTableSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('artikel')->insert ([
+        DB::table('artikel')->insert ([
         	'Judul_Artikel' => 'Manfaat',
         	'Isi_Artikel' => 'Manfaat sholat bagi kesehatan',
         	]);
