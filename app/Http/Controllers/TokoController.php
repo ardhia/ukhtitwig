@@ -81,8 +81,18 @@ class TokoController extends Controller
 	}
 
 	public function user_insertToko (){
-		return view('auth/user_pr\user_insertToko');
+		return view('auth/user_insertToko');
 	}
+
+    //post
+    public function prosesUser_insertToko (Request $request){
+        $artikel = new User_insertArtikel;
+        $artikel->Judul_Artikel = $request->input('Judul_Artikel');
+        $artikel->Isi_Artikel = $request->input('Isi_Artikel');
+        $artikel->save();
+
+        return Redirect::to('auth/profilU/user_insertArtikel');
+    }
 	//END
 
 	//ADMIN

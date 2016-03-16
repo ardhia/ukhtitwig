@@ -51,7 +51,7 @@ class ArtikelController extends Controller
         $artikel->Isi_Artikel = $request->input('Isi_Artikel');
         $artikel->save();
 
-        return Redirect::to('auth/user_profilU/user_insertArtikel');
+        return Redirect::to('auth/profilU/user_insertArtikel');
     }
     //END
 /*

@@ -170,6 +170,7 @@ Route::get('admin/tutorial/isi-tutorial', 'TutorialController@isi_tutorialAdmin'
 */
 Route::post('auth/profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 Route::post('auth/profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
+Route::post('auth/profilU/user_insertToko', 'TokoController@prosesUser_insertToko')->name('prosesToko');
 /*
 |--------------------------------------------------------------------------
 | END YOOOOOOOOOOO!!! >o<
