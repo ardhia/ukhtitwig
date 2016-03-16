@@ -26,7 +26,7 @@
 							<div class="out-artikel">
 								<div id="photo-artikel"></div>
 								<div id="artikelnya">
-									{{isi.Isi_Artikel}}
+								{{ isi.Isi_Artikel | str_words(50) }}
 								</div>
 							</div>
 						</div>

@@ -62,7 +62,7 @@ class TutorialController extends Controller
 		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
 		$user_insertTutorial->save();
 
-		return Redirect::to('auth/user_profilU/user_insertTutorial');
+		return Redirect::to('auth/user_insertTutorial');
 	}
 	//END
 }
