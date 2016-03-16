@@ -20,25 +20,13 @@ class TokoController extends Controller
 	public function tampilToko (){
 		return view('toko');
 	}
-	
-	public function tampilMakanan (){
-		return view('makanan');
-	}
 
 	public function tampilSepatu (){
 		return view('sepatu');
 	}
 
-	public function tampilKerudung (){
-		return view('kerudung');
-	}
-
 	public function tampilTas (){
 		return view('tas');
-	}
-
-	public function tampilAksesoris (){
-		return view('aksesoris');
 	}
 
 	public function tampilDll (){
@@ -51,24 +39,12 @@ class TokoController extends Controller
 		return view('auth\toko');
 	}
 
-	public function tampilMakananUser (){
-		return view('auth\makanan');
-	}
-
 	public function tampilSepatuUser (){
 		return view('auth\sepatu');
 	}
 
-	public function tampilKerudungUser (){
-		return view('auth\kerudung');
-	}
-
 	public function tampilTasUser (){
 		return view('auth\tas');
-	}
-
-	public function tampilAksesorisUser (){
-		return view('auth\aksesoris');
 	}
 
 	public function tampilDllUser (){
@@ -76,21 +52,37 @@ class TokoController extends Controller
 	}
 
 	public function user_insertToko (){
-		return view('auth/user_insertToko');
+		return view('auth\user_insertToko');
 	}
 
     //post
     public function prosesUser_insertToko (Request $request){
         $toko = new User_insertToko;
-        $file = Request::file('photo');
         $toko->judulToko = $request->input('judulToko');
-        $toko->photoToko = $request->input('photoToko');
         $toko->harga = $request->input('harga');
         $toko->jb = $request->input('jb');
         $toko->ketToko = $request->input('ketToko');
-        $toko->save();
+		if($request->hasFile('photoToko')) {
+            $file = Input::file('photoToko');
+            //getting timestamp
+            
+            $name = $file->getClientOriginalName();
+            
+            $toko->photoToko = $name;
 
-        return Redirect::to('auth/profilU/user_insertArtikel');
+            $file->move(public_path().'/uploadPhoto/toko/', $name);
+        }
+        $toko->save();
+        return Redirect::to('auth/profilU/user_insertToko');
+//        $file = Request::file('photo');
+//        $toko->judulToko = $request->input('judulToko');
+//        $toko->photoToko = $request->input('photoToko');
+//        $toko->harga = $request->input('harga');
+//        $toko->jb = $request->input('jb');
+//        $toko->ketToko = $request->input('ketToko');
+//        $toko->save();
+
+//        return Redirect::to('auth/profilU/user_insertArtikel');
     }
 	//END
 
@@ -99,24 +91,12 @@ class TokoController extends Controller
 		return view('admin\toko');
 	}
 
-	public function tampilMakananAdmin (){
-		return view('admin\makanan');
-	}
-
 	public function tampilSepatuAdmin (){
 		return view('admin\sepatu');
 	}
 
-	public function tampilKerudungAdmin (){
-		return view('admin\kerudung');
-	}
-
 	public function tampilTasAdmin (){
 		return view('admin\tas');
-	}
-
-	public function tampilAksesorisAdmin (){
-		return view('admin\aksesoris');
 	}
 
 	public function tampilDllAdmin (){
