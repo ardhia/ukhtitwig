@@ -17,7 +17,7 @@ class TutorialController extends Controller
 	}
 
 	public function isi_tutorial () {
-		return view('tutorial/isi-tutorial');
+		return view('isi-tutorial');
 	}
 	//END
 
@@ -27,11 +27,11 @@ class TutorialController extends Controller
 	}
 
 	public function isi_tutorialUser (){
-		return view('auth/tutorial/isi_tutorial');
+		return view('auth/isi-tutorial');
 	}
 
 	public function user_insertTutorial (){
-		return view('auth/user_profilU/user_insertTutorial');
+		return view('auth/user_insertTutorial');
 	}
 
 	//ADMIN
@@ -41,19 +41,19 @@ class TutorialController extends Controller
 	}
 
 	public function isi_tutorialAdmin (){
-		return view('admin/tutorial/isi-tutorial');
+		return view('admin/isi-tutorial');
 	}
 
     public function tampilIsiTutorial () {
     	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
 
-    	return view('isi-tutorial', ['tutorial' => $tutorial]);
+    	return view('admin/isi-tutorial', ['tutorial' => $tutorial]);
     }
 
       public function tampilTutorial () {
     	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
 
-    	return view('tutorial', ['tutorial' => $daftartutorial]);
+    	return view('admin/tutorial', ['tutorial' => $daftartutorial]);
     }
 
     public function prosesUser_insertTutorial (Request $request) {

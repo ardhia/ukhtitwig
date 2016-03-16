@@ -10,7 +10,7 @@
 			<div class="_breadcrumb">
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
-					<a href="{{route('homeUser')}}">Home</a>
+					<a href="{{route('/')}}">Home</a>
 					<a href="#" class="active">Nama User</a>
 				</div>
 			</div>
@@ -34,8 +34,11 @@
 					<div id="navuser">
 						<ul>
 							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getToko.php" aria-expanded="false" aria-controls="collapseExample">Toko</a></li>
+							<div class="tambah"><a href="{{route('profilU.user_insertToko')}}">+</a></div>
 							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getArtikel.php" aria-expanded="false" aria-controls="collapseExample">Artikel</a></li>
+							<div class="tambah"><a href="{{route('profilU.user_insertArtikel')}}">+</a></div>
 							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getTutorial.php" aria-expanded="false" aria-controls="collapseExample">Tutorial</a></li>
+							<div class="tambah"><a href="{{route('profilU.user_insertTutorial')}}">+</a></div>
 							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getArsip.php" aria-expanded="false" aria-controls="collapseExample">Arsip</a></li>
 						</ul>
 					</div>

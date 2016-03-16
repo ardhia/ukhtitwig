@@ -23,7 +23,7 @@
 	<div class="all-wrapper">
 		<div id="header">
 			<div class="log">
-				<a href="/"><div id="logo">Ukhti</div></a>
+				<a href="{{route('homeAdmin')}}"><div id="logo">Ukhti</div></a>
 				<div id="log">
 					<ul>
 						<li><a href="{{route('aboutAdmin')}}">About</a></li>
@@ -41,9 +41,9 @@
 				</ul>
 			</div>
 		</div>
-		{{ block('isi') }}
+		{{ block('isiAdmin') }}
 		<div id="footer">
-			<div id="logoF"><a href="{{route('/homeAdmin')}}"> Ukhti </a></div>
+			<div id="logoF"><a href="{{route('homeAdmin')}}"> Ukhti </a></div>
 			<div class="info">
 				<div id="kontak">
 					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>

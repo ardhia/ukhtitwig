@@ -19,103 +19,103 @@ class TokoController extends Controller
 	}
 
 	public function tampilPakaian (){
-		return view('toko/pakaian');
+		return view('pakaian');
 	}
 
 	public function tampilMakanan (){
-		return view('toko/makanan');
+		return view('makanan');
 	}
 
 	public function tampilSepatu (){
-		return view('toko/sepatu');
+		return view('sepatu');
 	}
 
 	public function tampilKerudung (){
-		return view('toko/kerudung');
+		return view('kerudung');
 	}
 
 	public function tampilTas (){
-		return view('toko/tas');
+		return view('tas');
 	}
 
 	public function tampilAksesoris (){
-		return view('toko/aksesoris');
+		return view('aksesoris');
 	}
 
 	public function tampilDll (){
-		return view('toko/dll');
+		return view('dll');
 	}
 	//END
 
 	//USER
 	public function tampilTokoUser (){
-		return view('auth/toko/');
+		return view('auth\toko');
 	}
 
 	public function tampilPakaianUser (){
-		return view('auth/toko/pakaian');
+		return view('auth\pakaian');
 	}
 
 	public function tampilMakananUser (){
-		return view('auth/toko/makanan');
+		return view('auth\makanan');
 	}
 
 	public function tampilSepatuUser (){
-		return view('auth/toko/sepatu');
+		return view('auth\sepatu');
 	}
 
 	public function tampilKerudungUser (){
-		return view('auth/toko/kerudung');
+		return view('auth\kerudung');
 	}
 
 	public function tampilTasUser (){
-		return view('auth/toko/tas');
+		return view('auth\tas');
 	}
 
 	public function tampilAksesorisUser (){
-		return view('auth/toko/aksesoris');
+		return view('auth\aksesoris');
 	}
 
 	public function tampilDllUser (){
-		return view('auth/toko/dll');
+		return view('auth\dll');
 	}
 
 	public function user_insertToko (){
-		return view('auth/user_profilU/user_insertToko');
+		return view('auth/user_pr\user_insertToko');
 	}
 	//END
 
 	//ADMIN
 	public function tampilTokoAdmin (){
-		return view('admin/toko');
+		return view('admin\toko');
 	}
 
 	public function tampilPakaianAdmin (){
-		return view('admin/toko/pakainan');
+		return view('admin\pakainan');
 	}
 
 	public function tampilMakananAdmin (){
-		return view('admin/toko/makanan');
+		return view('admin\makanan');
 	}
 
 	public function tampilSepatuAdmin (){
-		return view('admin/toko/sepatu');
+		return view('admin\sepatu');
 	}
 
 	public function tampilKerudungAdmin (){
-		return view('admin/toko/kerudung');
+		return view('admin\kerudung');
 	}
 
 	public function tampilTasAdmin (){
-		return view('admin/toko/tas');
+		return view('admin\tas');
 	}
 
 	public function tampilAksesorisAdmin (){
-		return view('admin/toko/aksesoris');
+		return view('admin\aksesoris');
 	}
 
 	public function tampilDllAdmin (){
-		return view('admin/toko/dll');
+		return view('admin\dll');
 	}
 
     public function uploadPhoto (Request $request){
