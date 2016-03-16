@@ -1,5 +1,5 @@
 {% extends 'layout' %}
-{% block isi %}
+{% block isiAdmin %}
 		<div id="bar">
 			<div class="search">
 				<form>
@@ -10,7 +10,7 @@
 			<div class="_breadcrumb">
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
-					<a href="/homeAdmin">Home</a>
+					<a href="{{route('homeAdmin')}}">Home</a>
 					<a href="{{route('toko.dllAdmin')}}"></a>
 					<a href="#" class="active">Lainnya</a>
 				</div>

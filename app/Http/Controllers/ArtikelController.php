@@ -41,7 +41,7 @@ class ArtikelController extends Controller
     }
 
     public function tampilUser_insertArtikel () {
-        return view('user_insertArtikel');
+        return view('auth/user_insertArtikel');
     }
 
     //post

@@ -12,12 +12,6 @@ class CreateTutorialTable extends Migration
      */
     public function up()
     {
-         Schema::create('tutorial', function(Blueprint $table) {
-            $table->increments('No');
-            $table->text('Judul_Tutorial');
-            $table->text('Isi_Tutorial');
-            $table->timestamps();
-        });
     }
 
     /**
