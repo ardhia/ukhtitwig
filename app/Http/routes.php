@@ -29,7 +29,7 @@ Route::get('/toko/aksesoris', 'AksesorisController@tampilAksesoris')->name('toko
 Route::get('/toko/dll', 'LainnyaController@tampilDll')->name('toko.dll');
 
 //Hadits
-Route::get('/hadits', 'PagesController@hadits')->name('hadits');
+Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
 
 //Artikel
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
@@ -82,7 +82,7 @@ Route::get('auth/toko/dll', 'LainnyaController@tampilDllUser')->name('toko.dllUs
 Route::get('auth/profilU/user_insertToko', 'TokoController@user_insertToko')->name('profilU.user_insertToko');
 
 //Hadits
-Route::get('auth/hadits', 'PagesController@haditsUser')->name('haditsUser');
+Route::get('auth/hadits', 'HaditsController@haditsUser')->name('haditsUser');
 
 //Artikel
 Route::get('auth/artikel', 'ArtikelController@tampilArtikelUser')->name('artikelUser');
@@ -137,7 +137,7 @@ Route::get('admin/toko/aksesoris', 'AksesorisController@tampilAksesorisAdmin')->
 Route::get('admin/toko/dll', 'LainnyaController@tampilDllAdmin')->name('toko.dllAdmin');
 
 //Hadits
-Route::get('admin/hadits', 'PagesController@haditsAdmin')->name('haditsAdmin');
+Route::get('admin/hadits', 'HaditsController@haditsAdmin')->name('haditsAdmin');
 
 //Artikel
 Route::get('admin/artikel', 'ArtikelController@tampilArtikelAdmin')->name('artikelAdmin');
