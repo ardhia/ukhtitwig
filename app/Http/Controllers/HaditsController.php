@@ -11,10 +11,10 @@ class HaditsController extends Controller
     //Publik
 
     public function hadits () {
-    	$daftarhadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->get();
-    	
-
+    	$daftarhadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->simplePaginate(5);
         return view('/hadits', ['hadits' => $daftarhadits]);
+
+
     }
 
     public function haditsUser () {
