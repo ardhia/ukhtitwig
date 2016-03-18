@@ -1401,18 +1401,21 @@ body {
 }
 
 .judul-art {
-	width: 99%;
+	width: 99.5%;
 	height: 36px;
 }
 
 .Judul-Tutorial {
-	width: 99%;
+	width: 99.5%;
 	height: 36px;
 }
 
 .bungkus-isiArtikel {
 	width: 100%;
-	margin-top: 5%;
+}
+
+.Isi_Tutorial {
+	height: 300px;
 }
 
 /*#toolbar1 {

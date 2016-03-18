@@ -3,8 +3,19 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-	<script type="text/javascript" src="{{asset('js/tinymce/js/tinymce/tinymce.dev.js')}}"></script>
-	<script>tinymce.init({ selector:'textarea' });</script>
+	<script type="text/javascript" src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+	<script>tinymce.init({ selector:'textarea',
+		plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste", "emoticons template paste textcolor"],
+
+   		toolbar : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons",
+
+   		image_advtab: true ,
+   		relative_urls: false, 
+  
+  		external_filemanager_path:"{!! str_finish(asset('/filemanager'),'/') !!}",
+  		filemanager_title        :"Responsive File Manager" , // bisa diganti terserah anda
+  		external_plugins         : { "filemanager" : "{{ asset('filemanager/plugin.min.js') }}"} 
+	 });</script>
 </head>
 <body>
 	<div class="all-wrapper">
