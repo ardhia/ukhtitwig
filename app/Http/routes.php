@@ -21,12 +21,12 @@ Route::get('/profilU', 'PagesController@profilU')->name('profilU');
 //Toko
 Route::get('/toko', 'TokoController@tampilToko')->name('toko');
 Route::get('/toko/pakaian', 'PakaianController@tampilPakaian')->name('toko.pakaian');
-Route::get('/toko/makanan', 'TokoController@tampilMakanan')->name('toko.makanan');
-Route::get('/toko/sepatu', 'TokoController@tampilSepatu')->name('toko.sepatu');
+Route::get('/toko/makanan', 'MakananController@tampilMakanan')->name('toko.makanan');
+Route::get('/toko/sepatu', 'SepatuController@tampilSepatu')->name('toko.sepatu');
 Route::get('/toko/kerudung', 'KerudungController@tampilKerudung')->name('toko.kerudung');
-Route::get('/toko/tas', 'TokoController@tampilTas')->name('toko.tas');
-Route::get('/toko/aksesoris', 'TokoController@tampilAksesoris')->name('toko.aksesoris');
-Route::get('/toko/dll', 'TokoController@tampilDll')->name('toko.dll');
+Route::get('/toko/tas', 'TasController@tampilTas')->name('toko.tas');
+Route::get('/toko/aksesoris', 'AksesorisController@tampilAksesoris')->name('toko.aksesoris');
+Route::get('/toko/dll', 'LainnyaController@tampilDll')->name('toko.dll');
 
 //Hadits
 Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
@@ -73,12 +73,12 @@ Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
 //Toko
 Route::get('auth/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
 Route::get('auth/toko/pakaian', 'PakaianController@tampilPakaianUser')->name('toko.pakaianUser');
-Route::get('auth/toko/makanan', 'TokoController@tampilMakananUser')->name('toko.makananUser');
-Route::get('auth/toko/sepatu', 'TokoController@tampilSepatuUser')->name('toko.sepatuUser');
+Route::get('auth/toko/makanan', 'MakananController@tampilMakananUser')->name('toko.makananUser');
+Route::get('auth/toko/sepatu', 'SepatuController@tampilSepatuUser')->name('toko.sepatuUser');
 Route::get('auth/toko/kerudung', 'KerudungController@tampilKerudungUser')->name('toko.kerudungUser');
-Route::get('auth/toko/tas', 'TokoController@tampilTasUser')->name('toko.tasUser');
-Route::get('auth/toko/aksesoris', 'TokoController@tampilAksesorisUser')->name('toko.aksesorisUser');
-Route::get('auth/toko/dll', 'TokoController@tampilDllUser')->name('toko.dllUser');
+Route::get('auth/toko/tas', 'TasController@tampilTasUser')->name('toko.tasUser');
+Route::get('auth/toko/aksesoris', 'AksesorisController@tampilAksesorisUser')->name('toko.aksesorisUser');
+Route::get('auth/toko/dll', 'LainnyaController@tampilDllUser')->name('toko.dllUser');
 Route::get('auth/profilU/user_insertToko', 'TokoController@user_insertToko')->name('profilU.user_insertToko');
 
 //Hadits
@@ -129,12 +129,12 @@ Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form')
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
 Route::get('admin/toko/pakaian', 'PakaianController@tampilPakaianAdmin')->name('toko.pakaianAdmin');
-Route::get('admin/toko/makanan', 'TokoController@tampilMakananAdmin')->name('toko.makananAdmin');
-Route::get('admin/toko/sepatu', 'TokoController@tampilSepatuAdmin')->name('toko.sepatuAdmin');
+Route::get('admin/toko/makanan', 'MakananController@tampilMakananAdmin')->name('toko.makananAdmin');
+Route::get('admin/toko/sepatu', 'SepatuController@tampilSepatuAdmin')->name('toko.sepatuAdmin');
 Route::get('admin/toko/kerudung', 'KerudungController@tampilKerudungAdmin')->name('toko.kerudungAdmin');
-Route::get('admin/toko/tas', 'TokoController@tampilTasAdmin')->name('toko.tasAdmin');
-Route::get('admin/toko/aksesoris', 'TokoController@tampilAksesorisAdmin')->name('toko.aksesorisAdmin');
-Route::get('admin/toko/dll', 'TokoController@tampilDllAdmin')->name('toko.dllAdmin');
+Route::get('admin/toko/tas', 'TasController@tampilTasAdmin')->name('toko.tasAdmin');
+Route::get('admin/toko/aksesoris', 'AksesorisController@tampilAksesorisAdmin')->name('toko.aksesorisAdmin');
+Route::get('admin/toko/dll', 'LainnyaController@tampilDllAdmin')->name('toko.dllAdmin');
 
 //Hadits
 Route::get('admin/hadits', 'HaditsController@haditsAdmin')->name('haditsAdmin');
@@ -170,6 +170,7 @@ Route::get('admin/tutorial/isi-tutorial', 'TutorialController@isi_tutorialAdmin'
 */
 Route::post('auth/profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
 Route::post('auth/profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
+Route::post('auth/profilU/user_insertToko', 'TokoController@prosesUser_insertToko')->name('prosesToko');
 /*
 |--------------------------------------------------------------------------
 | END YOOOOOOOOOOO!!! >o<

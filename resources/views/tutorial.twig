@@ -19,19 +19,15 @@
 		<div id="wrapper">
 			<div class="wrap">
 				<div class="content">
-				{% for isi in tutorial %}				    
-					<div id="artikel">
-						<div class="judul-artikel">
-							{{isi.Judul_Tutorial}}
-						</div>
-						<div class="out-artikel">
-							<div id="photo-artikel"></div>
-							<div id="artikelnya">
-								{{ isi.Isi_Tutorial | str_words(50) | raw }}
+							</div>
+							<div class="out-artikel">
+								<div id="photo-artikel"></div>
+								<div id="artikelnya">
+									{{ isi.Isi_Tutorial| str_words(50) }}
+								</div>
 							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
 				</div>
 				<div class="rightKet">
 					<div class="judul">Keterangan</div>
