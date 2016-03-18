@@ -1,0 +1,16 @@
+/*Style Media Kueri*/
+@media screen and (max-width:960px) {
+    .all-wrapper {
+        width: 100%;
+    }
+ 
+    body {
+        font-size: 1em;
+        line-height: 1.44;
+    }
+ 
+    p {
+        font-size: 0.8em;
+    }
+}
+

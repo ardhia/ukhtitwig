@@ -21,9 +21,6 @@ class PagesController extends Controller
     	return view('profilU');
     }
 
-    public function hadits () {
-        return view('hadits');
-    }
     //END
 /*
 |
@@ -43,9 +40,7 @@ class PagesController extends Controller
         return view('auth/profilU');
     }
 
-    public function haditsUser () {
-        return view('auth/hadits');
-    }
+    
     //END
 /*
 |
@@ -65,8 +60,5 @@ class PagesController extends Controller
         return view('admin/profilU');
     }
 
-    public function haditsAdmin () {
-        return view('admint/hadits');
-    }
     //END
 }

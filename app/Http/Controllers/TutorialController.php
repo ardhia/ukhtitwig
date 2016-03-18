@@ -12,13 +12,17 @@ class TutorialController extends Controller
 {
 
  //PUBLIK
-	 public function tutorial () {
-	  return view('tutorial');
-	 }
+	  public function tutorial () {
+     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
 
-	 public function isi_tutorial () {
-	  return view('isi-tutorial');
-	 }
+     return view('/tutorial', ['tutorial' => $tutorial]);
+    }
+
+      public function isi_tutorial () {
+     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
+
+     return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
+    }
  //END
 
  //USER
@@ -43,6 +47,10 @@ class TutorialController extends Controller
 	  return Redirect::to('auth/profilU/user_insertTutorial');
 	 }
 
+   
+
+ //END
+
  //ADMIN
 
 	 public function tutorialAdmin (){
@@ -53,16 +61,5 @@ class TutorialController extends Controller
 	  return view('admin/isi-tutorial');
 	 }
 
-    public function tampilIsiTutorial () {
-     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
-
-     return view('admin/isi-tutorial', ['tutorial' => $tutorial]);
-    }
-
-      public function tampilTutorial () {
-     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
-
-     return view('admin/tutorial', ['tutorial' => $daftartutorial]);
-    }
  //END
 }
