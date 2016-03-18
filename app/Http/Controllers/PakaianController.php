@@ -12,21 +12,21 @@ class PakaianController extends Controller
 {
 	//get
 	public function tampilPakaian (){
-    	$daftartoko =  DB::table('toko')->select('photoToko')->where('jb', 'Pakaian')->get();
+    	$daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb')->where('jb', 'Pakaian')->get();
     	
     	return view('pakaian', ['toko' => $daftartoko]);
 	}
 
 	public function tampilPakaianUser (){
-    	$daftartoko =  DB::table('toko')->select('photoToko')->where('jb', 'Pakaian')->get();
+    	$daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb')->where('jb', 'Pakaian')->get();
     	
     	return view('auth/pakaian', ['toko' => $daftartoko]);
 	}
 
 	public function tampilPakaianAdmin (){
-    	$daftartoko =  DB::table('toko')->select('photoToko')->where('jb', 'Pakaian')->get();
+    	$daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb')->where('jb', 'Pakaian')->get();
     	
-    	return view('admin/pakaian', ['atoko' => $daftartoko]);
+    	return view('admin/pakaian', ['toko' => $daftartoko]);
 	}
 
 }
