@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -36,8 +38,11 @@ class PagesController extends Controller
         return view('auth/about');
     }
 
-    public function profilUser () {
-        return view('auth/profilU');
+    public function profilUser (Request $request) {
+        $user = Auth::check();
+        var_dump($user);
+        exit;
+        return view('auth/profilU', ['user' => $user ]);
     }
 
     

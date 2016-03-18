@@ -30,7 +30,6 @@ Route::get('/toko/dll', 'LainnyaController@tampilDll')->name('toko.dll');
 
 //Hadits
 Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
-Route::get('/hadits', 'HaditsController@tampilPagination')->name('hadits');
 
 //Artikel
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
