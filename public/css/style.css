@@ -1468,7 +1468,11 @@ body {
 
 .bungkus-isiArtikel {
 	width: 100%;
+<<<<<<< .mine
+	margin-top: 10%;
+=======
 	margin-top: 5%;
+>>>>>>> .theirs
 }
 
 /*#toolbar1 {
