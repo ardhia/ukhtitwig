@@ -72,7 +72,7 @@ class ArtikelController extends Controller
 */
     //Admin
     public function tampilArtikelAdmin () {
-        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
+        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->get();
         
         return view('admin/artikel', ['artikel' => $daftarartikel]);
     }

@@ -16,7 +16,7 @@ class TutorialController extends Controller
 	  public function tutorial () {
      $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
 
-     return view('/tutorial', ['tutorial' => $tutorial]);
+     return view('tutorial', ['tutorial' => $tutorial]);
     }
 
       public function isi_tutorial () {
@@ -27,6 +27,12 @@ class TutorialController extends Controller
  //END
 
  //USER
+    public function tampilTutorialUser (){
+    	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
+
+    	return view('auth/tutorial', ['tutorial' => $daftartutorial]); 
+    }
+
 	 public function tutorialUser () {
 	  return view('auth/tutorial');
 	 }
@@ -49,7 +55,7 @@ class TutorialController extends Controller
             
             $name = $file->getClientOriginalName();
             
-            $tutorial->Photo_Tutorial = $name;
+            $user_insertTutorial->Photo_Tutorial = $name;
 
             $file->move(public_path().'/uploadPhoto/tutorial/', $name);
         }
