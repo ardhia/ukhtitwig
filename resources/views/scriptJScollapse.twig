@@ -1,0 +1,11 @@
+
+	<script>
+		$(document).ready(function(){
+		  $("#demo-{{photo.idToko}}").on("hide.bs.collapse", function(){
+		    $(".btn").html('Lihat Keterangan Produk');
+		  });
+		  $("#demo-{{photo.idToko}}").on("show.bs.collapse", function(){
+		    $(".btn").html('Close');
+		  });
+		});
+	</script>

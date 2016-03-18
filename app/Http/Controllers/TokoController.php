@@ -21,34 +21,11 @@ class TokoController extends Controller
 		return view('toko');
 	}
 
-	public function tampilSepatu (){
-		return view('sepatu');
-	}
-
-	public function tampilTas (){
-		return view('tas');
-	}
-
-	public function tampilDll (){
-		return view('dll');
-	}
 	//END
 
 	//USER
 	public function tampilTokoUser (){
 		return view('auth\toko');
-	}
-
-	public function tampilSepatuUser (){
-		return view('auth\sepatu');
-	}
-
-	public function tampilTasUser (){
-		return view('auth\tas');
-	}
-
-	public function tampilDllUser (){
-		return view('auth\dll');
 	}
 
 	public function user_insertToko (){
@@ -89,18 +66,6 @@ class TokoController extends Controller
 	//ADMIN
 	public function tampilTokoAdmin (){
 		return view('admin\toko');
-	}
-
-	public function tampilSepatuAdmin (){
-		return view('admin\sepatu');
-	}
-
-	public function tampilTasAdmin (){
-		return view('admin\tas');
-	}
-
-	public function tampilDllAdmin (){
-		return view('admin\dll');
 	}
 
     public function uploadPhoto (Request $request){

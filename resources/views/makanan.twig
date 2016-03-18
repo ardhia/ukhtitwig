@@ -19,23 +19,10 @@
 		<div id="wrapper">
 			<div class="out-toko">
 				<div class="pakai">
-					<div id="baju"></div>
-					<div id="baju"></div>
-					<div id="baju"></div>
-					<div id="baju1"></div>
-				</div>
-				<div class="pakai">
-					<div id="baju"></div>
-					<div id="baju"></div>
-					<div id="baju"></div>
-					<div id="baju1"></div>
-				</div>
-				<div class="pakai">
-					<div id="baju"></div>
-					<div id="baju"></div>
-					<div id="baju"></div>
-					<div id="baju1"></div>
-				</div>
+					{% for photo in toko %}
+						<div id="baju"><img src="/uploadPhoto/toko/{{photo.photoToko}}" width="100%" height="100%" /></div>
+					{% endfor %}
+					</div>
 			</div>
 		</div>
 {% endblock %}
