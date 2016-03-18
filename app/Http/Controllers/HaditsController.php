@@ -25,4 +25,9 @@ class HaditsController extends Controller
         return view('admint/hadits');
     }
 
+    public function tampilPagination (){
+        $Pagination = DB::table('hadits')->Paginate(5);
+        return view('/hadits', ['hadits' => $Pagination]);
+    }
+
 }
