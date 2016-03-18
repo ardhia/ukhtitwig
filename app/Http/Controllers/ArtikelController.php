@@ -7,13 +7,14 @@ use Redirect;
 use App\User_insertArtikel;
 use App\Http\Requests;
 use DB;
+use Illuminate\Support\Facades\Input;
 
 class ArtikelController extends Controller
 {
 
     //Publik
     public function tampilArtikel () {
-    	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
+    	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->get();
     	
     	return view('artikel', ['artikel' => $daftarartikel]);
     }
@@ -31,7 +32,7 @@ class ArtikelController extends Controller
 
     //get
     public function tampilArtikelUser () {
-        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel')->get();
+        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->get();
         
         return view('auth/artikel', ['artikel' => $daftarartikel]);
     }
@@ -49,6 +50,16 @@ class ArtikelController extends Controller
         $artikel = new User_insertArtikel;
         $artikel->Judul_Artikel = $request->input('Judul_Artikel');
         $artikel->Isi_Artikel = $request->input('Isi_Artikel');
+        if($request->hasFile('Photo')) {
+            $file = Input::file('Photo');
+            //getting timestamp
+            
+            $name = $file->getClientOriginalName();
+            
+            $artikel->Photo = $name;
+
+            $file->move(public_path().'/uploadPhoto/artikel/', $name);
+        }
         $artikel->save();
 
         return Redirect::to('auth/profilU/user_insertArtikel');

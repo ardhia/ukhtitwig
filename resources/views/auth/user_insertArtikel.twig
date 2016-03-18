@@ -7,15 +7,16 @@
 	<script>tinymce.init({ selector:'textarea',
 		plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste", "emoticons template paste textcolor"],
 
-   		toolbar : "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons",
+   		toolbar : "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons",
 
    		image_advtab: true ,
    		relative_urls: false, 
   
-  		external_filemanager_path:"{!! str_finish(asset('/filemanager'),'/') !!}",
+  		external_filemanager_path:"{{ str_finish(asset('/filemanager'),'/') }}",
   		filemanager_title        :"Responsive File Manager" , // bisa diganti terserah anda
   		external_plugins         : { "filemanager" : "{{ asset('filemanager/plugin.min.js') }}"} 
-	 });</script>
+	 });
+	</script>
 </head>
 <body>
 	<div class="all-wrapper">
@@ -31,9 +32,10 @@
 		</div>
 		<div id="wrapper">
 			<div class="bungkus-art">
-				<form method="post" action="{{route('prosesArtikel')}}"> 
+				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
 					<div class="bungkus-tool-judul">
 						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art"> </input>
+						<input type="file" name="Photo" class="photo"></input>
 						<div class="bungkus-isiArtikel">
 							<textarea name="Isi_Artikel" class="Isi_Artikel"></textarea>
 						</div>

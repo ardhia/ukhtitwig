@@ -18,6 +18,18 @@
 		<div id="wrapper">
 			<div class="wrap">
 				<div class="content">
+					{% for isi in tutorial %}
+						<div id="artikel">
+							<div class="Judul-Tutorial">
+								{{isi.Judul_Tutorial}}
+							</div>
+							<div class="out-artikel">
+								<div id="photo-artikel"></div>
+								<div id="artikelnya"> 
+									{% autoescape %}
+									{{isi.Isi_Tutorial | str_words(50) | raw }}
+									{% endautoescape %}
+								</div>
 							</div>
 						</div>
 					{% endfor %}
