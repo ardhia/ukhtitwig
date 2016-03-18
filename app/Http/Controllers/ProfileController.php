@@ -13,6 +13,7 @@ class ProfileController extends Controller
             // $request->user() returns an instance of the authenticated user...
         }
     }
+    
     public function __construct() {
     	$this->middleware('auth');
 	}

@@ -33,7 +33,28 @@
 						<div id="demo-{{photo.idToko}}" class="collapse">
 							<div class="judulToko">{{photo.judulToko}}</div>
 							<div class="hargaKet">
-								
+								<div class="nama">
+									<div class="moreKet">Harga</div>
+								</div>
+								<div class="db">
+									<div class="moreKet">: Rp.{{photo.harga}},-</div>
+								</div>
+							</div>
+							<div class="hargaKet">
+								<div class="nama">
+									<div class="moreKet">Keterangan</div>
+								</div>
+								<div class="db">
+									<div class="moreKet">: {{photo.ketToko}}</div>
+								</div>
+							</div>
+							<div class="hargaKet">
+								<div class="nama">
+									<div class="author">Author (by)</div>
+								</div>
+								<div class="db">
+									<div class="author">: {{photo.name}}</div>
+								</div>
 							</div>
 						</div>
 						{% include 'scriptJScollapse' %}
