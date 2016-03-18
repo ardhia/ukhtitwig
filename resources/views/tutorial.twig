@@ -20,11 +20,15 @@
 				<div class="content">
 					{% for isi in tutorial %}
 						<div id="artikel">
-							<div class="Judul-Tutorial">
+							<div class="judul-artikel">
 								{{isi.Judul_Tutorial}}
 							</div>
 							<div class="out-artikel">
-								<div id="photo-artikel"></div>
+								<div id="photo-artikel"><img src="/uploadPhoto/tutorial/{{isi.Photo_Tutorial}}" width="100%" height="100%"></div>
+								<div id="artikelnya"> 
+									{% autoescape %}
+									{{isi.Isi_Tutorial | str_words(50) | raw }}
+									{% endautoescape %}
 								</div>
 							</div>
 						</div>

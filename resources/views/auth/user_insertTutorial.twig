@@ -4,7 +4,20 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 	<script type="text/javascript" src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
-	<script>tinymce.init({ selector:'textarea' });</script>
+	<script>tinymce.init({ 
+		selector:'textarea',
+		plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste", "emoticons template paste textcolor"],
+
+   		toolbar : "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons",
+
+   		image_advtab: true ,
+   		relative_urls: false, 
+  
+  		external_filemanager_path:"{{ str_finish(asset('/filemanager'),'/') }}",
+  		filemanager_title        :"Upload" ,
+  		external_plugins         : { "filemanager" : "{{ asset('filemanager/plugin.min.js') }}"} 
+	 });
+	</script>
 </head>
 <body>
 	<div class="all-wrapper">
@@ -22,9 +35,10 @@
 			<div class="bungkus-art">
 				<form method="post" action="{{route('prosesTutorial')}}"> 
 				<div class="bungkus-tool-judul">
-						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="Judul-Tutorial"> </input>
+						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art"> </input>
+						<input type="file" name="Photo_Tutorial" class="photo"></input>
 						<div class="bungkus-isiArtikel">
-							<textarea name="Isi_Tutorial" class="Isi_Artikel"></textarea>
+							<textarea name="Isi_Tutorial" class="isi-art"></textarea>
 						</div>
 						<input type="submit" name="edit" value="Edit" class="edit"></input>
 						<input type="submit" name="simpan" value="Simpan" class="simpan"></input>

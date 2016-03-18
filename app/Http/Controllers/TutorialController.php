@@ -7,19 +7,20 @@ use Redirect;
 use App\Http\Requests;
 use App\User_insertTutorial;
 use DB;
+use Illuminate\Support\Facades\Input;
 
 class TutorialController extends Controller
 {
 
  //PUBLIK
 	  public function tutorial () {
-     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
+     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
 
      return view('/tutorial', ['tutorial' => $tutorial]);
     }
 
       public function isi_tutorial () {
-     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial')->get();
+     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
 
      return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
     }
@@ -42,6 +43,16 @@ class TutorialController extends Controller
 	 $user_insertTutorial= new User_insertTutorial;
 	 $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
 	 $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+	 if($request->hasFile('Photo_Tutorial')) {
+            $file = Input::file('Photo_Tutorial');
+            //getting timestamp
+            
+            $name = $file->getClientOriginalName();
+            
+            $tutorial->Photo_Tutorial = $name;
+
+            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
+        }
 	 $user_insertTutorial->save();
 
 	  return Redirect::to('auth/profilU/user_insertTutorial');
@@ -60,6 +71,10 @@ class TutorialController extends Controller
 	 public function isi_tutorialAdmin (){
 	  return view('admin/isi-tutorial');
 	 }
+
+	 public function uploadPhoto (Request $request){
+    	$file = $request->file('photo');
+    }
 
  //END
 }

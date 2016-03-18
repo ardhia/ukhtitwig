@@ -13,7 +13,7 @@
    		relative_urls: false, 
   
   		external_filemanager_path:"{{ str_finish(asset('/filemanager'),'/') }}",
-  		filemanager_title        :"Responsive File Manager" , // bisa diganti terserah anda
+  		filemanager_title        :"Upload" ,
   		external_plugins         : { "filemanager" : "{{ asset('filemanager/plugin.min.js') }}"} 
 	 });
 	</script>
@@ -37,11 +37,13 @@
 						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art"> </input>
 						<input type="file" name="Photo" class="photo"></input>
 						<div class="bungkus-isiArtikel">
-							<textarea name="Isi_Artikel" class="Isi_Artikel"></textarea>
+							<textarea name="Isi_Artikel" class="isi-art"></textarea>
 						</div>
-						<input type="submit" name="edit" value="Edit" class="edit"></input>
-						<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
-						<input type="submit" name="publish" value="Publish" class="publish"></input>
+						<div class="bungkus-ditsimpub">
+							<input type="submit" name="edit" value="Edit" class="edit"></input>
+							<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
+							<input type="submit" name="publish" value="Publish" class="publish"></input>
+						</div>
 					</div>
 				</form>
 			</div>
