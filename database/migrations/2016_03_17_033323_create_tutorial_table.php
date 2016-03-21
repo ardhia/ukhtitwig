@@ -11,14 +11,14 @@ class CreateTutorialTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {/*
         Schema::create('tutorial', function(Blueprint $table) {
             $table->increments('No');
             $table->text('Judul_Tutorial');
             $table->text('Isi_Tutorial');
             $table->string('Photo_Tutorial');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

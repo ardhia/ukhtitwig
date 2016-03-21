@@ -12,9 +12,6 @@ class UpdateArtikelTable extends Migration
      */
     public function up()
     {
-        Schema::table('artikel', function ($table) {
-            $table->string('Photo');
-        });
     }
 
     /**

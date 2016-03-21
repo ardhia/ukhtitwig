@@ -39,9 +39,7 @@ class PagesController extends Controller
     }
 
     public function profilUser (Request $request) {
-        $user = Auth::check();
-        var_dump($user);
-        exit;
+        $user = Auth::user();
         return view('auth/profilU', ['user' => $user ]);
     }
 
