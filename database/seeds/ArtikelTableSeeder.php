@@ -13,7 +13,7 @@ class ArtikelTableSeeder extends Seeder
     {
         DB::table('artikel')->insert ([
         	'Judul_Artikel' => 'Manfaat',
-        	'Isi_Artikel' => 'Manfaat sholat bagi kesehatan',
+        	'Isi_Artikel' => 'Manfaat sholat bagi kesehatan dan jangan lupa shalat. yuu shalat anak anak haha',
         	]);
     }
 }
