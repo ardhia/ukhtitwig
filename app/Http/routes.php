@@ -208,33 +208,33 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
 
 	//Home About Profil
-	Route::get('auth/', 'PagesController@homeUser')->name('homeUser');
-	Route::get('auth/about', 'PagesController@aboutUser')->name('aboutUser');
-	Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
+    Route::get('auth/', ['middleware' => 'auth.basic', 'PagesController@homeUser'])->name('homeUser');
+    Route::get('auth/about', ['middleware' => 'auth.basic', 'PagesController@aboutUser'])->name('aboutUser');
+	Route::get('auth/profilU', ['middleware' => 'auth.basic', 'PagesController@profilUser'])->name('profilUser');
+    
+    //Toko
+    Route::get('auth/toko', ['middleware' => 'auth.basic', 'TokoController@tampilTokoUser'])->name('tokoUser');
+    Route::get('auth/toko/pakaian', ['middleware' => 'auth.basic', 'PakaianController@tampilPakaianUser'])->name('toko.pakaianUser');
+    Route::get('auth/toko/makanan', ['middleware' => 'auth.basic', 'MakananController@tampilMakananUser'])->name('toko.makananUser');
+    Route::get('auth/toko/sepatu', ['middleware' => 'auth.basic', 'SepatuController@tampilSepatuUser'])->name('toko.sepatuUser');
+    Route::get('auth/toko/kerudung', ['middleware' => 'auth.basic', 'KerudungController@tampilKerudungUser'])->name('toko.kerudungUser');
+    Route::get('auth/toko/tas', ['middleware' => 'auth.basic', 'TasController@tampilTasUser'])->name('toko.tasUser');
+    Route::get('auth/toko/aksesoris', ['middleware' => 'auth.basic', 'AksesorisController@tampilAksesorisUser'])->name('toko.aksesorisUser');
+    Route::get('auth/toko/dll', ['middleware' => 'auth.basic', 'LainnyaController@tampilDllUser'])->name('toko.dllUser');
+    Route::get('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'TokoController@user_insertToko'])->name('profilU.user_insertToko');
 
-	//Toko
-	Route::get('auth/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
-	Route::get('auth/toko/pakaian', 'PakaianController@tampilPakaianUser')->name('toko.pakaianUser');
-	Route::get('auth/toko/makanan', 'MakananController@tampilMakananUser')->name('toko.makananUser');
-	Route::get('auth/toko/sepatu', 'SepatuController@tampilSepatuUser')->name('toko.sepatuUser');
-	Route::get('auth/toko/kerudung', 'KerudungController@tampilKerudungUser')->name('toko.kerudungUser');
-	Route::get('auth/toko/tas', 'TasController@tampilTasUser')->name('toko.tasUser');
-	Route::get('auth/toko/aksesoris', 'AksesorisController@tampilAksesorisUser')->name('toko.aksesorisUser');
-	Route::get('auth/toko/dll', 'LainnyaController@tampilDllUser')->name('toko.dllUser');
-	Route::get('auth/profilU/user_insertToko', 'TokoController@user_insertToko')->name('profilU.user_insertToko');
+    //Hadits
+    Route::get('auth/hadits', ['middleware' => 'auth.basic', 'HaditsController@haditsUser'])->name('haditsUser');
 
-	//Hadits
-	Route::get('auth/hadits', 'HaditsController@haditsUser')->name('haditsUser');
+    //Artikel
+    Route::get('auth/artikel', ['middleware' => 'auth.basic', 'ArtikelController@tampilArtikelUser'])->name('artikelUser');
+    Route::get('auth/artikel/isi-artikel', ['middleware' => 'auth.basic', 'ArtikelController@tampilIsiArtikelUser'])->name('artikel.isi-artikelUser');
+    Route::get('auth/profilU/user_insertArtikel', ['middleware' => 'auth.basic', 'ArtikelController@tampilUser_insertArtikel'])->name('profilU.user_insertArtikel');
 
-	//Artikel
-	Route::get('auth/artikel', 'ArtikelController@tampilArtikelUser')->name('artikelUser');
-	Route::get('auth/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikelUser')->name('artikel.isi-artikelUser');
-	Route::get('auth/profilU/user_insertArtikel', 'ArtikelController@tampilUser_insertArtikel')->name('profilU.user_insertArtikel');
-
-	//Tutorial
-	Route::get('auth/tutorial', 'TutorialController@tutorialUser')->name('tutorialUser');
-	Route::get('auth/tutorial/isi-tutorial', 'TutorialController@isi_tutorialUser')->name('tutorial.isi-tutorialUser');
-	Route::get('auth/profilU/user_insertTutorial', 'TutorialController@user_insertTutorial')->name('profilU.user_insertTutorial');
+    //Tutorial
+    Route::get('auth/tutorial', ['middleware' => 'auth.basic', 'TutorialController@tutorialUser'])->name('tutorialUser');
+    Route::get('auth/tutorial/isi-tutorial', ['middleware' => 'auth.basic', 'TutorialController@isi_tutorialUser'])->name('tutorial.isi-tutorialUser');
+    Route::get('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'TutorialController@user_insertTutorial'])->name('profilU.user_insertTutorial');
 	/*
 	|--------------------------------------------------------------------------
 	| END YOOOOOOOOOOO!!! >o<
