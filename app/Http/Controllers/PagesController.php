@@ -31,16 +31,16 @@ class PagesController extends Controller
 */
     //User
     public function homeUser () {
-        return view('auth\ukhtiUser');
+        return view('auth\ukhti');
     }
 
     public function aboutUser () {
-        return view('auth\aboutUser');
+        return view('auth\about');
     }
 
     public function profilUser (Request $request) {
         $user = Auth::user();
-        return view('auth\profilUser', ['user' => $user ]);
+        return view('auth\profil', ['user' => $user ]);
     }
 
     
