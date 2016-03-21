@@ -66,8 +66,9 @@ Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('t
 */
 
 //Home About Profil
-Route::get('auth/ukhti', 'PagesController@homeUser')->name('homeUser');
+Route::get('auth/', 'PagesController@homeUser')->name('homeUser');
 Route::get('auth/about', 'PagesController@aboutUser')->name('aboutUser');
+Route::get('auth/profilUser', 'PagesController@profilUser')->name('profilUser');
 
 //Toko
 Route::get('auth/toko', 'TokoController@tampilTokoUser')->name('tokoUser');

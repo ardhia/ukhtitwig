@@ -14,8 +14,8 @@ class ArtikelController extends Controller
 
     //Publik
     public function tampilArtikel () {
-    	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->get();
-    	
+    	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->Paginate(3);
+
     	return view('artikel', ['artikel' => $daftarartikel]);
     }
 
