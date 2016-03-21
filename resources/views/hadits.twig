@@ -28,14 +28,17 @@
 							</div>
 						</div>
 					{% endfor %}
-				</div>
-				<div class="rightKet">
-					<div id="arsip">
-					 <div class="judul">Keterangan</div>
-					 <div class="isi-ket"> Assalamualaikum Ukhti ^^ Laman ini berisi hadits shahih tentang wanita. Semoga bermanfaat^^</div>
+					<div class="paginate">
+						{{ hadits.render()|raw }}
 					</div>
 				</div>
 				<div class="rightKet">
+					<div id="arsip">
+						<div class="judul">Ke)terangan</div>
+						<div class="isi-ket"> 
+							Assalamualaikum Ukhti ^^ Laman ini berisi hadits shahih tentang wanita. Semoga bermanfaat^^
+						</div>
+					</div>
 					<div id="arsip">
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
