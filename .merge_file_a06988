@@ -23,27 +23,27 @@
 	<div class="all-wrapper">
 		<div id="header">
 			<div class="log">
-				<a href="homeUser"><div id="logo">Ukhti</div></a>
+				<a href="{{route('homeAdmin')}}"><div id="logo">Ukhti</div></a>
 				<div id="log">
 					<ul>
-						<li><a href="{{route('aboutUser')}}">About</a></li>
+						<li><a href="{{route('aboutAdmin')}}">About</a></li>
 						<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
-						<li><a href="{{route('tampilkanSignIn')}}">Log Up</a></li>
+						<li><a href="{{route('tampilkanSignIn')}}">Sign In</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="nav">
 				<ul>
-					<div class="nav-in"><li><a href="{{route('tokoUser')}}">Toko</a></li></div>
-					<div class="nav-in"><li><a href="{{route('artikelUser')}}">Artikel</a></li></div>
-					<div class="nav-in"><li><a href="{{route('tutorialUser')}}">Tutorial</a></li></div>
-					<div class="nav-in"><li><a href="{{route('haditsUser')}}">Hadits</a></li></div>
+					<div class="nav-in"><li><a href="{{route('tokoAdmin')}}">Toko</a></li></div>
+					<div class="nav-in"><li><a href="{{route('artikelAdmin')}}">Artikel</a></li></div>
+					<div class="nav-in"><li><a href="{{route('tutorialAdmin')}}">Tutorial</a></li></div>
+					<div class="nav-in"><li><a href="{{route('haditsAdmin')}}">Hadits</a></li></div>
 				</ul>
 			</div>
 		</div>
-		{{ block('isi') }}
+		{{ block('isiAdmin') }}
 		<div id="footer">
-			<div id="logoF"><a href="{{route('homeUser')}}"> Ukhti </a></div>
+			<div id="logoF"><a href="{{route('homeAdmin')}}"> Ukhti </a></div>
 			<div class="info">
 				<div id="kontak">
 					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>

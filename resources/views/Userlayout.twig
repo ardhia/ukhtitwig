@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>	
+	<meta charset="utf-8" />
 	<script type="text/javascript" src="{{asset('js/jquery-1.9.0.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.nivo.slider.js')}}"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{{asset('js/nivo-slider.css')}}" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/media-queries.css')}}" />
 	<link href="{{asset('js/default.css')}}" rel="stylesheet" type="text/css" />
 	<title> Ukhti </title>
 	<script type="text/javascript">
@@ -17,33 +19,32 @@
     <link rel="stylesheet" href="{{asset('images/themes/light/light.css')}}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{asset('images/themes/dark/dark.css')}}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{asset('images/themes/bar/bar.css')}}" type="text/css" media="screen" />
-	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
-</head>
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'></head>
 <body>
 	<div class="all-wrapper">
 		<div id="header">
 			<div class="log">
-				<a href="{{route('homeAdmin')}}"><div id="logo">Ukhti</div></a>
+				<a href="/"><div id="logo">Ukhti</div></a>
 				<div id="log">
 					<ul>
-						<li><a href="{{route('aboutAdmin')}}">About</a></li>
+						<li><a href="{{route('about')}}">About</a></li>
 						<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
-						<li><a href="{{route('tampilkanSignIn')}}">log out</a></li>
+						<li><a href="{{route('tampilkanSignIn')}}">Log Up</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="nav">
 				<ul>
-					<div class="nav-in"><li><a href="{{route('tokoAdmin')}}">Toko</a></li></div>
-					<div class="nav-in"><li><a href="{{route('artikelAdmin')}}">Artikel</a></li></div>
-					<div class="nav-in"><li><a href="{{route('tutorialAdmin')}}">Tutorial</a></li></div>
-					<div class="nav-in"><li><a href="{{route('haditsAdmin')}}">Hadits</a></li></div>
+					<div class="nav-in"><li><a href="{{route('toko')}}">Toko</a></li></div>
+					<div class="nav-in"><li><a href="{{route('artikel')}}">Artikel</a></li></div>
+					<div class="nav-in"><li><a href="{{route('tutorial')}}">Tutorial</a></li></div>
+					<div class="nav-in"><li><a href="{{route('hadits')}}">Hadits</a></li></div>
 				</ul>
 			</div>
 		</div>
-		{{ block('isiAdmin') }}
+		{{ block('isi') }}
 		<div id="footer">
-			<div id="logoF"><a href="{{route('homeAdmin')}}"> Ukhti </a></div>
+			<div id="logoF"><a href="{{route('/')}}"> Ukhti </a></div>
 			<div class="info">
 				<div id="kontak">
 					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>
