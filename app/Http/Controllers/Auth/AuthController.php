@@ -28,9 +28,9 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/auth';
+    protected $redirectTo = 'auth/ukhti';
     protected $redirectPath = 'auth/profilU';
-    protected $loginPath = '/login';
+    protected $loginPath = 'auth/login';
     /**
      * Create a new authentication controller instance.
      *
@@ -38,7 +38,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
 
     /**
