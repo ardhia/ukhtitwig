@@ -1,26 +1,27 @@
-{% extends 'layout' %}
+{% extends 'layoutToko' %}
 {% block isi %}
     <div id="bar">
     	<div class="search">
-    		<form>
-    			<input type="text" name="input-search" placeholder="Search" class="text1"></input>
-    			<select name="kategori" class="text2">
-    				<option>Katagori</option>
-    				<option value="Pakaian">Pakaian</option>
-    				<option value="Kerudung">Kerudung</option>
-    				<option value="Aksesoris">Aksesoris</option>
-    				<option value="Makanan">Makanan</option>
-    				<option value="Tas">Tas</option>
-    				<option value="Sepatu">Sepatu</option>
-    				<option value="dll">Lainnya</option>
-    			</select>
-    			<input type="submit" name="search" value="" class="submit"></input>
+    		<form action="#" method="POST">
+    			<input type="text" name="input-search" placeholder="Search" class="text1">
+        			<select name="kategori" class="text2">
+        				<option>Katagori</option>
+        				<option value="Pakaian">Pakaian</option>
+        				<option value="Kerudung">Kerudung</option>
+        				<option value="Aksesoris">Aksesoris</option>
+        				<option value="Makanan">Makanan</option>
+        				<option value="Tas">Tas</option>
+        				<option value="Sepatu">Sepatu</option>
+        				<option value="dll">Lainnya</option>
+        			</select>
+                </input>
+    			<input type="submit" name="search" class="submit"></input>
     		</form>
     	</div>
     	<div class="_breadcrumb">
     		<!-- another version - flat style with animated hover effect -->
     		<div class="breadcrumb flat">
-    			<a href="/">Home</a>
+    			<a href="{{route('/')}}">Home</a>
     			<a href="#" class="active">Toko</a>
     		</div>
     	</div>
