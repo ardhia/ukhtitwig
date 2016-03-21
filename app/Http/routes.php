@@ -68,7 +68,6 @@ Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('t
 //Home About Profil
 Route::get('auth', 'PagesController@homeUser')->name('homeUser');
 Route::get('auth/about', 'PagesController@aboutUser')->name('aboutUser');
-Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
 
 //Toko
 Route::get('auth/toko', 'TokoController@tampilTokoUser')->name('tokoUser');
@@ -209,15 +208,6 @@ Route::post('auth/profilU/user_insertToko', 'TokoController@prosesUser_insertTok
 */
 
 
-// Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin')->name('tampilkanSignIn');
-Route::post('auth/login', 'Auth\AuthController@postLogin')->name('memprosesSignIn');
-Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logoutUser');
-
-// Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister')->name('tampilkanSignUp');
-Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
-
 /*
 |--------------------------------------------------------------------------
 | END Authentication routes & Registration routes
@@ -235,6 +225,8 @@ Route::get('imageUploadForm', 'ImageController@upload' );
 Route::post('imageUploadForm', 'ImageController@store' );
 Route::get('showLists', 'ImageController@show' );
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -247,5 +239,16 @@ Route::get('showLists', 'ImageController@show' );
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+   
+	// Authentication routes...
+	Route::get('auth/login', 'Auth\AuthController@getLogin')->name('tampilkanSignIn');
+	Route::post('auth/login', 'Auth\AuthController@postLogin')->name('memprosesSignIn');
+	Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logoutUser');
+
+	// Registration routes...
+	Route::get('auth/register', 'Auth\AuthController@getRegister')->name('tampilkanSignUp');
+	Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
+
+	Route::get('auth/profilU', 'PagesController@profilUser')->name('profilUser');
+
 });
