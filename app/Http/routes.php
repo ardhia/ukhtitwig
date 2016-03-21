@@ -17,6 +17,7 @@
 Route::get('/', 'PagesController@home')->name('/');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
+Route::post('/subs', 'SubscribeController@simpanLangganan')->name('simpanLangganan');
 
 //Toko
 Route::get('/toko', 'TokoController@tampilToko')->name('toko');
@@ -38,6 +39,7 @@ Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('
 //Tutorial
 Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
 Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
+
 /*
 |--------------------------------------------------------------------------
 | END YOOOOOOOOOOO!!! >o<
