@@ -17,7 +17,7 @@
 Route::get('/', 'PagesController@home')->name('/');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/profilU', 'PagesController@profilU')->name('profilU');
-Route::post('/subs', 'SubscribeController@simpanLangganan')->name('simpanLangganan');
+Route::post('/subs', 'SubscribeController@prosesSimpanLangganan')->name('simpanLangganan');
 
 //Toko
 Route::get('/toko', 'TokoController@tampilToko')->name('toko');
