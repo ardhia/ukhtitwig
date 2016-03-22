@@ -50,14 +50,11 @@
 .panel-title {
 	display: inline-block;
     position: relative;
-    padding-bottom: 0px;
-
 }
 
 .panel-title:after {
 	content: '';
     display: block;
-    margin: auto;
     height: 3px;
     width: 2px;
 }
