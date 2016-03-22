@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use Redirect;
 use App\User_insertArtikel;
@@ -47,6 +48,11 @@ class ArtikelController extends Controller
 
     //post
     public function prosesUser_insertArtikel (Request $request){
+        $this->validate($request, [
+        'Judul_Artikel' => 'required',
+        'Isi_Artikel' => 'required',
+        'Photo' => 'required|unique:artikel|max:255',
+        ]);
         $artikel = new User_insertArtikel;
         $artikel->Judul_Artikel = $request->input('Judul_Artikel');
         $artikel->Isi_Artikel = $request->input('Isi_Artikel');
