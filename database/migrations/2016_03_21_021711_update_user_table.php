@@ -11,10 +11,10 @@ class UpdateUserTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {/*
         Schema::table('users', function ($table) {
             $table->string('photoProfil');
-        });
+        });*/
     }
 
     /**

@@ -23,15 +23,10 @@ class SubscribeController extends Controller
 
     }
 */
-  protected function create(array $request)
-  {
-
-  	return Subscribe::create([
-  		'email' => $request['email'],
-  		]);
-  }
-
-   public function prosesSimpanLangganan (Request $request){
+	public function prosesSimpanLangganan (Request $request){
+		$this->validate($request, [
+        'email' => 'required|unique:subscribe|max:255',
+    	]);
         $subscribe = new Subscribe;
         $subscribe->email = $request->input('email');
         $subscribe->save();

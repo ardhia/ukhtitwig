@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subscribe extends Model
 {
-   protected $table = 'subscribe';
+   	protected $table = 'subscribe';
 
     protected $fillable = [
-    	'Id', 'Email',
+    	'Email',
     ];
 }
 
