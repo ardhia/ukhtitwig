@@ -10,7 +10,7 @@
 		<div class="out-login">
 			<div id="log-in">
 				<form action="{{route('memprosesSignIn')}}" method="POST">
-					<input type="hidden" name="_token" value="{{csrf_token()}}"></input>
+					<input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
 					<input type="email" name="email" placeholder="Email" class="login-email"></input>
 					<input type="password" name="password" placeholder="Password" class="login-password"></input>
 					<input type="checkbox" name="remember" class="remember"> Remember Me

@@ -169,6 +169,7 @@ body {
 	width: 30%;
 	height: auto;
 	float: right;
+	white-space: nowrap;
 }
 
 ._breadcrumb {
@@ -1053,31 +1054,68 @@ body {
 	border-radius: 8px;
 }
 
-#icon-g {
+#icon {
 	width: 22%;
 	height: 35px;
 	float: left;
 	margin-right: 3%;
-	background: url(../images/g.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
 	border-radius: 8px;
 }
 
-#icon-kontak {
-	width: 22%;
-	height: 35px;
-	float: left;
-	margin-right: 3%;
-	background: url(../images/kontak.png);
-        -webkit-background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -o-background-size: 100% 100%;
-        background-size: 100% 100%;
-	border-radius: 8px;
+#icon ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
+
+#icon ul li { 
+	position: relative;
+	float: left;
+	width: 97%;
+	text-align: center;
+}
+
+#icon ul li a {
+	display: block;
+	color: #000;
+	text-decoration: none;
+}
+
+/*dropmenu navigasi*/
+#icon li ul {
+	background: rgba(255, 255, 255, 0.60);
+	display: none;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	text-align: left;
+	position: absolute;
+	width: 150px;
+	border-radius: 6px;
+}
+
+#icon li li 	{
+	display: block;
+	float: none;
+	text-align: left;
+	margin: 0px;
+	padding: 1px 10px;
+	width: auto;
+	border-radius: 6px;
+}
+
+#icon li:hover ul {
+	display: block;
+}
+
+#icon li ul a:hover,
+#icon li ul li:hover > a {
+	background: #9C65A6;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 6px;
+}
+/*end*/
 
 #subscribe {
 	width: 90%;
@@ -1184,8 +1222,6 @@ body {
 	padding: 6px;
 	margin-right: -1%;
 	border-bottom-left-radius: 6px;
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
 	border-right-color: #fff;
 }
 
@@ -1194,18 +1230,23 @@ body {
 	height: auto;
 	border-radius: 6px;
 	border: solid #00C9FF 1px;
-	padding: 6px;
+	padding: 5px;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
-	margin-right: -1%;
+	margin-right: -1.5%;
 }
 
 .submit {
 	width: 8%;
 	height: 28px;
-	background: url(../images/search.png);
-	border-radius: 8px;
-	background-size: 100% 28px;
+	background: url(../images/search.jpg);
+	border-radius: 4px;
+	background-size: 100% 100%;
+}
+
+.submit:hover {
+	background: url(../images/aftersearch.jpg);
+	background-size: 100% 100%;
 }
 
 .form-subscribe {

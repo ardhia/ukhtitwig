@@ -48,14 +48,36 @@
 			<div id="logoF"><a href="{{route('/')}}"> Ukhti </a></div>
 			<div class="info">
 				<div id="kontak">
-					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>
-					<a href=""><div id="icon-twitt"></div></a>
-					<div id="icon-g"></div>
-					<div id="icon-kontak"></div>
+					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel" target="_blank"><div id="icon-fb"></div></a>
+					<a href="https://twitter.com/Ukhti19f" target="_blank"><div id="icon-twitt"></div></a>
+					<div id="icon">
+						<ul>
+							<li>
+								<a href="https://plus.google.com/u/0/102599475103197283643/" target="_blank">
+									<img src="{{asset('images/g.png')}}" width="100%" height="100%" />
+								</a>
+								<ul>
+									<li> ukhti19f16@gmail.com </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div id="icon">
+						<ul>
+							<li>
+								<img src="{{asset('images/kontak.png')}}" width="100%" height="100%" />
+								<ul>
+									<li> 082216631084 </li>
+									<li> 082319711511 </li>
+									<li> 089612754898 </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div id="subscribe">
 					<div class="judul-subscribe">Berlangganan Artikel di Ukhti Yuu..</div>
-					<form class="form-subscribe">
+					<form class="form-subscribe" method="POST" action="{{route('simpanLangganan')}}">
 						<input name="mail" placeholder="Your E-mail Address" class="input-subscribe" type="email">
 						<input name="subscribe" value="Subscribe Now!" class="submit-subscribe" type="submit">
 					</form>
