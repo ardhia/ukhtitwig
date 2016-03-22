@@ -35,15 +35,13 @@
 				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
 					<div class="bungkus-tool-judul">
 						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art"> </input>
-						<input type="file" name="Photo" class="photo"></input>
+						<input type="file" name="Photo" class="photo" title="Harap diisi dengan gambar utama postingan anda"></input>
 						<div class="bungkus-isiArtikel">
 							<textarea name="Isi_Artikel" class="isi-art"></textarea>
 						</div>
-						<div class="bungkus-ditsimpub">
-							<input type="submit" name="edit" value="Edit" class="edit"></input>
-							<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
-							<input type="submit" name="publish" value="Publish" class="publish"></input>
-						</div>
+						<input type="submit" name="edit" value="Edit" class="edit"></input>
+						<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
+						<input type="submit" name="publish" value="Publish" class="publish"></input>
 					</div>
 				</form>
 			</div>
