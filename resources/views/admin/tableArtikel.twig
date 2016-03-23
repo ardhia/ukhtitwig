@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Artikel</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="wrapper">
+		<table border="1">
+			<tr>
+				<th>No</th>
+				<th>Creator</th>
+				<th>Judul Artikel</th>
+				<th>Isi Artikel</th>
+			</tr>
+			{% for table in artikel %}
+			<tr>
+				<td>{{table.No}}</td>
+				<td>{{table.email}}</td>
+				<td>{{table.Judul_Artikel}}</td>
+				<td>
+				{{table.Isi_Artikel|raw }}
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>
