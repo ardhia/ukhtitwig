@@ -35,6 +35,7 @@ Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
 //Artikel
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
+Route::get('/artikel', 'ArtikelController@tampilArsipArtikel')->name('arsipArtikel');
 
 //Tutorial
 Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
@@ -90,6 +91,10 @@ Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form')
 
 //table Artikel
 Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');
+//table Tutorial
+Route::get('admin/tableTutorial', 'TableTutorialController@tampilTableTutorial')->name('tableTutorial');
+//tableToko
+Route::get('admin/tableToko', 'TableTokoController@tampilTableToko')->name('tableToko');
 
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');

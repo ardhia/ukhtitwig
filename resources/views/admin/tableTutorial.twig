@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Tutorial</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="wrapper">
+		<table border="1">
+			<tr>
+				<th>No</th>
+				<th>Creator</th>
+				<th>Judul Tutorial</th>
+				<th>Isi Tutorial</th>
+			</tr>
+			{% for table in tutorial %}
+			<tr>
+				<td>{{table.No}}</td>
+				<td>{{table.email}}</td>
+				<td>{{table.Judul_Tutorial}}</td>
+				<td>
+				{{table.Isi_Tutorial|raw }}
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>
