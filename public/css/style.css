@@ -108,7 +108,7 @@ body {
 	border-radius: 5px;
 }
 
-.nav {
+.navigasi {
 	width: 30%;
 	float: left;
 	margin-top: 278px;
@@ -118,7 +118,7 @@ body {
 	border-radius: 0px 16px 0px 0px;
 }
 
-.nav-in {
+.navigasi-in {
 	width: 25%;
 	float: left;
 	background: #90ECE2;
@@ -126,27 +126,27 @@ body {
 	box-shadow: 2px 0px 8px 1px #168CFF;
 }
 
-.nav ul {
+.navigasi ul {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
 
-.nav ul li {
+.navigasi ul li {
 	position: relative;
 	float: left;
 	width: 100%;
 	text-align: center;
 }
 
-.nav ul li a {
+.navigasi ul li a {
 	display: block;
 	color: #0042FF;
 	padding: 10px 0px;
 	text-decoration: none;
 }
 
-.nav ul li a:hover{
+.navigasi ul li a:hover{
 	color: #FF1E27;
 	background: #FFE6FF;
 	border-radius: 21px 21px 0px 0px;
@@ -765,10 +765,10 @@ body {
 	width: 99%;
 	height: auto;
 	float: left;
-	padding: 2px 0.5%;
+	padding: 2px 0.5% 0px;
 }
 
-
+/*
 #navuser ul {
 	list-style: none;
 	margin: 0px;
@@ -794,7 +794,7 @@ body {
 	background: #90ECE2;
 	border-radius: 5px;
 }
-
+*/
 .tambah {
 	width: 2%;
 	height: auto;
@@ -806,7 +806,7 @@ body {
 	width: 80%;
 	height: auto;
 	float: left;
-	margin: 10px 0% 0px;
+	margin: 35px 0% 0px;
 	padding: 0px 10%;
 }
 
