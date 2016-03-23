@@ -803,11 +803,11 @@ body {
 }
 
 .out-profil { 
-	width: 90%; 
+	width: 80%;
 	height: auto;
 	float: left;
 	margin: 10px 0% 0px;
-	padding-left: 10%;
+	padding: 0px 10%;
 }
 
 #photo-toko {
@@ -1512,26 +1512,34 @@ body {
 	height: 350px;
 }
 
-.edit {
-	width: 29%;
-	height: 30px;
-	border-radius: 4px;	
+.push {
+	width: auto;
+	height: auto;
+	border-radius: 8px;
 	font-family: "Handlee";
+	float: right;
+	padding: 4px 2.5%;
+	color: #fff;
+	background: #c6c4c4;
+	font-weight: bold;
+	font-size: 16px;
+	border: 5px double #fff;
 }
 
-.simpan {
-	width: 29%;
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
+.scroll {
+	width: 96%;
+	height: 300px;
+	float: left;
+	overflow-y: scroll;
+	padding-right: 4%;
 }
 
-.publish {
-	width: 29%;
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
+.note {
+	font-size: 12px;
+	color: #FF81E5;
+	padding: 6px 0px;
 }
+
 /* Breadcrumbs .... */
 
 /*custom font*/
