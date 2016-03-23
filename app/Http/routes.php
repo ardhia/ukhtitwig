@@ -94,6 +94,8 @@ Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->n
 Route::get('admin/tableTutorial', 'TableTutorialController@tampilTableTutorial')->name('tableTutorial');
 //tableToko
 Route::get('admin/tableToko', 'TableTokoController@tampilTableToko')->name('tableToko');
+//tableUser
+Route::get('admin/tableUser', 'TableUserController@tampilTableUser')->name('tableUser');
 
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
