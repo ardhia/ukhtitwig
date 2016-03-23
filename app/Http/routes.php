@@ -90,6 +90,10 @@ Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form')
 
 //table Artikel
 Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');
+//table Tutorial
+Route::get('admin/tableTutorial', 'TableTutorialController@tampilTableTutorial')->name('tableTutorial');
+//tableToko
+Route::get('admin/tableToko', 'TableTokoController@tampilTableToko')->name('tableToko');
 
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
