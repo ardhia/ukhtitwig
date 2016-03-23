@@ -108,7 +108,7 @@ body {
 	border-radius: 5px;
 }
 
-.nav {
+.navigasi {
 	width: 30%;
 	float: left;
 	margin-top: 278px;
@@ -118,7 +118,7 @@ body {
 	border-radius: 0px 16px 0px 0px;
 }
 
-.nav-in {
+.navigasi-in {
 	width: 25%;
 	float: left;
 	background: #90ECE2;
@@ -126,27 +126,27 @@ body {
 	box-shadow: 2px 0px 8px 1px #168CFF;
 }
 
-.nav ul {
+.navigasi ul {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
 
-.nav ul li {
+.navigasi ul li {
 	position: relative;
 	float: left;
 	width: 100%;
 	text-align: center;
 }
 
-.nav ul li a {
+.navigasi ul li a {
 	display: block;
 	color: #0042FF;
 	padding: 10px 0px;
 	text-decoration: none;
 }
 
-.nav ul li a:hover{
+.navigasi ul li a:hover{
 	color: #FF1E27;
 	background: #FFE6FF;
 	border-radius: 21px 21px 0px 0px;
@@ -765,10 +765,10 @@ body {
 	width: 99%;
 	height: auto;
 	float: left;
-	padding: 2px 0.5%;
+	padding: 2px 0.5% 0px;
 }
 
-
+/*
 #navuser ul {
 	list-style: none;
 	margin: 0px;
@@ -794,7 +794,7 @@ body {
 	background: #90ECE2;
 	border-radius: 5px;
 }
-
+*/
 .tambah {
 	width: 2%;
 	height: auto;
@@ -803,11 +803,11 @@ body {
 }
 
 .out-profil { 
-	width: 90%; 
+	width: 80%;
 	height: auto;
 	float: left;
-	margin: 10px 0% 0px;
-	padding-left: 10%;
+	margin: 35px 0% 0px;
+	padding: 0px 10%;
 }
 
 #photo-toko {
@@ -1512,26 +1512,34 @@ body {
 	height: 350px;
 }
 
-.edit {
-	width: 29%;
-	height: 30px;
-	border-radius: 4px;	
+.push {
+	width: auto;
+	height: auto;
+	border-radius: 8px;
 	font-family: "Handlee";
+	float: right;
+	padding: 4px 2.5%;
+	color: #fff;
+	background: #c6c4c4;
+	font-weight: bold;
+	font-size: 16px;
+	border: 5px double #fff;
 }
 
-.simpan {
-	width: 29%;
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
+.scroll {
+	width: 96%;
+	height: 300px;
+	float: left;
+	overflow-y: scroll;
+	padding-right: 4%;
 }
 
-.publish {
-	width: 29%;
-	height: 30px;
-	border-radius: 4px;
-	font-family: "Handlee";
+.note {
+	font-size: 12px;
+	color: #FF81E5;
+	padding: 6px 0px;
 }
+
 /* Breadcrumbs .... */
 
 /*custom font*/
