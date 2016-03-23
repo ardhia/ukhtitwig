@@ -23,6 +23,24 @@ class ArtikelController extends Controller
     public function tampilIsiArtikel () {
         return view('isi-artikel');
     }
+
+    //arsip
+    public function tampilArsipArtikel () {
+        $tahun = DB::table('artikel')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahun as $item){
+            $bulan
+
+            var_dump($item->tahun);
+        }
+        exit;
+        return view('artikel', ['artikel' => $daftarartikel]);
+    }
+
     //END
 /*
 |
@@ -70,6 +88,7 @@ class ArtikelController extends Controller
 
         return Redirect::to('auth/profilU/user_insertArtikel');
     }
+
     //END
 /*
 |
