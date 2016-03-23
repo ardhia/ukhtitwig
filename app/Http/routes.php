@@ -35,6 +35,7 @@ Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
 //Artikel
 Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
 Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
+Route::get('/artikel', 'ArtikelController@tampilArsipArtikel')->name('arsipArtikel');
 
 //Tutorial
 Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
