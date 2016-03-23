@@ -17,15 +17,7 @@ class ArtikelController extends Controller
     public function tampilArtikel () {
     	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->Paginate(3);
 
-    	return view('artikel', ['artikel' => $daftarartikel]);
-    }
-
-    public function tampilIsiArtikel () {
-        return view('isi-artikel');
-    }
-
-    //arsip
-    public function tampilArsipArtikel () {
+        //Arsip
         $tahun = DB::table('artikel')
                         ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
                         ->groupBy(DB::raw("YEAR(created_at)"))
@@ -33,12 +25,19 @@ class ArtikelController extends Controller
                         ->get();
 
         foreach($tahun as $item){
-            $bulan
+            $bulan = DB::table('artikel')->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as total'))
+            ->groupBy(DB::raw('MONTH(created_at) as bulan'))->get();
 
             var_dump($item->tahun);
         }
         exit;
-        return view('artikel', ['artikel' => $daftarartikel]);
+
+
+    	return view('artikel', ['artikel' => $daftarartikel]);
+    }
+
+    public function tampilIsiArtikel () {
+        return view('isi-artikel');
     }
 
     //END
