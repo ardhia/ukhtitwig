@@ -34,6 +34,13 @@ class TokoController extends Controller
 
     //post
     public function prosesUser_insertToko (Request $request){
+        $this->validate($request, [
+        'judulToko' => 'required',
+        'photoToko' => 'required|unique:artikel|max:255',
+        'harga' => 'required',
+        'jb' => 'required',
+        'ketToko' => 'required',
+        ]);
         $toko = new User_insertToko;
         $toko->judulToko = $request->input('judulToko');
         $toko->harga = $request->input('harga');
