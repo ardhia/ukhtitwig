@@ -46,22 +46,27 @@ class TutorialController extends Controller
 	 }
 
 	 public function prosesUser_insertTutorial (Request $request) {
-	 $user_insertTutorial= new User_insertTutorial;
-	 $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
-	 $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
-	 if($request->hasFile('Photo_Tutorial')) {
-            $file = Input::file('Photo_Tutorial');
-            //getting timestamp
-            
-            $name = $file->getClientOriginalName();
-            
-            $user_insertTutorial->Photo_Tutorial = $name;
+        $this->validate($request, [
+        'Judul_Tutorial' => 'required',
+        'Isi_Tutorial' => 'required',
+        'Photo' => 'required|unique:artikel|max:255',
+        ]);
+		 $user_insertTutorial= new User_insertTutorial;
+		 $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
+		 $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+		 if($request->hasFile('Photo_Tutorial')) {
+	            $file = Input::file('Photo_Tutorial');
+	            //getting timestamp
+	            
+	            $name = $file->getClientOriginalName();
+	            
+	            $user_insertTutorial->Photo_Tutorial = $name;
 
-            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
-        }
-	 $user_insertTutorial->save();
+	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
+	        }
+		 $user_insertTutorial->save();
 
-	  return Redirect::to('auth/profilU/user_insertTutorial');
+		  return Redirect::to('auth/profilU/user_insertTutorial');
 	 }
 
    
