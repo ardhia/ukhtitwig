@@ -1,11 +1,6 @@
-{% extends 'artikel' %}
-{% block 'arsipArtikel' %}
-	<div class="judul">Arsip</div>
-	<div class="isi-arsip">
-		{{dump(artikel)}}
-		{% for item in artikel %}
-		    {{item.tahun}}
-		    {{item.total}}
-		{% endfor %}
-	</div>
-{% endblock %}
+<div class="judul">Arsip</div>
+<div class="isi-arsip">
+	{% for arsip in artikel %}
+	{{arsip.tahun}}
+	{% endfor %}
+</div>

@@ -31,19 +31,59 @@
 								<div id="photo-artikel"><img src="/uploadPhoto/artikel/{{isi.Photo}}" width="100%" height="100%"></div>
 								<div id="artikelnya"> 
 									{% autoescape %}
-									{{isi.Isi_Artikel | str_words(50) | raw }}
+									{{isi.Isi_Artikel|str_words(50)|raw }}
 									{% endautoescape %}
 								</div>
 							</div>
 						</div>
 					{% endfor %}
-					<div class="paginate">
-						{{ artikel.render()|raw }}
-					</div>
+					<div class="paginate">{{ artikel.render()|raw }}</div>
 				</div>
 				<div class="rightKet">
 					<div id="arsip">
-						{{ block('arsipArtikel') }}
+						<div class="judul">Arsip</div>
+						<div class="isi-arsip">
+							<div class="panel-group" id="data-{{arsip.tahun}}">
+								{% for arsip in tahun %}
+								    <div class="panel panel-default">
+								    	<div class="panel-heading">
+								    	  	<h4 class="panel-title">
+								    	    	<a data-toggle="collapse" data-parent="#data-{{arsip.tahun}}" href="#tahun-{{arsip.tahun}}">{{arsip.tahun}}</a>
+								    	 	</h4>
+								    	 	 ({{arsip.total}})
+								    	</div>
+								    	<div id="tahun-{{arsip.tahun}}" class="panel-collapse collapse in">
+									    	{% for b in bulan %}
+												<div class="panel-group" id="data-{{b.bulan}}">
+										    	  	<div class="panel-body">
+													    <div class="panel panel-default">
+													    	<div class="panel-heading">
+													    	  	<h4 class="panel-title">
+													    	    	<a data-toggle="collapse" data-parent="#data-{{b.bulan}}" href="#bulan-{{b.bulan}}">{{b.bulan}}</a>
+													    	 	</h4>
+													    	 	 ({{b.jumlah}})
+													    	</div>
+													    	<div id="bulan-{{b.bulan}}" class="panel-collapse collapse in">
+													    	  	<div class="panel-body">
+													    	  		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+													    	  	</div>
+													    	</div>
+													    </div>
+										    	  	</div>
+										    	</div>
+									    	{% endfor %}
+								    	</div>
+								    </div>
+								{% endfor %}
+							</div>
+
+
+
+
+
+
+							
+						</div>
 					</div>
 				</div>
 			</div>

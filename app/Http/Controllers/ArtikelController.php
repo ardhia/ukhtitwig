@@ -25,15 +25,18 @@ class ArtikelController extends Controller
                         ->get();
 
         foreach($tahun as $item){
-            $bulan = DB::table('artikel')->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as total'))
-            ->groupBy(DB::raw('MONTH(created_at) as bulan'))->get();
-
-            var_dump($item->tahun);
+            $bulan = DB::table('artikel')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            $item->bulan = $bulan;
+            //dd($item);
         }
-        exit;
+        //dd($tahun);
+        //exit;
 
 
-    	return view('artikel', ['artikel' => $daftarartikel]);
+    	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun, 'bulan' => $bulan]);
     }
 
     public function tampilIsiArtikel () {
