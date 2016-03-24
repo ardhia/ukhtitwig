@@ -32,8 +32,8 @@ class ArtikelController extends Controller
             $item->bulan = $bulan;
             //dd($item);
         }
-        dd($tahun);
-        exit;
+        //dd($tahun);
+        //exit;
 
 
     	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun, 'bulan' => $bulan]);
