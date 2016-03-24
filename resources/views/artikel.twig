@@ -31,19 +31,25 @@
 								<div id="photo-artikel"><img src="/uploadPhoto/artikel/{{isi.Photo}}" width="100%" height="100%"></div>
 								<div id="artikelnya"> 
 									{% autoescape %}
-									{{isi.Isi_Artikel | str_words(50) | raw }}
+									{{isi.Isi_Artikel|str_words(50)|raw }}
 									{% endautoescape %}
 								</div>
 							</div>
 						</div>
 					{% endfor %}
-					<div class="paginate">
-						{{ artikel.render()|raw }}
-					</div>
+					<div class="paginate">{{ artikel.render()|raw }}</div>
 				</div>
 				<div class="rightKet">
 					<div id="arsip">
-						{{ block('arsipArtikel') }}
+						<div class="judul">Arsip</div>
+						<div class="isi-arsip">
+							{% for arsip in tahun %}
+								{{arsip.tahun}}
+								{% for b in bulan %}
+								    {{b.bulan}}
+								{% endfor %}
+							{% endfor %}
+						</div>
 					</div>
 				</div>
 			</div>
