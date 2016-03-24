@@ -55,6 +55,7 @@
 .panel-title:after {
 	content: '';
     display: block;
+    margin: auto;
     height: 3px;
     width: 2px;
 }

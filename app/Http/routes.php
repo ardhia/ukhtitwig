@@ -39,6 +39,11 @@ Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('
 //Tutorial
 Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
 Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
+
+Route::get('/ago', function(){
+	return view('ago');
+});
+
 /*
 |--------------------------------------------------------------------------
 | END YOOOOOOOOOOO!!! >o<
@@ -87,6 +92,7 @@ Route::get('admin', 'PagesController@homeAdmin')->name('homeAdmin');
 Route::get('admin/about', 'PagesController@aboutAdmin')->name('aboutAdmin');
 Route::get('admin/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
 Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
+Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
 
 //table Artikel
 Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');
@@ -94,6 +100,10 @@ Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->n
 Route::get('admin/tableTutorial', 'TableTutorialController@tampilTableTutorial')->name('tableTutorial');
 //tableToko
 Route::get('admin/tableToko', 'TableTokoController@tampilTableToko')->name('tableToko');
+//tableUser
+Route::get('admin/tableUser', 'TableUserController@tampilTableUser')->name('tableUser');
+//tableSubscribe
+Route::get('admin/tableSubscribe', 'TableSubscribeController@tampilTableSubscribe')->name('tableSubscribe');
 
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');
