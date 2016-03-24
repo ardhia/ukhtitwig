@@ -1,4 +1,4 @@
-{% extends 'layout' %}
+{% extends 'layoutProfil' %}
 {% block isi %}
 		<div id="bar">
 			<div class="search">
@@ -33,39 +33,30 @@
 				<div class="contentuser">
 					<div id="navuser">
 						<ul>
-							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getToko.php" aria-expanded="false" aria-controls="collapseExample">Toko</a></li>
-							<div class="tambah"><a href="{{route('user_profilU.user_insertToko')}}">+</a></div>
-							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getArtikel.php" aria-expanded="false" aria-controls="collapseExample">Artikel</a></li>
-							<div class="tambah"><a href="{{route('user_profilU.user_insertArtikel')}}">+</a></div>
-							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getTutorial.php" aria-expanded="false" aria-controls="collapseExample">Tutorial</a></li>
-							<div class="tambah"><a href="{{route('user_profilU.user_insertTutorial')}}">+</a></div>
-							<li><a class="btn btn-primary" role="button" data-toggle="collapse" href="getArsip.php" aria-expanded="false" aria-controls="collapseExample">Arsip</a></li>
+							<li><a data-toggle="tab" href="#getTestimoni">Testimoni</a></li>
+							<li><a data-toggle="tab" href="#getToko">Toko</a></li>
+							<li><a data-toggle="tab" href="#getArtikel">Artikel</a></li>
+							<li><a data-toggle="tab" href="#getTutorial">Tutorial</a></li>
 						</ul>
 					</div>
 					<div class="out-profil">
-						<div id="artikel">
-							<div class="judul-artikel">
-								Lorem ipsum dolor sit amet
-							</div>
-							<div class="out-artikel">
+						<div id="getTestimoni">
+							<div class="scroll">
+								Ini Testimoni <br>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 							</div>
 						</div>
-						<div id="artikel">
-							<div class="judul-artikel">
-								Lorem ipsum dolor sit amet
-							</div>
-							<div class="out-artikel">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</div>
+						<div id="getToko" class="tab">
+							Ini Toko <br>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</div>
-						<div id="artikel">
-							<div class="judul-artikel">
-								Lorem ipsum dolor sit amet
-							</div>
-							<div class="out-artikel">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</div>
+						<div id="getArtikel" class="tab">
+							Ini Artikel <br>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+						<div id="getTutorial" class="tab">
+							Ini Tutorial <br>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</div>
 					</div>
 				</div>

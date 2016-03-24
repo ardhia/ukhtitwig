@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table User</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="wrapper">
+		<table border="1">
+			<tr>
+				<th>No</th>
+				<th>Nama</th>
+				<th>Email</th>
+				<th>Password</th>
+				<th>Username</th>
+				<th>Tempat Lahir</th>
+				<th>Tanggal Lahir</th>
+				<th>Jenis Kelamin</th>
+				<th>status</th>
+				<th>Alternatif Email</th>
+			</tr>
+			{% for table in users %}
+			<tr>
+				<td>{{table.id}}</td>
+				<td>{{table.name}}</td>
+				<td>{{table.email}}</td>
+				<td>{{table.password}}</td>
+				<td>{{table.username}}</td>
+				<td>{{table.tempat_lahir}}</td>
+				<td>{{table.tanggal_lahir}}</td>
+				<td>{{table.jenis_kelamin}}</td>
+				<td>{{table.status}}</td>
+				<td>{{table.al_email}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Table Toko</title>
+	<title>Table Subscribe</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 </head>
@@ -10,20 +10,12 @@
 		<table border="1">
 			<tr>
 				<th>No</th>
-				<th>Creator</th>
-				<th>Judul Toko</th>
-				<th>Harga</th>
-				<th>Jenis Barang</th>
-				<th>Keterangan Barang</th>
+				<th>Email</th>
 			</tr>
-			{% for table in tutorial %}
+			{% for table in subscribe %}
 			<tr>
-				<td>{{table.idToko}}</td>
+				<td>{{table.Id}}</td>
 				<td>{{table.email}}</td>
-				<td>{{table.judulToko}}</td>
-				<td>{{table.harga}}</td>
-				<td>{{table.jb|raw }}</td>
-				<td>{{table.ketToko|raw }}</td>
 			</tr>
 			{% endfor %}
 		</table>

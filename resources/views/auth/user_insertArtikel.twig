@@ -17,6 +17,7 @@
   		external_plugins         : { "filemanager" : "{{ asset('filemanager/plugin.min.js') }}"} 
 	 });
 	</script>
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div class="all-wrapper">
@@ -35,13 +36,12 @@
 				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
 					<div class="bungkus-tool-judul">
 						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art"> </input>
-						<input type="file" name="Photo" class="photo" title="Harap diisi dengan gambar utama postingan anda"></input>
+						<input type="file" name="Photo" class="photo"></input>
+						<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
 						<div class="bungkus-isiArtikel">
 							<textarea name="Isi_Artikel" class="isi-art"></textarea>
 						</div>
-						<input type="submit" name="edit" value="Edit" class="edit"></input>
-						<input type="submit" name="simpan" value="Simpan" class="simpan"></input>
-						<input type="submit" name="publish" value="Publish" class="publish"></input>
+						<input type="submit" name="publish" value="Publish" class="push"></input>
 					</div>
 				</form>
 			</div>

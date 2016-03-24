@@ -43,14 +43,7 @@
 				</div>
 				<div class="rightKet">
 					<div id="arsip">
-						<div class="judul">Arsip</div>
-						<div class="isi-arsip">
-						{{dump(artikel)}}
-						{% for item in artikel %}
-						    {{item.tahun}}
-						    {{item.total}}
-						{% endfor %}
-						</div>
+						{{ block('arsipArtikel') }}
 					</div>
 				</div>
 			</div>

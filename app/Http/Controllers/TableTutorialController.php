@@ -12,6 +12,6 @@ class TableTutorialController extends Controller
 	
 	$tutorial = DB::table('tutorial')->select('No', 'email', 'Judul_Tutorial', 'Isi_Tutorial')->get();
 
-     return view('admin/tableTutorial', ['tutorial' => $tutorial]);
+     return view('admin/profilA', ['tutorial' => $tutorial]);
 	}
 }
