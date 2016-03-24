@@ -14,7 +14,7 @@ class TutorialController extends Controller
 
  //PUBLIK
 	  public function tutorial () {
-     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->Paginate(3);
+     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->Paginate(3);
 
      return view('tutorial', ['tutorial' => $tutorial]);
     }
@@ -49,7 +49,7 @@ class TutorialController extends Controller
         $this->validate($request, [
         'Judul_Tutorial' => 'required',
         'Isi_Tutorial' => 'required',
-        'Photo' => 'required|unique:artikel|max:255',
+        'Photo_Tutorial' => 'required|unique:tutorial|max:255',
         ]);
 		 $user_insertTutorial= new User_insertTutorial;
 		 $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');

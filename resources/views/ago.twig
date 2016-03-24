@@ -1,0 +1,79 @@
+{% extends 'layout' %}
+{% block isi %}
+	<link rel="stylesheet" type="text/css" href="{{asset('css/arsipcollapse.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<div id="bar">
+			<div class="search">
+				<form>
+					<input type="text" name="input-search" placeholder="Search" class="text"></input>
+					<input type="submit" name="search" value="" class="submit"></input>
+				</form>
+			</div>
+			<div class="_breadcrumb">
+				<!-- another version - flat style with animated hover effect -->
+				<div class="breadcrumb flat">
+					<a href="{{route('/')}}">Home</a>
+					<a href="#" class="active">Artikel</a>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper">
+			<div class="wrap">
+				<div class="content">
+					{% for isi in artikel %}
+						<div id="artikel">
+							<div class="judul-artikel">
+								{{isi.Judul_Artikel}}
+							</div>
+							<div class="out-artikel">
+								<div id="photo-artikel"><img src="/uploadPhoto/artikel/{{isi.Photo}}" width="100%" height="100%"></div>
+								<div id="artikelnya"> 
+									{% autoescape %}
+									{{isi.Isi_Artikel | str_words(50) | raw }}
+									{% endautoescape %}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+					<div class="paginate">
+						{{ artikel.render()|raw }}
+					</div>
+				</div>
+				<div class="rightKet">
+					<div id="arsip">
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#panel2016">Arsip 2016</a>
+									</h4>
+								</div>
+								<div id="panel2016" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#contoh"></a>
+												<div class="panel panel-default">
+													<div class="panel-heading">
+														<h4 class="panel-title">
+															<a data-toggle="collapse" data-parent="#accordion" href="#panel-bulan">Januari</a>
+														</h4>
+													</div>
+													<div id="panel-bulan" class="panel-collapse collapse in">
+														<div class="panel-body">
+													
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+					  </div> 
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
