@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/profiltabs.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/media-queries.css')}}" />
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="navuser">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active">
+				<a href="#tableArtikel" aria-controls="tableArtikel" role="tab" data-toggle="tab">Artikel</a>
+			</li>
+			<li role="presentation">
+				<a href="#tableTutorial" aria-controls="tableTutorial" role="tab" data-toggle="tab">Tutorial</a>
+			</li>
+			<li role="presentation">
+				<a href="#tableToko" aria-controls="tableToko" role="tab" data-toggle="tab">Toko</a>
+			</li>
+			<li role="presentation">
+				<a href="#tableSubscribe" aria-controls="tableSubscribe" role="tab" data-toggle="tab">Subscribe</a>
+			</li>
+		</ul>
+	</div>
+		<div class="out-profil">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="tableArtikel">
+					<div id="wrapper">
+						<table border="1">
+							<tr>
+								<th>No</th>
+								<th>Creator</th>
+								<th>Judul Artikel</th>
+								<th>Isi Artikel</th>
+							</tr>
+							{% for table in artikel %}
+							<tr>
+								<td>{{table.No}}</td>
+								<td>{{table.email}}</td>
+								<td>{{table.Judul_Artikel}}</td>
+								<td>
+								{{table.Isi_Artikel|raw }}
+								</td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="tableTutorial">
+					<div id="wrapper">
+						<table border="1">
+							<tr>
+								<th>No</th>
+								<th>Creator</th>
+								<th>Judul Tutorial</th>
+								<th>Isi Tutorial</th>
+							</tr>
+							{% for table in tutorial %}
+							<tr>
+								<td>{{table.No}}</td>
+								<td>{{table.email}}</td>
+								<td>{{table.Judul_Tutorial}}</td>
+								<td>
+								{{table.Isi_Tutorial|raw }}
+								</td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="tableToko">
+					<div id="wrapper">
+						<table border="1">
+							<tr>
+								<th>No</th>
+								<th>Creator</th>
+								<th>Judul Toko</th>
+								<th>Harga</th>
+								<th>Jenis Barang</th>
+								<th>Keterangan Barang</th>
+							</tr>
+							{% for table in tutorial %}
+							<tr>
+								<td>{{table.idToko}}</td>
+								<td>{{table.email}}</td>
+								<td>{{table.judulToko}}</td>
+								<td>{{table.harga}}</td>
+								<td>{{table.jb|raw }}</td>
+								<td>{{table.ketToko|raw }}</td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="tableSubscribe">
+					<div id="wrapper">
+						<table border="1">
+							<tr>
+								<th>No</th>
+								<th>Email</th>
+							</tr>
+							{% for table in subscribe %}
+							<tr>
+								<td>{{table.Id}}</td>
+								<td>{{table.email}}</td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+  			</div>
+		</div>
+</body>
+</html>

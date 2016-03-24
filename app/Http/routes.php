@@ -87,6 +87,7 @@ Route::get('admin', 'PagesController@homeAdmin')->name('homeAdmin');
 Route::get('admin/about', 'PagesController@aboutAdmin')->name('aboutAdmin');
 Route::get('admin/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
 Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
+Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
 
 //table Artikel
 Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');
@@ -96,6 +97,8 @@ Route::get('admin/tableTutorial', 'TableTutorialController@tampilTableTutorial')
 Route::get('admin/tableToko', 'TableTokoController@tampilTableToko')->name('tableToko');
 //tableUser
 Route::get('admin/tableUser', 'TableUserController@tampilTableUser')->name('tableUser');
+//tableSubscribe
+Route::get('admin/tableSubscribe', 'TableSubscribeController@tampilTableSubscribe')->name('tableSubscribe');
 
 //Toko
 Route::get('admin/toko', 'TokoController@tampilTokoAdmin')->name('tokoAdmin');

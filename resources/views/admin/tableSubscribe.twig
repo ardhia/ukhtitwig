@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Subscribe</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="wrapper">
+		<table border="1">
+			<tr>
+				<th>No</th>
+				<th>Email</th>
+			</tr>
+			{% for table in subscribe %}
+			<tr>
+				<td>{{table.Id}}</td>
+				<td>{{table.email}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>
