@@ -1773,3 +1773,32 @@ body {
     width: 960px;
     border-left: 1px black solid;
 }
+
+.ced {
+    padding: 8px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0px 0px 0px 2px;
+	margin: 5px 4%;
+}
+
+
+.edit{
+	padding: 8px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0px 0px 0px 2px;
+	margin: 10px 14%;
+	float: left;
+	width: 71%;
+}
+
+.edit1 {
+    padding: 8px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 0px 2px;
+    margin: 10px 20%;
+    float: left;
+    width: 61%;
+}

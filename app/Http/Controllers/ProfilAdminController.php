@@ -18,6 +18,6 @@ class ProfilAdminController extends Controller
 
     	$subs =  DB::table('subscribe')->select('Id', 'email')->get();
 
-    	return view('admin/profilA', ['artikel' => $daftarartikel], ['tutorial' => $tutorial], ['toko' => $toko], ['subscribe' => $subs]);
+    	return view('admin/profilA', ['artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'subscribe' => $subs]);
     }
 }
