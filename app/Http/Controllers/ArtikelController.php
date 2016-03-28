@@ -39,6 +39,11 @@ class ArtikelController extends Controller
     	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun, 'bulan' => $bulan]);
     }
 
+    //EDIT
+     public function tampilEditAdmin ($id){
+        return $id;
+    }
+    //
     public function tampilIsiArtikel () {
         return view('isi-artikel');
     }
