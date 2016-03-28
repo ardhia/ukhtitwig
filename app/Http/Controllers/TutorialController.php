@@ -13,10 +13,28 @@ class TutorialController extends Controller
 {
 
  //PUBLIK
-	  public function tutorial () {
-     $tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->Paginate(3);
+	public function tutorial () {
+     	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->Paginate(3);
 
-     return view('tutorial', ['tutorial' => $tutorial]);
+	    //Arsip
+        $tahun = DB::table('tutorial')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahun as $item){
+            $bulan = DB::table('tutorial')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+        //dd($tahun);
+        //exit;
+
+     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun]);
     }
 
       public function isi_tutorial () {

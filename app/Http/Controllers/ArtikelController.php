@@ -36,7 +36,7 @@ class ArtikelController extends Controller
         //exit;
 
 
-    	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun, 'bulan' => $bulan]);
+    	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun]);
     }
 
     public function tampilIsiArtikel () {

@@ -43,46 +43,39 @@
 					<div id="arsip">
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
-							<div class="panel-group" id="data-{{arsip.tahun}}">
-								{% for arsip in tahun %}
-								    <div class="panel panel-default">
-								    	<div class="panel-heading">
-								    	  	<h4 class="panel-title">
-								    	    	<a data-toggle="collapse" data-parent="#data-{{arsip.tahun}}" href="#tahun-{{arsip.tahun}}">{{arsip.tahun}}</a>
-								    	 	</h4>
-								    	 	 ({{arsip.total}})
-								    	</div>
-								    	<div id="tahun-{{arsip.tahun}}" class="panel-collapse collapse in">
-									    	{% for b in bulan %}
-												<div class="panel-group" id="data-{{b.bulan}}">
-										    	  	<div class="panel-body">
-													    <div class="panel panel-default">
-													    	<div class="panel-heading">
-													    	  	<h4 class="panel-title">
-													    	    	<a data-toggle="collapse" data-parent="#data-{{b.bulan}}" href="#bulan-{{arsip.tahun}}-{{b.bulan}}">{{b.bulan}}</a>
-													    	 	</h4>
-													    	 	 ({{b.jumlah}})
-													    	</div>
-													    	<div id="bulan-{{arsip.tahun}}-{{b.bulan}}" class="panel-collapse collapse in">
-													    	  	<div class="panel-body">
-													    	  		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-													    	  	</div>
-													    	</div>
-													    </div>
-										    	  	</div>
-										    	</div>
-									    	{% endfor %}
-								    	</div>
-								    </div>
-								{% endfor %}
-							</div>
-
-
-
-
-
-
-							
+						  	<div class="panel-group" id="accordion">
+							  	{% for item in tahun %}
+							    	<div class="panel panel-default">
+								      	<div class="panel-heading">
+								        	<h4 class="panel-title">
+								          		<a data-toggle="collapse" data-parent="#accordion" href="#tahun-{{item.tahun}}">{{item.tahun}}</a>
+								        	</h4>
+								        	({{item.total}})
+								      	</div>
+								      	<div id="tahun-{{item.tahun}}" class="panel-collapse collapse in">
+								        	<div class="panel-body">
+									          	<div class="panel-group" id="{{item.tahun}}-accordion">
+										          	{% for bulan in item.bulan %}
+										            	<div class="panel panel-default">
+											              	<div class="panel-heading">
+											                	<h4 class="panel-title">
+											                  		<a data-toggle="collapse" data-parent="#{{item.tahun}}-accordion" href="#bulan-{{bulan.bulan}}">{{bulan.bulan}}</a>
+											                	</h4>
+											                	({{bulan.jumlah}})
+											              	</div>
+											              	<div id="bulan-{{bulan.bulan}}" class="panel-collapse collapse in">
+											                	<div class="panel-body">
+											                		<a href="#link">Buat linknya</a>
+											                	</div>
+											              	</div>
+										            	</div>
+										            {% endfor %}
+									          	</div>
+								        	</div>
+								      	</div>
+							    	</div>
+							    {% endfor %}
+						  	</div>
 						</div>
 					</div>
 				</div>
