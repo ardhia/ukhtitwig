@@ -45,59 +45,39 @@
 					<div id="arsip">	
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
-							
-						            <li>
-						  				<a href="#arsip2016">2016</a>
-						  				<ul class="sidebar">
-										    <li><a href="#januari">Januari</a></li>
-										    <li><a href="#febuari">Febuari</a></li>
-										    <li><a href="#maret">Maret</a></li>
-										    <li><a href="#apri">Apri</a></li>
-										    <li><a href="#mei">Mei</a></li>
-										    <li><a href="#juni">Juni</a></li>
-										    <li><a href="#juli">Juli</a></li>
-										    <li><a href="#agustus">Agustus</a></li>
-										    <li><a href="#september">September</a></li>
-										    <li><a href="#oktober">Oktober</a></li>
-										    <li><a href="#november">November</a></li>
-										    <li><a href="#desember">Desember</a></li>
-										  </ul>
-									</li>
-						            <li>
-						  				<a href="#arsip2015">2015</a>
-						  				<ul class="sidebar">
-										    <li><a href="#januari">Januari</a></li>
-										    <li><a href="#febuari">Febuari</a></li>
-										    <li><a href="#maret">Maret</a></li>
-										    <li><a href="#apri">Apri</a></li>
-										    <li><a href="#mei">Mei</a></li>
-										    <li><a href="#juni">Juni</a></li>
-										    <li><a href="#juli">Juli</a></li>
-										    <li><a href="#agustus">Agustus</a></li>
-										    <li><a href="#september">September</a></li>
-										    <li><a href="#oktober">Oktober</a></li>
-										    <li><a href="#november">November</a></li>
-										    <li><a href="#desember">Desember</a></li>
-										  </ul>
-									</li>
-						            <li>
-						  				<a href="#arsip2014">2014</a>
-						  				<ul class="sidebar">
-										    <li><a href="#januari">Januari</a></li>
-										    <li><a href="#febuari">Febuari</a></li>
-										    <li><a href="#maret">Maret</a></li>
-										    <li><a href="#apri">Apri</a></li>
-										    <li><a href="#mei">Mei</a></li>
-										    <li><a href="#juni">Juni</a></li>
-										    <li><a href="#juli">Juli</a></li>
-										    <li><a href="#agustus">Agustus</a></li>
-										    <li><a href="#september">September</a></li>
-										    <li><a href="#oktober">Oktober</a></li>
-										    <li><a href="#november">November</a></li>
-										    <li><a href="#desember">Desember</a></li>
-										  </ul>
-									</li>
-						        </ul>
+						  	<div class="panel-group" id="accordion">
+							  	{% for item in tahun %}
+							    	<div class="panel panel-default">
+								      	<div class="panel-heading">
+								        	<h4 class="panel-title">
+								          		<a data-toggle="collapse" data-parent="#accordion" href="#tahun-{{item.tahun}}">{{item.tahun}}</a>
+								        	</h4>
+								        	({{item.total}})
+								      	</div>
+								      	<div id="tahun-{{item.tahun}}" class="panel-collapse collapse in">
+								        	<div class="panel-body">
+									          	<div class="panel-group" id="{{item.tahun}}-accordion">
+										          	{% for bulan in item.bulan %}
+										            	<div class="panel panel-default">
+											              	<div class="panel-heading">
+											                	<h4 class="panel-title">
+											                  		<a data-toggle="collapse" data-parent="#{{item.tahun}}-accordion" href="#bulan-{{bulan.bulan}}">{{bulan.bulan}}</a>
+											                	</h4>
+											                	({{bulan.jumlah}})
+											              	</div>
+											              	<div id="bulan-{{bulan.bulan}}" class="panel-collapse collapse in">
+											                	<div class="panel-body">
+											                		<a href="#link">Buat linknya</a>
+											                	</div>
+											              	</div>
+										            	</div>
+										            {% endfor %}
+									          	</div>
+								        	</div>
+								      	</div>
+							    	</div>
+							    {% endfor %}
+						  	</div>
 						</div>
 					</div>
 				</div>
