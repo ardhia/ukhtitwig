@@ -39,6 +39,7 @@ Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('
 //Tutorial
 Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
 Route::get('/tutorial/isi-tutorial', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
+Route::get('/tutorial/search/{id}', 'TutorialController@search');
 
 Route::get('/ago', function(){
 	return view('ago');

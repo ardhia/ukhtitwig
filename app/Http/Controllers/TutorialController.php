@@ -24,6 +24,11 @@ class TutorialController extends Controller
 
      return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
     }
+
+    public function search ($id) {
+    	$request->get('input-search');
+    	return $id;
+    }
  //END
 
  //USER
