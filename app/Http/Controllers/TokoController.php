@@ -29,7 +29,9 @@ class TokoController extends Controller
 	}
 
 	public function user_insertToko (){
-		return view('auth\user_insertToko');
+        $toko =  DB::table('toko')->select('idToko', 'email', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
+
+		return view('auth\user_insertToko', ['toko' => $toko]);
 	}
 
     //post

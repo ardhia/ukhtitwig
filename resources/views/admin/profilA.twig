@@ -38,15 +38,17 @@
 								<th>Creator</th>
 								<th>Judul Artikel</th>
 								<th>Isi Artikel</th>
+								<th>Action</th>
 							</tr>
 							{% for table in artikel %}
 							<tr>
 								<td>{{table.No}}</td>
 								<td>{{table.email}}</td>
 								<td>{{table.Judul_Artikel}}</td>
-								<td>
-								{{table.Isi_Artikel|raw }}
-								</td>
+								<td>{{table.Isi_Artikel|raw }}</td>
+								<td><button value="Create" class="ced">Create</button>
+								<button value="Edit" action="{{route('editAdmin')}}" class="edit">Edit</button>
+								<button value="Delete" class="ced">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
@@ -60,6 +62,7 @@
 								<th>Creator</th>
 								<th>Judul Tutorial</th>
 								<th>Isi Tutorial</th>
+								<th>Action</th>
 							</tr>
 							{% for table in tutorial %}
 							<tr>
@@ -69,6 +72,9 @@
 								<td>
 								{{table.Isi_Tutorial|raw }}
 								</td>
+								<td><button value="Create" class="ced">Create</button>
+								<button value="Edit" class="edit1">Edit</button>
+								<button value="Delete" class="ced">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
@@ -84,6 +90,7 @@
 								<th>Harga</th>
 								<th>Jenis Barang</th>
 								<th>Keterangan Barang</th>
+								<th>Action</th>
 							</tr>
 							{% for table in tutorial %}
 							<tr>
@@ -93,6 +100,9 @@
 								<td>{{table.harga}}</td>
 								<td>{{table.jb|raw }}</td>
 								<td>{{table.ketToko|raw }}</td>
+								<td><button value="Create" class="tk">Create</button>
+								<button value="Edit" class="tk1">Edit</button>
+								<button value="Delete" class="tk">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
@@ -104,11 +114,15 @@
 							<tr>
 								<th>No</th>
 								<th>Email</th>
+								<th>Action</th>
 							</tr>
 							{% for table in subscribe %}
 							<tr>
 								<td>{{table.Id}}</td>
 								<td>{{table.email}}</td>
+								<td><button value="Create" class="subs">Create</button>
+								<button value="Edit" class="subs1">Edit</button>
+								<button value="Delete" class="subs">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>

@@ -94,6 +94,7 @@ Route::get('admin/about', 'PagesController@aboutAdmin')->name('aboutAdmin');
 Route::get('admin/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
 Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
 Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
+Route::get('artikel/{id}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
 
 //table Artikel
 Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');
@@ -144,13 +145,6 @@ Route::get('admin/tutorial/isi-tutorial', 'TutorialController@isi_tutorialAdmin'
 |
 |
 |
-|--------------------------------------------------------------------------
-| Routes File POST Halaman User
-|--------------------------------------------------------------------------
-*/
-Route::post('auth/profilU/user_insertArtikel', 'ArtikelController@prosesUser_insertArtikel')->name('prosesArtikel');
-Route::post('auth/profilU/user_insertTutorial', 'TutorialController@prosesUser_insertTutorial')->name('prosesTutorial');
-Route::post('auth/profilU/user_insertToko', 'TokoController@prosesUser_insertToko')->name('prosesToko');
 /*
 |--------------------------------------------------------------------------
 | END YOOOOOOOOOOO!!! >o<
@@ -255,6 +249,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/tutorial/isi-tutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@isi_tutorialUser'])->name('tutorial.isi-tutorialUser');
     Route::get('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_insertTutorial'])->name('profilU.user_insertTutorial');
 	/*
+    |--------------------------------------------------------------------------
+    | Routes File POST Halaman User
+    |--------------------------------------------------------------------------
+    */
+    Route::post('auth/profilU/user_insertArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_insertArtikel'])->name('prosesArtikel');
+    Route::post('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_insertTutorial'])->name('prosesTutorial');
+    Route::post('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_insertToko'])->name('prosesToko');
+    /*
 	|--------------------------------------------------------------------------
 	| END YOOOOOOOOOOO!!! >o<
 	|--------------------------------------------------------------------------
