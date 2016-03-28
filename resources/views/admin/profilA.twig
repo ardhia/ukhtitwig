@@ -47,7 +47,7 @@
 								<td>{{table.Judul_Artikel}}</td>
 								<td>{{table.Isi_Artikel|raw }}</td>
 								<td><button value="Create" class="ced">Create</button>
-								<button value="Edit" class="edit">Edit</button>
+								<button value="Edit" action="{{route('editAdmin')}}" class="edit">Edit</button>
 								<button value="Delete" class="ced">Delete</button></td>
 							</tr>
 							{% endfor %}

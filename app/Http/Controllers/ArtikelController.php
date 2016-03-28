@@ -41,6 +41,7 @@ class ArtikelController extends Controller
 
     //EDIT
      public function tampilEditAdmin ($id){
+        $editartikel = DB::table('artikel')->get();
         return $id;
     }
     //
