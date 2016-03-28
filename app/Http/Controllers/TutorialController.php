@@ -8,13 +8,14 @@ use App\Http\Requests;
 use App\User_insertTutorial;
 use DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Collection;
 
 class TutorialController extends Controller
 {
 
  //PUBLIK
 	public function tutorial () {
-     	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->Paginate(3);
+     	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->Paginate(3);
 
 	    //Arsip
         $tahun = DB::table('tutorial')
@@ -43,13 +44,13 @@ class TutorialController extends Controller
      return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
     }
 
-    public function search ($id) {
-    	$request->get('input-search');
-    	return $id;
+    public function search ($keywords) {
+    	
+    	return view('search', ['keywords' => $keywords]);
     }
  //END
 
- //USER
+ //US ER 
     public function tampilTutorialUser (){
     	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
 
