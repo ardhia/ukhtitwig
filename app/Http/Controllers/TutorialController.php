@@ -45,10 +45,10 @@ class TutorialController extends Controller
     }
 
     public function search (Request $request) {
-    	$keywords= $request->get('keywords');
-    	$keywords = DB::table('tutorial')->where('Judul_Tutorial', $keywords);
-
-    	return view('search', ['keywords' => $keywords]);
+        $keywords= $request->get('keywords');
+        $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
+        
+        return view('search', ['keywords' => $table]);
     }
  //END
 
