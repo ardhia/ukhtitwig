@@ -39,7 +39,7 @@ class TutorialController extends Controller
     }
 
       public function isi_tutorial () {
-     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
+     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->get();
 
      return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
     }
@@ -54,7 +54,7 @@ class TutorialController extends Controller
 
  //US ER 
     public function tampilTutorialUser (){
-    	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->get();
+    	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->get();
 
     	return view('auth/tutorial', ['tutorial' => $daftartutorial]); 
     }
@@ -80,8 +80,8 @@ class TutorialController extends Controller
 		 $user_insertTutorial= new User_insertTutorial;
 		 $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
 		 $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
-		 if($request->hasFile('Photo_Tutorial')) {
-	            $file = Input::file('Photo_Tutorial');
+		 if($request->hasFile('Photo')) {
+	            $file = Input::file('Photo');
 	            //getting timestamp
 	            
 	            $name = $file->getClientOriginalName();

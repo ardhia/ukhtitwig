@@ -1841,3 +1841,49 @@ body {
 	margin: 10px 20%;
 	width: 22%;
 }
+
+/* search */
+
+.cari {
+	width: 90%;
+	height: auto;
+	float: left;
+	white-space: nowrap;
+	margin-bottom: 4s%;
+	margin-top: 3%;
+
+}
+
+.masuk {
+	width: 8%;
+	height: 28px;
+	background: url(../images/search.jpg);
+	border-radius: 4px;
+	background-size: 100% 100%;
+}
+
+.bungkus-search {
+	width: 90%;
+	height: auto;
+	float: left;
+	margin-bottom: 5%;
+	background: rgba(198, 255, 251, 0.54);
+}
+
+.hasil-search {
+	width: 100%;
+	height: 50px;
+	float: left;
+	margin-bottom: 5%;
+	text-align: left;
+	font-size: 48px;
+	font-family: 'Handlee';
+}
+
+.isi-search {
+	width: 100%;
+	height: 30px;
+	float: left;
+	margin-bottom: 5%;
+	background: pink; 
+}
