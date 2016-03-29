@@ -1852,13 +1852,10 @@ body {
 }
 
 .cari {
-	width: 80%;
+	width: 100%;
 	height: auto;
 	float: left;
 	white-space: nowrap;
-	margin-bottom: 4%;
-	margin-top: 3%;
-	margin-left: 65px;
 
 }
 
@@ -1886,15 +1883,12 @@ body {
 	margin-bottom: 5%;
 	text-align: left;
 	font-size: 48px;
-	font-family: 'Handlee';
 	margin-left: 20px;
 }
 
 .isi-search {
 	width: 90%;
-	height: 30px;
+	height: auto;
 	float: left;
-	margin-bottom: 5%;
-	margin-left: 5%;
 	background: pink; 
 }

@@ -11,7 +11,11 @@
     					</form>
 					</div>
 					<div class="hasil-search">Hasil Pencarian</div>
-					<div class="isi-search"></div>
+					{% for item in keywords %}
+						<div class="isi-search">
+						    {{ item.Judul_Tutorial }}
+						</div>
+					{% endfor %}
 				</div>
 				<div class="paginate">
 					{{ tutorial.render()|raw }}
