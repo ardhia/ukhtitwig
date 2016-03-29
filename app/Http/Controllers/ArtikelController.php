@@ -41,8 +41,8 @@ class ArtikelController extends Controller
 
     //EDIT
      public function tampilEditAdmin ($id){
-        $editartikel = DB::table('artikel')->get();
-        return $id;
+        $id = DB::table('artikel')->get();
+        return view('isi-tutorial').$id;
     }
     //
     public function tampilIsiArtikel () {

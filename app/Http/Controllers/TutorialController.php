@@ -38,10 +38,10 @@ class TutorialController extends Controller
      return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun]);
     }
 
-      public function isi_tutorial () {
-     $daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->get();
+    public function isi_tutorial ($No) {
+        $dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->where('No', $No)->first();
 
-     return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial]);
     }
 
     public function search (Request $request) {

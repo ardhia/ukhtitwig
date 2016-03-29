@@ -12,7 +12,11 @@
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
 					<a href="{{route('tutorial')}}">Tutorial</a>
-					<a href="#" class="active">Judul Tutorial</a>
+					<a href="#" class="active">
+					{% for item in dataTutorial %}
+						{{item.Judul_Tutorial}}
+					{% endfor %}
+					</a>
 				</div>
 			</div>
 		</div>
@@ -21,7 +25,8 @@
 				<div class="content">
 					<div id="tulis">
 						<div class="tanggal">02 februari 2016</div>
-						<div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</div>
+						<div class="title">
+						</div>
 					</div>
 					<div id="out-tulisan">
 						<div class="foto1"></div>
