@@ -15,7 +15,7 @@ class TutorialController extends Controller
 
  //PUBLIK
 	public function tutorial () {
-     	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial')->Paginate(3);
+     	$tutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->Paginate(3);
 
 	    //Arsip
         $tahun = DB::table('tutorial')

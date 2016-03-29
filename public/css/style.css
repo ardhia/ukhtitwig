@@ -1844,13 +1844,21 @@ body {
 
 /* search */
 
+.bungkus-arsip {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: 12%;
+}
+
 .cari {
-	width: 90%;
+	width: 80%;
 	height: auto;
 	float: left;
 	white-space: nowrap;
-	margin-bottom: 4s%;
+	margin-bottom: 4%;
 	margin-top: 3%;
+	margin-left: 65px;
 
 }
 
@@ -1867,6 +1875,7 @@ body {
 	height: auto;
 	float: left;
 	margin-bottom: 5%;
+	margin-top: 5%;
 	background: rgba(198, 255, 251, 0.54);
 }
 
@@ -1878,12 +1887,14 @@ body {
 	text-align: left;
 	font-size: 48px;
 	font-family: 'Handlee';
+	margin-left: 20px;
 }
 
 .isi-search {
-	width: 100%;
+	width: 90%;
 	height: 30px;
 	float: left;
 	margin-bottom: 5%;
+	margin-left: 5%;
 	background: pink; 
 }
