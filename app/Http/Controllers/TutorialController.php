@@ -44,8 +44,10 @@ class TutorialController extends Controller
      return view('/tutorial/isi-tutorial', ['tutorial' => $daftartutorial]);
     }
 
-    public function search ($keywords) {
-    	
+    public function search (Request $request) {
+    	$keywords= $request->get('keywords');
+    	$keywords = DB::table('tutorial')->where('Judul_Tutorial', $keywords);
+
     	return view('search', ['keywords' => $keywords]);
     }
  //END

@@ -1,4 +1,7 @@
 {% extends 'layout' %}
 {% block isi %}
     <h3>Search</h3>
+    {% for item in keywords %}
+        {{item.Judul_Tutorial}}
+    {% endfor %}
 {% endblock %}
