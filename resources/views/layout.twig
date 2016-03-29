@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="{{asset('images/themes/light/light.css')}}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{asset('images/themes/dark/dark.css')}}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{asset('images/themes/bar/bar.css')}}" type="text/css" media="screen" />
-	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'></head>
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
 <body>
 	<div class="all-wrapper">
 		<div id="header">
@@ -29,9 +30,15 @@
 				<div id="log">
 					<ul>
 						<li><a href="{{route('about')}}">About</a></li>
-						<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
-						<li><a href="{{route('tampilkanSignIn')}}">Sign In</a></li>
+						<li><a href="#signUp" data-toggle="modal">Sign Up</a></li>
+						<li><a href="#signIn" data-toggle="modal">Sign In</a></li>
 					</ul>
+				</div>
+				<div class="modal fade" id="signUp" role="dialog">
+					{% include 'auth/register' %}
+				</div>
+				<div class="modal fade" id="signIn" role="dialog">
+					{% include 'auth/login' %}
 				</div>
 			</div>
 			<div class="navigasi">
