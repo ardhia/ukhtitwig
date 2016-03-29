@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript" src="{{asset('js/jquery-1.9.0.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/jquery.nivo.slider.js')}}"></script>
+	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="{{asset('js/nivo-slider.css')}}" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/collapsebutton.css')}}">
-	<link href="{{asset('js/default.css')}}" rel="stylesheet" type="text/css" />
-	<title> Ukhti </title>
-	<script type="text/javascript">
-			$(window).load(function() {
-				$('#slider').nivoSlider();
-			});
-	</script>
-    <link rel="stylesheet" href="{{asset('images/themes/default/default.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('images/themes/light/light.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('images/themes/dark/dark.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('images/themes/bar/bar.css')}}" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/profiltabs.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/media-queries.css')}}" />
 	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="all-wrapper">
@@ -28,9 +18,15 @@
 				<div id="log">
 					<ul>
 						<li><a href="{{route('about')}}">About</a></li>
-						<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
-						<li><a href="{{route('tampilkanSignIn')}}">Sign In</a></li>
+						<li><a href="#signUp" data-toggle="modal">Sign Up</a></li>
+						<li><a href="#signIn" data-toggle="modal">Sign In</a></li>
 					</ul>
+				</div>
+				<div class="modal fade" id="signUp" role="dialog">
+					{% include 'auth/register' %}
+				</div>
+				<div class="modal fade" id="signIn" role="dialog">
+					{% include 'auth/login' %}
 				</div>
 			</div>
 			<div class="navigasi">
