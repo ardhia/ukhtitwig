@@ -1,5 +1,8 @@
-{% extends 'layoutProfil' %}
-{% block isi %}
+{% extends 'Userlayout' %}
+{% block NamaUser %}
+    {{user.name}}
+{% endblock %}
+{% block isiUser %}
 		<div id="bar">
 			<div class="search">
 				<form>
@@ -11,23 +14,23 @@
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
-					<a href="#" class="active">Nama User</a>
+					<a href="#" class="active">{{user.name}}</a>
 				</div>
 			</div>
 		</div>
 		<div id="wrapper">
 			<div class="wrap">
-				<div class="namauser">Ukhti</div>
+				<div class="namauser">{{user.name}}</div>
 				<div class="phobiouser">
 					<div id="photouser"></div>
 					<div id="biodatauser">
-						Tempat tinggal: <br>
-						TTL: <br>
-						Jenis Kelamin: <br>
-						Email: <br>
-						No. Hp: <br>
-						Hal yang disukai: <br>
-						Kutipan Hadits:
+						Alamat: {{user.alamat}} <br>
+						TTL: {{user.tempat_lahir}}, {{user.tanggal_lahir}}<br>
+						Jenis Kelamin: {{user.jenis_kelamin}} <br>
+						Email: {{user.email}}<br>
+						No. Hp: {{user.no_hp}}<br>
+						Hal yang disukai: {{user.kesukaan}}<br>
+						Kutipan Hadits: {{user.kutipan}}
 					</div>
 				</div>
 				<div class="contentuser">
@@ -59,7 +62,6 @@
 								<table border="1">
 									<tr>
 										<th>No</th>
-										<th>Creator</th>
 										<th>Judul Toko</th>
 										<th>Harga</th>
 										<th>Jenis Barang</th>
@@ -69,7 +71,6 @@
 									{% for table in tutorial %}
 									<tr>
 										<td>{{table.idToko}}</td>
-										<td>{{table.email}}</td>
 										<td>{{table.judulToko}}</td>
 										<td>{{table.harga}}</td>
 										<td>{{table.jb|raw }}</td>
@@ -85,7 +86,6 @@
 								<table border="1">
 									<tr>
 										<th>No</th>
-										<th>Creator</th>
 										<th>Judul Artikel</th>
 										<th>Isi Artikel</th>
 										<th>Action</th>
@@ -93,7 +93,6 @@
 									{% for table in artikel %}
 									<tr>
 										<td>{{table.No}}</td>
-										<td>{{table.email}}</td>
 										<td>{{table.Judul_Artikel}}</td>
 										<td>{{table.Isi_Artikel|raw }}</td>
 										<td><button value="Create" class="ced">Create</button>
@@ -107,7 +106,6 @@
 								<table border="1">
 									<tr>
 										<th>No</th>
-										<th>Creator</th>
 										<th>Judul Tutorial</th>
 										<th>Isi Tutorial</th>
 										<th>Action</th>
@@ -115,7 +113,6 @@
 									{% for table in tutorial %}
 									<tr>
 										<td>{{table.No}}</td>
-										<td>{{table.email}}</td>
 										<td>{{table.Judul_Tutorial}}</td>
 										<td>
 										{{table.Isi_Tutorial|raw }}

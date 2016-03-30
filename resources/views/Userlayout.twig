@@ -2,24 +2,22 @@
 <html lang="en">
 <head>	
 	<meta charset="utf-8" />
-	<script type="text/javascript" src="{{asset('js/jquery-1.9.0.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/jquery.nivo.slider.js')}}"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="{{asset('js/nivo-slider.css')}}" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/media-queries.css')}}" />
-	<link href="{{asset('js/default.css')}}" rel="stylesheet" type="text/css" />
-	<title> Ukhti </title>
-	<script type="text/javascript">
-			$(window).load(function() {
-				$('#slider').nivoSlider();
-			});
+	<link rel="stylesheet" type="text/css" href="{{asset('css/profiltabs.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/media-queries.css')}}"/>
+	<title>{{ block('NamaUser') }}</title>
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script src='https://kang-is.googlecode.com/svn/trunk/javascript/tinyscrollbar.js' type='text/javascript'/>
+  	<script type='text/javascript'>
+		//<![CDATA[
+			$('#scrollbar1').tinyscrollbar({ axis: 'y'});
+			$('#scrollbar2').tinyscrollbar({ axis: 'x'});
+		//]]>
 	</script>
-    <link rel="stylesheet" href="{{asset('images/themes/default/default.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('images/themes/light/light.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('images/themes/dark/dark.css')}}" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{asset('images/themes/bar/bar.css')}}" type="text/css" media="screen" />
-	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'></head>
+</head>
 <body>
 	<div class="all-wrapper">
 		<div id="header">
@@ -27,35 +25,64 @@
 				<a href="/"><div id="logo">Ukhti</div></a>
 				<div id="log">
 					<ul>
+	    				<li><a href="{{route('profilUser')}}">{{user.name}}</a></li>
 						<li><a href="{{route('about')}}">About</a></li>
-						<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
-						<li><a href="{{route('tampilkanSignIn')}}">Log Up</a></li>
+	    				<li><a href="{{route('logoutUser')}}">Log Out</a></li>
 					</ul>
 				</div>
+				<div class="modal fade" id="signUp" role="dialog">
+					{% include 'auth/register' %}
+				</div>
+				<div class="modal fade" id="signIn" role="dialog">
+					{% include 'auth/login' %}
+				</div>
 			</div>
-			<div class="nav">
+			<div class="navigasi">
 				<ul>
-					<div class="nav-in"><li><a href="{{route('toko')}}">Toko</a></li></div>
-					<div class="nav-in"><li><a href="{{route('artikel')}}">Artikel</a></li></div>
-					<div class="nav-in"><li><a href="{{route('tutorial')}}">Tutorial</a></li></div>
-					<div class="nav-in"><li><a href="{{route('hadits')}}">Hadits</a></li></div>
+					<div class="navigasi-in"><li><a href="{{route('toko')}}">Toko</a></li></div>
+					<div class="navigasi-in"><li><a href="{{route('artikel')}}">Artikel</a></li></div>
+					<div class="navigasi-in"><li><a href="{{route('tutorial')}}">Tutorial</a></li></div>
+					<div class="navigasi-in"><li><a href="{{route('hadits')}}">Hadits</a></li></div>
 				</ul>
 			</div>
 		</div>
-		{{ block('isi') }}
+		{{ block('isiUser') }}
 		<div id="footer">
 			<div id="logoF"><a href="{{route('/')}}"> Ukhti </a></div>
 			<div class="info">
 				<div id="kontak">
-					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel"><div id="icon-fb"></div></a>
-					<a href=""><div id="icon-twitt"></div></a>
-					<div id="icon-g"></div>
-					<div id="icon-kontak"></div>
+					<a href="https://www.facebook.com/ukhtiwebsiteinformation/?ref=aymt_homepage_panel" target="_blank"><div id="icon-fb"></div></a>
+					<a href="https://twitter.com/Ukhti19f" target="_blank"><div id="icon-twitt"></div></a>
+					<div id="icon">
+						<ul>
+							<li>
+								<a href="https://plus.google.com/u/0/102599475103197283643/" target="_blank">
+									<img src="{{asset('images/g.png')}}" width="100%" height="100%" />
+								</a>
+								<ul>
+									<li> ukhti19f16@gmail.com </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div id="icon">
+						<ul>
+							<li>
+								<img src="{{asset('images/kontak.png')}}" width="100%" height="100%" />
+								<ul>
+									<li> 082216631084 </li>
+									<li> 082319711511 </li>
+									<li> 089612754898 </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div id="subscribe">
 					<div class="judul-subscribe">Berlangganan Artikel di Ukhti Yuu..</div>
-					<form class="form-subscribe">
-						<input name="mail" placeholder="Your E-mail Address" class="input-subscribe" type="email">
+					<form class="form-subscribe" method="POST" action="{{route('simpanLangganan')}}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
+						<input name="email" placeholder="Your E-mail Address" class="input-subscribe" type="email">
 						<input name="subscribe" value="Subscribe Now!" class="submit-subscribe" type="submit">
 					</form>
 				</div>
