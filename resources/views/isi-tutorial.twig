@@ -13,9 +13,7 @@
 					<a href="{{route('/')}}">Home</a>
 					<a href="{{route('tutorial')}}">Tutorial</a>
 					<a href="#" class="active">
-					{% for item in dataTutorial %}
-						{{item.Judul_Tutorial}}
-					{% endfor %}
+						{{dataTutorial.Judul_Tutorial}}
 					</a>
 				</div>
 			</div>
@@ -24,13 +22,12 @@
 			<div class="wrap">
 				<div class="content">
 					<div id="tulis">
-						<div class="tanggal">02 februari 2016</div>
-						<div class="title">
-						</div>
+						<div class="tanggal">{{dataTutorial.created_at}}</div>
+						<div class="title">{{dataTutorial.Judul_Tutorial}}</div>
 					</div>
 					<div id="out-tulisan">
-						<div class="foto1"></div>
-						<div class="tulisan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+						<div class="foto1">{{dataTutorial.Photo}}</div>
+						<div class="tulisan">{{dataTutorial.Isi_Tutorial}}</div>
 					</div>
 					<div id="tampil-komentar"></div>
 					<div id="comment">
