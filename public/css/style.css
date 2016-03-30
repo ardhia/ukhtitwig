@@ -742,12 +742,14 @@ body {
 }
 
 #photouser {
-	background: #00C9FF;
+	background: url(../images/photoProfil.jpg);
+	background-size: 100% 100%;
 	width: 85%;
-	height: 250px;
+	height: 291px;
 	float: left;
 	padding: 2px 2%;
 	margin: 10px 5%;
+	border-radius: 27px;
 }
 
 #biodatauser {
