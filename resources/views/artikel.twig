@@ -6,9 +6,9 @@
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<div id="bar">
 			<div class="search">
-				<form>
-					<input type="text" name="input-search" placeholder="Search" class="text"></input>
-					<input type="submit" name="search" value="" class="submit"></input>
+				<form method="get" action="{{url('artikel/searchartikel')}}">
+					<input type="text" name="keywords" placeholder="Search" class="text"></input>
+					<input type="submit" value="" class="submit"></input>
 				</form>
 			</div>
 			<div class="_breadcrumb">

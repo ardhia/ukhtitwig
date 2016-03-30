@@ -106,15 +106,17 @@ Route::group(['middleware' => ['web']], function () {
 
     //Hadits
     Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
+    Route::get('/hadits/searchhadits', 'HaditsController@search')->name('hadits.search');
 
     //Artikel
     Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
-    Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
+    Route::get('/artikel/content/{No}', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
+    Route::get('/artikel/searchartikel', 'ArtikelController@search')->name('artikel.search');
 
     //Tutorial
     Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
     Route::get('/tutorial/content/{No}', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
-    Route::get('/tutorial/search', 'TutorialController@search')->name('tutorial.search');
+    Route::get('/tutorial/searchtutorial', 'TutorialController@search')->name('tutorial.search');
 
     /*
     |--------------------------------------------------------------------------
