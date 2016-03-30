@@ -45,8 +45,10 @@ class ArtikelController extends Controller
         return view('isi-tutorial').$id;
     }
     //
-    public function tampilIsiArtikel () {
-        return view('isi-artikel');
+    public function tampilIsiArtikel ($No) {
+        $dataArtikel = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo', 'created_at')->where('No', $No)->first();
+        //dd($dataTutorial);
+        return view('isi-artikel', ['dataArtikel' => $dataArtikel]);
     }
 
     //END
