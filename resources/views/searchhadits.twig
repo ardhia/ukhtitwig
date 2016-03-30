@@ -13,12 +13,12 @@
 					<div class="hasil-search">Hasil Pencarian</div>
 					{% for item in keywords %}
 						<div class="isi-search">
-						    {{ item.Judul_Tutorial }}
+						    {{ item.Isi_Hadits}|str_words(10)}}
 						</div>
 					{% endfor %}
 				</div>
 				<div class="paginate">
-					{{ tutorial.render()|raw }}
+					{{ hadits.render()|raw }}
 				</div>
 			</div>
 			<div class="rightKet">

@@ -4,8 +4,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 	<script type="text/javascript" src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
-	<script>tinymce.init({ 
-		selector:'textarea',
+	<script>tinymce.init({ selector:'textarea',
 		plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste", "emoticons template paste textcolor"],
 
    		toolbar : "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons",
@@ -34,20 +33,20 @@
 		</div>
 		<div id="wrapper">
 			<div class="bungkus-art">
-				<form enctype="multipart/form-data" method="post" action="{{route('prosesTutorial')}}"> 
-				<div class="bungkus-tool-judul">
-						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art" value="aplah"> apalahapalah</input>
-						<input type="file" name="Photo_Tutorial" class="photo"></input>
+				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
+					<div class="bungkus-tool-judul">
+						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art"> </input>
+						<input type="file" name="Photo" class="photo"></input>
 						<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
 						<div class="bungkus-isiArtikel">
-							<textarea name="Isi_Tutorial">hayyyyyyyohh</textarea>
+							<textarea name="Isi_Artikel" class="isi-art"></textarea>
 						</div>
-						<input type="submit" name="publish" value="Publish" class="push"></input>
+						<input type="submit" name="publish" value="Sunting" class="push"></input>
 					</div>
 				</form>
-			</div>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+

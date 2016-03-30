@@ -12,9 +12,7 @@
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
 					<a href="{{route('artikel')}}">Artikel</a>
-					<a href="#" class="active">
-						{{dataArtikel.Judul_Artikel}}
-					</a>
+					<a href="#" class="active">{{dataArtikel.Judul_Artikel}}</a>
 				</div>
 			</div>
 		</div>
@@ -28,7 +26,7 @@
 						</div>
 						<div id="out-tulisan">
 							<div class="foto1">{{dataArtikel.Photo}}</div>
-							<div class="tulisan">{{dataArtikel.Isi_Artikel}}</div>
+							<div class="tulisan">{{dataArtikel.Isi_Artikel|raw}}</div>
 						</div>
 					</div>
 					<div id="tampil-komentar"></div>

@@ -101,7 +101,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/toko/sepatu', 'SepatuController@tampilSepatu')->name('toko.sepatu');
     Route::get('/toko/kerudung', 'KerudungController@tampilKerudung')->name('toko.kerudung');
     Route::get('/toko/tas', 'TasController@tampilTas')->name('toko.tas');
+    
     Route::get('/toko/aksesoris', 'AksesorisController@tampilAksesoris')->name('toko.aksesoris');
+    Route::get('/toko/aksesoris/searchaksesoris', 'AksesorisController@search')->name('toko.aksesoris-search');
+    
     Route::get('/toko/dll', 'LainnyaController@tampilDll')->name('toko.dll');
 
     //Hadits
@@ -112,6 +115,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
     Route::get('/artikel/content/{No}', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
     Route::get('/artikel/searchartikel', 'ArtikelController@search')->name('artikel.search');
+
 
     //Tutorial
     Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
@@ -150,6 +154,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
     Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
     Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
+    //edit delete artikel
     Route::get('artikel/{id}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
 
     //table Artikel
