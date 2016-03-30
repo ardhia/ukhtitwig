@@ -109,7 +109,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //Artikel
     Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
-    Route::get('/artikel/isi-artikel', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
+    Route::get('/artikel/content/{No}', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
 
     //Tutorial
     Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
