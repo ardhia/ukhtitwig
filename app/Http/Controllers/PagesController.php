@@ -38,10 +38,6 @@ class PagesController extends Controller
         return view('auth\about');
     }
 
-    public function profilUser (Request $request) {
-        $user = Auth::user();
-        return view('auth\profilU', ['user' => $user ]);
-    }
 
     
     //END

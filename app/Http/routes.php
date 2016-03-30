@@ -40,7 +40,7 @@ Route::group(['middleware' => ['web']], function () {
 	//Home About Profil
     Route::get('auth/', ['middleware' => 'auth.basic', 'uses' => 'PagesController@homeUser'])->name('homeUser');
     Route::get('auth/about', ['middleware' => 'auth.basic', 'uses' => 'PagesController@aboutUser'])->name('aboutUser');
-	Route::get('auth/profilU', ['middleware' => 'auth.basic', 'uses' => 'PagesController@profilUser'])->name('profilUser');
+	Route::get('auth/profilU', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@profilUser'])->name('profilUser');
     
     //Toko
     Route::get('auth/toko', ['middleware' => 'auth.basic', 'TokoController@tampilTokoUser'])->name('tokoUser');
