@@ -149,7 +149,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
     Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
     //edit delete artikel
-    Route::get('artikel/{id}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
+    Route::get('artikel/{No}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
 
     //table Artikel
     Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');

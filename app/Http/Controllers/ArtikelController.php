@@ -114,9 +114,10 @@ class ArtikelController extends Controller
 
 
     //EDIT
-     public function tampilEditAdmin ($id){
-        $dataartikel = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo')->where('No', $id)->first();
-        return view('admin/editAdmin', ['dataartikel', $dataartikel]);
+     public function tampilEditAdmin ($No){
+        $artikelini = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo')->where('No', $No)->first();
+
+        return view('admin/editAdmin', ['artikelini' => $artikelini ]);
     }
 
 
