@@ -34,8 +34,6 @@ class ArtikelController extends Controller
         }
         //dd($tahun);
         //exit;
-
-
     	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun]);
     }
 
