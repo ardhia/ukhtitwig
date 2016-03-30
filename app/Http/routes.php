@@ -113,7 +113,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //Tutorial
     Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
-    Route::get('/tutorial/{No}', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
+    Route::get('/tutorial/content/{No}', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
     Route::get('/tutorial/search', 'TutorialController@search')->name('tutorial.search');
 
     /*

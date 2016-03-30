@@ -39,8 +39,8 @@ class TutorialController extends Controller
     }
 
     public function isi_tutorial ($No) {
-        $dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->where('No', $No)->first();
-
+        $dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
+        //dd($dataTutorial);
         return view('isi-tutorial', ['dataTutorial' => $dataTutorial]);
     }
 
