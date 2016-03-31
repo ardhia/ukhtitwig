@@ -9,6 +9,8 @@ use App\User_insertTutorial;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class TutorialController extends Controller
 {
@@ -50,37 +52,70 @@ class TutorialController extends Controller
         
         return view('search', ['keywords' => $table]);
     }
- //END
+     //END
 
- //US ER 
+    //USER 
     public function tampilTutorialUser (){
     	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->get();
 
     	return view('auth/tutorial', ['tutorial' => $daftartutorial]); 
     }
 
-	 public function tutorialUser () {
-	  return view('auth/tutorial');
+	public function tutorialUser () {
+	   return view('auth/tutorial');
+	   }
+
+	public function isi_tutorialUser (){
+	   return view('auth/isi-tutorial');
 	 }
 
-	 public function isi_tutorialUser (){
-	  return view('auth/isi-tutorial');
-	 }
+	public function user_insertTutorial (){
+        return view('auth/user_insertTutorial');
+	}
 
-	 public function user_insertTutorial (){
-	  return view('auth/user_insertTutorial');
-	 }
+    public function user_editTutorial ($No){
+        $user = Auth::user();
 
-	 public function prosesUser_insertTutorial (Request $request) {
+        $isiTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->where('No', $No)->first();
+        //dd($isiTutorial, $user);
+        //exit;
+        return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial]);
+    }
+
+    public function prosesUser_editTutorial (Request $request) {
+        $this->validate($request, [
+        'Judul_Tutorial' => 'required',
+        'Isi_Tutorial' => 'required',
+        'Photo' => 'required|unique:tutorial|max:255',
+        ]);
+        $user_insertTutorial= new User_insertTutorial;
+        $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
+        $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+        if($request->hasFile('Photo')) {
+                $file = Input::file('Photo');
+                //getting timestamp
+                
+                $name = $file->getClientOriginalName();
+                
+                $user_insertTutorial->Photo = $name;
+
+                $file->move(public_path().'/uploadPhoto/tutorial/', $name);
+            }
+            $user_insertTutorial->save();
+
+        return Redirect::to('auth/profilU/user_insertTutorial');
+    }
+
+	public function prosesUser_insertTutorial (Request $request) {
         $this->validate($request, [
         'Judul_Tutorial' => 'required',
         'Isi_Tutorial' => 'required',
         'Photo_Tutorial' => 'required|unique:tutorial|max:255',
         ]);
-		 $user_insertTutorial= new User_insertTutorial;
-		 $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
-		 $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
-		 if($request->hasFile('Photo')) {
+		$user_insertTutorial= new User_insertTutorial;
+		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
+		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+        if($request->hasFile('Photo')) {
 	            $file = Input::file('Photo');
 	            //getting timestamp
 	            
@@ -90,10 +125,10 @@ class TutorialController extends Controller
 
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }
-		 $user_insertTutorial->save();
+            $user_insertTutorial->save();
 
-		  return Redirect::to('auth/profilU/user_insertTutorial');
-	 }
+		return Redirect::to('auth/profilU/user_insertTutorial');
+    }
 
    
 

@@ -747,6 +747,10 @@ body {
 	border-radius: 27px;
 }
 
+.photoProfil {
+	width: 100%;
+}
+
 #biodatauser {
 	width: 85%;
 	height: auto;
