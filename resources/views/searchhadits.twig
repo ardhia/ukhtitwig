@@ -1,5 +1,9 @@
 {% extends 'layout' %}
 {% block isi %}
+	<link rel="stylesheet" type="text/css" href="{{asset('css/arsipcollapse.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<div id="wrapper">
 		<div class="wrap">
 			<div class="content">
@@ -13,7 +17,7 @@
 					<div class="hasil-search">Hasil Pencarian</div>
 					{% for item in keywords %}
 						<div class="isi-search">
-						    {{ item.Isi_Hadits}|str_words(10)}}
+						    {{item.Isi_Hadits|str_words (10)}}
 						</div>
 					{% endfor %}
 				</div>
@@ -27,38 +31,38 @@
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
 							<div class="panel-group" id="accordion">
-								{% for item in tahun %}
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#tahun-{{item.tahun}}">{{item.tahun}}</a>
-											</h4>
-											({{item.total}})
-										</div>
-										<div id="tahun-{{item.tahun}}" class="panel-collapse collapse in">
-											<div class="panel-body">
-												<div class="panel-group" id="{{item.tahun}}-accordion">
-													{% for bulan in item.bulan %}
-														<div class="panel panel-default">
-															<div class="panel-heading">
-																<h4 class="panel-title">
-																	<a data-toggle="collapse" data-parent="#{{item.tahun}}-accordion" href="#bulan-{{bulan.bulan}}">{{bulan.bulan}}</a>
-																</h4>
-																({{bulan.jumlah}})
-															</div>
-															<div id="bulan-{{bulan.bulan}}" class="panel-collapse collapse in">
-																<div class="panel-body">
-																	<a href="#link">Buat linknya</a>
-																</div>
-															</div>
-														</div>
-													{% endfor %}
-												</div>
-											</div>
-										</div>
-									</div>
-								{% endfor %}
-							</div>
+							  	{% for item in Riwayat %}
+							    	<div class="panel panel-default">
+								      	<div class="panel-heading">
+								        	<h4 class="panel-title">
+								          		<a data-toggle="collapse" data-parent="#accordion" href="#Riwayat-{{item.Riwayat}}">{{item.Riwayat}}</a>
+								        	</h4>
+								        	({{item.total}})
+								      	</div>
+								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
+								        	<div class="panel-body">
+									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
+										          	{% for link in item.link %}
+										            	<div class="panel panel-default">
+											              	<div class="panel-heading">
+											                	<h4 class="panel-title">
+											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#Sumber_HR-{Sumber_HR.Sumber_HR}}">{{Sumber_HR.Sumber_HR}}</a>
+											                	</h4>
+											                	({{Sumber_HR.jumlah}})
+											              	</div>
+											              	<div id="Sumber_HR-{{Sumber_HR.Sumber_HR}}" class="panel-collapse collapse in">
+											                	<div class="panel-body">
+											                		<a href="#link">Buat linknya</a>
+											                	</div>
+											              	</div>
+										            	</div>
+										            {% endfor %}
+									          	</div>
+								        	</div>
+								      	</div>
+							    	</div>
+							    {% endfor %}
+						  	</div>
 						</div>
 					</div>
 				</div>

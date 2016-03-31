@@ -32,8 +32,8 @@ class HaditsController extends Controller
         //exit;
         return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat ]);
     }
-    
-    public function search (Requests $request) {
+
+    public function search (Request $request) {
         $keywords = $request->get('keywords');
         $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->get();
 
