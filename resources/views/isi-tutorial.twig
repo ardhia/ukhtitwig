@@ -21,13 +21,15 @@
 		<div id="wrapper">
 			<div class="wrap">
 				<div class="content">
-					<div id="tulis">
-						<div class="tanggal">{{dataTutorial.created_at}}</div>
-						<div class="title">{{dataTutorial.Judul_Tutorial}}</div>
-					</div>
-					<div id="out-tulisan">
-						<div class="foto1">{{dataTutorial.Photo}}</div>
-						<div class="tulisan">{{dataTutorial.Isi_Tutorial|raw}}</div>
+					<div id="bungkus-tulisan">
+						<div id="tulis">
+							<div class="tanggal">{{dataTutorial.created_at}}</div>
+							<div class="title">{{dataTutorial.Judul_Tutorial}}</div>
+						</div>
+						<div id="out-tulisan">
+							<div class="foto1">{{dataTutorial.Photo}}</div>
+							<div class="tulisan">{{dataTutorial.Isi_Tutorial|raw}}</div>
+						</div>
 					</div>
 					<div id="tampil-komentar"></div>
 					<div id="comment">

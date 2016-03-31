@@ -19,13 +19,15 @@
 		<div id="wrapper">
 			<div class="wrap">
 				<div class="content">
-					<div id="tulis">
-						<div class="tanggal">{{dataArtikel.created_at}}</div>
-						<div class="title">{{dataArtikel.Judul_Artikel}}</div>
-					</div>
-					<div id="out-tulisan">
-						<div class="foto1"><img src="/uploadPhoto/artikel/{{dataArtikel.Photo}}" width="100%" height="100%"></div>
-						<div class="tulisan">{{dataArtikel.Isi_Artikel|raw}}</div>
+					<div id="bungkus-tulisan">
+						<div id="tulis">
+							<div class="tanggal">{{dataArtikel.created_at}}</div>
+							<div class="title">{{dataArtikel.Judul_Artikel}}</div>
+						</div>
+						<div id="out-tulisan">
+							<div class="foto1">{{dataArtikel.Photo}}</div>
+							<div class="tulisan">{{dataArtikel.Isi_Artikel|raw}}</div>
+						</div>
 					</div>
 					<div id="tampil-komentar"></div>
 					<div id="comment">

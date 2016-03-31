@@ -17,13 +17,14 @@ class DatabaseSeeder extends Seeder
         //$this->call(DllTableSeeder::class);
         //$this->call(ArtikelTableSeeder::class); 
         //$this->call(TutorialTableSeeder::class);
+        //$this->call(HaditsTableSeeder::class);
 
     	//$this->call(MakananTableSeeder::class);
     	//$this->call(PakaianTableSeeder::class);
     	//$this->call(AksesorisTableSeeder::class);
     	//$this->call(SepatuTableSeeder::class);
     	//$this->call(TasTableSeeder::class);
-        $this->call(SubscribeTableSeeder::class);
+        //$this->call(SubscribeTableSeeder::class);
 
 
 

@@ -39,8 +39,9 @@ class TutorialController extends Controller
     }
 
     public function isi_tutorial ($No) {
-        $dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
-        //dd($dataTutorial);
+    	$dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
+      //dd($dataTutorial);
+
         return view('isi-tutorial', ['dataTutorial' => $dataTutorial]);
     }
 
@@ -48,7 +49,7 @@ class TutorialController extends Controller
         $keywords= $request->get('keywords');
         $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
         
-        return view('search', ['keywords' => $table]);
+        return view('searchtutorial', ['keywords' => $table]);
     }
  //END
 

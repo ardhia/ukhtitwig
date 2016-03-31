@@ -4,46 +4,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<div id="bar">
-			<div class="search">
-				<form method="get" action="{{url('hadits/searchhadits')}}">
-					<input type="text" name="keywords" placeholder="Search" class="text"></input>
-					<input type="submit" value="" class="submit"></input>
-				</form>
-			</div>
-			<div class="_breadcrumb">
-				<!-- another version - flat style with animated hover effect -->
-				<div class="breadcrumb flat">
-					<a href="{{route('/')}}">Home</a>
-					<a href="#" class="active">Hadits</a>
-				</div>
-			</div>
-		</div>
-		<div id="wrapper">
-			<div class="wrap">
-				<div class="content">
-					{% for isi in hadits %}
-						<div id="artikel">
-							<div class="judul-artikel">
-							{{isi.Sumber_HR}}
-							</div>
-							<div class="out-artikel">
-							{{isi.Isi_Hadits}}
-							</div>
+	<div id="wrapper">
+		<div class="wrap">
+			<div class="content">
+				<div class="bungkus-search">
+					<div class="cari">
+    					<form method="get" action="{{url('hadits/searchhadits')}}">
+    						<input type="text" name="keywords" placeholder="Search" class="text"</input>
+    						<input type="submit" value="" class="submit"></input>
+    					</form>
+					</div>
+					<div class="hasil-search">Hasil Pencarian</div>
+					{% for item in keywords %}
+						<div class="isi-search">
+						    {{item.Isi_Hadits|str_words (10)}}
 						</div>
 					{% endfor %}
-					<div class="paginate">
-						{{ hadits.render()|raw }}
-					</div>
 				</div>
-				<div class="rightKet">
-					<div id="arsip">
-						<div class="judul">Keterangan</div>
-						<div class="isi-ket"> 
-							Assalamualaikum Ukhti ^^ Laman ini berisi hadits shahih tentang wanita. Semoga bermanfaat^^
-						</div>
-					</div>
-					<div id="arsip">
+				<div class="paginate">
+					{{ hadits.render()|raw }}
+				</div>
+			</div>
+			<div class="rightKet">
+				<div class="bungkus-arsip">
+					<div id="arsip">	
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
 							<div class="panel-group" id="accordion">
@@ -62,11 +46,11 @@
 										            	<div class="panel panel-default">
 											              	<div class="panel-heading">
 											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#link-{link.Sumber_HR}}">{{link.Sumber_HR}}</a>
+											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#Sumber_HR-{Sumber_HR.Sumber_HR}}">{{Sumber_HR.Sumber_HR}}</a>
 											                	</h4>
-											                	({{link.jumlah}})
+											                	({{Sumber_HR.jumlah}})
 											              	</div>
-											              	<div id="link-{{link.Sumber_HR}}" class="panel-collapse collapse in">
+											              	<div id="Sumber_HR-{{Sumber_HR.Sumber_HR}}" class="panel-collapse collapse in">
 											                	<div class="panel-body">
 											                		<a href="#link">Buat linknya</a>
 											                	</div>
@@ -84,4 +68,5 @@
 				</div>
 			</div>
 		</div>
+	</div>
 {% endblock %}
