@@ -1,5 +1,9 @@
 {% extends 'layout' %}
 {% block isi %}
+	<link rel="stylesheet" type="text/css" href="{{asset('css/arsipcollapse.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<div id="bar">
 			<div class="search">
 				<form method="get" action="{{url('hadits/searchhadits')}}">
@@ -34,7 +38,7 @@
 				</div>
 				<div class="rightKet">
 					<div id="arsip">
-						<div class="judul">Ke)terangan</div>
+						<div class="judul">Keterangan</div>
 						<div class="isi-ket"> 
 							Assalamualaikum Ukhti ^^ Laman ini berisi hadits shahih tentang wanita. Semoga bermanfaat^^
 						</div>
@@ -58,12 +62,11 @@
 										            	<div class="panel panel-default">
 											              	<div class="panel-heading">
 											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#link-{Riwayat.link}}">{{link.
-											                  		link}}</a>
+											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#link-{link.Sumber_HR}}">{{link.Sumber_HR}}</a>
 											                	</h4>
 											                	({{link.jumlah}})
 											              	</div>
-											              	<div id="link-{{Riwayat.link}}" class="panel-collapse collapse in">
+											              	<div id="link-{{link.Sumber_HR}}" class="panel-collapse collapse in">
 											                	<div class="panel-body">
 											                		<a href="#link">Buat linknya</a>
 											                	</div>
