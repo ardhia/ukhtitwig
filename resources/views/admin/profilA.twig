@@ -32,6 +32,7 @@
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="tableArtikel">
 					<div id="wrapper">
+					<div class="scroll">
 						<table border="1">
 							<tr>
 								<th>No</th>
@@ -46,16 +47,18 @@
 								<td>{{table.email}}</td>
 								<td>{{table.Judul_Artikel}}</td>
 								<td>{{table.Isi_Artikel|raw }}</td>
-								<td><button value="Create" class="ced">Create</button>
-								<a href="{{route('editAdmin', {id: table.No})}}"><button value="Edit" class="edit" >Edit</button></a>
+								<td>
+								<a href="{{route('editAdmin', {No: table.No})}}"><button value="Edit" id="edit" >Edit</button></a>
 								<button value="Delete" class="ced">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
 					</div>
+					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableTutorial">
 					<div id="wrapper">
+					<div class="scroll">
 						<table border="1">
 							<tr>
 								<th>No</th>
@@ -72,16 +75,18 @@
 								<td>
 								{{table.Isi_Tutorial|raw }}
 								</td>
-								<td><button value="Create" class="ced">Create</button>
-								<button value="Edit" class="edit1">Edit</button>
+								<td>
+								<a href="{{route('editAdmintutor', {No: table.No})}}"><button value="Edit" class="edit1">Edit</button></a>
 								<button value="Delete" class="ced">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
 					</div>
+					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableToko">
 					<div id="wrapper">
+					<div class="scroll">
 						<table border="1">
 							<tr>
 								<th>No</th>
@@ -100,16 +105,18 @@
 								<td>{{table.harga}}</td>
 								<td>{{table.jb|raw }}</td>
 								<td>{{table.ketToko|raw }}</td>
-								<td><button value="Create" class="tk">Create</button>
-								<button value="Edit" class="tk1">Edit</button>
+								<td>
+								<a href="{{route('editAdminToko', {No: table.idToko})}}"><button value="Edit" class="tk1">Edit</button></a>
 								<button value="Delete" class="tk">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
 					</div>
+					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableSubscribe">
 					<div id="wrapper">
+					<div class="scroll">
 						<table border="1">
 							<tr>
 								<th>No</th>
@@ -120,12 +127,13 @@
 							<tr>
 								<td>{{table.Id}}</td>
 								<td>{{table.email}}</td>
-								<td><button value="Create" class="subs">Create</button>
+								<td>
 								<button value="Edit" class="subs1">Edit</button>
 								<button value="Delete" class="subs">Delete</button></td>
 							</tr>
 							{% endfor %}
 						</table>
+					</div>
 					</div>
 				</div>
   			</div>

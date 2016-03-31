@@ -123,13 +123,7 @@ class ArtikelController extends Controller
         return view('admin/isi-artikel');
     }
 
-
-
-    //EDIT
-     /*public function tampilEditAdmin ($id){
-        $dataartikel = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo')->where('No', $id)->first();
-        return view('admin/editAdmin', ['dataartikel', $dataartikel]);
-    }*/
+    
 
 
     //END

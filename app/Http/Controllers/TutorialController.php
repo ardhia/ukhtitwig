@@ -114,5 +114,12 @@ class TutorialController extends Controller
     	$file = $request->file('photo');
     }
 
+    //edit admin
+    public function tampilEditTutorial ($No){
+        $tutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->where('No', $No)->first();
+
+        return view('admin/editAdmintutor', ['tutorial' => $tutorial]);
+    }
+
  //END
 }
