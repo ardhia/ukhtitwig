@@ -308,11 +308,16 @@ body {
 	margin: 5px 10%;
 }
 
-#tulis {
+#bungkus-tulisan {
 	width: 90%;
 	height: auto;
 	float: left;
-	margin-bottom: 20px;
+}
+
+#tulis {
+	width: 100%;
+	height: auto;
+	float: left;
 }
 
 .tanggal {
@@ -335,9 +340,9 @@ body {
 }
 
 #out-tulisan {
-	width: 86%;
+	width: 100%;
 	height: auto;
-	padding: 8px 2%;
+	padding: 19px 0%;
 	float: left;
 	background: rgba(198, 255, 251, 0.54);
 }
@@ -346,7 +351,7 @@ body {
 	width: 48%;
 	height: 202px;
 	float: left;
-	margin: 5px 25%;
+	margin: 5px 25% 3%;
 	background: green;
 }
 

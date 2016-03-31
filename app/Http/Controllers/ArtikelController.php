@@ -37,10 +37,24 @@ class ArtikelController extends Controller
     	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun]);
     }
 
+
+    public function search (Request $request) {
+        $keywords= $request->get('keywords');
+        $table = DB::table('artikel')->select('Judul_Artikel')->where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->get();
+        
+        return view('searchartikel', ['keywords' => $table]);
+    }
+
+    //EDIT
+     public function tampilEditAdmin ($id){
+        $id = DB::table('artikel')->get();
+        return view('isi-tutorial').$id;
+    }
     //
     public function tampilIsiArtikel ($No) {
         $dataArtikel = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo', 'created_at')->where('No', $No)->first();
         //dd($dataTutorial);
+
         return view('isi-artikel', ['dataArtikel' => $dataArtikel]);
     }
 
@@ -109,14 +123,7 @@ class ArtikelController extends Controller
         return view('admin/isi-artikel');
     }
 
-
-
-    //EDIT
-     public function tampilEditAdmin ($No){
-        $artikelini = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo')->where('No', $No)->first();
-
-        return view('admin/editAdmin', ['artikelini' => $artikelini ]);
-    }
+    
 
 
     //END

@@ -14,6 +14,13 @@ class AksesorisController extends Controller
 		return view('aksesoris', ['toko' => $daftartoko]);
 	}
 
+	public function search (Request $request){
+		$keywords = $request->get('keywords');
+		$table = DB::table('aksesoris')->select('judulToko')->where('jb', 'Aksesoris', 'judulToko', 'LIKE', '%' .$keywords. '%')->get();
+
+		return view('toko/aksesoris/searchaksesoris', ['keywords' => $table]);
+	}
+
 	public function tampilAksesorisUser (){
     	$daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb', 'ketToko')->where('jb', 'Aksesoris')->Paginate(12);
     	

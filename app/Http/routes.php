@@ -105,20 +105,26 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/toko/sepatu', 'SepatuController@tampilSepatu')->name('toko.sepatu');
     Route::get('/toko/kerudung', 'KerudungController@tampilKerudung')->name('toko.kerudung');
     Route::get('/toko/tas', 'TasController@tampilTas')->name('toko.tas');
+    
     Route::get('/toko/aksesoris', 'AksesorisController@tampilAksesoris')->name('toko.aksesoris');
+    Route::get('/toko/aksesoris/searchaksesoris', 'AksesorisController@search')->name('toko.aksesoris-search');
+    
     Route::get('/toko/dll', 'LainnyaController@tampilDll')->name('toko.dll');
 
     //Hadits
     Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
+    Route::get('/hadits/searchhadits', 'HaditsController@search')->name('hadits.search');
 
     //Artikel
     Route::get('/artikel', 'ArtikelController@tampilArtikel')->name('artikel');
     Route::get('/artikel/content/{No}', 'ArtikelController@tampilIsiArtikel')->name('artikel.isi-artikel');
+    Route::get('/artikel/searchartikel', 'ArtikelController@search')->name('artikel.search');
+
 
     //Tutorial
     Route::get('/tutorial', 'TutorialController@tutorial')->name('tutorial');
     Route::get('/tutorial/content/{No}', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
-    Route::get('/tutorial/search', 'TutorialController@search')->name('tutorial.search');
+    Route::get('/tutorial/searchtutorial', 'TutorialController@search')->name('tutorial.search');
 
     /*
     |--------------------------------------------------------------------------
