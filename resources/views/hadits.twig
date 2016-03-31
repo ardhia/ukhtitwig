@@ -42,7 +42,40 @@
 					<div id="arsip">
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<div class="panel-group" id="accordion">
+							  	{% for item in Riwayat %}
+							    	<div class="panel panel-default">
+								      	<div class="panel-heading">
+								        	<h4 class="panel-title">
+								          		<a data-toggle="collapse" data-parent="#accordion" href="#Riwayat-{{item.Riwayat}}">{{item.Riwayat}}</a>
+								        	</h4>
+								        	({{item.total}})
+								      	</div>
+								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
+								        	<div class="panel-body">
+									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
+										          	{% for link in item.link %}
+										            	<div class="panel panel-default">
+											              	<div class="panel-heading">
+											                	<h4 class="panel-title">
+											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#link-{Riwayat.link}}">{{link.
+											                  		link}}</a>
+											                	</h4>
+											                	({{link.jumlah}})
+											              	</div>
+											              	<div id="link-{{Riwayat.link}}" class="panel-collapse collapse in">
+											                	<div class="panel-body">
+											                		<a href="#link">Buat linknya</a>
+											                	</div>
+											              	</div>
+										            	</div>
+										            {% endfor %}
+									          	</div>
+								        	</div>
+								      	</div>
+							    	</div>
+							    {% endfor %}
+						  	</div>
 						</div>
 					</div>
 				</div>
