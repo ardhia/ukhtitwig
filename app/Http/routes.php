@@ -74,7 +74,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('auth/profilU/user_insertArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_insertArtikel'])->name('prosesArtikel');
 
     Route::post('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_insertTutorial'])->name('prosesTutorial');
-    Route::post('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_editTutorial'])->name('prosesEditTutorial');
+    Route::post('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_editTutorial'])->name('prosesEditTutorial');
     
     Route::post('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_insertToko'])->name('prosesToko');
     /*

@@ -82,28 +82,34 @@ class TutorialController extends Controller
         return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial]);
     }
 
-    public function prosesUser_editTutorial (Request $request) {
-        $this->validate($request, [
+    public function prosesUser_editTutorial (Request $request, $No) {
+        /*$this->validate($request, [
         'Judul_Tutorial' => 'required',
         'Isi_Tutorial' => 'required',
         'Photo' => 'required|unique:tutorial|max:255',
-        ]);
-        $user_insertTutorial= new User_insertTutorial;
-        $user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
-        $user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+        ]);*/
+        $editTutorial= new User_insertTutorial;
         if($request->hasFile('Photo')) {
-                $file = Input::file('Photo');
-                //getting timestamp
-                
-                $name = $file->getClientOriginalName();
-                
-                $user_insertTutorial->Photo = $name;
+                                    $file = Input::file('Photo');
+                                    //getting timestamp
+                                    
+                                    $name = $file->getClientOriginalName();
+                                    
+                                    $editTutorial->Photo_Tutorial = $name;
 
-                $file->move(public_path().'/uploadPhoto/tutorial/', $name);
-            }
-            $user_insertTutorial->save();
+                                    $file->move(public_path().'/uploadPhoto/tutorial/', $name);
+                                    }
+        $editTutorial = DB::table('tutorial')
+                        ->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'No')
+                        ->where('No', $No)
+                        ->update(['Judul_Tutorial' => $request->input('Judul_Tutorial'),
+                        'Isi_Tutorial' =>  $request->input('Isi_Tutorial'),
+                        'Photo' => $request->input('Photo')]);
+        //$editTutorial->save();
+        //dd($editTutorial);
+        //exit;
 
-        return Redirect::to('auth/profilU/user_insertTutorial');
+        return Redirect::to('auth/profilU');
     }
 
 	public function prosesUser_insertTutorial (Request $request) {
