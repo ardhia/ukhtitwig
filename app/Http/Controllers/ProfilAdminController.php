@@ -10,7 +10,7 @@ class ProfilAdminController extends Controller
 {
     public function tampilProfilAdmin (){
 
-    	$daftarartikel =  DB::table('artikel')->select('No', 'email', 'Judul_Artikel', 'Isi_Artikel')->get();
+    	$artikel =  DB::table('artikel')->select('No', 'email', 'Judul_Artikel', 'Isi_Artikel')->get();
 
     	$tutorial = DB::table('tutorial')->select('No', 'email', 'Judul_Tutorial', 'Isi_Tutorial')->get();
 
@@ -18,6 +18,6 @@ class ProfilAdminController extends Controller
 
     	$subs =  DB::table('subscribe')->select('Id', 'email')->get();
 
-    	return view('admin/profilA', ['artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'subscribe' => $subs]);
+    	return view('admin/profilA', ['artikel' => $artikel, 'tutorial' => $tutorial, 'toko' => $toko, 'subscribe' => $subs]);
     }
 }
