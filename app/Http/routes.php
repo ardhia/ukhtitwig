@@ -150,6 +150,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
     //edit delete artikel
     Route::get('artikel/{No}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
+    //edit delete tutorial
+    Route::get('tutorial/{No}/edit', 'TutorialController@tampilEditTutorial')->name('editAdmintutor');
+    //edit delete toko
+    Route::get('toko/{No}/edit', 'TokoController@tampilEditToko')->name('editAdminToko');
 
     //table Artikel
     Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');

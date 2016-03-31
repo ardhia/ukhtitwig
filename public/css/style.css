@@ -1529,13 +1529,13 @@ body {
 	border: 5px double #fff;
 }
 
-/*.scroll {
+.scroll {
 	width: 96%;
-	height: 300px;
+	height: 400px;
 	float: left;
 	overflow-y: scroll;
 	padding-right: 4%;
-}*/
+}
 
 #scrollbar1 { width: 100%; clear: both; margin: 20px 0 10px; }
 #scrollbar1 .viewport { width: 97%; height: 200px; overflow: hidden; position: relative; }
@@ -1800,23 +1800,22 @@ body {
 }
 
 
-.edit{
+#edit{
 	padding: 8px;
 	border-radius: 5px;
 	background: #fff;
 	box-shadow: 0px 0px 0px 2px;
-	margin: 10px 14%;
-	float: left;
-	width: 71%;
+	margin: 10px 4%;
+	width: 88%;
 }
 
 .edit1 {
-    padding: 8px;
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 0px 0px 0px 2px;
-    margin: 10px 20%;
-    width: 61%;
+	padding: 8px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0px 0px 0px 2px;
+	margin: 10px 8%;
+	width: 78%;
 }
 
 .subs {
@@ -1838,21 +1837,21 @@ body {
 }
 
 .tk {
-	padding: 5px;
+	padding: 5%;
 	border-radius: 5px;
 	background: #fff;
 	box-shadow: 0px 0px 0px 2px;
-	margin: 10px 14%;
-	width: 22%;
+	margin: 10px 10%;
+	width: 38%;
 }
 
 .tk1 {
-    padding: 4px;
+    padding: 5%;
 	border-radius: 5px;
 	background: #fff;
 	box-shadow: 0px 0px 0px 2px;
-	margin: 10px 20%;
-	width: 22%;
+	margin: 10px 10%;
+	width: 38%;
 }
 
 /* search */
