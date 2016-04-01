@@ -73,6 +73,8 @@ class ArtikelController extends Controller
     //post
     public function prosesUser_insertArtikel (Request $request){
         $user = Auth::user();
+        //$user->id = $request->input('id');
+        //dd($user->id);exit;
         $this->validate($request, [
         'Judul_Artikel' => 'required',
         'Isi_Artikel' => 'required',
@@ -91,9 +93,10 @@ class ArtikelController extends Controller
 
             $file->move(public_path().'/uploadPhoto/artikel/', $name);
         }
+        $artikel->user_id = $user->id;
         $artikel->save();
-        dd($user);exit;
-        return Redirect::to('auth/profilU/user_insertArtikel').view(['user' => $user]);
+        //dd($artikel);exit;
+        return Redirect::to('auth/profilU/user_insertArtikel');
     }
 
     //END
