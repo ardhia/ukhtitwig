@@ -34,14 +34,15 @@
 		<div id="wrapper">
 			<div class="bungkus-art">
 				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="bungkus-tool-judul">
-						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art"> </input>
-						<input type="file" name="Photo" class="photo"></input>
+						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art">
+						<input type="file" name="Photo" class="photo">
 						<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
 						<div class="bungkus-isiArtikel">
 							<textarea name="Isi_Artikel" class="isi-art"></textarea>
 						</div>
-						<input type="submit" name="publish" value="Publish" class="push"></input>
+						<input type="submit" name="publish" value="Publish" class="push">
 					</div>
 				</form>
 			</div>

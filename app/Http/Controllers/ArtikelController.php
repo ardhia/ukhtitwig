@@ -9,6 +9,8 @@ use App\User_insertArtikel;
 use App\Http\Requests;
 use DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class ArtikelController extends Controller
 {
@@ -78,11 +80,13 @@ class ArtikelController extends Controller
     }
 
     public function tampilUser_insertArtikel () {
-        return view('auth/user_insertArtikel');
+        $user = Auth::user();
+        return view('auth/user_insertArtikel', ['user' => $user]);
     }
 
     //post
     public function prosesUser_insertArtikel (Request $request){
+        $user = Auth::user();
         $this->validate($request, [
         'Judul_Artikel' => 'required',
         'Isi_Artikel' => 'required',
@@ -102,8 +106,8 @@ class ArtikelController extends Controller
             $file->move(public_path().'/uploadPhoto/artikel/', $name);
         }
         $artikel->save();
-
-        return Redirect::to('auth/profilU/user_insertArtikel');
+        dd($user);exit;
+        return Redirect::to('auth/profilU/user_insertArtikel').view(['user' => $user]);
     }
 
     //END

@@ -92,12 +92,8 @@ class TutorialController extends Controller
         $editTutorial= new User_insertTutorial;
         if($request->hasFile('Photo')) {
                                     $file = Input::file('Photo');
-                                    //getting timestamp
-                                    
                                     $name = $file->getClientOriginalName();
-                                    
                                     $editTutorial->Photo_Tutorial = $name;
-
                                     $file->move(public_path().'/uploadPhoto/tutorial/', $name);
                                     }
         $editTutorial = DB::table('tutorial')
@@ -110,7 +106,7 @@ class TutorialController extends Controller
         //dd($editTutorial);
         //exit;
 
-        return Redirect::to('auth/profilU');
+        return Redirect::to('/tutorial/content/{No:}');
     }
 
 	public function prosesUser_insertTutorial (Request $request) {

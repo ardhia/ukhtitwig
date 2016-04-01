@@ -140,13 +140,17 @@ body {
 	padding: 10px 0px 10px 5%;
 	text-align: center;
 	color: #827BFF;
+	background: RGBA(93, 238, 255, 0.19);
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
 }
 
 #namalog:hover{
 	color: #90ECE2;
 	border-right: solid #90ECE2 2px;
 	background: #fbfbfb;
-	border-radius: 2px;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
 }
 
 .navigasi {
