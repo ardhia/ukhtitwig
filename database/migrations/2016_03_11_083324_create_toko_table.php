@@ -18,6 +18,10 @@ class CreateTokoTable extends Migration
             $table->string('photoToko');
             $table->text('harga');
             $table->text('jb');
+            $table->text('ketToko');
+            $table->text('artikel');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

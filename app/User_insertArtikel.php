@@ -9,6 +9,5 @@ class User_insertArtikel extends Model
     protected $table = 'artikel';
 
     protected $fillable = [
-       'No', 'Judul_Artikel', 'Isi_Artikel', 'Photo',
-    ];
+        'Judul_Artikel', 'Isi_Artikel', 'No'   ];
 }

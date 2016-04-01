@@ -17,10 +17,9 @@ class ProfilUserController extends Controller
 
 
         //Untuk menampilkan table
-    	$daftarartikel =  DB::table('artikel')->select('No', 'email', 'Judul_Artikel', 'Isi_Artikel')->where('email', $user)->get();
-    	$tutorial = DB::table('tutorial')->select('No', 'email', 'Judul_Tutorial', 'Isi_Tutorial')->where('email', $user)->get();
-    	$toko =  DB::table('toko')->select('idToko', 'email', 'judulToko', 'harga', 'jb', 'ketToko')->where('email', $user)->get();
-    	$subs =  DB::table('subscribe')->select('Id', 'email')->get();
+    	$daftarartikel =  DB::table('artikel')->select('No', 'user_id', 'Judul_Artikel', 'Isi_Artikel')->where('user_id', $user)->get();
+    	$tutorial = DB::table('tutorial')->select('No', 'user_id', 'Judul_Tutorial', 'Isi_Tutorial')->where('user_id', $user)->get();
+    	$toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'harga', 'jb', 'ketToko')->where('user_id', $user)->get();
 
         return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko]);
     }

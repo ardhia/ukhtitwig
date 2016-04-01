@@ -16,7 +16,7 @@ class CreateHaditsTable extends Migration
             $table->increments('No');
             $table->text('Isi_Hadits');
             $table->text('Sumber_HR');
-            $table->text('Jenis_Hadits');
+            $table->text('Riwayat');
             $table->timestamps();
         });
     }
