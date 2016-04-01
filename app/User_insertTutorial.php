@@ -9,6 +9,6 @@ class User_insertTutorial extends Model
     protected $table = 'tutorial';
 
     protected $fillable = [
-        'Judul_Tutorial', 'Isi_Tutorial', 'Photo_Tutorial', 'No',
+        'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'No',
     ];
 }

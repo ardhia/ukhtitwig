@@ -35,12 +35,13 @@
 		<div id="wrapper">
 			<div class="bungkus-art">
 				<form enctype="multipart/form-data" method="post" action="{{route('prosesTutorial')}}"> 
+				<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 				<div class="bungkus-tool-judul">
-						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art" value="aplah"> apalahapalah</input>
-						<input type="file" name="Photo_Tutorial" class="photo"></input>
+						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art" value="Judul"></input>
+						<input type="file" name="Photo" class="photo"></input>
 						<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
 						<div class="bungkus-isiArtikel">
-							<textarea name="Isi_Tutorial">hayyyyyyyohh</textarea>
+							<textarea name="Isi_Tutorial"></textarea>
 						</div>
 						<input type="submit" name="publish" value="Publish" class="push"></input>
 					</div>

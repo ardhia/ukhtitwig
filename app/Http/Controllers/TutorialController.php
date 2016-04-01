@@ -93,7 +93,7 @@ class TutorialController extends Controller
         if($request->hasFile('Photo')) {
                                     $file = Input::file('Photo');
                                     $name = $file->getClientOriginalName();
-                                    $editTutorial->Photo_Tutorial = $name;
+                                    $editTutorial->Photo = $name;
                                     $file->move(public_path().'/uploadPhoto/tutorial/', $name);
                                     }
         $editTutorial = DB::table('tutorial')
@@ -113,7 +113,7 @@ class TutorialController extends Controller
         $this->validate($request, [
         'Judul_Tutorial' => 'required',
         'Isi_Tutorial' => 'required',
-        'Photo_Tutorial' => 'required|unique:tutorial|max:255',
+        'Photo' => 'required|unique:tutorial|max:255',
         ]);
 		$user_insertTutorial= new User_insertTutorial;
 		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
@@ -124,7 +124,7 @@ class TutorialController extends Controller
 	            
 	            $name = $file->getClientOriginalName();
 	            
-	            $user_insertTutorial->Photo_Tutorial = $name;
+	            $user_insertTutorial->Photo = $name;
 
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }

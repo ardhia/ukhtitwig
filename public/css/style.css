@@ -801,12 +801,25 @@ body {
 	width: 100%;
 }
 
+.outbio {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
 #biodatauser {
-	width: 85%;
+	width: 35%;
 	height: auto;
 	float: left;
 	padding: 2px 2%;
-	margin: 10px 5%;
+	margin: 10px 0px 10px 5%;
+}
+#biodatauser2 {
+	width: 45%;
+	height: auto;
+	float: left;
+	padding: 2px 2%;
+	margin: 10px 5% 10px 0px;
 }
 
 .contentuser {
