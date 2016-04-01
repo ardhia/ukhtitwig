@@ -33,10 +33,11 @@
 		</div>
 		<div id="wrapper">
 			<div class="bungkus-art">
-				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
-					<div class="bungkus-tool-judul">
+				<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel', {No: tampilEditAdmin.No})}}"> 
+						<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+						<div class="bungkus-tool-judul">
 						<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art" value="{{artikelini.Judul_Artikel}}"></input>
-						<input type="file" name="Photo" class="photo"></input>
+						<input type="file" name="Photo" class="photo" value="{{artikelini.Photo}}"></input>
 						<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
 						<div class="bungkus-isiArtikel">
 							<textarea name="Isi_Artikel" class="isi-art">{{artikelini.Isi_Artikel}}</textarea>

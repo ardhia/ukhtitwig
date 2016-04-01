@@ -159,8 +159,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
     Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
     //edit delete artikel
-    Route::get('artikel/{No}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
-    Route::post('artikel/{No}/edit', 'ArtikelController@prosesEditAdmin')->name('prosesEdit');
+    Route::get('admin/artikel/{No}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
+    Route::post('admin/artikel/{No}/edit', 'ArtikelController@prosesEditAdmin')->name('prosesEdit');
     Route::get('artikel/delete/{Id}', 'ArtikelController@hapusArtikel')->name('hapusArtikel');
     //edit delete tutorial
     Route::get('tutorial/{No}/edit', 'TutorialController@tampilEditTutorial')->name('editAdmintutor');
