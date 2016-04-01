@@ -799,6 +799,37 @@ body {
 
 .photoProfil {
 	width: 100%;
+	height: auto;
+	float: left;
+}
+
+#changePhoto {
+	width: 100%;
+	margin-top: 241px;
+	height: 50px;
+	float: left;
+}
+
+#changePhoto:hover {
+	background: RGBA(0, 0, 0, 0.3);
+	border-bottom-right-radius: 19px;
+	border-bottom-left-radius: 19px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+.iconCamera {
+	width: 19%;
+	height: 38px;
+	float: left;
+	margin: 6px 5%;
+	background: url(../images/camera.png);
+	background-size: 100% 100%;
+}
+
+.iconCamera:hover {
+	background: url(../images/camerahover.png);
+	background-size: 100% 100%;
 }
 
 #biodatauser {
@@ -1958,4 +1989,63 @@ body {
 	float: left;
 	margin-left: 4%;
 	margin-bottom: 3%; 
+}
+
+
+/*Change Photo Profil*/
+.changePP {
+	width: 30%;
+	height: auto;
+	float: left;
+	background: #ececec;
+	border-radius: 4px;
+	padding: 20px 2%;
+	margin: 100px 35%;
+	box-shadow: 2px 2px 1px 1px #B6F7FF;
+	border-top: 2px solid #fff;
+	border-left: 2px solid #fff;
+}
+
+#titleChangePP {
+	width: 100%;
+	height: auto;
+	float: left;
+	border-bottom: 2px #23A4FF solid;
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 8px;
+	margin-bottom: 16px;
+	color: #64bfff;
+}
+
+#contentChangePP {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.fileChangePP {
+	float: left;
+	width: 92%;
+	padding: 2px 4%;
+	color: #331dc8;
+}
+
+.submitChangePP {
+	float: right;
+	padding: 3px 3%;
+	background: #64BFFF;
+	border-radius: 8px;
+	margin-top: 10px;
+	border: solid 1px #BFF6FF;
+	color: #fff;
+	box-shadow: 0px 0px 8px 2px #8FEEF9;
+}
+
+.submitChangePP:hover {
+	background: #FFF;
+	border-radius: 8px;
+	border: solid 1px #BFF6FF;
+	color: #64BFFF;
+	box-shadow: 0px 0px 8px 2px #8FEEF9;
 }

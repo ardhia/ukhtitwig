@@ -23,7 +23,10 @@
 				<div class="namauser">{{user.name}}</div>
 				<div class="phobiouser">
 					<div id="photouser">
-						<div class="photoProfil"></div>
+						<div class="photoProfil"><div id="changePhoto"><a href="#change" data-toggle="modal"><div class="iconCamera"></div></a></div></div>
+						<div class="modal fade" id="change" role="dialog">
+							{% include 'auth/changePhotoProfil' %}
+						</div>
 					</div>
 					<div id="biodatauser">
 						Alamat: {{user.alamat}} <br>

@@ -110,6 +110,7 @@ class TutorialController extends Controller
     }
 
 	public function prosesUser_insertTutorial (Request $request) {
+        $user = Auth::user();
         $this->validate($request, [
         'Judul_Tutorial' => 'required',
         'Isi_Tutorial' => 'required',
@@ -128,7 +129,8 @@ class TutorialController extends Controller
 
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }
-            $user_insertTutorial->save();
+        $artikel->user_id = $user->id;
+        $user_insertTutorial->save();
 
 		return Redirect::to('auth/profilU/user_insertTutorial');
     }
