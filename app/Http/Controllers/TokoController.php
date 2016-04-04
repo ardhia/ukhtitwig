@@ -86,12 +86,6 @@ class TokoController extends Controller
     	$file = $request->file('photo');
     }
 
-    //edit 
-    public function tampilEditToko ($No) {
-        $toko = DB::table('toko')->select('idToko', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->where('idToko', $No)->first();
-        return view('admin/editAdminToko', ['toko' => $toko]);
-    }
-
     //END
 
 

@@ -21,11 +21,11 @@ class HaditsController extends Controller
                         ->groupBy(DB::raw("Riwayat"))
                         ->get();
         foreach ($Riwayat as $item) {
-            $link = DB::table('hadits')
+            $Sumber_HR = DB::table('hadits')
                 ->select(DB::raw('Sumber_HR'), DB::raw('count(*) as jumlah'))
                 ->groupBy(DB::raw('Sumber_HR'))
                 ->where(DB::raw('Riwayat'), $item->Riwayat)->get();
-            $item->Sumber_HR = $link;
+            $item->Sumber_HR = $Sumber_HR;
         }
 
         //dd($Riwayat);

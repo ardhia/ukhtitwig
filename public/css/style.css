@@ -405,6 +405,7 @@ body {
 #tampil-komentar {
 	width: 90%;
 	height: auto;
+	float: left;
 }
 
 #comment {

@@ -12,6 +12,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Tutorial;
+use App\KomentarTutorial;
 
 class TutorialController extends Controller
 {
@@ -154,12 +155,22 @@ class TutorialController extends Controller
     	$file = $request->file('photo');
     }
 
-    //edit admin
-    public function tampilEditTutorial ($No){
-        $tutorial = Tutorial::where('No', $No)->first();
+ //END
 
-        return view('admin/editAdmintutor', ['tutorial' => $tutorial]);
+    //post komentar tutorial
+    public function simpanKomentarTutor (Request $request, $No){
+        $komentutor= new KomentarTutorial;
+        $komentutor->nama = $request->input('nama');
+        $komentutor->isi_komentar = $request->input('isi_komentar');
+        $komentutor->save;
+
+        return Redirect::to('auth/tutorial/isi-tutorial');
     }
 
- //END
+    public function tampilkomentarTutor ($No){
+        $komen = DB::table('komentar_tutorial')->select('No');
+        $komentutor = DB::table('komentar_tutorial')->select('No', 'nama', 'isi_komentar')->where('no_tutorial', $No)->first();
+
+        return view('auth/Komentartutorial', ['komentar_tutorial' => $komentutor]);
+    }
 }

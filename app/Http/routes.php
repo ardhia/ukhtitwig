@@ -66,6 +66,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/tutorial/isi-tutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@isi_tutorialUser'])->name('tutorial.isi-tutorialUser');
     Route::get('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_insertTutorial'])->name('profilU.user_insertTutorial');
     Route::get('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_editTutorial'])->name('profilU.user_editTutorial');
+    //komentar tutorial
+    Route::post('auth/tutorial/isi-tutorial/{No}', 'TutorialController@simpanKomentarTutor')->name('komentarTutorial');
+    Route::get('auth/tutorial/isi-tutorial/{No}', 'TutorialController@tampilkomentarTutor')->name('tampilkomentarTutor');
 	/*
     |--------------------------------------------------------------------------
     | Routes File POST Halaman User
@@ -161,14 +164,15 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/profilU', 'PagesController@profilAdmin')->name('profilAdmin');
     Route::get('admin/admin_form', 'PagesController@admin_form')->name('admin_form');
     Route::get('admin/profilA', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
-    //edit delete artikel
-    Route::get('admin/artikel/{No}/edit', 'ArtikelController@tampilEditAdmin')->name('editAdmin');
-    Route::post('admin/artikel/{No}/edit', 'ArtikelController@prosesEditAdmin')->name('prosesEdit');
-    Route::get('artikel/delete/{Id}', 'ArtikelController@hapusArtikel')->name('hapusArtikel');
-    //edit delete tutorial
-    Route::get('tutorial/{No}/edit', 'TutorialController@tampilEditTutorial')->name('editAdmintutor');
-    //edit delete toko
-    Route::get('toko/{No}/edit', 'TokoController@tampilEditToko')->name('editAdminToko');
+
+    //delete artikel
+    Route::get('admin/artikel/{No}', 'ProfilAdminController@hapusArtikel')->name('hapusArtikel');
+    //delete tutorial
+    Route::get('admin/tutorial/{No}', 'ProfilAdminController@hapusTutorial')->name('hapusTutorial');
+    //delete toko
+    Route::get('admin/toko/{No}', 'ProfilAdminController@hapusToko')->name('hapusToko');
+    //delete subscribe
+    Route::get('admin/subscribe/{No}', 'ProfilAdminController@hapusSubscribe')->name('hapusSubscribe');
 
     //table Artikel
     Route::get('admin/tableArtikel', 'TableArtikelController@tampilTableArtikel')->name('tableArtikel');

@@ -30,14 +30,7 @@
 							<div class="foto1">{{dataTutorial.Photo}}</div>
 							<div class="tulisan">{{dataTutorial.Isi_Tutorial|raw}}</div>
 						</div>
-					</div>
-					<div id="tampil-komentar"></div>
-					<div id="comment">
-						<form>
-							<input type="text" name="nama" placeholder="Masukan Nama Anda" class="nama-komentar"></input>
-							<input type="text" name="komentar" class="isi-komentar"></input>
-							<input type="submit" name="kirim" class="kirim"></input>
-						</form>
+						{% include 'komentartutorial' %}
 					</div>
 				</div>
 				<div class="rightKet">

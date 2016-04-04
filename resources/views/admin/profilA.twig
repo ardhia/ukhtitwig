@@ -50,8 +50,7 @@
 								<td>{{table.Photo}}</td>
 								<td>{{table.Isi_Artikel|raw }}</td>
 								<td>
-								<a href="{{route('editAdmin', {No: table.No})}}"><button value="Edit" id="edit" >Edit</button></a>
-								<button value="Delete" class="ced">Delete</button></td>
+								<a href="{{route('hapusArtikel', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></td></a>
 							</tr>
 							{% endfor %}
 						</table>
@@ -78,8 +77,7 @@
 								{{table.Isi_Tutorial|raw }}
 								</td>
 								<td>
-								<a href="{{route('editAdmintutor', {No: table.No})}}"><button value="Edit" class="edit1">Edit</button></a>
-								<button value="Delete" class="ced">Delete</button></td>
+								<a href="{{route('hapusTutorial', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></td></a>
 							</tr>
 							{% endfor %}
 						</table>
@@ -108,8 +106,7 @@
 								<td>{{table.jb|raw }}</td>
 								<td>{{table.ketToko|raw }}</td>
 								<td>
-								<a href="{{route('editAdminToko', {No: table.idToko})}}"><button value="Edit" class="tk1">Edit</button></a>
-								<button value="Delete" class="tk">Delete</button></td>
+								<a href="{{route('hapusToko', {No: table.idToko})}}"><button value="Delete" class="tk">Delete</button></td></a>
 							</tr>
 							{% endfor %}
 						</table>
@@ -130,8 +127,7 @@
 								<td>{{table.Id}}</td>
 								<td>{{table.email}}</td>
 								<td>
-								<button value="Edit" class="subs1">Edit</button>
-								<button value="Delete" class="subs">Delete</button></td>
+								<a href="{{route('hapusSubscribe', {No: table.Id})}}"><button value="Delete" class="subs">Delete</button></td></a>
 							</tr>
 							{% endfor %}
 						</table>
