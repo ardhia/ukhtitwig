@@ -835,16 +835,20 @@ body {
 }
 
 .photoProfil {
-	width: 100%;
-	height: auto;
+	width: 21%;
+	height: 291px;
 	float: left;
+	display: block;
+	position: absolute;
+	border-radius: 24px;
 }
 
 #changePhoto {
-	width: 100%;
+	width: 21%;
 	margin-top: 241px;
 	height: 50px;
 	float: left;
+	position: absolute;
 }
 
 #changePhoto:hover {

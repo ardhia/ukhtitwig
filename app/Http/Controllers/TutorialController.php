@@ -90,7 +90,7 @@ class TutorialController extends Controller
         'Isi_Tutorial' => 'required',
         'Photo' => 'required|unique:tutorial|max:255',
         ]);*/
-        $editTutorial= new User_insertTutorial;
+        //$editTutorial= new User_insertTutorial;
         if($request->hasFile('Photo')) {
                                     $file = Input::file('Photo');
                                     $name = $file->getClientOriginalName();
@@ -107,7 +107,7 @@ class TutorialController extends Controller
         //dd($editTutorial);
         //exit;
 
-        return Redirect::to('/tutorial/content/{No:}');
+        return Redirect::to('/auth/profilU');
     }
 
 	public function prosesUser_insertTutorial (Request $request) {
