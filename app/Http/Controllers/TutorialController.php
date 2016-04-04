@@ -129,7 +129,7 @@ class TutorialController extends Controller
 
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }
-        $artikel->user_id = $user->id;
+        $user_insertTutorial->user_id = $user->id;
         $user_insertTutorial->save();
 
 		return Redirect::to('auth/profilU/user_insertTutorial');

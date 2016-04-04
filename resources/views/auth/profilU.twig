@@ -74,67 +74,69 @@
 								</div>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getToko">
+								<a href="{{route('profilU.user_insertToko')}}"><button value="Create" class="tambah">Create</button></a>
 								<table border="1">
 									<tr>
-										<th>No</th>
 										<th>Judul Toko</th>
 										<th>Harga</th>
 										<th>Jenis Barang</th>
 										<th>Keterangan Barang</th>
+										<th>File Photo</th>
 										<th>Action</th>
 									</tr>
-									{% for table in tutorial %}
+									{% for table in toko %}
 									<tr>
-										<td>{{table.idToko}}</td>
 										<td>{{table.judulToko}}</td>
-										<td>{{table.harga}}</td>
+										<td>Rp.{{table.harga}},-</td>
 										<td>{{table.jb|raw }}</td>
 										<td>{{table.ketToko|raw }}</td>
-										<td><button value="Create" class="tk">Create</button>
-										<button value="Edit" class="tk1">Edit</button>
-										<button value="Delete" class="tk">Delete</button></td>
+										<td><img src="/uploadPhoto/toko/{{table.photoToko}}" width="50px" height="40px"></td>
+										<td>
+											<a href="" class="linkcrud">Edit</a>
+											<a href="" class="linkcrud">Delete</a>
+										</td>
 									</tr>
 									{% endfor %}
 								</table>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getArtikel">
+								<a href="{{route('profilU.user_insertArtikel')}}"><button value="Create" class="tambah">Create</button></a>
 								<table border="1">
 									<tr>
-										<th>No</th>
 										<th>Judul Artikel</th>
 										<th>Isi Artikel</th>
 										<th>Action</th>
 									</tr>
 									{% for table in artikel %}
 									<tr>
-										<td>{{table.No}}</td>
 										<td>{{table.Judul_Artikel}}</td>
 										<td>{{table.Isi_Artikel|raw }}</td>
-										<td><button value="Create" class="ced">Create</button>
-										<a href="{{route('editAdmin', {id: table.No})}}"><button value="Edit" class="edit" >Edit</button></a>
-										<button value="Delete" class="ced">Delete</button></td>
+										<td>
+											<a href="" class="linkcrud">Edit</a>
+											<a href="" class="linkcrud">Delete</a>
+										</td>
 									</tr>
 									{% endfor %}
 								</table>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getTutorial">
+								<a href="{{route('profilU.user_insertTutorial')}}"><button value="Create" class="tambah">Create</button></a>
 								<table border="1">
 									<tr>
-										<th>No</th>
 										<th>Judul Tutorial</th>
 										<th>Isi Tutorial</th>
+										<th>Photo</th>
 										<th>Action</th>
 									</tr>
 									{% for table in tutorial %}
 									<tr>
-										<td>{{table.No}}</td>
 										<td>{{table.Judul_Tutorial}}</td>
+										<td>{{table.Isi_Tutorial|raw }}</td>
+										<td>{{table.Photo}}</td>
 										<td>
-										{{table.Isi_Tutorial|raw }}
+											<a href="{{route('profilU.user_editTutorial', {No: table.No})}}" class="linkcrud">Edit</a>
+											<a href="" class="linkcrud">Delete</a>
 										</td>
-										<td><button value="Create" class="ced">Create</button>
-										<button value="Edit" class="edit1">Edit</button>
-										<button value="Delete" class="ced">Delete</button></td>
 									</tr>
 									{% endfor %}
 								</table>
