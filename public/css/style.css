@@ -108,6 +108,43 @@ body {
 	border-radius: 2px;
 }
 
+
+/*dropmenu navigasi*/
+#log li ul {
+	background: #fbfbfb;
+	display: none;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	text-align: left;
+	position: absolute;
+	width: 150px;
+	border-radius: 6px;
+	box-shadow: 2px 2px 2px 2px #d5d5d5;
+}
+
+#log li li 	{
+	display: block;
+	float: none;
+	text-align: left;
+	margin: 6px 11%;
+	width: auto;
+	border-bottom: 1px solid #929292;
+}
+
+#log li:hover ul {
+	display: block;
+}
+
+#log li ul a:hover,
+#log li ul li:hover > a {
+	color: #fbfbfb;
+	text-decoration: none;
+	background: #929292;
+	border: 0px solid;
+}
+/*end*/
+
 .wraplog {
 	float: right;
 	height: auto;
@@ -938,10 +975,35 @@ body {
 }
 */
 .tambah {
-	width: 2%;
+	width: auto;
 	height: auto;
 	float: left;
-	padding: 10px 0px;
+	padding: 3px 2%;
+	margin-bottom: 4px;
+	background: #C6FFFB;
+	color: #6B8A82;
+	border-radius: 4px;
+}
+
+.tambah:hover {
+	color: #555;
+	background: #fff;
+}
+
+.linkcrud {
+	width: 100%;
+	float: left;
+	border-bottom: 1px solid;
+	margin: 3px;
+	text-align: center;
+}
+
+.linkcrud:hover {
+	border-bottom: 2px solid #6b8a82;
+	padding-top: 3px;
+	color: #6b8a82;
+	background: #C6FFFB;
+	width: 100%;
 }
 
 .out-profil { 

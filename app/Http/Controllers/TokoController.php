@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\User_insertToko;
 use Illuminate\Support\Facades\Input;
 use DB;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 
 
@@ -18,7 +20,8 @@ class TokoController extends Controller
 	//PUBLIK
 
 	public function tampilToko (){
-		return view('toko');
+        $daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb', 'ketToko')->get();
+		return view('toko', ['toko' => $daftartoko]);
 	}
 
 	//END
@@ -36,9 +39,10 @@ class TokoController extends Controller
 
     //post
     public function prosesUser_insertToko (Request $request){
+        $user = Auth::user();
         $this->validate($request, [
         'judulToko' => 'required',
-        'photoToko' => 'required|unique:artikel|max:255',
+        'photoToko' => 'required|unique:toko|max:255',
         'harga' => 'required',
         'jb' => 'required',
         'ketToko' => 'required',
@@ -58,6 +62,7 @@ class TokoController extends Controller
 
             $file->move(public_path().'/uploadPhoto/toko/', $name);
         }
+        $toko->user_id = $user->id;
         $toko->save();
         return Redirect::to('auth/profilU/user_insertToko');
 //        $file = Request::file('photo');

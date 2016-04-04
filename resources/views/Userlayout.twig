@@ -17,16 +17,15 @@
 		<div id="header">
 			<div class="log">
 				<a href="/"><div id="logo">Ukhti</div></a>
-						<div class="panel-group">
-							<div class="panel panel-default">
 				<div id="log">
 					<ul>
-					  			<li><a data-toggle="collapse" href="#setting">Setting</a>
-								    <div id="setting" class="panel-collapse collapse">
-								    	<div class="panel-body">Panel Body</div>
-								    	<div class="panel-footer">Panel Footer</div>
-								    </div>
-								</li>
+					  	<li><a href="#setting">Setting</a>
+					  		<ul id="setting">
+					  			<li><a href=""></a></li>
+					  			<li><a href=""></a></li>
+					  			<li><a href="{{route('logoutUser')}}">Log Out</a></li>
+					  		</ul>
+					  	</li>
 						<li><a href="{{route('about')}}">About</a></li>
 					</ul>
 			    </div>
@@ -36,8 +35,6 @@
 			    		<div id="namalog">@{{user.username}}</div>
 		    		</a>
 			    </div>
-							</div>
-				    	</div>
 			</div>
 			<div class="navigasi">
 				<ul>
