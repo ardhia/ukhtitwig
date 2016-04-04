@@ -92,12 +92,8 @@ class TutorialController extends Controller
         $editTutorial= new User_insertTutorial;
         if($request->hasFile('Photo')) {
                                     $file = Input::file('Photo');
-                                    //getting timestamp
-                                    
                                     $name = $file->getClientOriginalName();
-                                    
-                                    $editTutorial->Photo_Tutorial = $name;
-
+                                    $editTutorial->Photo = $name;
                                     $file->move(public_path().'/uploadPhoto/tutorial/', $name);
                                     }
         $editTutorial = DB::table('tutorial')
@@ -110,14 +106,15 @@ class TutorialController extends Controller
         //dd($editTutorial);
         //exit;
 
-        return Redirect::to('auth/profilU');
+        return Redirect::to('/tutorial/content/{No:}');
     }
 
 	public function prosesUser_insertTutorial (Request $request) {
+        $user = Auth::user();
         $this->validate($request, [
         'Judul_Tutorial' => 'required',
         'Isi_Tutorial' => 'required',
-        'Photo_Tutorial' => 'required|unique:tutorial|max:255',
+        'Photo' => 'required|unique:tutorial|max:255',
         ]);
 		$user_insertTutorial= new User_insertTutorial;
 		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
@@ -128,11 +125,12 @@ class TutorialController extends Controller
 	            
 	            $name = $file->getClientOriginalName();
 	            
-	            $user_insertTutorial->Photo_Tutorial = $name;
+	            $user_insertTutorial->Photo = $name;
 
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }
-            $user_insertTutorial->save();
+        $artikel->user_id = $user->id;
+        $user_insertTutorial->save();
 
 		return Redirect::to('auth/profilU/user_insertTutorial');
     }
