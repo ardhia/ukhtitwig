@@ -81,7 +81,7 @@
 										<th>Harga</th>
 										<th>Jenis Barang</th>
 										<th>Keterangan Barang</th>
-										<th>File Photo</th>
+										<th>Photo</th>
 										<th>Action</th>
 									</tr>
 									{% for table in toko %}
@@ -105,12 +105,14 @@
 									<tr>
 										<th>Judul Artikel</th>
 										<th>Isi Artikel</th>
+										<th>Photo</th>
 										<th>Action</th>
 									</tr>
 									{% for table in artikel %}
 									<tr>
 										<td>{{table.Judul_Artikel}}</td>
 										<td>{{table.Isi_Artikel|raw }}</td>
+										<td><img src="/uploadPhoto/artikel/{{table.Photo}}" width="50px" height="40px"></td>
 										<td>
 											<a href="" class="linkcrud">Edit</a>
 											<a href="" class="linkcrud">Delete</a>
@@ -132,7 +134,7 @@
 									<tr>
 										<td>{{table.Judul_Tutorial}}</td>
 										<td>{{table.Isi_Tutorial|raw }}</td>
-										<td>{{table.Photo}}</td>
+										<td><img src="/uploadPhoto/tutorial/{{table.Photo}}" width="50px" height="40px"></td>
 										<td>
 											<a href="{{route('profilU.user_editTutorial', {No: table.No})}}" class="linkcrud">Edit</a>
 											<a href="" class="linkcrud">Delete</a>

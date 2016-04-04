@@ -991,6 +991,7 @@ body {
 }
 
 .linkcrud {
+	width: 100%;
 	float: left;
 	border-bottom: 1px solid;
 	margin: 3px;
@@ -999,7 +1000,7 @@ body {
 
 .linkcrud:hover {
 	border-bottom: 2px solid #6b8a82;
-	border-top: 2px solid #6b8a82;
+	padding-top: 3px;
 	color: #6b8a82;
 	background: #C6FFFB;
 	width: 100%;

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Tutorial;
 
 class TutorialController extends Controller
 {
@@ -77,7 +78,7 @@ class TutorialController extends Controller
     public function user_editTutorial ($No){
         $user = Auth::user();
 
-        $isiTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->where('No', $No)->first();
+        $isiTutorial = Tutorial::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiTutorial, $user);
         //exit;
         return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial]);
@@ -155,7 +156,7 @@ class TutorialController extends Controller
 
     //edit admin
     public function tampilEditTutorial ($No){
-        $tutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->where('No', $No)->first();
+        $tutorial = Tutorial::where('No', $No)->first();
 
         return view('admin/editAdmintutor', ['tutorial' => $tutorial]);
     }
