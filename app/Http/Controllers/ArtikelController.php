@@ -118,44 +118,6 @@ class ArtikelController extends Controller
 
 
 
-    //EDIT
-     public function tampilEditAdmin ($No){
-        $artikelini = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo')->where('No', $No)->first();
-        //dd($artikelini);
-        //exit;
-        return view('admin/editAdmin', ['artikelini' => $artikelini ]);
-    }
-
-    public function prosesEditAdmin (Request $request, $No){
-
-        $editArtikel= new User_insertArtikel;
-        if($request->hasFile('Photo')) {
-                                    $file = Input::file('Photo');
-                                    //getting timestamp
-                                    
-                                    $name = $file->getClientOriginalName();
-                                    
-                                    $editArtikel->Photo = $name;
-
-                                    $file->move(public_path().'/uploadPhoto/artikel/', $name);
-                                    }
-        $editArtikel = DB::table('artikel')
-                        ->select('Judul_Artikel', 'Isi_Artikel', 'Photo', 'No')
-                        ->where('No', $No)
-                        ->update(['Judul_Artikel' => $request->input('Judul_Artikel'),
-                        'Isi_Artikel' =>  $request->input('Isi_Artikel'),
-                        'Photo' => $request->input('Photo')]);
-        //$editArtikel->save();
-
-        return Redirect::to('admin/artikel/');
-    }
-
-    //hapus
-    public function hapusArtikel ($id){
-        //$artikelhps = 
-    }
-
-
     //END
 
 }

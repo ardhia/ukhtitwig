@@ -20,4 +20,32 @@ class ProfilAdminController extends Controller
 
     	return view('admin/profilA', ['artikel' => $artikel, 'tutorial' => $tutorial, 'toko' => $toko, 'subscribe' => $subs]);
     }
+
+    //delete Artikel
+    public function hapusArtikel ($No){
+    	$hapusartikel = DB::table('artikel')
+    					->where('No', $No)
+    					->delete();
+    }
+
+    //delete Tutorial
+    public function hapusTutorial ($No){
+    	$hapustutorial = DB::table('tutorial')
+    					->where('No', $No)
+    					->delete();
+    }
+
+    //delete Toko
+    public function hapusToko ($No){
+    	$hapustoko = DB::table('toko')
+    				->where('idToko', $No)
+    				->delete();
+    }
+
+    //hapus Subscribe
+    public function hapusSubscribe ($No){
+    	$hapussubscribe = DB::table('subscribe')
+    					->where('Id', $No)
+    					->delete();
+    }
 }
