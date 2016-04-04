@@ -839,14 +839,52 @@ body {
 }
 
 #biodatauser {
-	width: 35%;
+	width: 10%;
 	height: auto;
 	float: left;
 	padding: 2px 2%;
 	margin: 10px 0px 10px 5%;
 }
+.alamat {
+	height: 30px;
+	background: url(../images/iconrumah.png);
+	background-size: 100% 100%;
+}
+.ttl {
+	height: 30px;
+	background: url(../images/iconcake.png);
+	background-size: 100% 100%;
+	margin: 5px 0px;
+}
+.jk {
+	height: 30px;
+	background: url(../images/ijk.png);
+	background-size: 100% 100%;
+}
+.iemail {
+	height: 30px;
+	background: url(../images/iconemail.png);
+	background-size: 100% 100%;
+	margin: 5px 0px;
+}
+.nohp {
+	height: 30px;
+	background: url(../images/iconhp.png);
+	background-size: 100% 100%;
+}
+.suka {
+	height: 30px;
+	background: url(../images/iconsuka.png);
+	background-size: 100% 100%;
+	margin: 5px 0px;
+}
+.ihadits {
+	height: 30px;
+	background: url(../images/iconal-quran.png);
+	background-size: 100% 100%;
+}
 #biodatauser2 {
-	width: 45%;
+	width: 70%;
 	height: auto;
 	float: left;
 	padding: 2px 2%;
@@ -858,6 +896,10 @@ body {
 	height: auto;
 	float: left;
 	margin: 5px 0px 0px 2%;
+}
+.nana {
+	height: 10px;
+	padding-top: 25px;
 }
 
 #navuser {
