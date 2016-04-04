@@ -58,17 +58,15 @@
 								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
 								        	<div class="panel-body">
 									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
-										          	{% for link in item.link %}
+										          	{% for Sumber_HR in item.Sumber_HR %}
 										            	<div class="panel panel-default">
 											              	<div class="panel-heading">
 											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#link-{link.Sumber_HR}}">{{link.Sumber_HR}}</a>
+											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#Sumber_HR-{Sumber_HR.Sumber_HR}}">{{Sumber_HR.Sumber_HR}}</a>
 											                	</h4>
-											                	({{link.jumlah}})
 											              	</div>
-											              	<div id="link-{{link.Sumber_HR}}" class="panel-collapse collapse in">
+											              	<div id="Sumber_HR-{{Sumber_HR.Sumber_HR}}" class="panel-collapse collapse in">
 											                	<div class="panel-body">
-											                		<a href="#link">Buat linknya</a>
 											                	</div>
 											              	</div>
 										            	</div>
