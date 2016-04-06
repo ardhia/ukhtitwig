@@ -787,15 +787,32 @@ body {
 	width: 100%;
 	height:auto;
 	float: left;
-	margin-top: 10px;
+	margin-top: 6px;
+}
+
+#juban {
+	width: 100%;
+	height: 280px;
+	float: left;
+	margin: 2% 0% 0% 1%;
+	background: url(../images/gggg.jpg);
+    -webkit-background-size: 100% 280px;
+    -moz-background-size: 100% 280px;
+    -o-background-size: 100% 280px;
+    background-size: 100% 280px;
+}
+
+.bantu {
+	width: 100%;
+	height: auto;
+	float: left;
 }
 
 #bant {
-	width: 30%;
+	width: 24%;
 	height: 140px;
-	background: violet;
 	float: left;
-	margin: 0% 2% 1% 12%;
+	margin: 0% 0% 2% 1%;
 }
 
 .toko {
@@ -804,7 +821,7 @@ body {
 	margin-right: 2%;
 	float: left;
 	font-size: 100px;
-	background: url(../images/shop.png);
+	background: url(../images/toko1.jpg);
     -webkit-background-size: 100% 140px;
     -moz-background-size: 100% 140px;
     -o-background-size: 100% 140px;
@@ -818,6 +835,19 @@ body {
 	float: left;
 	font-size: 100px;
 	background: url(../images/artikel.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
+}
+
+.tutor {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
+	float: left;
+	font-size: 100px;
+	background: url(../images/tutor.jpg);
     -webkit-background-size: 100% 140px;
     -moz-background-size: 100% 140px;
     -o-background-size: 100% 140px;
