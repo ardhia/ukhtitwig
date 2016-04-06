@@ -58,6 +58,7 @@ class AuthController extends Controller
             'jenis_kelamin' => 'required|max:255',
             'username' => 'required|max:255|unique:users',
             'status' => 'required|max:255',
+            'photoProfil' => 'required',
             'password' => 'required|confirmed|min:6',
         ]);
     }

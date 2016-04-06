@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
-use App\User_insertTutorial;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Collection;
@@ -76,7 +75,10 @@ class TutorialController extends Controller
 	 }
 
 	public function user_insertTutorial (){
-        return view('auth/user_insertTutorial');
+        $user = Auth::user();
+        $tutorial = DB::table('tutorial');
+
+        return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial]);
 	}
 
     public function user_editTutorial ($No){
@@ -124,11 +126,11 @@ class TutorialController extends Controller
                     $file = Input::file('Photo');
                     $name = $file->getClientOriginalName();
                     $file->move(public_path().'/uploadPhoto/tutorial/', $name);
-        $Testimoni = new Tutorial;
-        $Testimoni = DB::table('tutorial')
+        $tutorial = new Tutorial;
+        $tutorial = DB::table('tutorial')
                     ->where('user_id', $user->id)
                     ->insert(['Judul_Tutorial' => $request->input('Judul_Tutorial'), 'Isi_Tutorial' => $request->input('Isi_Tutorial'), 'Photo' => $name, 'user_id' => $user->id]);
-        //$Testimoni->save();
+        $tutorial->save();
         //dd($Testimoni);exit;
         }
 
@@ -147,7 +149,8 @@ class TutorialController extends Controller
         $user_insertTutorial->user_id = $user->id;
         $user_insertTutorial->save();*/
         //dd($user_insertTutorial);exit;
-		return Redirect::to('auth/profilU/user_insertTutorial');
+        return redirect()->route('prosesTutorial');
+		//return Redirect::to('auth/profilU/user_insertTutorial');
     }
 
     public function deleteTutorial ($No){
