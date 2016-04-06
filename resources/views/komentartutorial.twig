@@ -1,6 +1,8 @@
 <div id="tampil-komentar"></div>
+	<div class="judul_kmntar">{{komentar_tutorial.nama}}</div>
+	<div class="isi_komentar">{{komentar_tutorial.isi_komentar}}</div>
 <div id="comment">
-	<form action="{{route('komentarTutorial', {No: table.no_tutorial})}}" method="POST">
+	<form enctype="multipart/form-data" action="{{route('simpanKomentarTutorial', {No: no_tutorial})}}" method="POST">
 	   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<input type="text" name="nama" placeholder="Masukan Nama Anda" class="nama-komentar"></input>
 		<input type="text" name="isi_komentar" class="isi-komentar"></input>

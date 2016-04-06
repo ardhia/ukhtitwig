@@ -45,8 +45,12 @@ class TutorialController extends Controller
     public function isi_tutorial ($No) {
     	$dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
       //dd($dataTutorial);
+        $komentar_tutorial= DB::table('komentar_tutorial')
+                            ->select('No', 'nama', 'isi_komentar')
+                            ->where('no_tutorial', $No)
+                            ->get();
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial]);
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No]);
     }
 
     public function search (Request $request) {
@@ -158,19 +162,25 @@ class TutorialController extends Controller
  //END
 
     //post komentar tutorial
-    public function simpanKomentarTutor (Request $request, $No){
-        $komentutor= new KomentarTutorial;
-        $komentutor->nama = $request->input('nama');
-        $komentutor->isi_komentar = $request->input('isi_komentar');
-        $komentutor->save;
+    public function simpanKomentarTutorial(Request $request, $No){
+        $tutorial = DB::table('tutorial')
+                    ->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'No')
+                    ->where('No', $No)
+                    ->first();
+        $komentar = new KomentarTutorial;
+        $komentar = DB::table('komentar_tutorial')
+                    ->where('no_tutorial', $No)
+                    ->insert(['No' => $request->input('No'), 'nama' => $request->input('nama'), 'isi_komentar' => $request->input('isi_komentar'), 'no_tutorial' => $No]);
 
-        return Redirect::to('auth/tutorial/isi-tutorial');
+        return redirect()->route('tutorial.isi-tutorial', ['no_tutorial' => $No]);
     }
-
-    public function tampilkomentarTutor ($No){
-        $komen = DB::table('komentar_tutorial')->select('No');
-        $komentutor = DB::table('komentar_tutorial')->select('No', 'nama', 'isi_komentar')->where('no_tutorial', $No)->first();
-
-        return view('auth/Komentartutorial', ['komentar_tutorial' => $komentutor]);
-    }
+    
+    //get komentar tutorial
+    /*public function tampilKomentarTutorial ($No){
+        $komentar_tutorial= DB::table('komentar_tutorial')
+                            ->select('No', 'nama', 'isi_komentar')
+                            ->where('no_tutorial', $No)
+                            ->get();
+        return view('komentartutorial', ['komentar_tutorial' => $komentar_tutorial]);
+    }*/
 }

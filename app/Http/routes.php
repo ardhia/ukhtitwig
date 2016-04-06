@@ -66,9 +66,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/tutorial/isi-tutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@isi_tutorialUser'])->name('tutorial.isi-tutorialUser');
     Route::get('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_insertTutorial'])->name('profilU.user_insertTutorial');
     Route::get('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_editTutorial'])->name('profilU.user_editTutorial');
-    //komentar tutorial
-    Route::post('auth/tutorial/isi-tutorial/{No}', 'TutorialController@simpanKomentarTutor')->name('komentarTutorial');
-    Route::get('auth/tutorial/isi-tutorial/{No}', 'TutorialController@tampilkomentarTutor')->name('tampilkomentarTutor');
 	/*
     |--------------------------------------------------------------------------
     | Routes File POST Halaman User
@@ -129,6 +126,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/tutorial/content/{No}', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
     Route::get('/tutorial/searchtutorial', 'TutorialController@search')->name('tutorial.search');
 
+    //komentar tutorial
+    //get
+    //Route::get('tutorial/isi-tutorial/{No}', 'TutorialController@tampilKomentarTutorial')->name('komentarTutorial');
+    //pos
+    Route::post('tutorial/komentar/{No}', 'TutorialController@simpanKomentarTutorial')->name('simpanKomentarTutorial');
     /*
     |--------------------------------------------------------------------------
     | END YOOOOOOOOOOO!!! >o<

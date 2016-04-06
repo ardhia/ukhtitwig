@@ -407,6 +407,22 @@ body {
 	height: auto;
 	float: left;
 }
+/*.judul_kmntar {
+	width: 95%;
+	height: auto;
+	float: left;
+	background: pink;
+	font-family: "Handlee";
+	font-size: 30px;
+	padding-left: 5%;
+}
+
+.isi_komentar{
+	width: 100%;
+	height: 100px;
+	float: left;
+	background: cyan;
+}*/
 
 #comment {
 	width: 90%;
