@@ -27,8 +27,8 @@
 							<div class="title">{{dataTutorial.Judul_Tutorial}}</div>
 						</div>
 						<div id="out-tulisan">
-							<div class="foto1">{{dataTutorial.Photo}}</div>
-							<div class="tulisan">{{dataTutorial.Isi_Tutorial|raw}}</div>
+							<div class="foto1"><img src="/uploadPhoto/tutorial/{{dataTutorial.Photo}}" width="100%" height="100%"></div>
+							<div class="tulisan">{{dataTutorial.Isi_Tutorial|str_words(50)|raw}}</div>
 						</div>
 						{% include 'komentartutorial' %}
 					</div>

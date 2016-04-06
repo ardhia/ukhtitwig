@@ -1,54 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-	<script type="text/javascript" src="{{asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
-	<script>tinymce.init({ 
-		selector:'textarea',
-		plugins : ["advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste", "emoticons template paste textcolor"],
-
-   		toolbar : "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons",
-
-   		image_advtab: true ,
-   		relative_urls: false, 
-  
-  		external_filemanager_path:"{{ str_finish(asset('/filemanager'),'/') }}",
-  		filemanager_title        :"Upload" ,
-  		external_plugins         : { "filemanager" : "{{ asset('filemanager/plugin.min.js') }}"} 
-	 });
-	</script>
-	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<div class="all-wrapper">
-		<div class="log">
-			<a href="/"><div id="logo">Ukhti</div></a>
-			<div id="log">
-				<ul>
-					<li><a href="{{route('aboutUser')}}">About</a></li>
-					<li><a href="{{route('tampilkanSignUp')}}">Sign Up</a></li>
-					<li><a href="{{route('tampilkanSignIn')}}">Sign In</a></li>
-				</ul>
+{% extends 'auth/layoutUserCRUD' %}
+{% block userCRUD %}
+	<form enctype="multipart/form-data" method="post" action="{{route('prosesEditTutorial', {No: isiTutorial.No})}}"> 
+		<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+		<div class="bungkus-tool-judul">
+			<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art" value="{{isiTutorial.Judul_Tutorial}}" />
+			<input type="file" name="Photo" class="photo" value="{{isiTutorial.Photo}}">
+			<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
+			<div class="bungkus-isiArtikel">
+				<textarea name="Isi_Tutorial">{{isiTutorial.Isi_Tutorial}}</textarea>
 			</div>
+			<input type="submit" name="edit" value="Perbarui" class="push" />
 		</div>
-		<div id="wrapper">
-			<div class="bungkus-art">
-				<form enctype="multipart/form-data" method="post" action="{{route('prosesEditTutorial', {No: isiTutorial.No})}}"> 
-					<input type="hidden" name="_token" value="{{ csrf_token() }}" />
-					<div class="bungkus-tool-judul">
-						<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art" value="{{isiTutorial.Judul_Tutorial}}" />
-						<input type="file" name="Photo" class="photo" value="{{isiTutorial.Photo}}">
-						<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
-						<div class="bungkus-isiArtikel">
-							<textarea name="Isi_Tutorial">{{isiTutorial.Isi_Tutorial}}</textarea>
-						</div>
-						<input type="submit" name="edit" value="Perbarui" class="push" />
-					</div>
-				</form>
-			</div>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+	</form>
+{% endblock %}
