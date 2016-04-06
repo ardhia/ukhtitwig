@@ -1,6 +1,6 @@
 {% extends 'auth/layoutUserCRUD' %}
 {% block userCRUD %}
-	<form enctype="multipart/form-data" method="post" action="{{route('prosesTutorial')}}"> 
+	<form enctype="multipart/form-data" method="POST" action="{{route('prosesTutorial')}}"> 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<div class="bungkus-tool-judul">
 			<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art">
@@ -9,7 +9,7 @@
 			<div class="bungkus-isiArtikel">
 				<textarea name="Isi_Tutorial"></textarea>
 			</div>
-			<input type="submit" name="publish" value="Publish" class="push">
+			<input type="submit" value="Publish" class="push">
 		</div>
 	</form>
 {% endblock %}

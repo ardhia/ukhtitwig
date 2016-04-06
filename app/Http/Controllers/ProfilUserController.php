@@ -22,7 +22,7 @@ class ProfilUserController extends Controller
     	$daftarartikel =  Artikel::where('user_id', $user->id)->get();
     	$tutorial = Tutorial::where('user_id', $user->id)->get();
     	$toko =  Toko::where('user_id', $user->id)->get();
-        //dd($toko);exit;
+        //dd($tutorial);exit;
 
         return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko]);
     }

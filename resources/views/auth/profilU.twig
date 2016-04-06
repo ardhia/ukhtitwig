@@ -34,7 +34,10 @@
 						</div>
 					</div>
 					<div class="outbio">
-						<a href="#suntingBio" class="sunting"></a>
+						<a href="#editBio" data-toggle="modal" class="sunting"></a>
+						<div class="modal fade" id="editBio" role="dialog">
+							{% include 'auth/editBio' %}
+						</div>
 						<div id="biodatauser">
 							<div class="alamat"></div>
 							<div class="isiBio">{{user.alamat}}</div>
