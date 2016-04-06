@@ -34,7 +34,7 @@
                 <div id="kolom-logup">
                     <form method="POST" action="{{route('memprosesSignUp')}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-                        <input type="hidden" name="photoProfil" value="{{asset('uploadPhoto/photoProfil/default.jpg')}}">
+                        <input type="hidden" name="photoProfil" value="default.jpg">
                         <input type="text" name="name" placeholder="Nama Lengkap" class="nama-logup"></input>
                         <input type="text" name="username" placeholder="Username" class="nama-logup"></input>
                         <input type="text" name="tempat_lahir" placeholder="Tempat" class="tempat"></input>
