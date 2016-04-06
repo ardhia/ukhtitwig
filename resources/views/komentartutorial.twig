@@ -1,9 +1,20 @@
-<div id="tampil-komentar"></div>
+<div class="judul_komentar">Komentar</div>
+<div id="tampil-komentar">
+    {% for komentar_tutorial in komentar_tutorial %}
+		<div class="bungkus_komentar">
+		    <div class="nama_komentar">{{komentar_tutorial.nama}}:</div>
+		    <div class="isi_komentar">{{komentar_tutorial.isi_komentar}}</div>
+		    <div class="tgl_komentar"></div>
+		</div>
+    {% endfor %}
+</div>
 <div id="comment">
-	<form action="{{route('komentarTutorial', {No: table.no_tutorial})}}" method="POST">
-	   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-		<input type="text" name="nama" placeholder="Masukan Nama Anda" class="nama-komentar"></input>
-		<input type="text" name="isi_komentar" class="isi-komentar"></input>
-		<input type="submit" name="kirim" class="kirim"></input>
-	</form>
+	<div class="comment2">
+		<form enctype="multipart/form-data" action="{{route('prosesKomentarTutorial', {No: No})}}" method="POST">
+		   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<input type="text" maxlength="10" name="nama" placeholder="Masukan Nama Anda" class="nama-komentar"></input>
+			<textarea class="isi-komentar" maxlength="50" placeholder="Komentar" name="isi_komentar"></textarea>
+		 <input type="submit" name="kirim" value="Kirim" class="kirim"></input>
+		</form>
+	</div>
 </div>

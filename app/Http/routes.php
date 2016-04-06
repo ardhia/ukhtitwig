@@ -72,6 +72,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_editTutorial'])->name('profilU.user_editTutorial');
     Route::get('auth/profilU/{No}/user_deleteTutorial', 'TutorialController@deleteTutorial')->name('deleteTutorial');
 
+
     //Testimoni
     Route::get('auth/profilU/{No}/user_deleteTestimoni', 'TestimoniController@deleteTestimoni')->name('deleteTestimoni');
 
@@ -79,6 +80,7 @@ Route::group(['middleware' => ['web']], function () {
     //komentar tutorial
     Route::post('auth/tutorial/isi-tutorial/{No}', 'TutorialController@simpanKomentarTutor')->name('komentarTutorial');
     Route::get('auth/tutorial/isi-tutorial/{No}', 'TutorialController@tampilkomentarTutor')->name('tampilkomentarTutor');
+
 	/*
     |--------------------------------------------------------------------------
     | Routes File POST Halaman User
@@ -145,9 +147,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/tutorial/content/{No}', 'TutorialController@isi_tutorial')->name('tutorial.isi-tutorial');
     Route::get('/tutorial/searchtutorial', 'TutorialController@search')->name('tutorial.search');
 
-
-    //Testimoni
-    Route::post('/profilU/Testimoni/{id}', 'TestimoniController@prosesTestimoni')->name('prosesTestimoni');
+    //post komentar tutorial
+    Route::post('/tutorial/komentar/{No}', 'KomentarController@prosesKomentarTutorial')->name('prosesKomentarTutorial');
+    //get komentar tutorial
+    //Route::get('/tutorial/content/{No}', 'KomentarController@isi_tutorial')->name('tutorial.isi-tutorial');
 
     /*
     |--------------------------------------------------------------------------

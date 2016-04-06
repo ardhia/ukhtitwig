@@ -11,7 +11,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Tutorial;
-use App\KomentarTutorial;
 
 class TutorialController extends Controller
 {
@@ -44,8 +43,12 @@ class TutorialController extends Controller
     public function isi_tutorial ($No) {
     	$dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
       //dd($dataTutorial);
+        $komentar_tutorial= DB::table('komentar_tutorial')
+                            ->select('nama', 'isi_komentar')
+                            ->where('no_tutorial', $No)
+                            ->get();
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial]);
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No]);
     }
 
     public function search (Request $request) {
@@ -177,20 +180,4 @@ class TutorialController extends Controller
 
  //END
 
-    //post komentar tutorial
-    public function simpanKomentarTutor (Request $request, $No){
-        $komentutor= new KomentarTutorial;
-        $komentutor->nama = $request->input('nama');
-        $komentutor->isi_komentar = $request->input('isi_komentar');
-        $komentutor->save;
-
-        return Redirect::to('auth/tutorial/isi-tutorial');
-    }
-
-    public function tampilkomentarTutor ($No){
-        $komen = DB::table('komentar_tutorial')->select('No');
-        $komentutor = DB::table('komentar_tutorial')->select('No', 'nama', 'isi_komentar')->where('no_tutorial', $No)->first();
-
-        return view('auth/Komentartutorial', ['komentar_tutorial' => $komentutor]);
-    }
 }
