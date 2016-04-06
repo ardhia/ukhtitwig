@@ -74,12 +74,9 @@ Route::group(['middleware' => ['web']], function () {
 
 
     //Testimoni
+    Route::post('auth/profilU/Testimoni/{id}', 'TestimoniController@prosesTestimoni')->name('prosesTestimoni');
     Route::get('auth/profilU/{No}/user_deleteTestimoni', 'TestimoniController@deleteTestimoni')->name('deleteTestimoni');
 
-
-    //komentar tutorial
-    Route::post('auth/tutorial/isi-tutorial/{No}', 'TutorialController@simpanKomentarTutor')->name('komentarTutorial');
-    Route::get('auth/tutorial/isi-tutorial/{No}', 'TutorialController@tampilkomentarTutor')->name('tampilkomentarTutor');
 
 	/*
     |--------------------------------------------------------------------------
