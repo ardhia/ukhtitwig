@@ -1,4 +1,4 @@
-/* CSS Document */
+ket/* CSS Document */
 /* GLOBAL RESET START */
 	body, html  { height: 100%; }
 	html, body, div, span, applet, object, iframe,
@@ -762,47 +762,70 @@ body {
 
 #keterangan {
 	width: 68%;
-	height: 290px;
+	height: auto;
 	float: left;
 	margin: 5px 5px 5px 10px;
 }
 
-.fotoprofil {
+.bantuan {
 	width: 100%;
-	height:500px;
+	height:auto;
 	float: left;
 	margin-top: 10px;
 }
 
-#fp {
+#bant {
 	width: 30%;
-	height: 490px;
+	height: 140px;
+	background: violet;
 	float: left;
-	margin: 5px 5% 5px 0px;
+	margin: 0% 2% 1% 12%;
 }
 
-#fp1 {
-	width: 30%;
-	height: 490px;
+.toko {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
 	float: left;
-	margin: 5px 0px;
+	font-size: 100px;
+	background: url(../images/shop.png);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
 }
 
-#fotoadmin {
-	background: url(../images/dhia-profil.jpg);
-	width: 60.29%;
-	height: 200px;
+.arti {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
 	float: left;
-	margin: 0px 20%;
-	background-size: 100% 100%;
-	border-radius: 8px;
+	font-size: 100px;
+	background: url(../images/artikel.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
+}
+
+.sign {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
+	float: left;
+	font-size: 100px;
+	background: url(../images/sign.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
 }
 
 #ketadmin {
 	width: 90%;
 	height: 280px;
 	float: left;
-	margin: 10px 5% 0px 5%;
+	margin: 12px 5% 0px 5%;
 }
 
 .namauser {
