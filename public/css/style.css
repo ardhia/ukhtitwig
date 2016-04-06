@@ -1,4 +1,4 @@
-/* CSS Document */
+ket/* CSS Document */
 /* GLOBAL RESET START */
 	body, html  { height: 100%; }
 	html, body, div, span, applet, object, iframe,
@@ -837,47 +837,101 @@ body {
 
 #keterangan {
 	width: 68%;
-	height: 290px;
+	height: auto;
 	float: left;
 	margin: 5px 5px 5px 10px;
 }
 
-.fotoprofil {
+.bantuan {
 	width: 100%;
-	height:500px;
+	height:auto;
 	float: left;
 	margin-top: 10px;
 }
 
-#fp {
+#juban {
+	width: 40%;
+	height: 60px;
+	float: left;
+	margin: 2% 0% 0% 30%;
+	background: url(../images/bab.jpg);
+}
+
+.bantu {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: 2%;
+}
+
+#bant {
 	width: 30%;
-	height: 490px;
+	height: 140px;
 	float: left;
-	margin: 5px 5% 5px 0px;
+	margin: 0% 0% 2% 1%;
 }
 
-#fp1 {
-	width: 30%;
-	height: 490px;
+#daftar {
+	width: 5%;
+	height: 140px;
 	float: left;
-	margin: 5px 0px;
+	margin: 0% 0% 2% 1%;
 }
 
-#fotoadmin {
-	background: url(../images/dhia-profil.jpg);
-	width: 60.29%;
-	height: 200px;
+.sign {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
 	float: left;
-	margin: 0px 20%;
-	background-size: 100% 100%;
-	border-radius: 8px;
+	font-size: 100px;
+	background: url(../images/BBB.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
+    border-radius: 15px;
 }
 
-#ketadmin {
-	width: 90%;
-	height: 280px;
+.toko {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
 	float: left;
-	margin: 10px 5% 0px 5%;
+	font-size: 100px;
+	background: url(../images/toko1.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
+    border-radius: 15px;
+}
+
+.arti {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
+	float: left;
+	font-size: 100px;
+	background: url(../images/artikel.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
+    border-radius: 15px;
+}
+
+.tutor {
+	width: 100%;
+	height: 140px;
+	margin-right: 2%;
+	float: left;
+	font-size: 100px;
+	background: url(../images/tutor.jpg);
+    -webkit-background-size: 100% 140px;
+    -moz-background-size: 100% 140px;
+    -o-background-size: 100% 140px;
+    background-size: 100% 140px;
+    border-radius: 15px;
 }
 
 .namauser {
