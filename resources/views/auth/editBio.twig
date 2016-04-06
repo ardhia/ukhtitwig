@@ -1,0 +1,15 @@
+<body>
+	<div class="changePP">
+		<div id="titleChangePP">Change Bio</div>
+		<div id="contentChangePP">
+			<form enctype="multipart/form-data" method="POST" action="{{route('changePhotoProfil', {id: user.id})}}">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="text" name="alamat" placeholder="Alamat" value="{{user.alamat}}" class="fileChangePP">
+				<input type="number" max="999999999999" min="0" name="noHP" placeholder="Nomor HP" value="{{user.noHP}}" class="fileChangePP">
+				<input type="text" name="kesukaan" placeholder="Hobi, Apa yang disukai, loves, dll" value="{{user.kesukaan}}" class="fileChangePP">
+				<input type="text" name="kutipanHadits" placeholder="Kutipan Hadits" value="{{user.kutipanHadits}}" class="fileChangePP">
+				<input type="submit" value="Change" class="submitChangePP">
+			</form>
+		</div>
+	</div>
+</body>

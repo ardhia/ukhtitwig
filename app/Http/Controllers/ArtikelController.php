@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use Redirect;
-use App\User_insertArtikel;
 use App\Http\Requests;
 use DB;
 use Illuminate\Support\Facades\Input;
@@ -84,14 +83,13 @@ class ArtikelController extends Controller
     //post
     public function prosesUser_insertArtikel (Request $request){
         $user = Auth::user();
-        //$user->id = $request->input('id');
         //dd($user->id);exit;
         $this->validate($request, [
         'Judul_Artikel' => 'required',
         'Isi_Artikel' => 'required',
         'Photo' => 'required|unique:artikel|max:255',
         ]);
-        $artikel = new User_insertArtikel;
+        $artikel = new Artikel;
         $artikel->Judul_Artikel = $request->input('Judul_Artikel');
         $artikel->Isi_Artikel = $request->input('Isi_Artikel');
         if($request->hasFile('Photo')) {
