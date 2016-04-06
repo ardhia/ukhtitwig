@@ -36,7 +36,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                         <input type="hidden" name="photoProfil" value="default.jpg">
                         <input type="text" name="name" placeholder="Nama Lengkap" class="nama-logup"></input>
-                        <input type="text" name="username" placeholder="Username" class="nama-logup"></input>
+                        <input type="text" name="username" placeholder="Username" maxlength="10" class="nama-logup"></input>
                         <input type="text" name="tempat_lahir" placeholder="Tempat" class="tempat"></input>
                         <input type="date" name="tanggal_lahir"  class="date"></input>
                         <input type="radio" name="jenis_kelamin" value="Perempuan" class="radiojk">Perempuan</input>

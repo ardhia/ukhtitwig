@@ -126,13 +126,14 @@ body {
 #namalog ul li {
 	position: relative;
 	float: right;
-	text-align: center;
+	text-align: left;
+	width: 110px;
 }
 
 #namalog ul li a {
 	display: block;
 	color: #827BFF;
-	padding: 10px 20%;
+	padding: 10px 16%;
 	text-decoration: none;
 }
 
@@ -909,6 +910,11 @@ body {
 	border-radius: 8px;
 }
 
+#full {
+	text-align: center;
+	margin-top: 10%;
+}
+
 .sunting {
 	background: url(../images/icon_setbefore.png) no-repeat;
 	background-size: 50% 50%;
@@ -998,8 +1004,9 @@ body {
 
 .isiBio {
 	float: left;
-	width: 79%;
-	padding: 10px 0px 0px 3%;
+	width: 77%;
+	padding: 10px 2% 0px 3%;
+	height: auto;
 }
 
 .contentuser {
@@ -2323,6 +2330,17 @@ body {
 	width: 92%;
 	padding: 2px 4%;
 	color: #331dc8;
+}
+
+.fileChangeBio {
+	float: left;
+	width: 91%;
+	padding: 4px 4%;
+	color: #331dc8;
+	margin: 4px 0px;
+	border-radius: 4px;
+	border: #fff solid 2px;
+	box-shadow: 1px 1px 1px #64BFFF;
 }
 
 .submitChangePP {

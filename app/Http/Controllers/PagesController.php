@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Artikel;
+use App\Toko;
+use App\Testimoni;
+use App\Tutorial;
 use DB;
 
 class PagesController extends Controller
@@ -21,11 +25,14 @@ class PagesController extends Controller
     }
 
     public function profilU ($id) {
-        $testimoni = DB::table('testimoni')->select('nama', 'email', 'isiTestimoni', 'No', 'Photo', 'created_at')->where('user_id', $id)->get();
-        $user = User::select('name', 'email', 'password', 'username', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'status', 'al_email', 'photoProfil')->where('id', $id)->get();
+        $testimoni = Testimoni::where('user_id', $id)->get();
+        $toko = Toko::where('user_id', $id)->get();
+        $artikel = Artikel::where('user_id', $id)->get();
+        $tutorial = Tutorial::where('user_id', $id)->get();
+        $user = User::where('id', $id)->first();
         //dd($user);
 
-    	return view('profilU', ['user' => $user, 'testimoni' => $testimoni, 'id' => $id]);
+    	return view('profilU', ['user' => $user, 'testimoni' => $testimoni, 'id' => $id, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel]);
     }
 
     //END

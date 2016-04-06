@@ -1,4 +1,7 @@
 {% extends 'layoutProfil' %}
+{% block buatnamaUser %}
+    {{user.name}}
+{% endblock %}
 {% block isi %}
 		<div id="bar">
 			<div class="search">
@@ -20,14 +23,11 @@
 				<div class="namauser">{{user.name}}</div>
 				<div class="phobiouser">
 					<div id="photouser">
-						<img src="/uploadPhoto/photoProfil/{{user.photoProfil}}" width="100%" height="100%" class="photoProfil" >
-						<div id="changePhoto">
-							<a href="#change" data-toggle="modal">
-								<div class="iconCamera"></div>
-							</a>
-						</div>
-						<div class="modal fade" id="change" role="dialog">
-							{% include 'auth/changePhotoProfil' %}
+						<a href="#lihat" data-toggle="modal">
+							<img src="/uploadPhoto/photoProfil/{{user.photoProfil}}" width="100%" height="100%" class="photoProfil" >
+						</a>
+						<div class="modal fade" id="lihat" role="dialog">
+							{% include 'full' %}
 						</div>
 					</div>
 					<div class="outbioUmum">
@@ -49,7 +49,7 @@
 						</div>
 						<div id="biodatauser">
 							<div class="nohp"></div>
-							<div class="isiBio">{{user.no_hp}}</div>
+							<div class="isiBio">{{user.noHP}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="suka"></div>
@@ -57,7 +57,7 @@
 						</div>
 						<div id="biodatauser">
 							<div class="ihadits"></div>
-							<div class="isiBio">{{user.kutipan}}</div>
+							<div class="isiBio">{{user.kutipanHadits}}</div>
 						</div>
 					</div>
 				</div>
@@ -108,8 +108,18 @@
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getToko">
 							    <div class="scroll">
-									Ini Testimoni <br>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							    	{% for item in toko %}
+							    		<div id="wrap-testimoni">
+							    			<div class="photo-testimoni"><img src="/uploadPhoto/toko/{{item.photoToko}}" width="100%" height="100%"></div>
+							    			<div class="out-testimoni">
+							    				<div id="judul-testimoni">
+							    					<div class="nama-testimoni">{{item.judulToko}}</div>
+							    					<div class="date-testimoni">Rp.{{item.harga}},- >> {{item.jb}}</div>
+							    				</div>
+							    				<div id="isi-testimoni">{{item.ketToko|str_words(50)|raw}}</div>
+							    			</div>
+							    		</div>
+							    	{% endfor %}
 								</div>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getArtikel">

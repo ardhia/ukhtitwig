@@ -56,7 +56,7 @@
 						</div>
 						<div id="biodatauser">
 							<div class="nohp"></div>
-							<div class="isiBio">{{user.no_hp}}</div>
+							<div class="isiBio">{{user.noHP}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="suka"></div>
@@ -64,7 +64,7 @@
 						</div>
 						<div id="biodatauser">
 							<div class="ihadits"></div>
-							<div class="isiBio">{{user.kutipan}}</div>
+							<div class="isiBio">{{user.kutipanHadits}}</div>
 						</div>
 					</div>
 				</div>
@@ -89,79 +89,103 @@
 						<div class="tab-content">
 						    <div role="tabpanel" class="tab-pane active" id="getTestimoni">
 							    <div class="scroll">
-									Ini Testimoni <br>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									<table border="1">
+										<tr>
+											<th>E-mail</th>
+											<th>Nama</th>
+											<th>Testimoni</th>
+											<th>Photo</th>
+											<th>Action</th>
+										</tr>
+										{% for table in testimoni %}
+										<tr>
+											<td>{{table.email}}</td>
+											<td>{{table.nama}},-</td>
+											<td>{{table.isiTestimoni}}</td>
+											<td><img src="/uploadPhoto/testimoni/{{table.Photo}}" width="50px" height="40px"></td>
+											<td>
+												<a href="{{route('deleteTestimoni', {idToko: table.idToko})}}" class="linkcrud">Delete</a>
+											</td>
+										</tr>
+										{% endfor %}
+									</table>
 								</div>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getToko">
 								<a href="{{route('profilU.user_insertToko')}}"><button value="Create" class="tambah">Create</button></a>
-								<table border="1">
-									<tr>
-										<th>Judul Toko</th>
-										<th>Harga</th>
-										<th>Jenis Barang</th>
-										<th>Keterangan Barang</th>
-										<th>Photo</th>
-										<th>Action</th>
-									</tr>
-									{% for table in toko %}
-									<tr>
-										<td>{{table.judulToko}}</td>
-										<td>Rp.{{table.harga}},-</td>
-										<td>{{table.jb|raw }}</td>
-										<td>{{table.ketToko|raw }}</td>
-										<td><img src="/uploadPhoto/toko/{{table.photoToko}}" width="50px" height="40px"></td>
-										<td>
-											<a href="{{route('profilU.user_editToko', {idToko: table.idToko})}}" class="linkcrud">Edit</a>
-											<a href="{{route('deleteToko', {idToko: table.idToko})}}" class="linkcrud">Delete</a>
-										</td>
-									</tr>
-									{% endfor %}
-								</table>
+							    <div class="scroll">
+									<table border="1">
+										<tr>
+											<th>Judul Toko</th>
+											<th>Harga</th>
+											<th>Jenis Barang</th>
+											<th>Keterangan Barang</th>
+											<th>Photo</th>
+											<th>Action</th>
+										</tr>
+										{% for table in toko %}
+										<tr>
+											<td>{{table.judulToko}}</td>
+											<td>Rp.{{table.harga}},-</td>
+											<td>{{table.jb|raw }}</td>
+											<td>{{table.ketToko|raw }}</td>
+											<td><img src="/uploadPhoto/toko/{{table.photoToko}}" width="50px" height="40px"></td>
+											<td>
+												<a href="{{route('profilU.user_editToko', {idToko: table.idToko})}}" class="linkcrud">Edit</a>
+												<a href="{{route('deleteToko', {idToko: table.idToko})}}" class="linkcrud">Delete</a>
+											</td>
+										</tr>
+										{% endfor %}
+									</table>
+								</div>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getArtikel">
 								<a href="{{route('profilU.user_insertArtikel')}}"><button value="Create" class="tambah">Create</button></a>
-								<table border="1">
-									<tr>
-										<th>Judul Artikel</th>
-										<th>Isi Artikel</th>
-										<th>Photo</th>
-										<th>Action</th>
-									</tr>
-									{% for table in artikel %}
-									<tr>
-										<td>{{table.Judul_Artikel}}</td>
-										<td>{{table.Isi_Artikel|raw }}</td>
-										<td><img src="/uploadPhoto/artikel/{{table.Photo}}" width="50px" height="40px"></td>
-										<td>
-											<a href="{{route('profilU.user_editArtikel', {No: table.No})}}" class="linkcrud">Edit</a>
-											<a href="{{route('deleteArtikel', {No: table.No})}}" class="linkcrud">Delete</a>
-										</td>
-									</tr>
-									{% endfor %}
-								</table>
+							    <div class="scroll">
+									<table border="1">
+										<tr>
+											<th>Judul Artikel</th>
+											<th>Isi Artikel</th>
+											<th>Photo</th>
+											<th>Action</th>
+										</tr>
+										{% for table in artikel %}
+										<tr>
+											<td>{{table.Judul_Artikel}}</td>
+											<td>{{table.Isi_Artikel|raw }}</td>
+											<td><img src="/uploadPhoto/artikel/{{table.Photo}}" width="50px" height="40px"></td>
+											<td>
+												<a href="{{route('profilU.user_editArtikel', {No: table.No})}}" class="linkcrud">Edit</a>
+												<a href="{{route('deleteArtikel', {No: table.No})}}" class="linkcrud">Delete</a>
+											</td>
+										</tr>
+										{% endfor %}
+									</table>
+								</div>
 							</div>
 						    <div role="tabpanel" class="tab-pane" id="getTutorial">
 								<a href="{{route('profilU.user_insertTutorial')}}"><button value="Create" class="tambah">Create</button></a>
-								<table border="1">
-									<tr>
-										<th>Judul Tutorial</th>
-										<th>Isi Tutorial</th>
-										<th>Photo</th>
-										<th>Action</th>
-									</tr>
-									{% for table in tutorial %}
-									<tr>
-										<td>{{table.Judul_Tutorial}}</td>
-										<td>{{table.Isi_Tutorial|raw }}</td>
-										<td><img src="/uploadPhoto/tutorial/{{table.Photo}}" width="50px" height="40px"></td>
-										<td>
-											<a href="{{route('profilU.user_editTutorial', {No: table.No})}}" class="linkcrud">Edit</a>
-											<a href="{{route('deleteTutorial', {No: table.No})}}" class="linkcrud">Delete</a>
-										</td>
-									</tr>
-									{% endfor %}
-								</table>
+							    <div class="scroll">
+									<table border="1">
+										<tr>
+											<th>Judul Tutorial</th>
+											<th>Isi Tutorial</th>
+											<th>Photo</th>
+											<th>Action</th>
+										</tr>
+										{% for table in tutorial %}
+										<tr>
+											<td>{{table.Judul_Tutorial}}</td>
+											<td>{{table.Isi_Tutorial|raw }}</td>
+											<td><img src="/uploadPhoto/tutorial/{{table.Photo}}" width="50px" height="40px"></td>
+											<td>
+												<a href="{{route('profilU.user_editTutorial', {No: table.No})}}" class="linkcrud">Edit</a>
+												<a href="{{route('deleteTutorial', {No: table.No})}}" class="linkcrud">Delete</a>
+											</td>
+										</tr>
+										{% endfor %}
+									</table>
+								</div>
 							</div>
   						</div>
 					</div>

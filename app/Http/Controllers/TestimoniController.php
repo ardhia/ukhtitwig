@@ -40,4 +40,12 @@ class TestimoniController extends Controller
         //dd($user);exit;
         return redirect()->route('profilU', ['user_id' => $id]);
     }
+
+    public function deleteTestimoni ($No){
+        $user = Auth::user();
+        $delete = DB::table('testimoni')->where('No', $No)->where('user_id', $user->id)->delete();
+
+        return Redirect::to('/auth/profilU');
+    }
+
 }
