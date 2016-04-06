@@ -2,8 +2,9 @@
 	<div class="changePP">
 		<div id="titleChangePP">Change Picture</div>
 		<div id="contentChangePP">
-			<form method="POST" action="{{route('profilUser')}}">
-				<input type="file" value="{{apa.apa}}" class="fileChangePP"><br />
+			<form enctype="multipart/form-data" method="POST" action="{{route('changePhotoProfil', {id: user.id})}}">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input name="photoProfil" type="file" value="{{user.photoProfil}}" class="fileChangePP"><br />
 				<input type="submit" value="Change" class="submitChangePP">
 			</form>
 		</div>

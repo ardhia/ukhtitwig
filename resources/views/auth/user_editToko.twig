@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Toko</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="all-wrapper">
+	    <div class="log">
+	    	<a href="{{route('/')}}"><div id="logo">Ukhti</div></a>
+	    	<div id="log">
+	    		<ul>
+	    			<li><a href="{{route('aboutUser')}}">About</a></li>
+	    			<li><a href="{{route('logoutUser')}}">Log Out</a></li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <div id="wrapper">
+	    	<form enctype="multipart/form-data" method="POST" action="{{route('prosesEditToko', {idToko: isiToko.idToko})}}">
+	    		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	    		<input type="text" name="judulToko" placeholder="Judul" class="insertToko" maxlength="40" value="{{isiToko.judulToko}}" />
+				<input type="file" name="photoToko" class="brows-toko" value="{{isiToko.photoToko}}" />
+	    		<input type="number" name="harga" placeholder="Harga" class="insertToko" max="9999999999999999" min="0" value="{{isiToko.harga}}" />
+	    		<select name="jb" class="insertToko">
+	    			<option value="{{isiToko.jb}}">{{isiToko.jb}}</option>
+	    			<option value="Pakaian">	Pakaian		</option>
+	    			<option value="Kerudung">	Kerudung	</option>
+	    			<option value="Aksesoris">	Aksesoris	</option>
+	    			<option value="Makanan">	Makanan		</option>
+	    			<option value="Tas">		Tas 		</option>
+	    			<option value="Sepatu">		Sepatu		</option>
+	    			<option value="Lainnya">	Lainnya		</option>
+	    		</select>
+		    	<div class="insert-ket-toko">Keterangan Barang:</div>
+		    	<textarea class="text-area" name="ketToko" maxlength="175">{{isiToko.ketToko}}</textarea>
+				<input type="submit" name="publish" value="Perbarui" class="push">
+	    	</form>
+	    </div>
+	</div>
+</div>
+</body>
+</html>

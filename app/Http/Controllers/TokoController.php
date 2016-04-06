@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-
+use App\Toko;
 
 
 
@@ -36,6 +36,16 @@ class TokoController extends Controller
 
 		return view('auth\user_insertToko', ['toko' => $toko]);
 	}
+
+    public function user_editToko ($idToko){
+        $user = Auth::user();
+
+        $isiToko = Toko::where('idToko', $idToko)->where('user_id', $user->id)->firstOrFail();
+        //dd($isiToko, $user);
+        //exit;
+        return view('auth/user_editToko', ['user' => $user, 'isiToko' => $isiToko]);
+    }
+
 
     //post
     public function prosesUser_insertToko (Request $request){
@@ -75,6 +85,39 @@ class TokoController extends Controller
 
 //        return Redirect::to('auth/profilU/user_insertArtikel');
     }
+
+    public function prosesUser_editToko (Request $request, $idToko) {
+        /* $user = Auth::user();
+        $this->validate($request, [
+        'judulToko' => 'required',
+        'photoToko' => 'required|unique:toko|max:255',
+        'harga' => 'required',
+        'jb' => 'required',
+        'ketToko' => 'required',
+        ]);
+        $toko = new User_insertToko;*/
+        if($request->hasFile('photoToko')) {
+                        $file = Input::file('photoToko');
+                        $name = $file->getClientOriginalName();
+                        $file->move(public_path().'/uploadPhoto/toko/', $name);
+        $editToko = Toko::where('idToko', $idToko)
+                        ->update(['judulToko' => $request->input('judulToko'), 'harga' => $request->input('harga'), 'jb' => $request->input('jb'), 'ketToko' => $request->input('ketToko'), 'photoToko' => $name]);
+        }
+        //$editToko>save();
+        //dd($editToko);
+        //exit;
+
+        return Redirect::to('/auth/profilU');
+    }
+
+    public function deleteToko ($idToko){
+        $user = Auth::user();
+        $delete = DB::table('toko')->where('idToko', $idToko)->where('user_id', $user->id)->delete();
+
+        return Redirect::to('/auth/profilU');
+    }
+
+
 	//END
 
 	//ADMIN

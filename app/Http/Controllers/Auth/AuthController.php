@@ -79,6 +79,7 @@ class AuthController extends Controller
             'tanggal_lahir' => $data['tanggal_lahir'],
             'jenis_kelamin' => $data['jenis_kelamin'],
             'status' => $data['status'],
+            'photoProfil' => $data['photoProfil'],
             'email' => $data['email'],
             'al_email' => $data['al_email'],
             'password' => bcrypt($data['password']),

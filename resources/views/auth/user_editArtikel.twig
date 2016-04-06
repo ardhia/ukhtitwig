@@ -1,0 +1,15 @@
+{% extends 'auth/layoutUserCRUD' %}
+{% block userCRUD %}
+	<form enctype="multipart/form-data" method="post" action="{{route('prosesEditArtikel', {No: isiArtikel.No})}}"> 
+		<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+		<div class="bungkus-tool-judul">
+			<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art" value="{{isiArtikel.Judul_Artikel}}" />
+			<input type="file" name="Photo" class="photo" value="/uploadPhoto/artikel/{{isiArtikel.Photo}}" />
+			<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
+			<div class="bungkus-isiArtikel">
+				<textarea name="Isi_Artikel">{{isiArtikel.Isi_Artikel}}</textarea>
+			</div>
+			<input type="submit" name="edit" value="Perbarui" class="push" />
+		</div>
+	</form>
+{% endblock %}
