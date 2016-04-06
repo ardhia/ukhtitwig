@@ -46,7 +46,17 @@
 					<div id="arsip">
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
-							<div class="panel-group" id="accordion">
+							{% for item in Riwayat %}
+								<a href="#Riwayat-{{item.Riwayat}}" class="btn btn-success" data-toggle="collapse">
+									{{item.Riwayat}}
+								</a>
+								<div id="#Riwayat-{{item.Riwayat}}" class="collapse">
+									{% for Sumber_HR in item.Sumber_HR %}
+									    <a href="#">{{Sumber_HR.Sumber_HR}}</a>
+									{% endfor %}
+								</div>
+							{% endfor %}
+							<!--div class="panel-group" id="accordion">
 							  	{% for item in Riwayat %}
 							    	<div class="panel panel-default">
 								      	<div class="panel-heading">
@@ -58,8 +68,8 @@
 								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
 								        	<div class="panel-body">
 									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
-										          	{% for Sumber_HR in item.Sumber_HR %}
-										            	<div class="panel panel-default">
+										          	{% for Sumbe_HR in item.Sumber_HR %}
+										            	<div clasrs="panel panel-default">
 											              	<div class="panel-heading">
 											                	<h4 class="panel-title">
 											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#Sumber_HR-{Sumber_HR.Sumber_HR}}">{{Sumber_HR.Sumber_HR}}</a>
@@ -76,7 +86,7 @@
 								      	</div>
 							    	</div>
 							    {% endfor %}
-						  	</div>
+						  	</div-->
 						</div>
 					</div>
 				</div>

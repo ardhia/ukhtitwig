@@ -17,22 +17,23 @@
 		<div id="header">
 			<div class="log">
 				<a href="/"><div id="logo">Ukhti</div></a>
-				<div id="log">
+				<div id="log"><div id="namalog">
 					<ul>
-					  	<li><a href="#setting">=v=</a>
-					  		<ul id="setting">
+					  	<li><a href="{{route('profilUser')}}">@{{user.username}}</a>
+					  		<ul>
+					  			<li><a href="">About Ukhti</a></li>
+					  			<li><a href="">Toko</a></li>
+					  			<li><a href="">Tutorial</a></li>
+					  			<li><a href="">Artikel</a></li>
 					  			<li><a href="">Pengaturan</a></li>
-					  			<li><a href=""></a></li>
 					  			<li><a href="{{route('logoutUser')}}">Log Out</a></li>
 					  		</ul>
 					  	</li>
-						<li><a href="{{route('about')}}">About</a></li>
 					</ul>
-			    </div>
+			    </div></div>
 			    <div class="wraplog">
 		    		<a href="{{route('profilUser')}}">
-			    		<div id="photolog">{{user.Photo}}</div>
-			    		<div id="namalog">@{{user.username}}</div>
+			    		<img id="photolog" src="/uploadPhoto/photoProfil/{{user.photoProfil}}" width="100%" height="100%">
 		    		</a>
 			    </div>
 			</div>

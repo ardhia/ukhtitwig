@@ -34,23 +34,35 @@
 						</div>
 					</div>
 					<div class="outbio">
-					<div id="biodatauser">
-						<div class="alamat"></div>
-						<div class="ttl"></div>
-						<div class="jk"></div>
-						<div class="iemail"></div>
-						<div class="nohp"></div>
-						<div class="suka"></div>
-						<div class="ihadits"></div>
-					</div>
-					<div id="biodatauser2"></div>
-					<div class="nana">{{user.alamat}}</div>
-					<div class="nana">{{user.tempat_lahir}}, {{user.tanggal_lahir}}</div>
-					<div class="nana">{{user.jenis_kelamin}}</div>
-					<div class="nana">{{user.email}}</div>
-					<div class="nana">{{user.no_hp}}</div>
-					<div class="nana">{{user.kesukaan}}</div>
-					<div class="nana">{{user.kutipan}}</div>
+						<a href="#suntingBio" class="sunting"></a>
+						<div id="biodatauser">
+							<div class="alamat"></div>
+							<div class="isiBio">{{user.alamat}}</div>
+						</div>
+						<div id="biodatauser">
+							<div class="ttl"></div>
+							<div class="isiBio">{{user.tempat_lahir}}, {{user.tanggal_lahir}}</div>
+						</div>
+						<div id="biodatauser">
+							<div class="jk"></div>
+							<div class="isiBio">{{user.jenis_kelamin}}</div>
+						</div>
+						<div id="biodatauser">
+							<div class="iemail"></div>
+							<div class="isiBio">{{user.email}}</div>
+						</div>
+						<div id="biodatauser">
+							<div class="nohp"></div>
+							<div class="isiBio">{{user.no_hp}}</div>
+						</div>
+						<div id="biodatauser">
+							<div class="suka"></div>
+							<div class="isiBio">{{user.kesukaan}}</div>
+						</div>
+						<div id="biodatauser">
+							<div class="ihadits"></div>
+							<div class="isiBio">{{user.kutipan}}</div>
+						</div>
 					</div>
 				</div>
 				<div class="contentuser">
@@ -97,8 +109,8 @@
 										<td>{{table.ketToko|raw }}</td>
 										<td><img src="/uploadPhoto/toko/{{table.photoToko}}" width="50px" height="40px"></td>
 										<td>
-											<a href="" class="linkcrud">Edit</a>
-											<a href="" class="linkcrud">Delete</a>
+											<a href="{{route('profilU.user_editToko', {idToko: table.idToko})}}" class="linkcrud">Edit</a>
+											<a href="{{route('deleteToko', {idToko: table.idToko})}}" class="linkcrud">Delete</a>
 										</td>
 									</tr>
 									{% endfor %}
@@ -119,8 +131,8 @@
 										<td>{{table.Isi_Artikel|raw }}</td>
 										<td><img src="/uploadPhoto/artikel/{{table.Photo}}" width="50px" height="40px"></td>
 										<td>
-											<a href="" class="linkcrud">Edit</a>
-											<a href="" class="linkcrud">Delete</a>
+											<a href="{{route('profilU.user_editArtikel', {No: table.No})}}" class="linkcrud">Edit</a>
+											<a href="{{route('deleteArtikel', {No: table.No})}}" class="linkcrud">Delete</a>
 										</td>
 									</tr>
 									{% endfor %}
@@ -142,7 +154,7 @@
 										<td><img src="/uploadPhoto/tutorial/{{table.Photo}}" width="50px" height="40px"></td>
 										<td>
 											<a href="{{route('profilU.user_editTutorial', {No: table.No})}}" class="linkcrud">Edit</a>
-											<a href="" class="linkcrud">Delete</a>
+											<a href="{{route('deleteTutorial', {No: table.No})}}" class="linkcrud">Delete</a>
 										</td>
 									</tr>
 									{% endfor %}

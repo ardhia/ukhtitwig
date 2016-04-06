@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use DB;
 
 class PagesController extends Controller
 {
@@ -19,8 +20,12 @@ class PagesController extends Controller
     	return view('about');
     }
 
-    public function profilU () {
-    	return view('profilU');
+    public function profilU ($id) {
+        $testimoni = DB::table('testimoni')->select('nama', 'email', 'isiTestimoni', 'No', 'Photo', 'created_at')->where('user_id', $id)->get();
+        $user = User::select('name', 'email', 'password', 'username', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'status', 'al_email', 'photoProfil')->where('id', $id)->get();
+        //dd($user);
+
+    	return view('profilU', ['user' => $user, 'testimoni' => $testimoni, 'id' => $id]);
     }
 
     //END

@@ -11,6 +11,7 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Artikel;
 
 class ArtikelController extends Controller
 {
@@ -42,7 +43,7 @@ class ArtikelController extends Controller
     //
     public function tampilIsiArtikel ($No) {
         $dataArtikel = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo', 'created_at')->where('No', $No)->first();
-        //dd($dataTutorial);
+        //dd($dataArtikel);
         return view('isi-artikel', ['dataArtikel' => $dataArtikel]);
     }
 
@@ -64,6 +65,16 @@ class ArtikelController extends Controller
     public function tampilIsiArtikelUser () {
         return view('auth/isi-artikel');
     }
+
+
+    public function user_editArtikel ($No){
+        $user = Auth::user();
+
+        $isiArtikel = Artikel::where('No', $No)->where('user_id', $user->id)->firstOrFail();
+        //dd($isiArtikel, $user);exit;
+        return view('auth/user_editArtikel', ['user' => $user, 'isiArtikel' => $isiArtikel]);
+    }
+
 
     public function tampilUser_insertArtikel () {
         $user = Auth::user();
@@ -97,6 +108,38 @@ class ArtikelController extends Controller
         $artikel->save();
         //dd($artikel);exit;
         return Redirect::to('auth/profilU/user_insertArtikel');
+    }
+
+    public function prosesUser_editArtikel (Request $request, $No) {
+        /*$this->validate($request, [
+        'Judul_Artikel' => 'required',
+        'Isi_Artikel' => 'required',
+        'Photo' => 'required|unique:artikel|max:255',
+        ]);*/
+        //$editArtikel= new User_insertArtikel;
+        if($request->hasFile('Photo')) {
+                                    $file = Input::file('Photo');
+                                    $name = $file->getClientOriginalName();
+                                    $file->move(public_path().'/uploadPhoto/artikel/', $name);
+        $editArtikel = DB::table('artikel')
+                        ->select('Judul_Artikel', 'Isi_Artikel', 'Photo', 'No')
+                        ->where('No', $No)
+                        ->update(['Judul_Artikel' => $request->input('Judul_Artikel'),
+                        'Isi_Artikel' =>  $request->input('Isi_Artikel'),
+                        'Photo' => $name]);
+        }
+        //$editArtikel->save();
+        //dd($editArtikel);
+        //exit;
+
+        return Redirect::to('/auth/profilU');
+    }
+
+    public function deleteArtikel ($No){
+        $user = Auth::user();
+        $delete = DB::table('artikel')->where('No', $No)->where('user_id', $user->id)->delete();
+
+        return Redirect::to('/auth/profilU');
     }
 
     //END

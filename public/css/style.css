@@ -108,9 +108,45 @@ body {
 	border-radius: 2px;
 }
 
+#namalog {
+	width: 100%;
+	height: auto;
+	float: left;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+	background: RGBA(93, 238, 255, 0.19);
+}
+
+#namalog ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#namalog ul li {
+	position: relative;
+	float: right;
+	text-align: center;
+}
+
+#namalog ul li a {
+	display: block;
+	color: #827BFF;
+	padding: 10px 20%;
+	text-decoration: none;
+}
+
+#namalog ul li a:hover{
+	color: #90ECE2;
+	border-right: solid #90ECE2 2px;
+	background: #fbfbfb;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+}
+
 
 /*dropmenu navigasi*/
-#log li ul {
+#namalog li ul {
 	background: #fbfbfb;
 	display: none;
 	height: auto;
@@ -118,12 +154,12 @@ body {
 	margin: 0px;
 	text-align: left;
 	position: absolute;
-	width: 150px;
+	width: 200px;
 	border-radius: 6px;
 	box-shadow: 2px 2px 2px 2px #d5d5d5;
 }
 
-#log li li 	{
+#namalog li li 	{
 	display: block;
 	float: none;
 	text-align: left;
@@ -132,62 +168,42 @@ body {
 	border-bottom: 1px solid #929292;
 }
 
-#log li:hover ul {
+#namalog li ul a {
+	padding: 10px 5%;
+}
+
+#namalog li:hover ul {
 	display: block;
 }
 
-#log li ul a:hover,
-#log li ul li:hover > a {
+#namalog li ul a:hover,
+#namalog li ul li:hover > a {
 	color: #fbfbfb;
 	text-decoration: none;
 	background: #929292;
 	border: 0px solid;
+	border-radius: 2px;
 }
 /*end*/
 
 .wraplog {
 	float: right;
 	height: auto;
-	padding: 13px 0% 13px 9%;
+	margin: 13px 0% 13px 9%;
 	font-size: 13px;
-	width: 10%;
+	width: 2.447%;
 }
 
 #photolog {
-	background: url(../images/photoProfil.jpg);
-	background-size: 100% 100%;
-	width: 25%;
+	width: 100%;
 	height: 33px;
+	background: RGBA(93, 238, 255, 0.19);
 	border-radius: 2px;
 	float: left;
 }
 
 #photolog:hover{
-	color: #90ECE2;
-	background: url(../images/photoProfil.jpg);
-	background-size: 100% 100%;
-	width: 25%;
-	height: 33px;
 	border-radius: 27px;
-}
-
-#namalog {
-	width: 66%;
-	float: left;
-	padding: 10px 0px 10px 5%;
-	text-align: center;
-	color: #827BFF;
-	background: RGBA(93, 238, 255, 0.19);
-	border-top-right-radius: 16px;
-	border-bottom-right-radius: 16px;
-}
-
-#namalog:hover{
-	color: #90ECE2;
-	border-right: solid #90ECE2 2px;
-	background: #fbfbfb;
-	border-top-right-radius: 16px;
-	border-bottom-right-radius: 16px;
 }
 
 .navigasi {
@@ -825,10 +841,10 @@ body {
 }
 
 #photouser {
-	background: url(../images/photoProfil.jpg);
+	background: #C6FFFB;
 	background-size: 100% 100%;
 	width: 85%;
-	height: 291px;
+	height: 284px;
 	float: left;
 	padding: 2px 2%;
 	margin: 10px 5%;
@@ -837,7 +853,7 @@ body {
 
 .photoProfil {
 	width: 21%;
-	height: 291px;
+	height: 283.283px;
 	float: left;
 	display: block;
 	position: absolute;
@@ -846,7 +862,7 @@ body {
 
 #changePhoto {
 	width: 21%;
-	margin-top: 241px;
+	margin-top: 232px;
 	height: 50px;
 	float: left;
 	position: absolute;
@@ -875,62 +891,115 @@ body {
 }
 
 .outbio {
-	width: 100%;
+	width: 95%;
 	height: auto;
 	float: left;
+	margin: 10px 0px 10px 5%;
+}
+
+.outbioUmum {
+	width: 95%;
+	height: auto;
+	float: left;
+	margin: 10px 0px 10px 5%;
+}
+
+.outbio:hover {
+	background: RGBA(0, 0, 0, 0.27);
+	border-radius: 8px;
+}
+
+.sunting {
+	background: url(../images/icon_setbefore.png) no-repeat;
+	background-size: 50% 50%;
+	width: 2%;
+	height: 26.9px;
+	float: right;
+	position: absolute;
+	margin: -8px -28px;
+}
+
+.sunting:hover {
+	background: url(../images/icon_set.png) no-repeat;
+	background-size: 100% 100%;
 }
 
 #biodatauser {
-	width: 10%;
-	height: auto;
+	width: 100%;
 	float: left;
-	padding: 2px 2%;
-	margin: 10px 0px 10px 5%;
+	height: auto;
+	margin: 3px 0px;
 }
+
 .alamat {
 	height: 30px;
 	background: url(../images/iconrumah.png);
 	background-size: 100% 100%;
+	width: 10%;
+	margin: 2px 2%;
+	float: left;
 }
+
 .ttl {
 	height: 30px;
 	background: url(../images/iconcake.png);
 	background-size: 100% 100%;
-	margin: 5px 0px;
+	width: 10%;
+	margin: 2px 2%;
+	float: left;
+
 }
+
 .jk {
 	height: 30px;
 	background: url(../images/ijk.png);
 	background-size: 100% 100%;
+	width: 10%;
+	margin: 2px 2%;
+	float: left;
 }
+
 .iemail {
 	height: 30px;
 	background: url(../images/iconemail.png);
 	background-size: 100% 100%;
-	margin: 5px 0px;
+	width: 10%;
+	margin: 2px 2%;
+	float: left;
 }
+
 .nohp {
 	height: 30px;
 	background: url(../images/iconhp.png);
 	background-size: 100% 100%;
+	width: 10%;
+	margin: 2px 2%;
+	float: left;
 }
+
 .suka {
 	height: 30px;
 	background: url(../images/iconsuka.png);
 	background-size: 100% 100%;
-	margin: 5px 0px;
+	width: 10%;
+	margin: 2px 2%;
+	float: left;
 }
+
 .ihadits {
 	height: 30px;
 	background: url(../images/iconal-quran.png);
 	background-size: 100% 100%;
-}
-#biodatauser2 {
-	width: 70%;
-	height: auto;
+	width: 10%;
+	margin: 2px 2%;
 	float: left;
-	padding: 2px 2%;
-	margin: 10px 5% 10px 0px;
+}
+
+
+.isiBio {
+	float: left;
+	width: 79%;
+	padding: 10px 0px 0px 3%;
 }
 
 .contentuser {
@@ -938,10 +1007,6 @@ body {
 	height: auto;
 	float: left;
 	margin: 5px 0px 0px 2%;
-}
-.nana {
-	height: 10px;
-	padding-top: 25px;
 }
 
 #navuser {
@@ -1738,10 +1803,117 @@ body {
 
 .scroll {
 	width: 96%;
-	height: 400px;
+	height: 385px;
 	float: left;
 	overflow-y: scroll;
+	scroll-behavior: ;
 	padding-right: 4%;
+}
+
+#wrap-testimoni {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 10px;
+	border: 1px solid #C6FFFB;
+	border-radius: 5px;
+	border-left-color: #fff;
+	padding-bottom: 8px;
+}
+
+.photo-testimoni {
+	width: 24%;
+	height: 92px;
+	float: left;
+	margin-right: 1%;
+	background: #C6FFFB;
+	border-radius: 4px;
+}
+
+.out-testimoni {
+	width: 75%;
+	height: auto;
+	float: left;
+}
+
+#judul-testimoni {
+	width: 92%;
+	height: auto;
+	float: left;
+	background: #C6FFFB;
+	padding: 4px 4%;
+	border-radius: 4px;
+}
+
+.nama-testimoni {
+	width: 50%;
+	height: auto;
+	float: left;
+}
+
+.date-testimoni {
+	width: 50%;
+	height: auto;
+	float: left;
+	text-align: right;
+	font-size: 14px;
+	color: #6b8a82;
+}
+
+#isi-testimoni {
+	width: 94%;
+	height: auto;
+	float: left;
+	padding: 8px 3% 0px;
+}
+
+.formTestimoni {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: 20px;
+	border-top: 6px double #6B8A82;
+	border-radius: 8px;
+}
+
+.fileTestimoni {
+	width: 98%;
+	height: auto;
+	float: left;
+	margin: 3px 0%;
+	color: #6b8a82;
+	background: #C6FFFB;
+	padding: 2px 1%;
+	border-radius: 4px;
+}
+
+.inputTestimoni {
+	width: 44%;
+	height: auto;
+	float: left;
+	margin: 4px 1% 4px 0px;
+	padding: 4px 2%;
+}
+
+.komenTestimoni {
+	width: 96%;
+	height: 50px;
+	float: left;
+	margin: 4px 0px;
+	padding: 4px 2%;
+}
+
+.submitTestimoni {
+	width: auto;
+	height: auto;
+	float: right;
+	padding: 2px 3%;
+	margin: 2px 2%;
+	background: #C6FFFB;
+	border: #fff solid 1px;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 1px #6b8a82;
+	color: #6b8a82;
 }
 
 #scrollbar1 { width: 100%; clear: both; margin: 20px 0 10px; }
