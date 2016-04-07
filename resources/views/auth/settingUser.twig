@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Setting</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/settingtabs.css')}}">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="wrapper_setting">
+	<div class="log">
+		<a href="/"><div id="logo">Ukhti</div></a>
+		<div id="log"><div id="namalog">
+			<ul>
+				<li><a href="{{route('profilUser')}}">@{{user.username}}</a>
+					<ul>
+						<li><a href="">About Ukhti</a></li>
+						<li><a href="">Toko</a></li>
+						<li><a href="">Tutorial</a></li>
+						<li><a href="">Artikel</a></li>
+						<li><a href="">Pengaturan</a></li>
+						<li><a href="{{route('logoutUser')}}">Log Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div></div>
+		<div class="wraplog">
+			<a href="{{route('profilUser')}}">
+				<img id="photolog" src="/uploadPhoto/photoProfil/{{user.photoProfil}}" width="100%" height="100%">
+			</a>
+		</div>
+	</div>
+	<div id="wrapper">
+		<div class="setting">
+			<div id="setting1">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#getSetting" aria-controls="getSetting" role="tab" data-toggle="tab">Setting</a>
+					</li>
+					<li role="presentation">
+						<a href="#getProfil" aria-controls="getProfil" role="tab" data-toggle="tab">Profil</a>
+					</li>
+					<li role="presentation">
+						<a href="#getEditProfil" aria-controls="getEditProfil" role="tab" data-toggle="tab">Edit Profil</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="daftar_setting">
+			<div id="daftar_setting1">
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="getSetting">
+						<div class="gambar_setting"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="getProfil">
+						<div class="namanya">
+							<div class="namanya1">Nama</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.name}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Email</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.email}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Username</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.username}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Alternatif Email</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.al_email}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Tempat Tanggal Lahir</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.tempat_lahir}}, {{settinguser.tanggal_lahir}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Jenis Kelamin</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.jenis_kelamin}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Status</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.status}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Alamat</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.alamat}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Telepon</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.noHP}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Kesukaan</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.kesukaan}}</div>
+						</div>						
+						<div class="namanya">
+							<div class="namanya1">Kutipan Hadits</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1">{{settinguser.kutipanHadits}}</div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Suasana Hati</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1"></div>
+						</div>
+						<div class="namanya">
+							<div class="namanya1">Contact Us</div>
+							<div class="ttk">:</div>
+							<div class="isi_namanya1"></div>
+						</div>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="getEditProfil">
+							<div class="namanya">
+								<div class="namanya1"></div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Nama</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Email</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Alternatif email</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Password</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Konfirmasi Password</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Tempat Tanggal Lahir</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Jenis Kelamin</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Status</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Photo Profil</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Alamat</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Telepon</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Kesukaan</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Kutipan Hadits</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">Suasana Hati</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+							<div class="namanya">
+								<div class="namanya1">contact Us</div>
+								<div class="ttk"></div>
+								<div class="isi_namanya1"></div>
+							</div>
+						</div>
+					
+	  			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

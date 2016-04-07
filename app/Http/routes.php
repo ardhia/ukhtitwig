@@ -95,6 +95,9 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::post('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_insertToko'])->name('prosesToko');
     Route::post('auth/profilU/{idToko}/user_editToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_editToko'])->name('prosesEditToko');
+    /*SETTING USER*/
+    Route::get('auth/setting_user', 'SettingUserController@tampilSettingUser')->name('settingUser');
+
     /*
 	|--------------------------------------------------------------------------
 	| END YOOOOOOOOOOO!!! >o<

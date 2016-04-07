@@ -1596,8 +1596,77 @@ body {
 	border-bottom: solid 1px;
 	border-radius: 8px;
 }
-
-
+/*SETTING USER*/
+.wrapper_setting{
+	width: 100%;
+	float: left;
+}
+.setting {
+	width: 40%;
+	height: auto;
+	float: left;
+	background: cyan;
+}
+#setting1{
+	width: 98%;
+	height: auto;
+	float: left;
+	margin: 5px 0px 5px 2%;
+	background: pink;
+}
+.daftar_setting {
+	width: 57%;
+	height: auto;
+	margin-left: 3%;
+	float: left;
+	background: cyan;
+}
+#daftar_setting1 {
+	width: 98%;
+	height: auto;
+	float: left;
+	margin: 20px 2% 5px 1%;
+	background: white;
+}
+.gambar_setting {
+	width: 78%;
+	height: 480px;
+	float: left;
+	background: url(../images/iconsetting3.png);
+	background-size: 100% 100%;
+	margin: 20px 7% 0px 15%;
+}
+.namanya {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.namanya1 {
+	width: 35%;
+    height: auto;
+    float: left;
+    font-size: 22px;
+    margin-left: 5%;
+    padding-top: 1%;
+	font-family: "Handlee";
+}
+.ttk{
+	width: 2%;
+	height: auto;
+	float: left;
+	font-size: 22px;
+	padding-top: 1%;
+	padding-left: 1%;
+}
+.isi_namanya1 {
+	width: 52%;
+	height: auto;
+	font-size: 22px;
+	float: left;
+	margin-right: 5%;
+	padding-top: 1%;
+	font-family: "Handlee";
+}
 /*Form Style*/
 
 .text {
