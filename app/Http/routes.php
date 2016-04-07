@@ -112,7 +112,13 @@ Route::group(['middleware' => ['web']], function () {
 
     //Home About Profil
     Route::get('/', 'PagesController@home')->name('/');
+    
     Route::get('/about', 'PagesController@about')->name('about');
+    Route::get('/about/helpArtikel','HelpartikelController@menampilkan_HelpArtikel')->name('about.help-artikel');
+    Route::get('/about/helpToko', 'HelptokoController@menampilkan_HelpToko')->name('about.help-toko');
+    Route::get('/about/helpTutorial', 'HelptutorialController@menampilkan_HelpTutorial')->name('about.help-tutorial');
+    Route::get('/about/helpSignUp', 'HelpsignupController@menampilkan_HelpSignUp')->name('about.help-signup');
+
     Route::get('/profilU/{id}', 'PagesController@profilU')->name('profilU');
     Route::post('/subs', 'SubscribeController@prosesSimpanLangganan')->name('simpanLangganan');
 

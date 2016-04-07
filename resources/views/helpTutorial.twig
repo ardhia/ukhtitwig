@@ -1,0 +1,21 @@
+{% extends 'layout' %}
+{% block isi %}
+    <div id="bar">
+    	<div class="search">
+    		<form>
+    			<input type="text" name="input-serach" placeholder="Search" class="text"></input>
+    			<input type="submit" name="search" value="" class="submit"></input>
+    		</form>
+    	</div>
+    	<div class="_breadcrumb">
+    		<!-- another version - flat style with animated hover effect -->
+    		<div class="breadcrumb flat">
+    			<a href="{{route('/')}}">Home</a>
+    			<a href="{{route('about')}}">About</a>
+    			<a href="#">Bantuan Tutorial</a>
+    		</div>
+    	</div>
+    </div>
+    <div id="wrapper">
+    </div>
+{% endblock %}
