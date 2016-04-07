@@ -15,27 +15,30 @@ class HaditsController extends Controller
     	//$hadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->Paginate(5);
         $hadits = Hadits::paginate(5);
 
+
         //Arsip
         $Riwayat = DB::table('hadits')
                         ->select (DB::raw("Riwayat"), DB::raw("count(*) as total "))
                         ->groupBy(DB::raw("Riwayat"))
+                        //->groupBy MONTH('created_at');
                         ->get();
-        foreach ($Riwayat as $item) {
-            $Sumber_HR = DB::table('hadits')
-                ->select(DB::raw('Sumber_HR'), DB::raw('count(*) as jumlah'))
-                ->groupBy(DB::raw('Sumber_HR'))
-                ->where(DB::raw('Riwayat'), $item->Riwayat)->get();
-            $item->Sumber_HR = $Sumber_HR;
-        }
 
+        foreach($Riwayat as $item){
+            $Isi_Hadits = DB::table('hadits')
+                ->select(DB::raw('Isi_Hadits'))
+                ->groupBy(DB::raw('Isi_Hadits'))
+                ->where(DB::raw('Riwayat'), $item->Riwayat)->get();
+            $item->Isi_Hadits = $Isi_Hadits;
+            //dd($item);
+        }
         //dd($Riwayat);
-        //exit;
+
         return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat ]);
     }
 
     public function search (Request $request) {
         $keywords = $request->get('keywords');
-        $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->get();
+        $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->paginate(7);
 
         return view('searchhadits', ['keywords' => $table]);
 
@@ -46,7 +49,7 @@ class HaditsController extends Controller
     }
 
     public function haditsAdmin () {
-        return view('admint/hadits');
+        return view('admin/hadits');
     }
 
 }

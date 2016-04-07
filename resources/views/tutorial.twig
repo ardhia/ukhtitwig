@@ -2,10 +2,7 @@
 {% block isi %}
 		<div id="bar">
 			<div class="search">
-				<form method="get" action="{{url('tutorial/searchtutorial')}}">
-					<input type="text" name="keywords" placeholder="Search" class="text"></input>
-					<input type="submit" value="" class="submit"></input>
-				</form>
+				{% include 'formSearchTutorial' %}
 			</div>
 			<div class="_breadcrumb">
 				<!-- another version - flat style with animated hover effect -->
@@ -47,39 +44,7 @@
 					<div id="arsip">	
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
-						  	<div class="panel-group" id="accordion">
-							  	{% for item in tahun %}
-							    	<div class="panel panel-default">
-								      	<div class="panel-heading">
-								        	<h4 class="panel-title">
-								          		<a data-toggle="collapse" data-parent="#accordion" href="#tahun-{{item.tahun}}">{{item.tahun}}</a>
-								        	</h4>
-								        	({{item.total}})
-								      	</div>
-								      	<div id="tahun-{{item.tahun}}" class="panel-collapse collapse in">
-								        	<div class="panel-body">
-									          	<div class="panel-group" id="{{item.tahun}}-accordion">
-										          	{% for bulan in item.bulan %}
-										            	<div class="panel panel-default">
-											              	<div class="panel-heading">
-											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.tahun}}-accordion" href="#bulan-{{bulan.bulan}}">{{bulan.bulan}}</a>
-											                	</h4>
-											                	({{bulan.jumlah}})
-											              	</div>
-											              	<div id="bulan-{{bulan.bulan}}" class="panel-collapse collapse in">
-											                	<div class="panel-body">
-											                		<a href="#link">Buat linknya</a>
-											                	</div>
-											              	</div>
-										            	</div>
-										            {% endfor %}
-									          	</div>
-								        	</div>
-								      	</div>
-							    	</div>
-							    {% endfor %}
-						  	</div>
+							{% include 'ArsipTutorial' %}
 						</div>
 					</div>
 				</div>

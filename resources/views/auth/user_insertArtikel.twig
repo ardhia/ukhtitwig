@@ -1,6 +1,6 @@
 {% extends 'auth/layoutUserCRUD' %}
 {% block userCRUD %}
-	<form enctype="multipart/form-data" method="post" action="{{route('prosesArtikel')}}"> 
+	<form enctype="multipart/form-data" method="POST" action="{{route('prosesArtikel')}}"> 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<div class="bungkus-tool-judul">
 			<input type="text" name="Judul_Artikel" placeholder="Judul" class="judul-art">

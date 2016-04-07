@@ -12,8 +12,8 @@ class HaditsTableSeeder extends Seeder
     public function run()
     {
 
-        /*DB::table('hadits')->insert([
-            'Isi_Hadits' => '. Rasulullah Shalallahu ‘alaihi wa sallam bersabda bagi lelaki yang ingin menikah : “Wanita itu dinikahi karena empat perkara yaitu karena hartanya, karena keturunannya, karena kecantikannya, dan karena agamanya. Maka pilihlah olehmu wanita yang punya agama, engkau akan beruntung.” (HR. Al-Bukhari no. 5090 dan Muslim no. 1466)',
+        DB::table('hadits')->insert([
+            'Isi_Hadits' => 'Rasulullah Shalallahu ‘alaihi wa sallam bersabda bagi lelaki yang ingin menikah : “Wanita itu dinikahi karena empat perkara yaitu karena hartanya, karena keturunannya, karena kecantikannya, dan karena agamanya. Maka pilihlah olehmu wanita yang punya agama, engkau akan beruntung.” (HR. Al-Bukhari no. 5090 dan Muslim no. 1466)',
             'Sumber_HR' => '(HR. Al-Bukhari no. 5090 dan Muslim no. 1466)',
             'Riwayat' => 'HR. Muslim',
             ]);
@@ -23,11 +23,10 @@ class HaditsTableSeeder extends Seeder
                 “Barangsiapa yang beriman kepada Allah dan hari Akhir, janganlah ia mengganggu tetangganya, dan berbuat baiklah kepada wanita. Sebab, mereka diciptakan dari tulang rusuk, dan tulang rusuk yang paling bengkok adalah bagian atasnya. Jika engkau meluruskannya, maka engkau mematahkannya dan jika engkau biarkan, maka akan tetap bengkok. Oleh karena itu, berbuatlah baik kepada wanita.” ',
             'Sumber_HR' => '(HR. Bukhari dan Muslim)',
             'Riwayat' => 'HR. Muslim',
-            ]);*/
-
+            ]);
 
         DB::table('hadits')->insert([
-            'Isi_Hadits' => '. Rasulullah Shallallahu’alaihi wa sallam bersabda : “Tidak halal bagi seorang istri berpuasa (sunnah) sementara suaminya ada (tidak sedang bepergian) kecuali dengan izinnya”. ',
+            'Isi_Hadits' => 'Rasulullah Shallallahu’alaihi wa sallam bersabda : “Tidak halal bagi seorang istri berpuasa (sunnah) sementara suaminya ada (tidak sedang bepergian) kecuali dengan izinnya”. ',
             'Sumber_HR' => '(HR. Al-Bukhari no. 5195 dan Muslim no. 1026)',
             'Riwayat' => 'HR. Muslim',
             ]);
