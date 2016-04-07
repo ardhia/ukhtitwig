@@ -17,7 +17,7 @@ class ArtikelController extends Controller
 
     //Publik
     public function tampilArtikel () {
-    	$daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->Paginate(3);
+    	$daftarartikel =  Artikel::Paginate(3);
 
         //Arsip
         $tahun = DB::table('artikel')
@@ -41,9 +41,57 @@ class ArtikelController extends Controller
 
     //
     public function tampilIsiArtikel ($No) {
-        $dataArtikel = DB::table('artikel')->select('No', 'Judul_Artikel', 'Isi_Artikel', 'Photo', 'created_at')->where('No', $No)->first();
+        $dataArtikel = Artikel::where('No', $No)->first();
         //dd($dataArtikel);
-        return view('isi-artikel', ['dataArtikel' => $dataArtikel]);
+        $komentar_artikel= DB::table('komentar_artikel')
+                            ->select('nama', 'isi_komentar')
+                            ->where('no_artikel', $No)
+                            ->get();
+
+        //Arsip
+        $tahun = DB::table('artikel')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahun as $item){
+            $bulan = DB::table('artikel')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+        //dd($tahun);
+        //exit;
+
+        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun]);
+    }
+
+    public function search (Request $request) {
+        $keywords= $request->get('keywords');
+        $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->get();
+
+        //Arsip
+        $tahun = DB::table('artikel')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahun as $item){
+            $bulan = DB::table('artikel')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+        //dd($tahun);
+        //exit;
+        
+        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun]);
     }
 
     //END
@@ -77,6 +125,7 @@ class ArtikelController extends Controller
 
     public function tampilUser_insertArtikel () {
         $user = Auth::user();
+        //dd($user);exit;
         return view('auth/user_insertArtikel', ['user' => $user]);
     }
 
@@ -94,18 +143,14 @@ class ArtikelController extends Controller
         $artikel->Isi_Artikel = $request->input('Isi_Artikel');
         if($request->hasFile('Photo')) {
             $file = Input::file('Photo');
-            //getting timestamp
-            
             $name = $file->getClientOriginalName();
-            
             $artikel->Photo = $name;
-
             $file->move(public_path().'/uploadPhoto/artikel/', $name);
         }
         $artikel->user_id = $user->id;
         $artikel->save();
         //dd($artikel);exit;
-        return Redirect::to('auth/profilU/user_insertArtikel');
+        return Redirect::to('auth/profilU');
     }
 
     public function prosesUser_editArtikel (Request $request, $No) {

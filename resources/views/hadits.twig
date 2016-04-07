@@ -1,9 +1,5 @@
 {% extends 'layout' %}
 {% block isi %}
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.20.0/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="{{asset('css/arsipcollapse.css')}}">
 		<div id="bar">
 			<div class="search">
 				<form method="get" action="{{url('hadits/searchhadits')}}">
@@ -46,47 +42,7 @@
 					<div id="arsip">
 						<div class="judul">Arsip</div>
 						<div class="isi-arsip">
-							{% for item in Riwayat %}
-								<a href="#Riwayat-{{item.Riwayat}}" class="btn btn-success" data-toggle="collapse">
-									{{item.Riwayat}}
-								</a>
-								<div id="#Riwayat-{{item.Riwayat}}" class="collapse">
-									{% for Sumber_HR in item.Sumber_HR %}
-									    <a href="#">{{Sumber_HR.Sumber_HR}}</a>
-									{% endfor %}
-								</div>
-							{% endfor %}
-							<!--div class="panel-group" id="accordion">
-							  	{% for item in Riwayat %}
-							    	<div class="panel panel-default">
-								      	<div class="panel-heading">
-								        	<h4 class="panel-title">
-								          		<a data-toggle="collapse" data-parent="#accordion" href="#Riwayat-{{item.Riwayat}}">{{item.Riwayat}}</a>
-								        	</h4>
-								        	({{item.total}})
-								      	</div>
-								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
-								        	<div class="panel-body">
-									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
-										          	{% for Sumbe_HR in item.Sumber_HR %}
-										            	<div clasrs="panel panel-default">
-											              	<div class="panel-heading">
-											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#Sumber_HR-{Sumber_HR.Sumber_HR}}">{{Sumber_HR.Sumber_HR}}</a>
-											                	</h4>
-											              	</div>
-											              	<div id="Sumber_HR-{{Sumber_HR.Sumber_HR}}" class="panel-collapse collapse in">
-											                	<div class="panel-body">
-											                	</div>
-											              	</div>
-										            	</div>
-										            {% endfor %}
-									          	</div>
-								        	</div>
-								      	</div>
-							    	</div>
-							    {% endfor %}
-						  	</div-->
+							{% include 'ArsipHadits' %}
 						</div>
 					</div>
 				</div>

@@ -14,10 +14,10 @@ class KomentarController extends Controller
 {
     //post komentar tutorial
     public function prosesKomentarTutorial(Request $request, $No){
-        /*$this->validate($request, [
+        $this->validate($request, [
         'nama' => 'required',
         'isi_komentar' => 'required',
-        ]);*/
+        ]);
         $tutorial = DB::table('tutorial')
                     ->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')
                     ->where('No', $No)
@@ -30,15 +30,21 @@ class KomentarController extends Controller
         return redirect()->route('tutorial.isi-tutorial', ['no_tutorial' => $No]);
     }
 
-	//get komentar tutorial
-   /* public function isi_tutorial ($No) {
-    	$dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
-      //dd($dataTutorial);
-        $komentar_tutorial= DB::table('komentar_tutorial')
-                            ->select('No', 'nama', 'isi_komentar')
-                            ->where('no_tutorial', $No)
-                            ->get();
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No]);
-    }*/
+    public function prosesKomentarArtikel(Request $request, $No){
+        $this->validate($request, [
+        'nama' => 'required',
+        'isi_komentar' => 'required',
+        ]);
+        $artikel = DB::table('artikel')
+                    ->select('Judul_Artikel', 'Isi_Artikel', 'Photo')
+                    ->where('No', $No)
+                    ->first();
+        $komentar = new KomentarTutorial;
+        $komentar = DB::table('komentar_artikel')
+                    ->where('no_artikel', $No)
+                    ->insert(['nama' => $request->input('nama'), 'isi_komentar' => $request->input('isi_komentar'), 'no_artikel' => $No]);
+
+        return redirect()->route('artikel.isi-artikel', ['no_artikel' => $No]);
+    }
 }

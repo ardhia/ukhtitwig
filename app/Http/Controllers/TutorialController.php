@@ -41,21 +41,59 @@ class TutorialController extends Controller
     }
 
     public function isi_tutorial ($No) {
-    	$dataTutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'created_at')->where('No', $No)->first();
-      //dd($dataTutorial);
+    	$dataTutorial = Tutorial::where('No', $No)->first();
+        //dd($dataTutorial);
         $komentar_tutorial= DB::table('komentar_tutorial')
                             ->select('nama', 'isi_komentar')
                             ->where('no_tutorial', $No)
                             ->get();
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No]);
+
+        //Arsip
+        $tahun = DB::table('tutorial')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahun as $item){
+            $bulan = DB::table('tutorial')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+        //dd($tahun);
+        //exit;
+
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun]);
     }
 
     public function search (Request $request) {
         $keywords= $request->get('keywords');
         $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
+
+        //Arsip
+        $tahun = DB::table('tutorial')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahun as $item){
+            $bulan = DB::table('tutorial')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+        //dd($tahun);
+        //exit;
+
         
-        return view('searchtutorial', ['keywords' => $table]);
+        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun]);
     }
      //END
 
@@ -77,7 +115,7 @@ class TutorialController extends Controller
 	public function user_insertTutorial (){
         $user = Auth::user();
         $tutorial = DB::table('tutorial');
-
+        //dd($user);exit;
         return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial]);
 	}
 
@@ -122,22 +160,7 @@ class TutorialController extends Controller
         'Isi_Tutorial' => 'required',
         'Photo' => 'required|unique:tutorial|max:255',
         ]);
-        if($request->hasFile('Photo')) {
-                    $file = Input::file('Photo');
-                    $name = $file->getClientOriginalName();
-                    $file->move(public_path().'/uploadPhoto/tutorial/', $name);
-        $tutorial = new Tutorial;
-        $tutorial = DB::table('tutorial')
-                    ->where('user_id', $user->id)
-                    ->insert(['Judul_Tutorial' => $request->input('Judul_Tutorial'), 'Isi_Tutorial' => $request->input('Isi_Tutorial'), 'Photo' => $name, 'user_id' => $user->id]);
-        $tutorial->save();
-        //dd($Testimoni);exit;
-        }
-
-
-
-		/*$user_insertTutorial= new User_insertTutorial;
-        $user_insertTutorial
+        $user_insertTutorial= new Tutorial;
 		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
 		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
         if($request->hasFile('Photo')) {
@@ -147,10 +170,9 @@ class TutorialController extends Controller
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }
         $user_insertTutorial->user_id = $user->id;
-        $user_insertTutorial->save();*/
+        $user_insertTutorial->save();
         //dd($user_insertTutorial);exit;
-        return redirect()->route('prosesTutorial');
-		//return Redirect::to('auth/profilU/user_insertTutorial');
+		return Redirect::to('auth/profilU');
     }
 
     public function deleteTutorial ($No){

@@ -57,7 +57,7 @@ class TokoController extends Controller
         'jb' => 'required',
         'ketToko' => 'required',
         ]);
-        $toko = new User_insertToko;
+        $toko = new Toko;
         $toko->judulToko = $request->input('judulToko');
         $toko->harga = $request->input('harga');
         $toko->jb = $request->input('jb');
@@ -74,7 +74,7 @@ class TokoController extends Controller
         }
         $toko->user_id = $user->id;
         $toko->save();
-        return Redirect::to('auth/profilU/user_insertToko');
+        return Redirect::to('auth/profilU');
 //        $file = Request::file('photo');
 //        $toko->judulToko = $request->input('judulToko');
 //        $toko->photoToko = $request->input('photoToko');
