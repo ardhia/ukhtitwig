@@ -9,6 +9,6 @@ class KomentarTutorial extends Model
     protected $table = 'komentar_tutorial';
 
     protected $fillable = [
-    	'nama', 'isi_komentar',
+    	'nama', 'isi_komentar', 'No', 'no_tutorial', 'created_at',
     ];
 }

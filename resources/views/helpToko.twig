@@ -1,4 +1,4 @@
-{% extends 'layoutToko' %}
+{% extends 'layout' %}
 {% block isi %}
 	<div id="bar">
 		<div class="search">
@@ -11,10 +11,12 @@
 			<!-- another version - flat style with animated hover effect -->
 			<div class="breadcrumb flat">
 				<a href="{{route('/')}}">Home</a>
-				<a href="{{route('toko')}}">Toko</a>
-				<a href="#" class="active">Kerudung</a>
-			</div>
+				<a href="{{route('about')}}">About</a>
+				<a href="#">Bantuan Toko</a>
+			</div> 
 		</div>
 	</div>
-	{% include 'contentToko' %}
+	<div id="wrapper">
+	</div>
+    
 {% endblock %}

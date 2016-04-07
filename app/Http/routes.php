@@ -87,13 +87,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('auth/profilU/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changePhotoProfil'])->name('changePhotoProfil');
     Route::post('auth/profilUBio/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changeBio'])->name('changeBio');
 
-    Route::post('auth/profilU/user_insertArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_insertArtikel'])->name('prosesArtikel');
+    Route::post('auth/profilU/user_insertArtikel/artikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_insertArtikel'])->name('prosesArtikel');
     Route::post('auth/profilU/{No}/user_editArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_editArtikel'])->name('prosesEditArtikel');
 
-    Route::post('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_insertTutorial'])->name('prosesTutorial');
+    Route::post('auth/profilU/user_insertTutorial/tutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_insertTutorial'])->name('prosesTutorial');
     Route::post('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_editTutorial'])->name('prosesEditTutorial');
     
-    Route::post('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_insertToko'])->name('prosesToko');
+    Route::post('auth/profilU/user_insertToko/toko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_insertToko'])->name('prosesToko');
     Route::post('auth/profilU/{idToko}/user_editToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@prosesUser_editToko'])->name('prosesEditToko');
     /*SETTING USER*/
     Route::get('auth/setting_user', 'SettingUserController@tampilSettingUser')->name('settingUser');
@@ -115,7 +115,13 @@ Route::group(['middleware' => ['web']], function () {
 
     //Home About Profil
     Route::get('/', 'PagesController@home')->name('/');
+    
     Route::get('/about', 'PagesController@about')->name('about');
+    Route::get('/about/helpArtikel','HelpartikelController@menampilkan_HelpArtikel')->name('about.help-artikel');
+    Route::get('/about/helpToko', 'HelptokoController@menampilkan_HelpToko')->name('about.help-toko');
+    Route::get('/about/helpTutorial', 'HelptutorialController@menampilkan_HelpTutorial')->name('about.help-tutorial');
+    Route::get('/about/helpSignUp', 'HelpsignupController@menampilkan_HelpSignUp')->name('about.help-signup');
+
     Route::get('/profilU/{id}', 'PagesController@profilU')->name('profilU');
     Route::post('/subs', 'SubscribeController@prosesSimpanLangganan')->name('simpanLangganan');
 
@@ -149,8 +155,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //post komentar tutorial
     Route::post('/tutorial/komentar/{No}', 'KomentarController@prosesKomentarTutorial')->name('prosesKomentarTutorial');
-    //get komentar tutorial
-    //Route::get('/tutorial/content/{No}', 'KomentarController@isi_tutorial')->name('tutorial.isi-tutorial');
+    Route::post('/artikel/komentar/{No}', 'KomentarController@prosesKomentarArtikel')->name('prosesKomentarArtikel');
 
     /*
     |--------------------------------------------------------------------------

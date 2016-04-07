@@ -1,0 +1,40 @@
+{% extends 'layout' %}
+{% block isi %}
+    <div id="bar">
+    	<div class="search">
+    		<form>
+    			<input type="text" name="input-search" placeholder="Search" class="text"></input>
+    			<input type="submit" name="search" value="" class="submit"></input>
+    		</form>
+    	</div>
+    	<div class="_breadcrumb">
+    		<!-- another version - flat style with animated hover effect -->
+    		<div class="breadcrumb flat">
+    			<a href="{{route('/')}}">Home</a>
+    			<a href="{{route('about')}}">About</a>
+    			<a href="#">Bantuan Sign Up</a>
+    		</div>
+    	</div>
+    </div>
+    <div id="wrapper">
+    	<div class="potoket">
+    		<div class="photosign"></div>
+    		<div id="keterangan">
+    			<h3>Mendaftar untuk menjadi member di Website Ukhti</h3>
+    		</div>
+    		<div id="keterangan">
+    			<p>1. Buka halaman (localhost:8000) website Ukhti.</p>
+				<p>2. Lihat 'Sign Up' yang berada di kanan atas</p>
+				<p>3. Masukkan Nama lengkap, dan lain sebagainya sesuai yang tertera pada halaman tersebut</p>
+				<p>4. Setelah itu klik 'Daftar'</p>
+				<p>5. Anda telah resmi menjadi member kami<p>
+    		</div>
+    		<div class="beware">
+    			<center>Perhatian : Data yang anda masukkan harus sesuai dengan fakta yang sebenarnya. Jangan melakukan pemalsuan terhadap diri anda.</center>
+    		</div>
+    		<div class="beware">
+    			<center>Catatan : Untuk menjadi partner kami bisa dengan menghubungi nomor kontak admin kami yang berada di bawah </center>
+    		</div>
+    	</div>
+    </div>
+{% endblock %}

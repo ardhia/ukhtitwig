@@ -16,53 +16,5 @@
 				</div>
 			</div>
 		</div>
-		<div id="wrapper">
-			<div class="out-toko">
-				<div class="pakai">
-					{% for photo in toko %}
-						<div id="baju">
-							<div class="photoToko"><img src="/uploadPhoto/toko/{{photo.photoToko}}" width="100%" height="100%" /></div>
-							<div class="ketToko">
-								<div id="butonmore">
-									<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo-{{photo.idToko}}">
-											Lihat Keterangan Produk
-								    </button>
-								</div>
-							</div>
-						</div>
-						<div id="demo-{{photo.idToko}}" class="collapse">
-							<div class="judulToko">{{photo.judulToko}}</div>
-							<div class="hargaKet">
-								<div class="nama">
-									<div class="moreKet">Harga</div>
-								</div>
-								<div class="db">
-									<div class="moreKet">: Rp.{{photo.harga}},-</div>
-								</div>
-							</div>
-							<div class="hargaKet">
-								<div class="nama">
-									<div class="moreKet">Keterangan</div>
-								</div>
-								<div class="db">
-									<div class="moreKet">: {{photo.ketToko}}</div>
-								</div>
-							</div>
-							<div class="hargaKet">
-								<div class="nama">
-									<div class="author">Author (by)</div>
-								</div>
-								<div class="db">
-									<div class="author">: {{photo.name}}</div>
-								</div>
-							</div>
-						</div>
-						{% include 'scriptJScollapse' %}
-					{% endfor %}
-					<div class="paginate">
-						{{ toko.render()|raw }}
-					</div>
-				</div>
-			</div>
-		</div>
+		{% include 'contentToko' %}
 {% endblock %}
