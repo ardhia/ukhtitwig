@@ -975,6 +975,22 @@ body {
 	margin: 5px 0px 5px 5px;
 }
 
+.photoar {
+	background: url(../images/arti.png);
+	width: 30%;
+	height: 290px;
+	float: left;
+	margin: 5px 0px 5px 5px;
+}
+
+.phototo {
+	background: url(../images/bu.png);
+	width: 30%;
+	height: 290px;
+	float: left;
+	margin: 5px 0px 5px 5px;
+}
+
 /* style untuk bantuan END */
 
 
