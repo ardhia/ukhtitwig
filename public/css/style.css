@@ -967,6 +967,14 @@ body {
 	margin: 2% 5px 5px 5px;
 }
 
+.phototu {
+	background: url(../images/tutu.png);
+	width: 30%;
+	height: 290px;
+	float: left;
+	margin: 5px 0px 5px 5px;
+}
+
 /* style untuk bantuan END */
 
 
@@ -2583,7 +2591,18 @@ tr:nth-child(even) {
 	background: #EDFBFF;
 	padding: 5px 1%;
 	border-radius: 4px;
-	box-shadow: 1px 1px 1px 1px #00C9FF; 
+	box-shadow: 1px 1px 1px 0px #00C9FF; 
+}
+
+.isi-notsearch {
+	width: 83%;
+	height: auto;
+	float: left;
+	margin: 0px 4% 13px;
+	background: #EDFBFF;
+	padding: 25px 4%;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px 0px #00C9FF;
 }
 
 

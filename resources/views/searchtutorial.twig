@@ -23,11 +23,15 @@
     				</form>
 				</div>
 				<div class="hasil-search">Hasil Pencarian</div>
-				{% for item in keywords %}
+				{% if keywords is empty %}
+				    <div class="isi-notsearch">Maaf, kata yang anda cari tidak ada. Coba menggunakan kata kunci lain.</div>
+				{% else %}
+					{% for item in keywords %}
 					<div class="isi-search">
-					    {{ item.Judul_Tutorial }}
+					    {{item.Judul_Tutorial|str_words (10)}}
 					</div>
-				{% endfor %}
+					{% endfor %}
+				{% endif %}
 				<div class="paginate">
 					{{ tutorial.render()|raw }}
 				</div>
