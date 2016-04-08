@@ -17,6 +17,14 @@ class ArtikelController extends Controller
 
     //Publik
     public function tampilArtikel () {
+        $user = Auth::user();
+
+        /*if (empty($user->konfirmasi)) {
+            echo "hmm";
+        } else {
+            echo "tidak";
+        }*/
+        //dd($isi);exit;
     	$daftarartikel =  Artikel::Paginate(3);
 
         //Arsip
@@ -36,11 +44,12 @@ class ArtikelController extends Controller
         }
         //dd($tahun);
         //exit;
-    	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun]);
+    	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun, 'user' => $user]);
     }
 
     //
     public function tampilIsiArtikel ($No) {
+        $user = Auth::user();
         $dataArtikel = Artikel::where('No', $No)->first();
         //dd($dataArtikel);
         $komentar_artikel= DB::table('komentar_artikel')
@@ -66,10 +75,12 @@ class ArtikelController extends Controller
         //dd($tahun);
         //exit;
 
-        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun]);
+        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun, 'user' => $user]);
     }
 
     public function search (Request $request) {
+        $user = Auth::user();
+
         $keywords= $request->get('keywords');
         $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->get();
 
@@ -91,7 +102,7 @@ class ArtikelController extends Controller
         //dd($tahun);
         //exit;
         
-        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun]);
+        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user]);
     }
 
     //END
@@ -101,18 +112,6 @@ class ArtikelController extends Controller
 |
 */
     //User
-
-    //get
-    public function tampilArtikelUser () {
-        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->get();
-        
-        return view('auth/artikel', ['artikel' => $daftarartikel]);
-    }
-
-    public function tampilIsiArtikelUser () {
-        return view('auth/isi-artikel');
-    }
-
 
     public function user_editArtikel ($No){
         $user = Auth::user();
@@ -192,17 +191,6 @@ class ArtikelController extends Controller
 |
 */
     //Admin
-    public function tampilArtikelAdmin () {
-        $daftarartikel =  DB::table('artikel')->select('Judul_Artikel', 'Isi_Artikel', 'Photo')->get();
-        
-        return view('admin/artikel', ['artikel' => $daftarartikel]);
-    }
-
-    public function tampilIsiArtikelAdmin () {
-        return view('admin/isi-artikel');
-    }
-
-
 
     //END
 

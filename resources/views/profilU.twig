@@ -1,6 +1,6 @@
 {% extends 'layoutProfil' %}
 {% block buatnamaUser %}
-    {{user.name}}
+    {{foruser.name}}
 {% endblock %}
 {% block isi %}
 		<div id="bar">
@@ -14,17 +14,17 @@
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
-					<a href="#" class="active">{{user.name}}</a>
+					<a href="#" class="active">{{foruser.name}}</a>
 				</div>
 			</div>
 		</div>
 		<div id="wrapper">
 			<div class="wrap">
-				<div class="namauser">{{user.name}}</div>
+				<div class="namauser">{{foruser.name}}</div>
 				<div class="phobiouser">
 					<div id="photouser">
 						<a href="#lihat" data-toggle="modal">
-							<img src="/uploadPhoto/photoProfil/{{user.photoProfil}}" width="100%" height="100%" class="photoProfil" >
+							<img src="/uploadPhoto/photoProfil/{{foruser.photoProfil}}" width="100%" height="100%" class="photoProfil" >
 						</a>
 						<div class="modal fade" id="lihat" role="dialog">
 							{% include 'full' %}
@@ -33,31 +33,31 @@
 					<div class="outbioUmum">
 						<div id="biodatauser">
 							<div class="alamat"></div>
-							<div class="isiBio">{{user.alamat}}</div>
+							<div class="isiBio">{{foruser.alamat}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="ttl"></div>
-							<div class="isiBio">{{user.tempat_lahir}}, {{user.tanggal_lahir}}</div>
+							<div class="isiBio">{{foruser.tempat_lahir}}, {{foruser.tanggal_lahir}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="jk"></div>
-							<div class="isiBio">{{user.jenis_kelamin}}</div>
+							<div class="isiBio">{{foruser.jenis_kelamin}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="iemail"></div>
-							<div class="isiBio">{{user.email}}</div>
+							<div class="isiBio">{{foruser.email}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="nohp"></div>
-							<div class="isiBio">{{user.noHP}}</div>
+							<div class="isiBio">{{foruser.noHP}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="suka"></div>
-							<div class="isiBio">{{user.kesukaan}}</div>
+							<div class="isiBio">{{foruser.kesukaan}}</div>
 						</div>
 						<div id="biodatauser">
 							<div class="ihadits"></div>
-							<div class="isiBio">{{user.kutipanHadits}}</div>
+							<div class="isiBio">{{foruser.kutipanHadits}}</div>
 						</div>
 					</div>
 				</div>

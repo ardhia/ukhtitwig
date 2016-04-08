@@ -20,18 +20,19 @@ class TokoController extends Controller
 	//PUBLIK
 
 	public function tampilToko (){
+        $user = Auth::user();
+
         $daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb', 'ketToko')->get();
-		return view('toko', ['toko' => $daftartoko]);
+
+		return view('toko', ['toko' => $daftartoko, 'user' => $user]);
 	}
 
 	//END
 
 	//USER
-	public function tampilTokoUser (){
-		return view('auth\toko');
-	}
 
 	public function user_insertToko (){
+        
         $toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 
 		return view('auth\user_insertToko', ['toko' => $toko]);
