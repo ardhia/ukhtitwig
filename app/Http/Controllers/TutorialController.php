@@ -19,7 +19,7 @@ class TutorialController extends Controller
 	public function tutorial () {
         $user = Auth::user();
 
-     	$tutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->Paginate(3);
+     	$tutorial = Tutorial::Paginate(3);
 
 	    //Arsip
         $tahun = DB::table('tutorial')
@@ -163,6 +163,7 @@ class TutorialController extends Controller
 	            $file->move(public_path().'/uploadPhoto/tutorial/', $name);
 	        }
         $user_insertTutorial->user_id = $user->id;
+        $user_insertTutorial->user_name = $user->username;
         $user_insertTutorial->save();
         //dd($user_insertTutorial);exit;
 		return Redirect::to('auth/profilU');

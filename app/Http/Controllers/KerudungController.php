@@ -12,7 +12,7 @@ class KerudungController extends Controller
 	public function tampilKerudung (){
 		$user = Auth::user();
 
-    	$daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb', 'ketToko')->where('jb', 'Kerudung')->Paginate(12);
+    	$daftartoko =  Toko::where('jb', 'Kerudung')->Paginate(12);
     	
     	return view('pakaian', ['toko' => $daftartoko, 'user' => $user]);
 	}
