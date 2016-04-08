@@ -1659,18 +1659,18 @@ body {
 	background: pink;
 }
 .daftar_setting {
-	width: 57%;
+	width: 56%;
 	height: auto;
 	margin-left: 3%;
 	float: left;
-	background: cyan;
+	border: solid;
+	border-radius: 10px;
 }
 #daftar_setting1 {
 	width: 98%;
 	height: auto;
 	float: left;
 	margin: 20px 2% 5px 1%;
-	background: white;
 }
 .gambar_setting {
 	width: 78%;
@@ -1679,6 +1679,21 @@ body {
 	background: url(../images/iconsetting3.png);
 	background-size: 100% 100%;
 	margin: 20px 7% 0px 15%;
+}
+.juduledit_nama {
+	width: 80%;
+	height: auto;
+	float: left;
+	padding: 10px 4%;
+	margin: 0px 6% 30px 6%;
+	font-size: 30px;
+	border-bottom: double;
+}
+.editnama_user {
+	width: 98%;
+	height: auto;
+	float: left;
+	margin: 15px 1%;
 }
 .gambar_foto{
 	width: 100%;
@@ -1692,6 +1707,7 @@ body {
 	height: auto;
 	float: left;
 	margin-bottom: 10px;
+	margin-top: 20px;
 }
 .namanya1 {
 	width: 35%;
@@ -1722,7 +1738,7 @@ body {
 	margin-bottom: 7px;
 }
 .tempatlahir {
-	width: 30%;
+	width: 29%;
 	height: auto;
 	font-size: 18px;
 	float: left;
@@ -1756,7 +1772,7 @@ body {
 	width: 19%;
 	height: 45px;
 	float: right;
-	margin: 10px 5% 25px 5%;
+	margin: 25px 5% 10px 5%;
 	border-radius: 8px;
 	border: solid 2px;
 }
