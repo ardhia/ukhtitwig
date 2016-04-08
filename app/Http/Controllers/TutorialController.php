@@ -17,6 +17,8 @@ class TutorialController extends Controller
 
  //PUBLIK
 	public function tutorial () {
+        $user = Auth::user();
+
      	$tutorial = DB::table('tutorial')->select('No', 'Judul_Tutorial', 'Isi_Tutorial', 'Photo')->Paginate(3);
 
 	    //Arsip
@@ -37,10 +39,12 @@ class TutorialController extends Controller
         //dd($tahun);
         //exit;
 
-     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun]);
+     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun, 'user' => $user]);
     }
 
     public function isi_tutorial ($No) {
+        $user = Auth::user();
+
     	$dataTutorial = Tutorial::where('No', $No)->first();
         //dd($dataTutorial);
         $komentar_tutorial= DB::table('komentar_tutorial')
@@ -67,10 +71,12 @@ class TutorialController extends Controller
         //dd($tahun);
         //exit;
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun]);
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun, 'user' => $user]);
     }
 
     public function search (Request $request) {
+        $user = Auth::user();
+
         $keywords= $request->get('keywords');
         $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
 
@@ -93,24 +99,11 @@ class TutorialController extends Controller
         //exit;
 
         
-        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun]);
+        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user]);
     }
      //END
 
-    //USER 
-    public function tampilTutorialUser (){
-    	$daftartutorial = DB::table('tutorial')->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo')->get();
-
-    	return view('auth/tutorial', ['tutorial' => $daftartutorial]); 
-    }
-
-	public function tutorialUser () {
-	   return view('auth/tutorial');
-	   }
-
-	public function isi_tutorialUser (){
-	   return view('auth/isi-tutorial');
-	 }
+    //USER
 
 	public function user_insertTutorial (){
         $user = Auth::user();

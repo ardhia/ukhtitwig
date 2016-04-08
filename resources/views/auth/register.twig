@@ -33,23 +33,23 @@
                 </div>
                 <div id="kolom-logup">
                     <form method="POST" action="{{route('memprosesSignUp')}}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="photoProfil" value="default.jpg">
-                        <input type="text" name="name" placeholder="Nama Lengkap" class="nama-logup"></input>
-                        <input type="text" name="username" placeholder="Username" maxlength="10" class="nama-logup"></input>
-                        <input type="text" name="tempat_lahir" placeholder="Tempat" class="tempat"></input>
-                        <input type="date" name="tanggal_lahir"  class="date"></input>
-                        <input type="radio" name="jenis_kelamin" value="Perempuan" class="radiojk">Perempuan</input>
-                        <input type="radio" name="jenis_kelamin" value="Laki-laki" class="radiojk">Laki-laki</input>
+                        <input type="text" name="name" placeholder="Nama Lengkap" class="nama-logup">
+                        <input type="text" name="username" placeholder="Username" maxlength="10" class="nama-logup">
+                        <input type="text" name="tempat_lahir" placeholder="Tempat" class="tempat">
+                        <input type="date" name="tanggal_lahir"  class="date">
+                        <input type="radio" name="jenis_kelamin" value="Perempuan" class="radiojk">Perempuan
+                        <input type="radio" name="jenis_kelamin" value="Laki-laki" class="radiojk">Laki-laki
                         <select name="status" class="nama-logup1">
                             <option value="lajang">Lajang</option>
                             <option value="menikah">Menikah</option>
                         </select>
-                        <input type="email" name="email" placeholder="Email" class="nama-logup1"></input>
-                        <input type="email" name="al_email" placeholder="Alternatif Email" class="nama-logup1"></input>
-                        <input type="password" name="password" placeholder="Password" class="nama-logup1"></input>
-                        <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" class="nama-logup1"></input>
-                        <input type="submit" name="daftar" value="Daftar" class="daftar"></input>
+                        <input type="email" name="email" placeholder="Email" class="nama-logup1">
+                        <input type="email" name="al_email" placeholder="Alternatif Email" class="nama-logup1">
+                        <input type="password" name="password" placeholder="Password" class="nama-logup1">
+                        <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" class="nama-logup1">
+                        <input type="submit" name="daftar" value="Daftar" class="daftar">
                     </form>
                 </div>
             </div>
