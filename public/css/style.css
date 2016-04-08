@@ -967,6 +967,14 @@ body {
 	margin: 2% 5px 5px 5px;
 }
 
+.phototu {
+	background: url(../images/tutu.png);
+	width: 30%;
+	height: 290px;
+	float: left;
+	margin: 5px 0px 5px 5px;
+}
+
 /* style untuk bantuan END */
 
 
