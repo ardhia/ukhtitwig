@@ -457,7 +457,7 @@ body {
 	box-shadow: 0px 0px 5px 0px cyan;
 }
 .nama_komentar {
-	width: 10%;
+	width: 15%;
 	height: auto;
 	float: left;
 	font-family: "Handlee";
@@ -467,17 +467,17 @@ body {
 }
 
 .isi_komentar{
-	width: 70%;
+	width: 79%;
 	height: auto;
 	float: left;
 	padding: 1% 5px;
-	margin-top: 8px;
 	margin: 4px 1% 4px 0px;
 }
+
 .tgl_komentar {
-	width: 14%;
-	height: 35px;
-	float: left;
+	width: 40%;
+	height: auto;
+	float: right;
 }
 
 #comment {

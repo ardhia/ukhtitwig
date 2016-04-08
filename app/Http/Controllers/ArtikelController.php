@@ -25,7 +25,7 @@ class ArtikelController extends Controller
             echo "tidak";
         }*/
         //dd($isi);exit;
-    	$daftarartikel =  Artikel::Paginate(3);
+    	$artikel =  Artikel::Paginate(3);
 
         //Arsip
         $tahun = DB::table('artikel')
@@ -44,7 +44,7 @@ class ArtikelController extends Controller
         }
         //dd($tahun);
         //exit;
-    	return view('artikel', ['artikel' => $daftarartikel, 'tahun' => $tahun, 'user' => $user]);
+    	return view('artikel', ['artikel' => $artikel, 'tahun' => $tahun, 'user' => $user]);
     }
 
     //
@@ -147,6 +147,7 @@ class ArtikelController extends Controller
             $file->move(public_path().'/uploadPhoto/artikel/', $name);
         }
         $artikel->user_id = $user->id;
+        $artikel->user_name = $user->username;
         $artikel->save();
         //dd($artikel);exit;
         return Redirect::to('auth/profilU');
