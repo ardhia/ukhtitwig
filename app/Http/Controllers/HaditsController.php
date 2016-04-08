@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Hadits;
+use Illuminate\Support\Facades\Auth;
 
 class HaditsController extends Controller
 {
     //Publik
 
     public function hadits () {
+        $user = Auth::user();
     	//$hadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->Paginate(5);
         $hadits = Hadits::paginate(5);
 
@@ -33,23 +35,16 @@ class HaditsController extends Controller
         }
         //dd($Riwayat);
 
-        return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat ]);
+        return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat, 'user' => $user]);
     }
 
     public function search (Request $request) {
+        $user = Auth::user();
         $keywords = $request->get('keywords');
         $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->paginate(7);
 
-        return view('searchhadits', ['keywords' => $table]);
+        return view('searchhadits', ['keywords' => $table, 'user' => $user]);
 
-    }
-
-    public function haditsUser () {
-        return view('auth/hadits');
-    }
-
-    public function haditsAdmin () {
-        return view('admin/hadits');
     }
 
 }
