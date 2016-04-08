@@ -99,6 +99,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/setting_user', 'SettingUserController@tampilSettingUser')->name('settingUser');
     /*POST SETTING EDIT*/
     Route::post('auth/{id}/setting_user', 'SettingUserController@prosesEditSetting')->name('editSettingUser');
+    Route::post('auth/{id}/setting_user', 'SettingUserController@prosesEditSettingEmail')->name('editSettingEmail');
+    Route::post('auth/{id}/setting_user', 'SettingUserController@prosesEditSettingPswd')->name('editSettingPswd');
+    Route::post('auth/{id}/setting_user', 'SettingUserController@prosesEditSettingIdentitas')->name('editSettingIdentitas');
+
+
     /*
 	|--------------------------------------------------------------------------
 	| END YOOOOOOOOOOO!!! >o<

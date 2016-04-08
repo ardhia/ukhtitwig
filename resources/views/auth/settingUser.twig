@@ -52,7 +52,6 @@
 						<a href="#getEditProfil" aria-controls="getEditProfil" role="tab" data-toggle="tab">Edit Profil</a>
 					</li>
 				</ul>
-				<div class="gambar_foto"></div>
 			</div>
 		</div>
 		<div class="daftar_setting">
@@ -62,7 +61,7 @@
 						<div class="gambar_setting"></div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getNama">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('settingUser', {id: user.id})}}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">{{user.name}}</div>
@@ -76,7 +75,7 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getEmail">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('prosesEditSettingemail', {id: user.id})}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">{{user.email}}</div>
@@ -95,7 +94,7 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getPassword">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('prosesEditSettingPswd', {id: user.id})}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">Password</div>
@@ -114,7 +113,7 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getEditProfil">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('prosesEditSettingIdentitas', {id: user.id})}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">Identitas</div>
