@@ -23,14 +23,14 @@
     				</form>
 				</div>
 				<div class="hasil-search">Hasil Pencarian</div>
-					{% if keywords == true %}
+					{% if keywords is empty %}
+					    <div class="isi-notsearch">Maaf, kata yang anda cari tidak ada. Coba menggunakan kata kunci lain.</div>
+					{% else %}
 						{% for item in keywords %}
 						<div class="isi-search">
 						    {{item.Isi_Hadits|str_words (10)}}
 						</div>
 						{% endfor %}
-					{% else %}
-						<div class="isi-search">Kata yang anda cari tidak ada. Coba menggunakan kata kunci lain.</div>
 					{% endif %}
 				<div class="paginate">
 					{{ keywords.render()|raw }}
