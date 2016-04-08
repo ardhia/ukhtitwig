@@ -39,14 +39,17 @@
 					<li role="presentation" class="active">
 						<a href="#getSetting" aria-controls="getSetting" role="tab" data-toggle="tab">Setting</a>
 					</li>
-					<li role="presentation">
-						<a href="#getEditProfil" aria-controls="getEditProfil" role="tab" data-toggle="tab">Edit Profil</a>
-					</li>
 					<li>
 						<a href="#getNama" aria-controls="getNama" role="tab" data-toggle="tab">Nama</a>
 					</li>
 					<li>
 						<a href="#getEmail" aria-controls="getEmail" role="tab" data-toggle="tab">Email</a>
+					</li>
+					<li>
+						<a href="#getPassword" aria-controls="getPassword" role="tab" data-toggle="tab">Password</a>
+					</li>
+					<li role="presentation">
+						<a href="#getEditProfil" aria-controls="getEditProfil" role="tab" data-toggle="tab">Edit Profil</a>
 					</li>
 				</ul>
 				<div class="gambar_foto"></div>
@@ -58,108 +61,88 @@
 					<div role="tabpanel" class="tab-pane active" id="getSetting">
 						<div class="gambar_setting"></div>
 					</div>
+					<div role="tabpanel" class="tab-pane" id="getNama">
+						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<div class="editnama_user">
+							<div class="juduledit_nama">{{user.name}}</div>
+								<div class="namanya">
+									<div class="namanya1">Nama</div>
+									<div class="ttk">:</div>
+									<input type="text" name="name" value="{{user.name}}" class="isi_namanya1"></input>
+									<input type="submit" value="simpan" class="simpan_edit"></input>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="getEmail">
+						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<div class="editnama_user">
+							<div class="juduledit_nama">{{user.email}}</div>
+								<div class="namanya">
+									<div class="namanya1">Email</div>
+									<div class="ttk">:</div>
+									<input type="text" name="email" value="{{user.email}}" class="isi_namanya1"></input>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Alternatif email</div>
+									<div class="ttk">:</div>
+									<input type="text" name="al_email" value="{{user.al_email}}" class="isi_namanya1"></input>
+									<input type="submit" value="simpan" class="simpan_edit"></input>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="getPassword">
+						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<div class="editnama_user">
+							<div class="juduledit_nama">Password</div>
+								<div class="namanya">
+									<div class="namanya1">Password</div>
+									<div class="ttk">:</div>
+									<input type="password" name="password" value="" class="isi_namanya1"></input>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Konfirmasi Password</div>
+									<div class="ttk">:</div>
+									<input type="password" name="password" value="" class="isi_namanya1"></input>
+									<input type="submit" value="simpan" class="simpan_edit"></input>
+								</div>
+							</div>
+						</form>
+					</div>
 					<div role="tabpanel" class="tab-pane" id="getEditProfil">
 						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							<!--<div class="namanya">
-								<div class="namanya1">Nama</div>
-								<div class="ttk">:</div>
-								<input type="text" name="name" value="{{user.name}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Email</div>
-								<div class="ttk">:</div>
-								<input type="text" name="email" value="{{user.email}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Alternatif email</div>
-								<div class="ttk">:</div>
-								<input type="text" name="al_email" value="{{user.al_email}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Password</div>
-								<div class="ttk">:</div>
-								<input type="password" name="password" value="" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Konfirmasi Password</div>
-								<div class="ttk">:</div>
-								<input type="password" name="password" value="" class="isi_namanya1"></input>
-							</div>-->
-							<div class="namanya">
-								<div class="namanya1">Tempat Tanggal Lahir</div>
-								<div class="ttk">:</div>
-								<input type="text" name="tempat_lahir" value="{{user.tempat_lahir}}" class="tempatlahir"></input>
-								<input type="date" name="tanggal_lahir" value="{{user.tanggal_lahir}}" class="tanggallahir"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Status</div>
-								<div class="ttk">:</div>
-			                    <select name="status" value="" class="isi_namanya1">
-			                        <option value="">Lajang</option>
-			                        <option value="">Menikah</option>
-			                    </select>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Alamat</div>
-								<div class="ttk">:</div>
-								<input type="text" name="alamat" value="{{user.alamat}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Telepon</div>
-								<div class="ttk">:</div>
-								<input type="number" name="noHP" value="{{user.noHP}}" class="isi_namanya1"></input>
-							</div>
-							<!--<div class="namanya">
-								<div class="namanya1">Kesukaan</div>
-								<div class="ttk">:</div>
-								<input type="text" name="kesukaan" value="{{user.kesukaan}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Kutipan Hadits</div>
-								<div class="ttk">:</div>
-								<textarea class="textarea_setting" name="kutipanHadits">{{user.kutipanHadits}}</textarea>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Suasana Hati</div>
-								<div class="ttk">:</div>
-								<input type="text" name="statusUser" value="{{user.statusUser}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">contact Us</div>
-								<div class="ttk">:</div>
-								<input type="text" name="contactUs" value="{{user.contactUs}}" class="isi_namanya1"></input>
-                        		<input type="submit" name="daftar" value="Simpan" class="simpan_edit"></input>
-							</div>-->
-						</form>
-					</div>
-					<div role="tabpanel" class="tab-pane" id="getNama">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							<div class="namanya">
-								<div class="namanya1">Nama</div>
-								<div class="ttk">:</div>
-								<input type="text" name="name" value="{{user.name}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Email</div>
-								<div class="ttk">:</div>
-								<input type="text" name="email" value="{{user.email}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Alternatif email</div>
-								<div class="ttk">:</div>
-								<input type="text" name="al_email" value="{{user.al_email}}" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Password</div>
-								<div class="ttk">:</div>
-								<input type="password" name="password" value="" class="isi_namanya1"></input>
-							</div>
-							<div class="namanya">
-								<div class="namanya1">Konfirmasi Password</div>
-								<div class="ttk">:</div>
-								<input type="password" name="password" value="" class="isi_namanya1"></input>
+							<div class="editnama_user">
+							<div class="juduledit_nama">Identitas</div>
+								<div class="namanya">
+									<div class="namanya1">Tempat Tanggal Lahir</div>
+									<div class="ttk">:</div>
+									<input type="text" name="tempat_lahir" value="{{user.tempat_lahir}}" class="tempatlahir"></input>
+									<input type="date" name="tanggal_lahir" value="{{user.tanggal_lahir}}" class="tanggallahir"></input>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Status</div>
+									<div class="ttk">:</div>
+				                    <select name="status" value="" class="isi_namanya1">
+				                        <option value="">Lajang</option>
+				                        <option value="">Menikah</option>
+				                    </select>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Alamat</div>
+									<div class="ttk">:</div>
+									<input type="text" name="alamat" value="{{user.alamat}}" class="isi_namanya1"></input>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Telepon</div>
+									<div class="ttk">:</div>
+									<input type="number" name="noHP" value="{{user.noHP}}" class="isi_namanya1"></input>
+									<input type="submit" value="simpan" class="simpan_edit"></input>
+								</div>
 							</div>
 						</form>
 					</div>
