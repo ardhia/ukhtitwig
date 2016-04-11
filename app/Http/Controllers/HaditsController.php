@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Hadits;
 use Illuminate\Support\Facades\Auth;
+use App\Notifikasi;
 
 class HaditsController extends Controller
 {
@@ -14,6 +15,7 @@ class HaditsController extends Controller
 
     public function hadits () {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
     	//$hadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->Paginate(5);
         $hadits = Hadits::paginate(5);
 
@@ -35,15 +37,16 @@ class HaditsController extends Controller
         }
         //dd($Riwayat);
 
-        return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat, 'user' => $user]);
+        return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat, 'user' => $user, 'notif' => $notif]);
     }
 
     public function search (Request $request) {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         $keywords = $request->get('keywords');
         $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->paginate(7);
 
-        return view('searchhadits', ['keywords' => $table, 'user' => $user]);
+        return view('searchhadits', ['keywords' => $table, 'user' => $user, 'notif' => $notif]);
 
     }
 

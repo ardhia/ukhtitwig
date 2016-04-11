@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
 use App\User;
+use App\Notifikasi;
 use DB;
 use App\Testimoni;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,11 @@ class TestimoniController extends Controller
         $Testimoni = DB::table('testimoni')
                     ->where('user_id', $id)
                     ->insert(['email' => $request->input('email'), 'nama' => $request->input('nama'), 'Photo' => $name, 'isiTestimoni' => $request->input('isiTestimoni'), 'user_id' => $id]);
+
+        $notif = new Notifikasi;
+        $notif = Notifikasi::where('user_id', $id)
+                ->insert(['link' => route('profilUser', ['user_id' => $id]), 'user_id' => $id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb')]);
+
         //$Testimoni->save();
         //dd($Testimoni);exit;
         }

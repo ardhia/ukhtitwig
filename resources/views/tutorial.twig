@@ -19,7 +19,7 @@
 						<div id="artikel">
 							<a href="{{route('tutorial.isi-tutorial', {No: isi.No})}}">
 								<div class="judul-artikel">
-									{{isi.Judul_Tutorial}} by. {{isi.user_name}}
+									{{isi.Judul_Tutorial}} 
 								</div>
 							</a>
 							<div class="out-artikel">
@@ -29,6 +29,7 @@
 									{{isi.Isi_Tutorial|str_words(50)|raw }}
 									{% endautoescape %}
 								</div>
+								<div id="authorDate">by. <a href="{{route('profilU', {id: isi.user_id})}}">{{isi.user_name}}</a> at {{isi.created_at}}</div>
 							</div>
 						</div>
 					{% endfor %}

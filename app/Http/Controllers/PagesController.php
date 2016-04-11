@@ -10,6 +10,7 @@ use App\Artikel;
 use App\Toko;
 use App\Testimoni;
 use App\Tutorial;
+use App\Notifikasi;
 
 class PagesController extends Controller
 {
@@ -17,14 +18,16 @@ class PagesController extends Controller
 	//Publik
     public function home () {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
-    	return view('ukhti', ['user' => $user]);
+    	return view('ukhti', ['user' => $user, 'notif' => $notif]);
     }
 
     public function about () {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
-    	return view('about', ['user' => $user]);
+    	return view('about', ['user' => $user, 'notif' => $notif]);
     }
 
     public function profilU ($id) {
@@ -34,9 +37,10 @@ class PagesController extends Controller
         $artikel = Artikel::where('user_id', $id)->get();
         $tutorial = Tutorial::where('user_id', $id)->get();
         $foruser = User::where('id', $id)->first();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         //dd($user);
 
-    	return view('profilU', ['foruser' => $foruser, 'testimoni' => $testimoni, 'id' => $id, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel, 'user' => $user]);
+    	return view('profilU', ['foruser' => $foruser, 'testimoni' => $testimoni, 'id' => $id, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel, 'user' => $user, 'notif' => $notif]);
     }
 
     //END
