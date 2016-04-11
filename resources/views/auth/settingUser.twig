@@ -49,10 +49,12 @@
 						<a href="#getPassword" aria-controls="getPassword" role="tab" data-toggle="tab">Password</a>
 					</li>
 					<li role="presentation">
-						<a href="#getEditProfil" aria-controls="getEditProfil" role="tab" data-toggle="tab">Edit Profil</a>
+						<a href="#getEditProfil" aria-controls="getEditProfil" role="tab" data-toggle="tab">Identitas</a>
+					</li>
+					<li role="presentation">
+						<a href="#getSitusWeb" aria-controls="getSitusWeb" role="tab" data-toggle="tab">Me</a>
 					</li>
 				</ul>
-				<div class="gambar_foto"></div>
 			</div>
 		</div>
 		<div class="daftar_setting">
@@ -62,7 +64,7 @@
 						<div class="gambar_setting"></div>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getNama">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('settingNama')}}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">{{user.name}}</div>
@@ -76,8 +78,8 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getEmail">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('settingEmail')}}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">{{user.email}}</div>
 								<div class="namanya">
@@ -95,8 +97,8 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getPassword">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('settingPswd')}}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">Password</div>
 								<div class="namanya">
@@ -114,8 +116,8 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="getEditProfil">
-						<form enctype="multipart/form-data" method="POST" action="{{route('editSettingUser', {id: user.id})}}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<form enctype="multipart/form-data" method="POST" action="{{route('settingIdentitas')}}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<div class="editnama_user">
 							<div class="juduledit_nama">Identitas</div>
 								<div class="namanya">
@@ -127,7 +129,7 @@
 								<div class="namanya">
 									<div class="namanya1">Status</div>
 									<div class="ttk">:</div>
-				                    <select name="status" value="" class="isi_namanya1">
+				                    <select name="status" value="{{user.status}}" class="isi_namanya1">
 				                        <option value="">Lajang</option>
 				                        <option value="">Menikah</option>
 				                    </select>
@@ -141,6 +143,35 @@
 									<div class="namanya1">Telepon</div>
 									<div class="ttk">:</div>
 									<input type="number" name="noHP" value="{{user.noHP}}" class="isi_namanya1"></input>
+									<input type="submit" value="simpan" class="simpan_edit"></input>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="getSitusWeb">
+						<form enctype="multipart/form-data" method="POST" action="{{route('settingLainnya')}}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<div class="editnama_user">
+							<div class="juduledit_nama">Me</div>
+								<div class="namanya">
+									<div class="namanya1">Kutipan Hadits</div>
+									<div class="ttk">:</div>
+									<textarea name="kutipanHadits" value="" class="textarea_setting">{{user.kutipanHadits}}</textarea>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Kesukaan</div>
+									<div class="ttk">:</div>
+									<input type="text" name="kesukaan" value="{{user.kesukaan}}" class="isi_namanya1"></input>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Suasana Hati</div>
+									<div class="ttk">:</div>
+									<input type="text" name="statusUser" value="{{user.statusUser}}" class="isi_namanya1"></input>
+								</div>
+								<div class="namanya">
+									<div class="namanya1">Situs Web</div>
+									<div class="ttk">:</div>
+									<input type="text" name="contactUs" value="{{user.contactUs}}" class="isi_namanya1"></input>
 									<input type="submit" value="simpan" class="simpan_edit"></input>
 								</div>
 							</div>
