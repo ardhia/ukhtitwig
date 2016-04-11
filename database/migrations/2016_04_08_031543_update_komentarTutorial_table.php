@@ -11,10 +11,10 @@ class UpdateKomentarTutorialTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {/*
         Schema::table('komentar_tutorial', function ($table) {
             $table->string('konfirmasi');
-        });
+        });*/
     }
 
     /**

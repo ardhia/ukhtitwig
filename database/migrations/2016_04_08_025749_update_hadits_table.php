@@ -12,10 +12,10 @@ class UpdateHaditsTable extends Migration
      */
     public function up()
     {
-        Schema::table('komentar_tutorial', function ($table) {
+        /*Schema::table('komentar_tutorial', function ($table) {
             $table->string('konfirmasi');
             $table->string('judul');
-        });
+        });*/
     }
 
     /**

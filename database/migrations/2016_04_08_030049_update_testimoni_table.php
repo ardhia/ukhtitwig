@@ -12,9 +12,9 @@ class UpdateTestimoniTable extends Migration
      */
     public function up()
     {
-        Schema::table('testimoni', function ($table) {
+       /* Schema::table('testimoni', function ($table) {
             $table->string('konfirmasi');
-        });
+        });*/
     }
 
     /**
