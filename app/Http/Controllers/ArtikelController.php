@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Artikel;
+use App\Notifikasi;
 
 class ArtikelController extends Controller
 {
@@ -26,6 +27,7 @@ class ArtikelController extends Controller
         }*/
         //dd($isi);exit;
     	$artikel =  Artikel::Paginate(3);
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         //Arsip
         $tahun = DB::table('artikel')
@@ -44,13 +46,14 @@ class ArtikelController extends Controller
         }
         //dd($tahun);
         //exit;
-    	return view('artikel', ['artikel' => $artikel, 'tahun' => $tahun, 'user' => $user]);
+    	return view('artikel', ['artikel' => $artikel, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
     }
 
     //
     public function tampilIsiArtikel ($No) {
         $user = Auth::user();
         $dataArtikel = Artikel::where('No', $No)->first();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         //dd($dataArtikel);
         $komentar_artikel= DB::table('komentar_artikel')
                             ->select('nama', 'isi_komentar')
@@ -75,11 +78,12 @@ class ArtikelController extends Controller
         //dd($tahun);
         //exit;
 
-        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun, 'user' => $user]);
+        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
     }
 
     public function search (Request $request) {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         $keywords= $request->get('keywords');
         $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->get();
@@ -102,7 +106,7 @@ class ArtikelController extends Controller
         //dd($tahun);
         //exit;
         
-        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user]);
+        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
     }
 
     //END
@@ -115,17 +119,19 @@ class ArtikelController extends Controller
 
     public function user_editArtikel ($No){
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         $isiArtikel = Artikel::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiArtikel, $user);exit;
-        return view('auth/user_editArtikel', ['user' => $user, 'isiArtikel' => $isiArtikel]);
+        return view('auth/user_editArtikel', ['user' => $user, 'isiArtikel' => $isiArtikel, 'notif' => $notif]);
     }
 
 
     public function tampilUser_insertArtikel () {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         //dd($user);exit;
-        return view('auth/user_insertArtikel', ['user' => $user]);
+        return view('auth/user_insertArtikel', ['user' => $user, 'notif' => $notif]);
     }
 
     //post

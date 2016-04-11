@@ -29,6 +29,7 @@
 									{{isi.Isi_Artikel|str_words(50)|raw }}
 									{% endautoescape %}
 								</div>
+								<div id="authorDate">by. <a href="{{route('profilU', {id: isi.user_id})}}">{{isi.user_name}}</a> at {{isi.created_at}}</div>
 							</div>
 						</div>
 					{% endfor %}
