@@ -14,6 +14,7 @@ class UpdateTutorialTable extends Migration
     {
         Schema::table('tutorial', function ($table) {
             $table->string('konfirmasi');
+            $table->string('user_name');
         });
     }
 
