@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Redirect;
 use App\Http\Requests;
-use App\User_insertToko;
 use Illuminate\Support\Facades\Input;
 use DB;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +21,7 @@ class TokoController extends Controller
 	public function tampilToko (){
         $user = Auth::user();
 
-        $daftartoko =  DB::table('toko')->select('photoToko', 'idToko', 'judulToko', 'harga', 'jb', 'ketToko')->get();
+        $daftartoko =  Toko::get();
 
 		return view('toko', ['toko' => $daftartoko, 'user' => $user]);
 	}
@@ -32,10 +31,11 @@ class TokoController extends Controller
 	//USER
 
 	public function user_insertToko (){
+        $user = Auth::user();
         
         $toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 
-		return view('auth\user_insertToko', ['toko' => $toko]);
+		return view('auth\user_insertToko', ['toko' => $toko, 'user' => $user]);
 	}
 
     public function user_editToko ($idToko){
@@ -74,6 +74,7 @@ class TokoController extends Controller
             $file->move(public_path().'/uploadPhoto/toko/', $name);
         }
         $toko->user_id = $user->id;
+        $toko->user_name = $user->username;
         $toko->save();
         return Redirect::to('auth/profilU');
 //        $file = Request::file('photo');
@@ -118,22 +119,4 @@ class TokoController extends Controller
         return Redirect::to('/auth/profilU');
     }
 
-
-	//END
-
-	//ADMIN
-	public function tampilTokoAdmin (){
-		return view('admin\toko');
-	}
-
-    public function uploadPhoto (Request $request){
-    	$file = $request->file('photo');
-    }
-
-    //END
-
-
-
-
-    //image
 }

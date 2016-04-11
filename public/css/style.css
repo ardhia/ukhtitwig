@@ -457,7 +457,7 @@ body {
 	box-shadow: 0px 0px 5px 0px cyan;
 }
 .nama_komentar {
-	width: 10%;
+	width: 15%;
 	height: auto;
 	float: left;
 	font-family: "Handlee";
@@ -467,17 +467,17 @@ body {
 }
 
 .isi_komentar{
-	width: 70%;
+	width: 79%;
 	height: auto;
 	float: left;
 	padding: 1% 5px;
-	margin-top: 8px;
 	margin: 4px 1% 4px 0px;
 }
+
 .tgl_komentar {
-	width: 14%;
-	height: 35px;
-	float: left;
+	width: 40%;
+	height: auto;
+	float: right;
 }
 
 #comment {
@@ -969,6 +969,22 @@ body {
 
 .phototu {
 	background: url(../images/tutu.png);
+	width: 30%;
+	height: 290px;
+	float: left;
+	margin: 5px 0px 5px 5px;
+}
+
+.photoar {
+	background: url(../images/arti.png);
+	width: 30%;
+	height: 290px;
+	float: left;
+	margin: 5px 0px 5px 5px;
+}
+
+.phototo {
+	background: url(../images/bu.png);
 	width: 30%;
 	height: 290px;
 	float: left;
@@ -1649,30 +1665,33 @@ body {
 	width: 40%;
 	height: auto;
 	float: left;
-	background: cyan;
+	border: solid pink;
+	border-radius: 10px;
 }
 #setting1{
-	width: 98%;
+	width: 97%;
 	height: auto;
 	float: left;
-	margin: 5px 0px 5px 2%;
+	margin: 3px 1%;
 	background: pink;
+	border: solid pink;
+	border-radius: 10px;
 }
 .daftar_setting {
 	width: 56%;
 	height: auto;
 	margin-left: 3%;
 	float: left;
-	border: solid pink 3px;
+	border: solid #48d5fb 2px;
 	border-radius: 10px;
-	background: #e3e3e3;
+	background: #e1fcff;
 }
 #daftar_setting1 {
 	width: 98%;
 	height: auto;
 	float: left;
-	margin: 20px 1% 5px 1%;
-	background: #e3e3e3;
+	margin: 20px 1%;
+	background: #e1fcff;
 }
 .gambar_setting {
 	width: 100%;
@@ -1696,7 +1715,7 @@ body {
 	float: left;
 	margin: 15px 1%;
 	border-radius: 10px;
-	box-shadow: 0px 0px 8px 6px pink;
+	box-shadow: 0px 0px 4px 4px #a5def9;
 	background: white;
 }
 .namanya {
@@ -1724,18 +1743,18 @@ body {
 	padding-left: 1%;
 }
 .isi_namanya1 {
-	width: 51%;
+	width: 49%;
 	height: auto;
 	font-size: 15px;
 	float: left;
 	margin-right: 5%;
-	padding-top: 1%;
+	padding: 3px 1%;
 	font-family: "Handlee";
 	border-radius: 8px;
-	box-shadow: 0px 0px 5px 0px pink;
+	box-shadow: 0px 0px 3px 0px #90d5fb;
 }
 .tempatlahir {
-	width: 29%;
+	width: 27%;
 	height: auto;
 	font-size: 15px;
 	float: left;
@@ -1743,29 +1762,32 @@ body {
 	margin-top: 1%;
 	font-family: "Handlee";
 	border-radius: 8px;
-	box-shadow: 0px 0px 5px 0px pink;
+	padding: 3px 1%;
+	box-shadow: 0px 0px 3px 0px #90d5fb;
 }
 .tanggallahir{
 	width: 16%;
 	height: auto;
-	font-size: 15px;
+	font-size: 12px;
 	float: left;
 	margin-right: 5%;
 	margin-top: 1%;
+	padding: 3px 1%;
 	font-family: "Handlee";
 	border-radius: 8px;
-	box-shadow: 0px 0px 5px 0px pink;
+	box-shadow: 0px 0px 3px 0px #90d5fb;
 }
 .textarea_setting{
-	width: 51%;
+	width: 49%;
 	height: auto;
-	font-size: 18px;
+	font-size: 15px;
 	float: left;
 	margin-right: 5%;
-	padding-top: 1%;
+	padding: 3px 1%;
 	font-family: "Handlee";
 	border-radius: 8px;
 	margin-bottom: 7px;
+	box-shadow: 0px 0px 3px 0px #90d5fb;
 }
 .simpan_edit {
 	width: 19%;
@@ -1773,7 +1795,9 @@ body {
 	float: right;
 	margin: 25px 5% 10px 5%;
 	border-radius: 8px;
-	border: solid 2px;
+	border: solid 2px #48d5fb;
+	color: #48d5fb;
+	background: #fff;
 }
 /*Form Style*/
 
