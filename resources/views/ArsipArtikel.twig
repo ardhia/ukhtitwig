@@ -21,7 +21,9 @@
 											              	</div>
 											              	<div id="bulan-{{bulan.bulan}}" class="panel-collapse collapse in">
 											                	<div class="panel-body">
-											                		<a href="#link">Buat linknya</a>
+											                		{% for link in bulan.link %}
+											                			<li><a href="{{route('artikel.isi-artikel', {No: link.No})}}">{{link.Judul_Artikel}}</a></li>
+											                		{% endfor %}
 											                	</div>
 											              	</div>
 										            	</div>

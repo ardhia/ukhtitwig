@@ -1,4 +1,7 @@
 {% extends 'layout' %}
+{% block title %}
+    Ukhti
+{% endblock %}
 {% block isi %}
 		<div id="bar">
 			<div class="search">
@@ -20,11 +23,9 @@
 					<div id="js">
 						<div class="slider-wrapper theme-default">
 							<div id="slider" class="nivoSlider">
-								<img src="{{asset('images/1.jpg')}}">
-								<img src="{{asset('images/2.jpg')}}">
-								<img src="{{asset('images/3.jpg')}}">
-								<img src="{{asset('images/4.jpg')}}">
-								<img src="{{asset('images/5.jpg')}}">
+								{% for item in artikel %}
+									<a href="{{route('artikel.isi-artikel', {No: item.No})}}"><img src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%"></a>
+								{% endfor %}
 							</div>
 						</div>
 					</div>

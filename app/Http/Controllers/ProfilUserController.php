@@ -25,7 +25,7 @@ class ProfilUserController extends Controller
     	$tutorial = Tutorial::where('user_id', $user->id)->get();
     	$toko =  Toko::where('user_id', $user->id)->get();
         $testimoni = Testimoni::where('user_id', $user->id)->get();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         //dd($notif);exit;
 
         return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'testimoni' => $testimoni, 'notif' => $notif]);
