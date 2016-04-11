@@ -98,6 +98,8 @@
 								<div class="formTestimoni">
 									<form action="{{route('prosesTestimoni', {id: id})}}" method="POST" enctype="multipart/form-data">
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										<input type="hidden" name="status" value="false">
+										<input type="hidden" name="verb" value="Mengirim Testimoni ke Profil Anda">
 										<input type="file" name="Photo" class="fileTestimoni">
 										<input type="email" name="email" class="inputTestimoni"  placeholder="E-mail">
 										<input type="text" name="nama" class="inputTestimoni" placeholder="Nama">

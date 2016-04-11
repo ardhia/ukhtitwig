@@ -122,16 +122,16 @@ Route::group(['middleware' => ['web']], function () {
 
     //Toko
     Route::get('/toko', 'TokoController@tampilToko')->name('toko');
-    Route::get('/toko/pakaian', 'PakaianController@tampilPakaian')->name('toko.pakaian');
-    Route::get('/toko/makanan', 'MakananController@tampilMakanan')->name('toko.makanan');
-    Route::get('/toko/sepatu', 'SepatuController@tampilSepatu')->name('toko.sepatu');
-    Route::get('/toko/kerudung', 'KerudungController@tampilKerudung')->name('toko.kerudung');
-    Route::get('/toko/tas', 'TasController@tampilTas')->name('toko.tas');
-    
-    Route::get('/toko/aksesoris', 'AksesorisController@tampilAksesoris')->name('toko.aksesoris');
+    Route::get('/toko/pakaian', 'SubTokoController@tampilPakaian')->name('toko.pakaian');
+    Route::get('/toko/makanan', 'SubTokoController@tampilMakanan')->name('toko.makanan');
+    Route::get('/toko/sepatu', 'SubTokoController@tampilSepatu')->name('toko.sepatu');
+    Route::get('/toko/kerudung', 'SubTokoController@tampilKerudung')->name('toko.kerudung');
+    Route::get('/toko/tas', 'SubTokoController@tampilTas')->name('toko.tas');
+    Route::get('/toko/aksesoris', 'SubTokoController@tampilAksesoris')->name('toko.aksesoris');
+    Route::get('/toko/dll', 'SubTokoController@tampilDll')->name('toko.dll');
+
     Route::get('/toko/aksesoris/searchaksesoris', 'AksesorisController@search')->name('toko.aksesoris-search');
     
-    Route::get('/toko/dll', 'LainnyaController@tampilDll')->name('toko.dll');
 
     //Hadits
     Route::get('/hadits', 'HaditsController@hadits')->name('hadits');

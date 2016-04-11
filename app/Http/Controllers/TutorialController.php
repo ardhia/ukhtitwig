@@ -11,6 +11,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Tutorial;
+use App\Notifikasi;
 
 class TutorialController extends Controller
 {
@@ -20,6 +21,7 @@ class TutorialController extends Controller
         $user = Auth::user();
 
      	$tutorial = Tutorial::Paginate(3);
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
 	    //Arsip
         $tahun = DB::table('tutorial')
@@ -39,13 +41,14 @@ class TutorialController extends Controller
         //dd($tahun);
         //exit;
 
-     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun, 'user' => $user]);
+     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
     }
 
     public function isi_tutorial ($No) {
         $user = Auth::user();
 
     	$dataTutorial = Tutorial::where('No', $No)->first();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         //dd($dataTutorial);
         $komentar_tutorial= DB::table('komentar_tutorial')
                             ->select('nama', 'isi_komentar')
@@ -71,11 +74,12 @@ class TutorialController extends Controller
         //dd($tahun);
         //exit;
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun, 'user' => $user]);
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
     }
 
     public function search (Request $request) {
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         $keywords= $request->get('keywords');
         $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
@@ -99,7 +103,7 @@ class TutorialController extends Controller
         //exit;
 
         
-        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user]);
+        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
     }
      //END
 
@@ -108,17 +112,19 @@ class TutorialController extends Controller
 	public function user_insertTutorial (){
         $user = Auth::user();
         $tutorial = DB::table('tutorial');
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         //dd($user);exit;
-        return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial]);
+        return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial, 'notif' => $notif]);
 	}
 
     public function user_editTutorial ($No){
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         $isiTutorial = Tutorial::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiTutorial, $user);
         //exit;
-        return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial]);
+        return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial, 'notif' => $notif]);
     }
 
     public function prosesUser_editTutorial (Request $request, $No) {

@@ -18,7 +18,10 @@
 				<div class="content">
 					<div id="bungkus-tulisan">
 						<div id="tulis">
-							<div class="tanggal">{{dataArtikel.created_at}}</div>
+							<div class="tanggal">
+								<a href="{{route('profilU', {id: dataArtikel.user_id})}}">@{{dataArtikel.user_name}}</a>
+								at {{dataArtikel.created_at}}
+							</div>
 							<div class="title">{{dataArtikel.Judul_Artikel}}</div>
 						</div>
 						<div id="out-tulisan">

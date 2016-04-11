@@ -79,6 +79,7 @@ body {
 	float: right;
 	padding: 13px 9% 13px 0%;
 	font-size: 13px;
+	width: 65%;
 }
 
 #log ul {
@@ -109,9 +110,9 @@ body {
 }
 
 #namalog {
-	width: 100%;
+	width: auto;
 	height: auto;
-	float: left;
+	float: right;
 	border-top-right-radius: 16px;
 	border-bottom-right-radius: 16px;
 	background: RGBA(93, 238, 255, 0.19);
@@ -190,10 +191,91 @@ body {
 .wraplog {
 	float: right;
 	height: auto;
-	margin: 13px 0% 13px 9%;
 	font-size: 13px;
-	width: 2.447%;
+	width: auto;
 }
+
+
+#notif {
+	width: 2%;
+	height: auto;
+	float: right;
+	border-radius: 8px;
+	background: url(../images/notif.png) no-repeat;
+	background-size: auto 100%;
+	margin: -4px 8.5% 0px 63.5%;
+	position: absolute;
+}
+
+#notifn ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#notif ul li {
+	position: relative;
+	float: right;
+	text-align: left;
+	width: 100%;
+}
+
+#notif ul li a {
+	display: block;
+	color: #827BFF;
+	padding: 6px 38%;
+	text-decoration: none;
+}
+
+#notif ul li a:hover {
+	background: url(../images/notifhover.png) no-repeat;
+	background-size: auto 100%;
+	color: #980CF5;
+	border: 0px;
+	border-radius: 0px;
+}
+
+
+/*dropmenu notif*/
+#notif li ul {
+	background: #fbfbfb;
+	display: none;
+	height: auto;
+	padding: 0px;
+	margin: 0px 0px 0px -288%;;
+	text-align: left;
+	position: absolute;
+	width: 200px;
+	border-radius: 6px;
+	box-shadow: 2px 2px 2px 2px #d5d5d5;
+}
+
+#notif li li 	{
+	display: block;
+	float: none;
+	text-align: left;
+	margin: 6px 11%;
+	width: auto;
+	border-bottom: 1px solid #929292;
+}
+
+#notif li ul a {
+	padding: 10px 5%;
+}
+
+#notif li:hover ul {
+	display: block;
+}
+
+#notif li ul a:hover,
+#notif li ul li:hover > a {
+	color: #fbfbfb;
+	text-decoration: none;
+	background: #929292;
+	border: 0px solid;
+	border-radius: 2px;
+}
+/*end*/
 
 #photolog {
 	width: 100%;
@@ -364,6 +446,17 @@ body {
 	height: auto;
 	float: left;
 	margin: 5px 10%;
+}
+
+#authorDate {
+	width: 98%;
+	height: auto;
+	float: left;
+	margin: 6px 0px 0px;
+	background: #fffff9;
+	border-radius: 4px;
+	padding: 4px 1%;
+	text-align: right;
 }
 
 #bungkus-tulisan {

@@ -10,6 +10,7 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Toko;
+use App\Notifikasi;
 
 
 
@@ -20,10 +21,11 @@ class TokoController extends Controller
 
 	public function tampilToko (){
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         $daftartoko =  Toko::get();
 
-		return view('toko', ['toko' => $daftartoko, 'user' => $user]);
+		return view('toko', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
 
 	//END
@@ -32,19 +34,21 @@ class TokoController extends Controller
 
 	public function user_insertToko (){
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
         
         $toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 
-		return view('auth\user_insertToko', ['toko' => $toko, 'user' => $user]);
+		return view('auth\user_insertToko', ['toko' => $toko, 'user' => $user, 'notif' => $notif]);
 	}
 
     public function user_editToko ($idToko){
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->get();
 
         $isiToko = Toko::where('idToko', $idToko)->where('user_id', $user->id)->firstOrFail();
         //dd($isiToko, $user);
         //exit;
-        return view('auth/user_editToko', ['user' => $user, 'isiToko' => $isiToko]);
+        return view('auth/user_editToko', ['user' => $user, 'isiToko' => $isiToko, 'notif' => $notif]);
     }
 
 
