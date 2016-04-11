@@ -21,7 +21,7 @@ class TokoController extends Controller
 
 	public function tampilToko (){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
 
         $daftartoko =  Toko::get();
 
@@ -34,7 +34,7 @@ class TokoController extends Controller
 
 	public function user_insertToko (){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         
         $toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 

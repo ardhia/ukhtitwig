@@ -15,7 +15,7 @@ class HaditsController extends Controller
 
     public function hadits () {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
     	//$hadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->Paginate(5);
         $hadits = Hadits::paginate(5);
 
@@ -42,7 +42,7 @@ class HaditsController extends Controller
 
     public function search (Request $request) {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         $keywords = $request->get('keywords');
         $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->paginate(7);
 

@@ -277,6 +277,14 @@ body {
 }
 /*end*/
 
+.notif-Alrert {
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #FFE6FF;
+	padding: 0px 10%;
+}
+
 #photolog {
 	width: 100%;
 	height: 33px;
@@ -434,7 +442,7 @@ body {
 }
 
 #photo-artikel {
-	background: pink;
+	background: none;
 	width: 46%;
 	height:200px;
 	float: left;
@@ -457,6 +465,14 @@ body {
 	border-radius: 4px;
 	padding: 4px 1%;
 	text-align: right;
+}
+
+#authorDate a {
+	color: #FF81E5;
+}
+
+#authorDate a:hover {
+	color: #00C9FF;
 }
 
 #bungkus-tulisan {
@@ -484,6 +500,14 @@ body {
 	margin-bottom: 1%;
 }
 
+.tanggal a {
+	color: #FF81E5;
+}
+
+.tanggal a:hover {
+	color: #00C9FF;
+}
+
 .title {
 	width: 92%;
 	height: auto;
@@ -508,7 +532,7 @@ body {
 	height: 220px;
 	float: left;
 	margin: 5px 24% 3%;
-	background: #79FFF6;
+	background: none;
 }
 
 .tulisan {

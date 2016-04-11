@@ -23,13 +23,15 @@
 					    </div>
 					    <div id="notif">
 					    	<ul>
-							  	<li><a href="#">1</a>
+							  	<li><a href="#">{{notif.count}}</a>
 							  		<ul>
+							  			<li class="notif-Alrert">======-*-======</li>
 							  			{% for item in notif %}
 							  				<li><a href="{{item.link}}">
 							  					{{item.nama}} {{item.verb}}
 							  				</a></li>
 							  			{% endfor %}
+							  			<li class="notif-Alrert"><a href="notif">Lihat Selengkapnya</a></li>
 							  		</ul>
 							  	</li>
 					    	</ul>

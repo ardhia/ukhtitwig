@@ -12,9 +12,9 @@ class UpdateKomentarArtikelTable extends Migration
      */
     public function up()
     {
-        Schema::table('komentar_artikel', function ($table) {
+        /*Schema::table('komentar_artikel', function ($table) {
             $table->string('konfirmasi');
-        });
+        });*/
     }
 
     /**

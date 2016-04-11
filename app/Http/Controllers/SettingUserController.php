@@ -8,13 +8,16 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Http\Requests;
 use Redirect;
+use App\Notifikasi;
+
 
 class SettingUserController extends Controller
 {
 	public function tampilSettingUser (){
         $user = Auth::user();
+        $notif = Notifikasi::where('user_id', $user->id)->paginate(5);
 
-		return view('auth/settingUser', ['user' => $user]);
+		return view('auth/settingUser', ['user' => $user, 'notif' => $notif]);
 	}
 
 	//post

@@ -12,9 +12,9 @@ class UpdateSubscribeTable extends Migration
      */
     public function up()
     {
-        Schema::table('subscribe', function ($table) {
+       /* Schema::table('subscribe', function ($table) {
             $table->string('konfirmasi');
-        });
+        });*/
     }
 
     /**

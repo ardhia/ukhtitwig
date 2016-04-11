@@ -18,14 +18,19 @@ class PagesController extends Controller
 	//Publik
     public function home () {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $artikel = Artikel::get();
+        $tutorial = Tutorial::get();
+        $toko = Toko::get();
 
-    	return view('ukhti', ['user' => $user, 'notif' => $notif]);
+        //dd($artikel);exit;
+
+    	return view('ukhti', ['user' => $user, 'notif' => $notif, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel]);
     }
 
     public function about () {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
 
     	return view('about', ['user' => $user, 'notif' => $notif]);
     }
@@ -37,7 +42,7 @@ class PagesController extends Controller
         $artikel = Artikel::where('user_id', $id)->get();
         $tutorial = Tutorial::where('user_id', $id)->get();
         $foruser = User::where('id', $id)->first();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         //dd($user);
 
     	return view('profilU', ['foruser' => $foruser, 'testimoni' => $testimoni, 'id' => $id, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel, 'user' => $user, 'notif' => $notif]);

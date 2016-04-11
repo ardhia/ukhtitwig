@@ -1,4 +1,7 @@
 {% extends 'layout' %}
+{% block title %}
+    {{dataTutorial.Judul_Tutorial}}
+{% endblock %}
 {% block isi %}
 		<div id="bar">
 			<div class="search">
@@ -21,8 +24,8 @@
 					<div id="bungkus-tulisan">
 						<div id="tulis">
 							<div class="tanggal">
-								<a href="{{route('profilU', {id: dataArtikel.user_id})}}">@{{dataArtikel.user_name}}</a>
-								at {{dataArtikel.created_at}}
+								<a href="{{route('profilU', {id: dataArtikel.user_id})}}">@{{dataTutorial.user_name}}</a>
+								at {{dataTutorial.created_at}}
 							</div>
 							<div class="title">{{dataTutorial.Judul_Tutorial}}</div>
 						</div>
