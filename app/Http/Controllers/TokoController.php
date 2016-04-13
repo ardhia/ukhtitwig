@@ -123,4 +123,19 @@ class TokoController extends Controller
         return Redirect::to('/auth/profilU');
     }
 
+    public function tampilSearch (Request $request) {
+        $user = Auth::user();
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
+
+        $katagori= $request->get('jb');
+        $keywords= $request->get('keywords');
+        $toko = Toko::where('jb', $katagori)->where('judulToko',  'LIKE', '%' . $keywords . '%')->Paginate(9);
+
+
+        return view('searchToko', ['keywords' => $toko]);
+    }
+
 }

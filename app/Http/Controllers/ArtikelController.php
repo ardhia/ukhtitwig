@@ -21,7 +21,7 @@ class ArtikelController extends Controller
         $user = Auth::user();
         $notif = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('created_at', 'desc')->Paginate(5);
         }
 
         /*if (empty($user->konfirmasi)) {
@@ -50,7 +50,9 @@ class ArtikelController extends Controller
                 $link = Artikel::select('Judul_Artikel', 'No')
                         ->groupBy(DB::raw('Judul_Artikel'))
                         ->orderBy('created_at', 'desc')
-                        ->where(DB::raw('MONTH(created_at)', 'YEAR(created_at)'), $itemdua->bulan)->get();
+                        ->where(DB::raw('YEAR(created_at)'), $item->tahun)
+                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
+                        ->get();
             $itemdua->link = $link;
             }
             $item->bulan = $bulan;
@@ -79,6 +81,7 @@ class ArtikelController extends Controller
         $tahun = DB::table('artikel')
                         ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
                         ->groupBy(DB::raw("YEAR(created_at)"))
+                        ->orderBy('created_at', 'desc')
                         //->groupBy MONTH('created_at');
                         ->get();
 
@@ -86,11 +89,15 @@ class ArtikelController extends Controller
             $bulan = DB::table('artikel')
                 ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
                 ->groupBy(DB::raw('MONTH(created_at)'))
+                ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
                 $link = Artikel::select('Judul_Artikel', 'No')
                         ->groupBy(DB::raw('Judul_Artikel'))
-                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)->get();
+                        ->orderBy('created_at', 'desc')
+                        ->where(DB::raw('YEAR(created_at)'), $item->tahun)
+                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
+                        ->get();
             $itemdua->link = $link;
             }
             $item->bulan = $bulan;
@@ -110,12 +117,13 @@ class ArtikelController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->get();
+        $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->Paginate(11);
 
         //Arsip
         $tahun = DB::table('artikel')
                         ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
                         ->groupBy(DB::raw("YEAR(created_at)"))
+                        ->orderBy('created_at', 'desc')
                         //->groupBy MONTH('created_at');
                         ->get();
 
@@ -123,11 +131,15 @@ class ArtikelController extends Controller
             $bulan = DB::table('artikel')
                 ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
                 ->groupBy(DB::raw('MONTH(created_at)'))
+                ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
                 $link = Artikel::select('Judul_Artikel', 'No')
                         ->groupBy(DB::raw('Judul_Artikel'))
-                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)->get();
+                        ->orderBy('created_at', 'desc')
+                        ->where(DB::raw('YEAR(created_at)'), $item->tahun)
+                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
+                        ->get();
             $itemdua->link = $link;
             }
             $item->bulan = $bulan;
