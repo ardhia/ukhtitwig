@@ -21,7 +21,10 @@ class TutorialController extends Controller
         $user = Auth::user();
 
      	$tutorial = Tutorial::Paginate(3);
-        $notif = Notifikasi::where('user_id', $user->id)-Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
 	    //Arsip
         $tahun = DB::table('tutorial')
@@ -54,7 +57,10 @@ class TutorialController extends Controller
         $user = Auth::user();
 
     	$dataTutorial = Tutorial::where('No', $No)->first();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
         //dd($dataTutorial);
         $komentar_tutorial= DB::table('komentar_tutorial')
                             ->select('nama', 'isi_komentar')
@@ -91,7 +97,10 @@ class TutorialController extends Controller
 
     public function search (Request $request) {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         $keywords= $request->get('keywords');
         $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
@@ -130,14 +139,20 @@ class TutorialController extends Controller
 	public function user_insertTutorial (){
         $user = Auth::user();
         $tutorial = DB::table('tutorial');
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
         //dd($user);exit;
         return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial, 'notif' => $notif]);
 	}
 
     public function user_editTutorial ($No){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         $isiTutorial = Tutorial::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiTutorial, $user);
@@ -199,25 +214,5 @@ class TutorialController extends Controller
 
         return Redirect::to('/auth/profilU');
     }
-
-   
-
- //END
-
- //ADMIN
-
-	 public function tutorialAdmin (){
-	  return view('admin/tutorial');
-	 }
-
-	 public function isi_tutorialAdmin (){
-	  return view('admin/isi-tutorial');
-	 }
-
-	 public function uploadPhoto (Request $request){
-    	$file = $request->file('photo');
-    }
-
- //END
 
 }

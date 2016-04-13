@@ -1,0 +1,37 @@
+{% extends 'Userlayout' %}
+{% block NamaUser %}
+    Notifikasi
+{% endblock %}
+{% block isiUser %}
+    <div id="bar">
+        <div class="search">
+            <form>
+                <input type="text" name="input-search" placeholder="Search" class="text"></input>
+                <input type="submit" name="search" value="" class="submit"></input>
+            </form>
+        </div>
+        <div class="_breadcrumb">
+            <!-- another version - flat style with animated hover effect -->
+            <div class="breadcrumb flat">
+                <a href="{{route('/')}}">Home</a>
+                <a href="{{route('profilUser')}}">{{user.name}}</a>
+                <a href="#" class="active">Notifikasi</a>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div class="wrap">
+            <div class="content">
+                <div class="out-notif">
+                    {% for item in notif %}
+                        <a href="{{item.link}}">
+                            <div id="isiNotif">
+                                <b>{{item.nama}}</b> {{item.verb}}: "{{item.isiNotif|str_words(4)}}"
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
