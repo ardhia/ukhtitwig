@@ -1997,8 +1997,35 @@ body {
 	margin-right: -8px;
 }
 
+.text4 {
+	width: 67%;
+	height: auto;
+	border-radius: 6px;
+	border: solid #00C9FF 1px;
+	padding: 10px 2%;
+	margin-right: -8px;
+}
+
+.text5 {
+	width: 25%;
+	height: auto;
+	border-radius: 6px;
+	border: solid #00C9FF 1px;
+	padding: 9px 2%;
+	margin-right: -8px;
+}
+
 .submit1 {
 	width: 6%;
+	height: 38px;
+	background: url(../images/search.jpg);
+	border-radius: 1px;
+	background-size: 100% 100%;
+	border: 1px solid #00c9ff;
+}
+
+.submit2 {
+	width: 4.5%;
 	height: 38px;
 	background: url(../images/search.jpg);
 	border-radius: 4px;

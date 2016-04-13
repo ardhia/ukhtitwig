@@ -32,6 +32,7 @@ class PagesController extends Controller
     }
 
     public function about () {
+        $user = Auth::user();
         $notif = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);

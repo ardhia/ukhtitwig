@@ -17,6 +17,7 @@ class CreateHaditsTable extends Migration
             $table->text('Isi_Hadits');
             $table->text('Sumber_HR');
             $table->text('Riwayat');
+            $table->string('judul');
             $table->timestamps();
         });
     }

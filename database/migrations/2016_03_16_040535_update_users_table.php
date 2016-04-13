@@ -20,6 +20,12 @@ class UpdateUsersTable extends Migration
             $table->string('status');
             $table->string('al_email');
             $table->string('photoProfil');
+            $table->string('alamat');
+            $table->string('noHP');
+            $table->text('kesukaan');
+            $table->text('kutipanHadits');
+            $table->text('statusUser');
+            $table->text('contactUs');
         });
     }
 

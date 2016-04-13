@@ -122,6 +122,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/subs', 'SubscribeController@prosesSimpanLangganan')->name('simpanLangganan');
 
     //Toko
+    Route::get('/toko/searchToko', 'TokoController@tampilSearch')->name('searchToko');
     Route::get('/toko', 'TokoController@tampilToko')->name('toko');
     Route::get('/toko/pakaian', 'SubTokoController@tampilPakaian')->name('toko.pakaian');
     Route::get('/toko/makanan', 'SubTokoController@tampilMakanan')->name('toko.makanan');
