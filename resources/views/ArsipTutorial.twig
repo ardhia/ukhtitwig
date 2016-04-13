@@ -15,11 +15,11 @@
 										            	<div class="panel panel-default">
 											              	<div class="panel-heading">
 											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.tahun}}-accordion" href="#bulan-{{bulan.bulan}}">{{bulan.bulan}}</a>
+											                  		<a data-toggle="collapse" data-parent="#{{item.tahun}}-accordion" href="#bulan-{{bulan.bulan}}-{{item.tahun}}">{{bulan.bulan}}</a>
 											                	</h4>
 											                	({{bulan.jumlah}})
 											              	</div>
-											              	<div id="bulan-{{bulan.bulan}}" class="panel-collapse collapse in">
+											              	<div id="bulan-{{bulan.bulan}}-{{item.tahun}}" class="panel-collapse collapse in">
 											                	<div class="panel-body">
 											                		{% for link in bulan.link %}
 											                			<li><a href="{{route('tutorial.isi-tutorial', {No: link.No})}}">{{link.Judul_Tutorial}}</a></li>

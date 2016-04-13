@@ -17,7 +17,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Aksesoris')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Aksesoris')->Paginate(12);
     	
 		return view('aksesoris', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -30,7 +30,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Kerudung')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Kerudung')->Paginate(12);
     	
     	return view('pakaian', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -43,7 +43,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Lainnya')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Lainnya')->Paginate(12);
     	
 		return view('dll', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -56,7 +56,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Makanan')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Makanan')->Paginate(12);
 
 		return view('makanan', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -69,7 +69,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Pakaian')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Pakaian')->Paginate(12);
     	
     	return view('pakaian', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -82,7 +82,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Sepatu')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Sepatu')->Paginate(12);
     	
 		return view('sepatu', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -95,7 +95,7 @@ class SubTokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
 
-    	$daftartoko =  Toko::where('jb', 'Tas')->Paginate(12);
+    	$daftartoko =  Toko::orderBy('created_at', 'desc')->where('jb', 'Tas')->Paginate(12);
     	
 		return view('tas', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
