@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    User Artikel
+    User Toko
 {% endblock %}
 {% block isi %}
 			<div id="bar">
@@ -14,22 +14,24 @@
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
-					<a href="#" class="active">Artikelnya Ukhty</a>
+					<a href="#" class="active">Tokonya Ukhty ;)</a>
 				</div>
 			</div>
 			</div>
 		<div id="wrapper">
 			<div class="isicontent_user">
-			<div class="user_judulTutorial">Artikelnya Ukhty ;)</div>
-			{% for item in artikel %}
-				<div class="isicontent_user1"><a href="{{route('artikel.isi-artikel', {No: item.No})}}">
-					<div class="user_judul">{{item.Judul_Artikel}}</div>
-				</a>
-				<div class="user_photo"><img src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%"></div>
-				<div class="user_isinya">{{item.Isi_Artikel|str_words(100)|raw}}</div>
+			<div class="user_judulTutorial">Tokonya Ukhty ;)</div>
+			{% for item in toko %}
+			<div class="isicontent_user1">
+				<div class="user_photo"><img src="/uploadPhoto/toko/{{item.photoToko}}" width="100%" height="100%"></div>
+				<div class="userbungkus_toko">
+				<div class="userjudul_toko">{{item.judulToko}}</div>
+				<div class="userharga_toko">Harga: Rp.{{item.harga}},-</div>
+				<div class="user_isinya1">Keterangan: {{item.ketToko}}</div>
+				</div>
 			</div>
 			{% endfor %}
-			<div class="paginate">{{ artikel.render()|raw }}</div>
+			<div class="paginate">{{ toko.render()|raw }}</div>
 			</div>
 		</div>
 {% endblock %}

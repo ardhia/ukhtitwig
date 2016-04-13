@@ -9,16 +9,17 @@ use App\User;
 use App\Http\Requests;
 use Redirect;
 use App\Notifikasi;
-use App\Tutorial;
+use App\Toko;
 
-class UserTutorialController extends Controller
+
+class UserTokoController extends Controller
 {
-    public function tampilUserTutorial (){
+    public function tampilUserToko (){
         $user = Auth::user();
-        $tutorial =  Tutorial::Paginate(3);
+        $toko =  Toko::Paginate(3);
         $notif = Notifikasi::where('user_id', $user->id)->paginate(5);
 
 
-        return view('auth/user_tutorial', ['user' => $user, 'notif' => $notif, 'tutorial' => $tutorial]);
+        return view('auth/user_toko', ['user' => $user, 'notif' => $notif, 'toko' => $toko]);
 	}
 }

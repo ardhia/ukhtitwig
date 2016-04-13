@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    User Artikel
+    User Tutorial
 {% endblock %}
 {% block isi %}
 			<div id="bar">
@@ -14,21 +14,23 @@
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
-					<a href="#" class="active">About</a>
+					<a href="#" class="active">Tutorialnya Ukhty ;)</a>
 				</div>
 			</div>
 			</div>
 		<div id="wrapper">
 			<div class="isicontent_user">
-			{% for item in artikel %}
+			<div class="user_judulTutorial">Tutorialnya Ukhty ;)</div>
+			{% for item in tutorial %}
 			<div class="isicontent_user1">
-				<div id="title_user">Artikelnya Ukhty ;)</div>
-				<div class="user_judul">{{item.Judul_Artikel}}</div>
-				<div class="user_photo"><img src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%"></div>
-				<div class="user_isinya">{{item.Isi_Artikel|str_words(100)|raw}}</div>
+				<a href="{{route('tutorial.isi-tutorial', {No: item.No})}}">
+					<div class="user_judul">{{item.Judul_Tutorial}}</div>
+				</a>
+				<div class="user_photo"><img src="/uploadPhoto/tutorial/{{item.Photo}}" width="100%" height="100%"></div>
+				<div class="user_isinya">{{item.Isi_Tutorial|str_words(50)|raw}}</div>
 			</div>
 			{% endfor %}
-			<div class="paginate">{{ artikel.render()|raw }}</div>
+			<div class="paginate">{{ tutorial.render()|raw }}</div>
 			</div>
 		</div>
 {% endblock %}
