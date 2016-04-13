@@ -32,7 +32,7 @@ class KomentarController extends Controller
 
         $notif = new Notifikasi;
         $notif = Notifikasi::where('user_id', $tutorial->user_id)
-                ->insert(['link' => route('tutorial.isi-tutorial', ['no_tutorial' => $No]), 'user_id' => $tutorial->user_id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb')]);
+                ->insert(['link' => route('tutorial.isi-tutorial', ['no_tutorial' => $No]), 'user_id' => $tutorial->user_id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb'), 'isiNotif' => $request->input('isi_komentar')]);
 
         return redirect()->route('tutorial.isi-tutorial', ['no_tutorial' => $No]);
     }
@@ -53,7 +53,7 @@ class KomentarController extends Controller
 
         $notif = new Notifikasi;
         $notif = Notifikasi::where('user_id', $artikel->user_id)
-                ->insert(['link' => route('artikel.isi-artikel', ['no_tutorial' => $No]), 'user_id' => $artikel->user_id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb')]);
+                ->insert(['link' => route('artikel.isi-artikel', ['no_tutorial' => $No]), 'user_id' => $artikel->user_id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb'), 'isiNotif' => $request->input('isi_komentar')]);
 
         return redirect()->route('artikel.isi-artikel', ['no_artikel' => $No]);
     }

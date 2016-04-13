@@ -13,7 +13,7 @@
 		<form enctype="multipart/form-data" action="{{route('prosesKomentarTutorial', {No: No})}}" method="POST">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<input type="hidden" name="status" value="false">
-			<input type="hidden" name="verb" value="Mengomentari Tutorial yang Anda buat.">
+			<input type="hidden" name="verb" value="Mengomentari Tutorial yang Anda buat">
 			<input type="text" maxlength="10" name="nama" placeholder="Masukan Nama Anda" class="nama-komentar">
 			<textarea class="isi-komentar" maxlength="50" placeholder="Komentar" name="isi_komentar"></textarea>
 		<input type="submit" name="kirim" value="Kirim" class="kirim">

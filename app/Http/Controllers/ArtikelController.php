@@ -19,6 +19,10 @@ class ArtikelController extends Controller
     //Publik
     public function tampilArtikel () {
         $user = Auth::user();
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         /*if (empty($user->konfirmasi)) {
             echo "hmm";
@@ -27,7 +31,6 @@ class ArtikelController extends Controller
         }*/
         //dd($isi);exit;
     	$artikel =  Artikel::Paginate(3);
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
 
         //Arsip
         $tahun = DB::table('artikel')
@@ -58,8 +61,11 @@ class ArtikelController extends Controller
     //
     public function tampilIsiArtikel ($No) {
         $user = Auth::user();
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
         $dataArtikel = Artikel::where('No', $No)->first();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         //dd($dataArtikel);
         $komentar_artikel= DB::table('komentar_artikel')
                             ->select('nama', 'isi_komentar')
@@ -95,7 +101,10 @@ class ArtikelController extends Controller
 
     public function search (Request $request) {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         $keywords= $request->get('keywords');
         $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->get();
@@ -137,7 +146,10 @@ class ArtikelController extends Controller
 
     public function user_editArtikel ($No){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         $isiArtikel = Artikel::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiArtikel, $user);exit;
@@ -147,7 +159,10 @@ class ArtikelController extends Controller
 
     public function tampilUser_insertArtikel () {
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
         //dd($user);exit;
         return view('auth/user_insertArtikel', ['user' => $user, 'notif' => $notif]);
     }
