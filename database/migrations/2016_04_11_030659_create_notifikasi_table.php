@@ -18,6 +18,7 @@ class CreateNotifikasiTable extends Migration
             $table->string('link');
             $table->string('verb');
             $table->string('nama');
+            $table->text('isiNotif');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
