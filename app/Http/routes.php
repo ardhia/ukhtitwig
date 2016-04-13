@@ -74,6 +74,7 @@ Route::group(['middleware' => ['web']], function () {
     |--------------------------------------------------------------------------
     */
     Route::get('auth/profilU/{id}/editPP', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@getPhotoProfil'])->name('getPhotoProfil');
+    Route::get('auth/profilU/notif', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@tampilNotifikasi'])->name('notifikasi');
     Route::post('auth/profilU/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changePhotoProfil'])->name('changePhotoProfil');
     Route::post('auth/profilUBio/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changeBio'])->name('changeBio');
 

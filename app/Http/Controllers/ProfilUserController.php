@@ -63,4 +63,12 @@ class ProfilUserController extends Controller
 
     }
 
+    public function tampilNotifikasi () {
+        $user = Auth::user();
+        $notif = Notifikasi::get();
+        //dd($notif);exit;
+
+        return view('auth/notifikasi', ['notif' => $notif, 'user' => $user]);
+    }
+
 }

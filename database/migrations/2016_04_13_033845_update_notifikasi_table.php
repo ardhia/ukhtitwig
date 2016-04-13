@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateHaditsTable extends Migration
+class UpdateNotifikasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class UpdateHaditsTable extends Migration
      */
     public function up()
     {
-        Schema::table('hadits', function ($table) {
-            $table->string('judul');
+        Schema::table('notifikasi', function($table) {
+            $table->text('isiNotif');
         });
     }
 

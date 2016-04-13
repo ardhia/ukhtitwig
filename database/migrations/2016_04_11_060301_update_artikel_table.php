@@ -11,10 +11,10 @@ class UpdateArtikelTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {/*
         Schema::table('artikel', function ($table) {
             $table->string('user_name');
-        });
+        });*/
     }
 
     /**
