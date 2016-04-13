@@ -30,12 +30,13 @@ class ArtikelController extends Controller
             echo "tidak";
         }*/
         //dd($isi);exit;
-    	$artikel =  Artikel::Paginate(3);
+    	$artikel =  Artikel::orderBy('created_at', 'desc')->Paginate(3);
 
         //Arsip
         $tahun = DB::table('artikel')
                         ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
                         ->groupBy(DB::raw("YEAR(created_at)"))
+                        ->orderBy('created_at', 'desc')
                         //->groupBy MONTH('created_at');
                         ->get();
 
@@ -43,11 +44,13 @@ class ArtikelController extends Controller
             $bulan = DB::table('artikel')
                 ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
                 ->groupBy(DB::raw('MONTH(created_at)'))
+                ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
                 $link = Artikel::select('Judul_Artikel', 'No')
                         ->groupBy(DB::raw('Judul_Artikel'))
-                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)->get();
+                        ->orderBy('created_at', 'desc')
+                        ->where(DB::raw('MONTH(created_at)', 'YEAR(created_at)'), $itemdua->bulan)->get();
             $itemdua->link = $link;
             }
             $item->bulan = $bulan;

@@ -1,4 +1,7 @@
 {% extends 'Userlayout' %}
+{% block NamaUser %}
+    Notifikasi
+{% endblock %}
 {% block isiUser %}
     <div id="bar">
         <div class="search">
@@ -11,8 +14,8 @@
             <!-- another version - flat style with animated hover effect -->
             <div class="breadcrumb flat">
                 <a href="{{route('/')}}">Home</a>
-                <a href="{{route('profilUser')}}">hgjg{{foruser.name}}</a>
-                <a href="#" class="active">{{foruser.name}}</a>
+                <a href="{{route('profilUser')}}">{{user.name}}</a>
+                <a href="#" class="active">Notifikasi</a>
             </div>
         </div>
     </div>
