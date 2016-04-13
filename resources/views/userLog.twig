@@ -23,7 +23,10 @@
 					    </div>
 					    <div id="notif">
 					    	<ul>
-							  	<li><a href="#">{{notif.count}}</a>
+							  	<li><a href="#">
+							  	{% if notif.status == false %}
+							  	    {{notif.count}}
+							  	{% endif %}</a>
 							  		<ul>
 							  			<li class="notif-Alrert">======-*-======</li>
 							  			{% for item in notif %}
