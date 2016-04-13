@@ -2814,3 +2814,53 @@ tr:nth-child(even) {
 	color: #64BFFF;
 	box-shadow: 0px 0px 8px 2px #8FEEF9;
 }
+
+/*userArtikel*/
+#title_user {
+	width: 75%;
+	height: auto;
+	float: left;
+	margin: 10px 0px 0px 5%;
+	padding: 3px 5%;
+	font-family: "orange juice";
+	font-size: 50px;
+	color: brown;
+}
+.isicontent_user {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.isicontent_user1 {
+	width: 90%;
+	float: left;
+	border: solid 3px pink;
+	box-shadow: -6px 6px 6px 0px pink;
+	border-radius: 10px;
+	margin: 0px 5%;
+}
+.user_judul {
+	width: 57%;
+	height: auto;
+	float: right;
+	margin: 15px 4% 5px 0px;
+	padding: 10px 2%;
+	box-shadow: 0px 0px 4px 0px pink;
+	border-radius: 8px;
+}
+.user_photo {
+	width: 29%;
+	height: 240px;
+	margin: 10px 2% 30px 3%;
+	float: left;
+	background: cyan;
+}
+.user_isinya {
+	width: 59%;
+	height: auto;
+	float: left;
+	margin: 5px 3% 10px 1%;
+	padding: 1%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 2px 0px pink;
+}

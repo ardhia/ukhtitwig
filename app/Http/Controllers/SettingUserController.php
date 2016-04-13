@@ -17,7 +17,7 @@ class SettingUserController extends Controller
         $user = Auth::user();
         $notif = Notifikasi::where('user_id', $user->id)->paginate(5);
 
-		return view('auth/settingUser', ['user' => $user, 'notif' => $notif]);
+		return view('auth/settingUser', ['notif' => $notif, 'user' => $user]);
 	}
 
 	//post
