@@ -955,8 +955,9 @@ body {
 
 .potoket {
 	width: 100%;
-	height:300px;
+	height: auto;
 	float: left;
+	margin-bottom: 5px;
 }
 
 #potoweb {
@@ -968,10 +969,11 @@ body {
 }
 
 #keterangan {
-	width: 66%;
+	width: 99%;
 	height: auto;
 	float: left;
 	margin: 5px 5px 5px 10px;
+	font-family: 'Handlee';
 }
 
 .bantuan {
@@ -1015,7 +1017,6 @@ body {
 	height: 140px;
 	margin-right: 2%;
 	float: left;
-	font-size: 100px;
 	background: url(../images/BBB.jpg);
     -webkit-background-size: 100% 140px;
     -moz-background-size: 100% 140px;
@@ -1029,7 +1030,6 @@ body {
 	height: 140px;
 	margin-right: 2%;
 	float: left;
-	font-size: 100px;
 	background: url(../images/toko1.jpg);
     -webkit-background-size: 100% 140px;
     -moz-background-size: 100% 140px;
@@ -1043,7 +1043,6 @@ body {
 	height: 140px;
 	margin-right: 2%;
 	float: left;
-	font-size: 100px;
 	background: url(../images/artikel.jpg);
     -webkit-background-size: 100% 140px;
     -moz-background-size: 100% 140px;
@@ -1057,13 +1056,20 @@ body {
 	height: 140px;
 	margin-right: 2%;
 	float: left;
-	font-size: 100px;
 	background: url(../images/tutor.jpg);
     -webkit-background-size: 100% 140px;
     -moz-background-size: 100% 140px;
     -o-background-size: 100% 140px;
     background-size: 100% 140px;
     border-radius: 15px;
+}
+
+.bungket {
+	width: 66%;
+	height: auto;
+	padding: 2px;
+	float: left;
+	margin: 5px 5px 5px 10px; 
 }
 
 /* style untuk bantuan */
@@ -1078,10 +1084,20 @@ body {
 
 .beware {
 	background: #c4edf2;
-	width: 68%;
+	width: 94%;
 	height: auto;
 	float: left;
-	margin: 2% 5px 5px 5px;
+	margin: 2% 5px 17px 16px;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pict {
+	width: 46%;
+	height: 190px;
+	margin: 2% 2% 2% 27%;
+	float: left;
+	background: blue;
 }
 
 .phototu {
