@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use App\Toko;
 use App\Notifikasi;
+use DB;
 
 class SubTokoController extends Controller
 {
@@ -99,4 +100,30 @@ class SubTokoController extends Controller
     	
 		return view('tas', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
+
+    public function searchDll (Request $request) {
+        $user = Auth::user();
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
+
+        $keywords= $request->get('keywords');
+        $table = DB::table('toko')->where('jb',  'Lainnya')->where('judulToko',  'LIKE', '%' . $keywords . '%')->get();
+
+        return view('searchdll', ['keywords' => $table, 'user'=> $user, 'notif'=> $notif]);
+    }
+
+    public function searchAksesoris (Request $request) {
+        $user = Auth::user();
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
+
+        $keywords= $request->get('keywords');
+        $table = DB::table('toko')->where('jb', 'Aksesoris')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+
+        return view('searchaksesoris', ['keywords' => $table, 'user'=> $user, 'notif'=>$notif]);
+    }
 }

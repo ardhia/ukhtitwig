@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    Search Aksesoris
+    Search Lainnya
 {% endblock %}
 {% block isi %}
 		<div id="bar">
@@ -12,7 +12,7 @@
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
 					<a href="{{route('toko')}}">Toko</a>
-					<a href="{{route('toko.aksesoris')}}">Aksesoris</a>
+					<a href="{{route('toko.dll')}}">Lainnya</a>
 					<a href="#" class="active">Search</a>
 				</div>
 			</div>
@@ -21,7 +21,7 @@
 		<div class="wrap">
 			<div class="content">
 				<div class="cari">
-    				<form method="get" action="{{url('toko/aksesoris/searchaksesoris')}}">
+    				<form method="get" action="{{url('toko/dll/searchdll')}}">
     					<input type="text" name="keywords" placeholder="Search" class="text3">
     					<input type="submit" value="" class="submit1">
     				</form>
