@@ -5,8 +5,8 @@
 {% block isi %}
 		<div id="bar">
 			<div class="search">
-				<form>
-					<input type="text" name="input-search" placeholder="Search" class="text"></input>
+				<form method="GET" action="{{route('searchAll')}}">
+					<input type="text" name="keywords" placeholder="Search" class="text"></input>
 					<input type="submit" name="search" value="" class="submit"></input>
 				</form>
 			</div>

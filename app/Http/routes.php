@@ -116,7 +116,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //Home About Profil
     Route::get('/', 'PagesController@home')->name('/');
-    
+    Route::get('/search', 'SearchController@searchAll')->name('searchAll');
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('/about/helpArtikel','HelpartikelController@menampilkan_HelpArtikel')->name('about.help-artikel');
     Route::get('/about/helpToko', 'HelptokoController@menampilkan_HelpToko')->name('about.help-toko');

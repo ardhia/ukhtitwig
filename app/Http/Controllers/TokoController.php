@@ -21,7 +21,10 @@ class TokoController extends Controller
 
 	public function tampilToko (){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         $daftartoko =  Toko::get();
 
@@ -34,7 +37,10 @@ class TokoController extends Controller
 
 	public function user_insertToko (){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
         
         $toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 
@@ -43,7 +49,10 @@ class TokoController extends Controller
 
     public function user_editToko ($idToko){
         $user = Auth::user();
-        $notif = Notifikasi::where('user_id', $user->id)->get();
+        $notif = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
 
         $isiToko = Toko::where('idToko', $idToko)->where('user_id', $user->id)->firstOrFail();
         //dd($isiToko, $user);
