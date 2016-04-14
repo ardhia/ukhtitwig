@@ -5,9 +5,9 @@
 {% block isi %}
 		<div id="bar">
 			<div class="search">
-				<form>
-					<input type="text" name="input-search" placeholder="Search" class="text"></input>
-					<input type="submit" name="search" value="" class="submit"></input>
+				<form method="get" action="{{url('/toko/makanan/searchmakanan')}}">
+					<input type="text" name="keywords" placeholder="Search" class="text"></input>
+					<input type="submit" value="" class="submit"></input>
 				</form>
 			</div>
 			<div class="_breadcrumb">
