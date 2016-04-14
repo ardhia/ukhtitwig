@@ -31,7 +31,7 @@
 				{% else %}
 					{% for item in keywords %}
 					<div class="isi-search">
-					    {{item.Judul_Artikel|str_words (10)}}
+					    {{item.Judul|str_words (10)}}
 					</div>
 					{% endfor %}
 				{% endif %}

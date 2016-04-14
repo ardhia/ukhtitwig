@@ -9,7 +9,7 @@ class Subscribe extends Model
    	protected $table = 'subscribe';
 
     protected $fillable = [
-    	'Email',
+    	'Id', 'email',
     ];
 }
 

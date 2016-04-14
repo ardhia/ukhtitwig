@@ -14,7 +14,7 @@ class CreateTokoTable extends Migration
     {
         Schema::create('toko', function (Blueprint $table) {
             $table->increments('idToko');
-            $table->text('judulToko');
+            $table->text('Judul');
             $table->string('photoToko');
             $table->text('harga');
             $table->text('jb');

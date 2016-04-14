@@ -23,14 +23,11 @@
 					    </div>
 					    <div id="notif">
 					    	<ul>
-							  	<li><a href="#">
-							  	{% if notif.status == false %}
-							  	    {{notif.count}}
-							  	{% endif %}</a>
+							  	<li><a href="#">{{count.total}}</a>
 							  		<ul>
 							  			<li class="notif-Alrert">======-*-======</li>
 							  			{% for item in notif %}
-							  				<li><a href="{{item.link}}">
+							  				<li><a href="{{route('prosesNotifikasi', {No: item.No})}}">
 							  					{{item.nama}} {{item.verb}}
 							  				</a></li>
 							  			{% endfor %}

@@ -41,8 +41,8 @@ class TutorialController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Tutorial::select('Judul_Tutorial', 'No')
-                        ->groupBy(DB::raw('Judul_Tutorial'))
+                $link = Tutorial::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
                         ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
@@ -88,8 +88,8 @@ class TutorialController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Tutorial::select('Judul_Tutorial', 'No')
-                        ->groupBy(DB::raw('Judul_Tutorial'))
+                $link = Tutorial::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
                         ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
@@ -113,7 +113,7 @@ class TutorialController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('tutorial')->select('Judul_Tutorial')->where('Judul_Tutorial',  'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('tutorial')->select('Judul')->where('Judul',  'LIKE', '%' . $keywords . '%')->get();
 
         
         //Arsip
@@ -131,8 +131,8 @@ class TutorialController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Tutorial::select('Judul_Tutorial', 'No')
-                        ->groupBy(DB::raw('Judul_Tutorial'))
+                $link = Tutorial::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
                         ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
@@ -178,8 +178,8 @@ class TutorialController extends Controller
 
     public function prosesUser_editTutorial (Request $request, $No) {
         /*$this->validate($request, [
-        'Judul_Tutorial' => 'required',
-        'Isi_Tutorial' => 'required',
+        'Judul' => 'required',
+        'Isi' => 'required',
         'Photo' => 'required|unique:tutorial|max:255',
         ]);*/
         //$editTutorial= new User_insertTutorial;
@@ -188,10 +188,10 @@ class TutorialController extends Controller
                                     $name = $file->getClientOriginalName();
                                     $file->move(public_path().'/uploadPhoto/tutorial/', $name);
         $editTutorial = DB::table('tutorial')
-                        ->select('Judul_Tutorial', 'Isi_Tutorial', 'Photo', 'No')
+                        ->select('Judul', 'Isi', 'Photo', 'No')
                         ->where('No', $No)
-                        ->update(['Judul_Tutorial' => $request->input('Judul_Tutorial'),
-                        'Isi_Tutorial' =>  $request->input('Isi_Tutorial'),
+                        ->update(['Judul' => $request->input('Judul'),
+                        'Isi' =>  $request->input('Isi'),
                         'Photo' => $name]);
         }
         //$editTutorial->save();
@@ -204,13 +204,13 @@ class TutorialController extends Controller
 	public function prosesUser_insertTutorial (Request $request) {
         $user = Auth::user();
         $this->validate($request, [
-        'Judul_Tutorial' => 'required',
-        'Isi_Tutorial' => 'required',
+        'Judul' => 'required',
+        'Isi' => 'required',
         'Photo' => 'required|unique:tutorial|max:255',
         ]);
         $user_insertTutorial= new Tutorial;
-		$user_insertTutorial->Judul_Tutorial = $request->input('Judul_Tutorial');
-		$user_insertTutorial->Isi_Tutorial = $request->input('Isi_Tutorial');
+		$user_insertTutorial->Judul = $request->input('Judul');
+		$user_insertTutorial->Isi = $request->input('Isi');
         if($request->hasFile('Photo')) {
 	            $file = Input::file('Photo');
 	            $name = $file->getClientOriginalName();

@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    {{dataArtikel.Judul_Artikel}}
+    {{dataArtikel.Judull}}
 {% endblock %}
 {% block isi %}
 		<div id="bar">
@@ -12,7 +12,7 @@
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
 					<a href="{{route('artikel')}}">Artikel</a>
-					<a href="#" class="active">{{dataArtikel.Judul_Artikel}}</a>
+					<a href="#" class="active">{{dataArtikel.Judul}}</a>
 				</div>
 			</div>
 		</div>
@@ -25,11 +25,11 @@
 								<a href="{{route('profilU', {id: dataArtikel.user_id})}}">@{{dataArtikel.user_name}}</a>
 								at {{dataArtikel.created_at}}
 							</div>
-							<div class="title">{{dataArtikel.Judul_Artikel}}</div>
+							<div class="title">{{dataArtikel.Judul}}</div>
 						</div>
 						<div id="out-tulisan">
 							<div class="foto1"><img src="/uploadPhoto/artikel/{{dataArtikel.Photo}}" width="100%" height="100%"></div>
-							<div class="tulisan">{{dataArtikel.Isi_Artikel|raw}}</div>
+							<div class="tulisan">{{dataArtikel.Isi|raw}}</div>
 						</div>
 						{% include 'komentarArtikel' %}
 					</div>

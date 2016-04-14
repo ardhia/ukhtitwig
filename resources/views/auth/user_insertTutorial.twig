@@ -3,11 +3,11 @@
 	<form enctype="multipart/form-data" method="POST" action="{{route('prosesTutorial')}}"> 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<div class="bungkus-tool-judul">
-			<input type="text" name="Judul_Tutorial" placeholder="Judul" class="judul-art">
+			<input type="text" name="Judul" placeholder="Judul" class="judul-art">
 			<input type="file" name="Photo" class="photo">
 			<div class="note">Note: Harap diisi dengan gambar utama postingan anda</div>
 			<div class="bungkus-isiArtikel">
-				<textarea name="Isi_Tutorial"></textarea>
+				<textarea name="Isi"></textarea>
 			</div>
 			<input type="submit" value="Publish" class="push">
 		</div>

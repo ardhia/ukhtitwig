@@ -24,7 +24,7 @@
             <div class="content">
                 <div class="out-notif">
                     {% for item in notif %}
-                        <a href="{{item.link}}">
+                        <a href="{{route('prosesNotifikasi', {No: item.No})}}">
                             <div id="isiNotif">
                                 <b>{{item.nama}}</b> {{item.verb}}: "{{item.isiNotif|str_words(4)}}"
                             </div>

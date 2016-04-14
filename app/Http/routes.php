@@ -80,6 +80,7 @@ Route::group(['middleware' => ['web']], function () {
     */
     Route::get('auth/profilU/{id}/editPP', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@getPhotoProfil'])->name('getPhotoProfil');
     Route::get('auth/profilU/notif', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@tampilNotifikasi'])->name('notifikasi');
+    Route::get('auth/profilU/notifTestimoni/{No}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@prosesNotifikasi'])->name('prosesNotifikasi');
     Route::post('auth/profilU/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changePhotoProfil'])->name('changePhotoProfil');
     Route::post('auth/profilUBio/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changeBio'])->name('changeBio');
 
@@ -116,7 +117,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //Home About Profil
     Route::get('/', 'PagesController@home')->name('/');
-    
+    Route::get('/search', 'SearchController@searchAll')->name('searchAll');
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('/about/helpArtikel','HelpartikelController@menampilkan_HelpArtikel')->name('about.help-artikel');
     Route::get('/about/helpToko', 'HelptokoController@menampilkan_HelpToko')->name('about.help-toko');
@@ -137,7 +138,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/toko/aksesoris', 'SubTokoController@tampilAksesoris')->name('toko.aksesoris');
     Route::get('/toko/dll', 'SubTokoController@tampilDll')->name('toko.dll');
 
-    Route::get('/toko/aksesoris/searchaksesoris', 'AksesorisController@search')->name('toko.aksesoris-search');
+    Route::get('/toko/dll/searchdll', 'SubTokoController@searchDll')->name('toko.dll-search');
+    Route::get('/toko/aksesoris/searchaksesoris', 'SubTokoController@searchAksesoris')->name('toko.aksesoris-search');
+    Route::get('/toko/kerudung/searchkerudung', 'SubTokoController@searchKerudung')->name('toko.kerudung-search');
+    Route::get('/toko/sepatu/searchsepatu', 'SubTokoController@searchSepatu')->name('toko.sepatu-search');
+    Route::get('/toko/makanan/searchmakanan', 'SubTokoController@searchMakanan')->name('toko.makanan-search');
+    Route::get('/toko/tas/searchtas', 'SubTokoController@searchTas')->name('toko.tas-search');
+    Route::get('/toko/pakaian/searchpakaian', 'SubTokoController@searchPakaian')->name('toko.pakaian-search');
+
     
 
     //Hadits

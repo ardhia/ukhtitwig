@@ -47,8 +47,8 @@ class ArtikelController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Artikel::select('Judul_Artikel', 'No')
-                        ->groupBy(DB::raw('Judul_Artikel'))
+                $link = Artikel::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
                         ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
@@ -92,8 +92,8 @@ class ArtikelController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Artikel::select('Judul_Artikel', 'No')
-                        ->groupBy(DB::raw('Judul_Artikel'))
+                $link = Artikel::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
                         ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
@@ -117,7 +117,7 @@ class ArtikelController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = Artikel::where('Judul_Artikel',  'LIKE', '%' . $keywords . '%')->Paginate(11);
+        $table = Artikel::where('Judul',  'LIKE', '%' . $keywords . '%')->Paginate(11);
 
         //Arsip
         $tahun = DB::table('artikel')
@@ -134,8 +134,8 @@ class ArtikelController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Artikel::select('Judul_Artikel', 'No')
-                        ->groupBy(DB::raw('Judul_Artikel'))
+                $link = Artikel::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
                         ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
@@ -187,13 +187,13 @@ class ArtikelController extends Controller
         $user = Auth::user();
         //dd($user->id);exit;
         $this->validate($request, [
-        'Judul_Artikel' => 'required',
-        'Isi_Artikel' => 'required',
+        'Judul' => 'required',
+        'Isi' => 'required',
         'Photo' => 'required|unique:artikel|max:255',
         ]);
         $artikel = new Artikel;
-        $artikel->Judul_Artikel = $request->input('Judul_Artikel');
-        $artikel->Isi_Artikel = $request->input('Isi_Artikel');
+        $artikel->Judul = $request->input('Judul');
+        $artikel->Isi = $request->input('Isi');
         if($request->hasFile('Photo')) {
             $file = Input::file('Photo');
             $name = $file->getClientOriginalName();
@@ -209,8 +209,8 @@ class ArtikelController extends Controller
 
     public function prosesUser_editArtikel (Request $request, $No) {
         /*$this->validate($request, [
-        'Judul_Artikel' => 'required',
-        'Isi_Artikel' => 'required',
+        'Judul' => 'required',
+        'Isi' => 'required',
         'Photo' => 'required|unique:artikel|max:255',
         ]);*/
         //$editArtikel= new User_insertArtikel;
@@ -219,10 +219,10 @@ class ArtikelController extends Controller
                                     $name = $file->getClientOriginalName();
                                     $file->move(public_path().'/uploadPhoto/artikel/', $name);
         $editArtikel = DB::table('artikel')
-                        ->select('Judul_Artikel', 'Isi_Artikel', 'Photo', 'No')
+                        ->select('Judul', 'Isi', 'Photo', 'No')
                         ->where('No', $No)
-                        ->update(['Judul_Artikel' => $request->input('Judul_Artikel'),
-                        'Isi_Artikel' =>  $request->input('Isi_Artikel'),
+                        ->update(['Judul' => $request->input('Judul'),
+                        'Isi' =>  $request->input('Isi'),
                         'Photo' => $name]);
         }
         //$editArtikel->save();

@@ -22,14 +22,14 @@
 						<div id="artikel">
 						<a href="{{route('artikel.isi-artikel', {No: isi.No})}}">
 								<div class="judul-artikel">
-									{{isi.Judul_Artikel}}
+									{{isi.Judul}}
 								</div>
 							</a>
 							<div class="out-artikel">
 								<div id="photo-artikel"><img src="/uploadPhoto/artikel/{{isi.Photo}}" width="100%" height="100%"></div>
 								<div id="artikelnya"> 
 									{% autoescape %}
-									{{isi.Isi_Artikel|str_words(50)|raw }}
+									{{isi.Isi|str_words(50)|raw }}
 									{% endautoescape %}
 								</div>
 								<div id="authorDate">by. <a href="{{route('profilU', {id: isi.user_id})}}">{{isi.user_name}}</a> at {{isi.created_at}}</div>
