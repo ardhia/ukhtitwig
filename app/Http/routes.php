@@ -137,10 +137,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/toko/aksesoris', 'SubTokoController@tampilAksesoris')->name('toko.aksesoris');
     Route::get('/toko/dll', 'SubTokoController@tampilDll')->name('toko.dll');
 
-    Route::get('/toko/dll/searchdll', 'SubTokoController@searchDll')->name('toko.dll-search');
-    Route::get('toko/aksesoris/searchaksesoris', 'SubTokoController@searchAksesoris')->name('toko.aksesoris-search');
-    Route::get('/toko/kerudung/searchkerudung', 'SubTokoController@searchKerudung')->name('toko.kerudung-search');
     
+
     
 
     //Hadits
