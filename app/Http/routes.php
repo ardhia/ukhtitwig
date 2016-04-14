@@ -141,6 +141,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('toko/aksesoris/searchaksesoris', 'SubTokoController@searchAksesoris')->name('toko.aksesoris-search');
     Route::get('/toko/kerudung/searchkerudung', 'SubTokoController@searchKerudung')->name('toko.kerudung-search');
     
+    
 
     //Hadits
     Route::get('/hadits', 'HaditsController@hadits')->name('hadits');
