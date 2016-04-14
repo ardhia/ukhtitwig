@@ -101,6 +101,8 @@ class SubTokoController extends Controller
 		return view('tas', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
 	}
 
+    /*search*/
+
     public function searchDll (Request $request) {
         $user = Auth::user();
         $notif = NULL;
@@ -125,5 +127,19 @@ class SubTokoController extends Controller
         $table = DB::table('toko')->where('jb', 'Aksesoris')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchaksesoris', ['keywords' => $table, 'user'=> $user, 'notif'=>$notif]);
+    }
+
+    public function searchKerudung (Request $request) {
+        $user = Auth::user();
+        $notif = Null;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        }
+
+        $keywords= $request->get('keywords');
+        $table = DB::table('toko')->where('jb', 'Kerudung')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+
+        return view('searchkerudung', ['keywords'=> $table, 'user'=> $user, 'notif'=> $notif]);
+        
     }
 }
