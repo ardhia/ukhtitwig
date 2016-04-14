@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    Search Artikel
+    Search
 {% endblock %}
 {% block isi %}
 		<div id="bar">
@@ -11,7 +11,6 @@
 				<!-- another version - flat style with animated hover effect -->
 				<div class="breadcrumb flat">
 					<a href="{{route('/')}}">Home</a>
-					<a href="{{route('artikel')}}">Artikel</a>
 					<a href="#" class="active">Search</a>
 				</div>
 			</div>
@@ -20,23 +19,23 @@
 		<div class="wrap">
 			<div class="content">
 				<div class="cari">
-    				<form method="get" action="{{url('artikel/searchartikel')}}">
-    					<input type="text" name="keywords" placeholder="Search" class="text3">
-    					<input type="submit" value="" class="submit1">
-    				</form>
+					<form method="GET" action="{{route('searchAll')}}">
+						<input type="text" name="keywords" placeholder="Search" class="text"></input>
+						<input type="submit" name="search" value="" class="submit"></input>
+					</form>
 				</div>
 				<div class="hasil-search">Hasil Pencarian</div>
 				{% if keywords is empty %}
 				    <div class="isi-notsearch">Maaf, kata yang anda cari tidak ada. Coba menggunakan kata kunci lain.</div>
 				{% else %}
 					{% for item in keywords %}
-					<div class="isi-search">
+					<a href=""><div class="isi-search">
 					    {{item.Judul|str_words (10)}}
-					</div>
+					</div></a>
 					{% endfor %}
 				{% endif %}
 				<div class="paginate">
-					{{ artikel.render()|raw }}
+					{{ keywords.render()|raw }}
 				</div>
 			</div>
 			<div class="rightKet">

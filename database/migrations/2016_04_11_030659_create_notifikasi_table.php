@@ -13,7 +13,7 @@ class CreateNotifikasiTable extends Migration
     public function up()
     {
         Schema::create('notifikasi', function(Blueprint $table){
-            $table->string('status');
+            $table->boolean('status');
             $table->increments('No');
             $table->string('link');
             $table->string('verb');

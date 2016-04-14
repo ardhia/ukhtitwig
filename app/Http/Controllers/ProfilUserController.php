@@ -26,9 +26,10 @@ class ProfilUserController extends Controller
     	$toko =  Toko::where('user_id', $user->id)->get();
         $testimoni = Testimoni::where('user_id', $user->id)->get();
         $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         //dd($notif);exit;
 
-        return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'testimoni' => $testimoni, 'notif' => $notif]);
+        return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'testimoni' => $testimoni, 'notif' => $notif, 'count' => $count]);
     }
 
     public function getPhotoProfil ($id) {
@@ -63,23 +64,22 @@ class ProfilUserController extends Controller
 
     }
 
-    public function tampilNotifikasi () {
+    public function tampilNotifikasi (Request $request) {
         $user = Auth::user();
         $notif = Notifikasi::where('user_id', $user->id)
                         ->orderBy('created_at', 'desc')->get();
-        //dd($user);exit;
+        //dd($notif);exit;
 
         return view('auth/notifikasi', ['notif' => $notif, 'user' => $user]);
     }
 
-    public function prosesNotifikasi (Request $request) {
+    public function prosesNotifikasi ($No) {
         $user = Auth::user();
-        $stat = 'true';
-        $status = Notifikasi::where('id', $user->id)
-                            ->where('No', $request->get('No'))
-                            ->update(['status' => $request->input($stat)]);
-
-        return redirect()->route('profilUser', ['user_id' => $user->id]);
+        $status = Notifikasi::where('user_id', $user->id)
+                            ->where('No', $No)
+                            ->update(['status' => true]);
+        //dd($user);exit;
+        return redirect()->route('profilUser');
     }
 
 }

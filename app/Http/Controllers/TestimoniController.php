@@ -37,7 +37,7 @@ class TestimoniController extends Controller
 
         $notif = new Notifikasi;
         $notif = Notifikasi::where('user_id', $id)
-                ->insert(['link' => route('prosesNotifikasi', ['No' => $notif->No]), 'user_id' => $id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb'), 'isiNotif' => $request->input('isiTestimoni')]);
+                ->insert(['link' => route('profilUser'), 'user_id' => $id, 'status' => $request->input('status'), 'nama' => $request->input('nama'), 'verb' => $request->input('verb'), 'isiNotif' => $request->input('isiTestimoni')]);
 
         //$Testimoni->save();
         //dd($Testimoni);exit;
