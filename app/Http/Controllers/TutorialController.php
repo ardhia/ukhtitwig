@@ -41,7 +41,7 @@ class TutorialController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Artikel::select('Judul_Tutorial', 'No')
+                $link = Tutorial::select('Judul_Tutorial', 'No')
                         ->groupBy(DB::raw('Judul_Tutorial'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
@@ -88,7 +88,7 @@ class TutorialController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Artikel::select('Judul_Tutorial', 'No')
+                $link = Tutorial::select('Judul_Tutorial', 'No')
                         ->groupBy(DB::raw('Judul_Tutorial'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
@@ -131,7 +131,7 @@ class TutorialController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
             foreach ($bulan as $itemdua) {
-                $link = Artikel::select('Judul_Tutorial', 'No')
+                $link = Tutorial::select('Judul_Tutorial', 'No')
                         ->groupBy(DB::raw('Judul_Tutorial'))
                         ->orderBy('created_at', 'desc')
                         ->where(DB::raw('YEAR(created_at)'), $item->tahun)
