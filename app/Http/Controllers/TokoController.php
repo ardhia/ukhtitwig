@@ -42,7 +42,7 @@ class TokoController extends Controller
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         }
         
-        $toko =  DB::table('toko')->select('idToko', 'user_id', 'judulToko', 'photoToko', 'harga', 'jb', 'ketToko')->get();
+        $toko =  DB::table('toko')->select('idToko', 'user_id', 'Judul', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 
 		return view('auth\user_insertToko', ['toko' => $toko, 'user' => $user, 'notif' => $notif]);
 	}
@@ -65,14 +65,14 @@ class TokoController extends Controller
     public function prosesUser_insertToko (Request $request){
         $user = Auth::user();
         $this->validate($request, [
-        'judulToko' => 'required',
+        'Judul' => 'required',
         'photoToko' => 'required|unique:toko|max:255',
         'harga' => 'required',
         'jb' => 'required',
         'ketToko' => 'required',
         ]);
         $toko = new Toko;
-        $toko->judulToko = $request->input('judulToko');
+        $toko->Judul = $request->input('Judul');
         $toko->harga = $request->input('harga');
         $toko->jb = $request->input('jb');
         $toko->ketToko = $request->input('ketToko');
@@ -91,7 +91,7 @@ class TokoController extends Controller
         $toko->save();
         return Redirect::to('auth/profilU');
 //        $file = Request::file('photo');
-//        $toko->judulToko = $request->input('judulToko');
+//        $toko->Judul = $request->input('Judul');
 //        $toko->photoToko = $request->input('photoToko');
 //        $toko->harga = $request->input('harga');
 //        $toko->jb = $request->input('jb');
@@ -104,7 +104,7 @@ class TokoController extends Controller
     public function prosesUser_editToko (Request $request, $idToko) {
         /* $user = Auth::user();
         $this->validate($request, [
-        'judulToko' => 'required',
+        'Judul' => 'required',
         'photoToko' => 'required|unique:toko|max:255',
         'harga' => 'required',
         'jb' => 'required',
@@ -116,7 +116,7 @@ class TokoController extends Controller
                         $name = $file->getClientOriginalName();
                         $file->move(public_path().'/uploadPhoto/toko/', $name);
         $editToko = Toko::where('idToko', $idToko)
-                        ->update(['judulToko' => $request->input('judulToko'), 'harga' => $request->input('harga'), 'jb' => $request->input('jb'), 'ketToko' => $request->input('ketToko'), 'photoToko' => $name]);
+                        ->update(['Judul' => $request->input('Judul'), 'harga' => $request->input('harga'), 'jb' => $request->input('jb'), 'ketToko' => $request->input('ketToko'), 'photoToko' => $name]);
         }
         //$editToko>save();
         //dd($editToko);
@@ -141,7 +141,7 @@ class TokoController extends Controller
 
         $katagori= $request->get('jb');
         $keywords= $request->get('keywords');
-        $toko = Toko::where('jb', $katagori)->where('judulToko',  'LIKE', '%' . $keywords . '%')->Paginate(9);
+        $toko = Toko::where('jb', $katagori)->where('Judul',  'LIKE', '%' . $keywords . '%')->Paginate(9);
 
 
         return view('searchToko', ['keywords' => $toko]);

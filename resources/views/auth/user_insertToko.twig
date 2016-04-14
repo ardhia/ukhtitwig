@@ -12,7 +12,7 @@
 	    <div id="wrapper">
 	    	<form enctype="multipart/form-data" method="POST" action="{{route('prosesToko')}}">
 	    		<input type="hidden" name="_token" value="{{ csrf_token() }}">
-	    		<input type="text" name="judulToko" placeholder="Judul" class="insertToko" maxlength="40">
+	    		<input type="text" name="Judul" placeholder="Judul" class="insertToko" maxlength="40">
 				<input type="file" name="photoToko" value="Browse" class="brows-toko">
 	    		<input type="number" name="harga" placeholder="Harga" class="insertToko" max="9999999999999999" min="0">
 	    		<select name="jb" class="insertToko">

@@ -125,7 +125,7 @@
 										</tr>
 										{% for table in toko %}
 										<tr>
-											<td>{{table.judulToko}}</td>
+											<td>{{table.Judul}}</td>
 											<td>Rp.{{table.harga}},-</td>
 											<td>{{table.jb|raw }}</td>
 											<td>{{table.ketToko|raw }}</td>
@@ -151,8 +151,8 @@
 										</tr>
 										{% for table in artikel %}
 										<tr>
-											<td>{{table.Judul_Artikel}}</td>
-											<td>{{table.Isi_Artikel|raw }}</td>
+											<td>{{table.Judul}}</td>
+											<td>{{table.Isi|raw }}</td>
 											<td><img src="/uploadPhoto/artikel/{{table.Photo}}" width="50px" height="40px"></td>
 											<td>
 												<a href="{{route('profilU.user_editArtikel', {No: table.No})}}" class="linkcrud">Edit</a>
@@ -175,8 +175,8 @@
 										</tr>
 										{% for table in tutorial %}
 										<tr>
-											<td>{{table.Judul_Tutorial}}</td>
-											<td>{{table.Isi_Tutorial|raw }}</td>
+											<td>{{table.Judul}}</td>
+											<td>{{table.Isi|raw }}</td>
 											<td><img src="/uploadPhoto/tutorial/{{table.Photo}}" width="50px" height="40px"></td>
 											<td>
 												<a href="{{route('profilU.user_editTutorial', {No: table.No})}}" class="linkcrud">Edit</a>

@@ -72,4 +72,14 @@ class ProfilUserController extends Controller
         return view('auth/notifikasi', ['notif' => $notif, 'user' => $user]);
     }
 
+    public function prosesNotifikasi (Request $request) {
+        $user = Auth::user();
+        $stat = 'true';
+        $status = Notifikasi::where('id', $user->id)
+                            ->where('No', $request->get('No'))
+                            ->update(['status' => $request->input($stat)]);
+
+        return redirect()->route('profilUser', ['user_id' => $user->id]);
+    }
+
 }

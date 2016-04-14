@@ -46,9 +46,9 @@
 							<tr>
 								<td>{{table.No}}</td>
 								<td>{{table.email}}</td>
-								<td>{{table.Judul_Artikel}}</td>
+								<td>{{table.Judul}}</td>
 								<td>{{table.Photo}}</td>
-								<td>{{table.Isi_Artikel|raw }}</td>
+								<td>{{table.Isi|raw }}</td>
 								<td>
 								<a href="{{route('hapusArtikel', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></td></a>
 							</tr>
@@ -72,9 +72,9 @@
 							<tr>
 								<td>{{table.No}}</td>
 								<td>{{table.email}}</td>
-								<td>{{table.Judul_Tutorial}}</td>
+								<td>{{table.Judul}}</td>
 								<td>
-								{{table.Isi_Tutorial|raw }}
+								{{table.Isi|raw }}
 								</td>
 								<td>
 								<a href="{{route('hapusTutorial', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></td></a>
@@ -101,7 +101,7 @@
 							<tr>
 								<td>{{table.idToko}}</td>
 								<td>{{table.email}}</td>
-								<td>{{table.judulToko}}</td>
+								<td>{{table.Judul}}</td>
 								<td>{{table.harga}}</td>
 								<td>{{table.jb|raw }}</td>
 								<td>{{table.ketToko|raw }}</td>

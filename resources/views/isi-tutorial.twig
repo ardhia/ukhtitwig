@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    {{dataTutorial.Judul_Tutorial}}
+    {{dataTutorial.Judul}}
 {% endblock %}
 {% block isi %}
 		<div id="bar">
@@ -13,7 +13,7 @@
 					<a href="{{route('/')}}">Home</a>
 					<a href="{{route('tutorial')}}">Tutorial</a>
 					<a href="#" class="active">
-						{{dataTutorial.Judul_Tutorial}}
+						{{dataTutorial.Judul}}
 					</a>
 				</div>
 			</div>
@@ -27,11 +27,11 @@
 								<a href="{{route('profilU', {id: dataArtikel.user_id})}}">@{{dataTutorial.user_name}}</a>
 								at {{dataTutorial.created_at}}
 							</div>
-							<div class="title">{{dataTutorial.Judul_Tutorial}}</div>
+							<div class="title">{{dataTutorial.Judul}}</div>
 						</div>
 						<div id="out-tulisan">
 							<div class="foto1"><img src="/uploadPhoto/tutorial/{{dataTutorial.Photo}}" width="100%" height="100%"></div>
-							<div class="tulisan">{{dataTutorial.Isi_Tutorial|raw}}</div>
+							<div class="tulisan">{{dataTutorial.Isi|raw}}</div>
 						</div>
 						{% include 'komentartutorial' %}
 					</div>

@@ -14,8 +14,8 @@ class CreateTutorialTable extends Migration
     {
         Schema::create('tutorial', function(Blueprint $table) {
             $table->increments('No');
-            $table->text('Judul_Tutorial');
-            $table->text('Isi_Tutorial');
+            $table->text('Judul');
+            $table->text('Isi');
             $table->string('Photo');
             $table->string('user_name');
             $table->integer('user_id')->unsigned();

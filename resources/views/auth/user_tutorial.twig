@@ -24,10 +24,10 @@
 			{% for item in tutorial %}
 			<div class="isicontent_user1">
 				<a href="{{route('tutorial.isi-tutorial', {No: item.No})}}">
-					<div class="user_judul">{{item.Judul_Tutorial}}</div>
+					<div class="user_judul">{{item.Judul}}</div>
 				</a>
 				<div class="user_photo"><img src="/uploadPhoto/tutorial/{{item.Photo}}" width="100%" height="100%"></div>
-				<div class="user_isinya">{{item.Isi_Tutorial|str_words(50)|raw}}</div>
+				<div class="user_isinya">{{item.Isi|str_words(50)|raw}}</div>
 			</div>
 			{% endfor %}
 			<div class="paginate">{{ tutorial.render()|raw }}</div>

@@ -131,10 +131,10 @@
 							    			<div class="photo-testimoni"><img src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%"></div>
 							    			<div class="out-testimoni">
 							    				<div id="judul-testimoni">
-							    					<div class="nama-testimoni">{{item.Judul_Artikel}}</div>
+							    					<div class="nama-testimoni">{{item.Judul}}</div>
 							    					<div class="date-testimoni">{{item.created_at}}</div>
 							    				</div>
-							    				<div id="isi-testimoni">{{item.Isi_Artikel|str_words(50)|raw}}</div>
+							    				<div id="isi-testimoni">{{item.Isi|str_words(50)|raw}}</div>
 							    			</div>
 							    		</div>
 							    	{% endfor %}
@@ -147,10 +147,10 @@
 							    			<div class="photo-testimoni"><img src="/uploadPhoto/tutorial/{{item.Photo}}" width="100%" height="100%"></div>
 							    			<div class="out-testimoni">
 							    				<div id="judul-testimoni">
-							    					<div class="nama-testimoni">{{item.Judul_Tutorial}}</div>
+							    					<div class="nama-testimoni">{{item.Judul}}</div>
 							    					<div class="date-testimoni">{{item.created_at}}</div>
 							    				</div>
-							    				<div id="isi-testimoni">{{item.Isi_Tutorial|str_words(50)|raw}}</div>
+							    				<div id="isi-testimoni">{{item.Isi|str_words(50)|raw}}</div>
 							    			</div>
 							    		</div>
 							    	{% endfor %}

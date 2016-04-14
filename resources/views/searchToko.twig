@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 {% block title %}
-    Search Artikel
+    Search Toko
 {% endblock %}
 {% block isi %}
 		<div id="bar">
@@ -40,7 +40,7 @@
 			{% else %}
 				{% for item in keywords %}
 				<div class="isi-search">
-				    {{item.judulToko|str_words (10)}}
+				    {{item.Judul|str_words (10)}}
 				</div>
 				{% endfor %}
 			{% endif %}
