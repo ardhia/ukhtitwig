@@ -34,7 +34,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/profilU/{id}/editPP', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@getPhotoProfil'])->name('getPhotoProfil');
     Route::post('auth/profilU/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changePhotoProfil'])->name('changePhotoProfil');
     Route::post('auth/profilUBio/{id}', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@changeBio'])->name('changeBio');
-    
+    //user_artikel
+    Route::get('auth/user_artikel', 'UserArtikelController@tampilUserArtikel')->name('userArtikel');
+    //user_tutorial
+    Route::get('auth/user_tutorial', 'UserTutorialController@tampilUserTutorial')->name('userTutorial');
+    //user_toko
+    Route::get('auth/user_toko', 'UserTokoController@tampilUserToko')->name('userToko');
     
     //CRUD Toko
     Route::get('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@user_insertToko'])->name('profilU.user_insertToko');

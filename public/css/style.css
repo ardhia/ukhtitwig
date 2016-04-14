@@ -2864,3 +2864,98 @@ tr:nth-child(even) {
 	color: #64BFFF;
 	box-shadow: 0px 0px 8px 2px #8FEEF9;
 }
+
+/*userArtikel*/
+.isicontent_user {
+	width: 100%;
+	height: auto;
+	float: left;
+	border: solid 1px pink;
+	padding-bottom: 30px;
+	background: #fffcfc;
+	border-radius: 20px;
+}
+.userbungkus_toko {
+	width: 59%;
+	float: left;
+	border: solid 1px pink;
+	border-radius: 10px;
+	margin: 25px 1% 30px 1%;
+	background: white;
+	padding: 1%;
+}
+.userjudul_toko {
+	width: 94%;
+	height: auto;
+	float: right;
+	margin: 5px 3% 10px 1%;
+	padding: 1%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 2px 0px pink;
+	background: #ffe7e7;
+
+}
+.user_isinya1 {
+	width: 94%;
+	height: auto;
+	float: right;
+	margin: 5px 3% 10px 1%;
+	padding: 1%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 2px 0px pink;
+}
+.userharga_toko{
+	width: 94%;
+	height: auto;
+	float: right;
+	margin: 5px 3% 10px 1%;
+	padding: 1%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 2px 0px pink;
+}
+.user_judulTutorial{
+	width: 46%;
+	height: auto;
+	float: left;
+	margin: 0px 25%;
+	font-size: 62px;
+	color: brown;
+	font-family: "orange juice";
+	padding: 10px 2%;
+}
+.isicontent_user1 {
+	width: 90%;
+	float: left;
+	border: solid 3px pink;
+	box-shadow: -6px 6px 6px 0px pink;
+	border-radius: 10px;
+	margin: 10px 5% 30px 5%;
+	background: white;
+}
+.user_judul {
+	width: 57%;
+	height: auto;
+	float: right;
+	margin: 15px 4% 5px 0px;
+	padding: 10px 2%;
+	box-shadow: 0px 0px 4px 0px pink;
+	border-radius: 8px;
+	border: solid 2px pink;
+	background: #ffe7e7;
+}
+.user_photo {
+	width: 29%;
+	height: 240px;
+	margin: 10px 2% 30px 3%;
+	float: left;
+	background: cyan;
+}
+.user_isinya {
+	width: 59%;
+	height: auto;
+	float: left;
+	margin: 5px 3% 10px 1%;
+	padding: 1%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 2px 0px pink;
+}

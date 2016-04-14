@@ -1,0 +1,35 @@
+{% extends 'layout' %}
+{% block title %}
+    User Artikel
+{% endblock %}
+{% block isi %}
+			<div id="bar">
+			<div class="search">
+				<form>
+					<input type="text" name="input-search" placeholder="Search" class="text"></input>
+					<input type="submit" name="search" value="" class="submit"></input>
+				</form>
+			</div>
+			<div class="_breadcrumb">
+				<!-- another version - flat style with animated hover effect -->
+				<div class="breadcrumb flat">
+					<a href="{{route('/')}}">Home</a>
+					<a href="#" class="active">Artikelnya Ukhty</a>
+				</div>
+			</div>
+			</div>
+		<div id="wrapper">
+			<div class="isicontent_user">
+			<div class="user_judulTutorial">Artikelnya Ukhty ;)</div>
+			{% for item in artikel %}
+				<div class="isicontent_user1"><a href="{{route('artikel.isi-artikel', {No: item.No})}}">
+					<div class="user_judul">{{item.Judul_Artikel}}</div>
+				</a>
+				<div class="user_photo"><img src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%"></div>
+				<div class="user_isinya">{{item.Isi_Artikel|str_words(100)|raw}}</div>
+			</div>
+			{% endfor %}
+			<div class="paginate">{{ artikel.render()|raw }}</div>
+			</div>
+		</div>
+{% endblock %}
