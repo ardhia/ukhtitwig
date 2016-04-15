@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         //$this->call(KerudungTableSeeder::class);
         //$this->call(DllTableSeeder::class);
         //$this->call(ArtikelTableSeeder::class); 
-        $this->call(TutorialTableSeeder::class);
-        //$this->call(HaditsTableSeeder::class);
+        //$this->call(TutorialTableSeeder::class);
+        $this->call(HaditsTableSeeder::class);
 
     	//$this->call(MakananTableSeeder::class);
     	//$this->call(PakaianTableSeeder::class);
