@@ -20,8 +20,10 @@ class ArtikelController extends Controller
     public function tampilArtikel () {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->orderBy('created_at', 'desc')->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         /*if (empty($user->konfirmasi)) {
@@ -60,15 +62,17 @@ class ArtikelController extends Controller
         }
         //dd($tahun);
         //exit;
-    	return view('artikel', ['artikel' => $artikel, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
+    	return view('artikel', ['artikel' => $artikel, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     //
     public function tampilIsiArtikel ($No) {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         $dataArtikel = Artikel::where('No', $No)->first();
         //dd($dataArtikel);
@@ -106,14 +110,16 @@ class ArtikelController extends Controller
         //dd($tahun);
         //exit;
 
-        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
+        return view('isi-artikel', ['dataArtikel' => $dataArtikel, 'komentar_artikel' => $komentar_artikel, 'No' => $No, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     public function search (Request $request) {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $keywords= $request->get('keywords');
@@ -148,7 +154,7 @@ class ArtikelController extends Controller
         //dd($tahun);
         //exit;
         
-        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
+        return view('searchartikel', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     //END
@@ -162,24 +168,28 @@ class ArtikelController extends Controller
     public function user_editArtikel ($No){
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $isiArtikel = Artikel::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiArtikel, $user);exit;
-        return view('auth/user_editArtikel', ['user' => $user, 'isiArtikel' => $isiArtikel, 'notif' => $notif]);
+        return view('auth/user_editArtikel', ['user' => $user, 'isiArtikel' => $isiArtikel, 'notif' => $notif, 'count' => $count]);
     }
 
 
     public function tampilUser_insertArtikel () {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         //dd($user);exit;
-        return view('auth/user_insertArtikel', ['user' => $user, 'notif' => $notif]);
+        return view('auth/user_insertArtikel', ['user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     //post

@@ -16,8 +16,10 @@ class HaditsController extends Controller
     public function hadits () {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
     	//$hadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->Paginate(5);
         $hadits = Hadits::paginate(5);
@@ -40,19 +42,21 @@ class HaditsController extends Controller
         }
         //dd($Riwayat);
 
-        return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat, 'user' => $user, 'notif' => $notif]);
+        return view('hadits', ['hadits' => $hadits, 'Riwayat' => $Riwayat, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     public function search (Request $request) {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         $keywords = $request->get('keywords');
         $table = DB::table('hadits')->select('Isi_Hadits')->where('Isi_Hadits', 'LIKE', '%' .$keywords. '%')->paginate(7);
 
-        return view('searchhadits', ['keywords' => $table, 'user' => $user, 'notif' => $notif]);
+        return view('searchhadits', ['keywords' => $table, 'user' => $user, 'notif' => $notif, 'count' => $count]);
 
     }
 

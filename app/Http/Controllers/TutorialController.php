@@ -22,8 +22,10 @@ class TutorialController extends Controller
 
      	$tutorial = Tutorial::orderBy('created_at', 'desc')->Paginate(3);
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         //Arsip
@@ -55,7 +57,7 @@ class TutorialController extends Controller
         //dd($tahun);
         //exit;
 
-     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
+     return view('tutorial', ['tutorial' => $tutorial, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     public function isi_tutorial ($No) {
@@ -63,8 +65,10 @@ class TutorialController extends Controller
 
     	$dataTutorial = Tutorial::where('No', $No)->first();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         //dd($dataTutorial);
         $komentar_tutorial= DB::table('komentar_tutorial')
@@ -102,14 +106,16 @@ class TutorialController extends Controller
         //dd($tahun);
         //exit;
 
-        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
+        return view('isi-tutorial', ['dataTutorial' => $dataTutorial, 'komentar_tutorial' => $komentar_tutorial, 'No' => $No, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
     public function search (Request $request) {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $keywords= $request->get('keywords');
@@ -146,7 +152,7 @@ class TutorialController extends Controller
         //exit;
 
         
-        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif]);
+        return view('searchtutorial', ['keywords' => $table, 'tahun' => $tahun, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
      //END
 
@@ -156,24 +162,28 @@ class TutorialController extends Controller
         $user = Auth::user();
         $tutorial = DB::table('tutorial');
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         //dd($user);exit;
-        return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial, 'notif' => $notif]);
+        return view('auth/user_insertTutorial', ['user' => $user, 'tutorial' => $tutorial, 'notif' => $notif, 'count' => $count]);
 	}
 
     public function user_editTutorial ($No){
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $isiTutorial = Tutorial::where('No', $No)->where('user_id', $user->id)->firstOrFail();
         //dd($isiTutorial, $user);
         //exit;
-        return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial, 'notif' => $notif]);
+        return view('auth/user_editTutorial', ['user' => $user, 'isiTutorial' => $isiTutorial, 'notif' => $notif, 'count' => $count]);
     }
 
     public function prosesUser_editTutorial (Request $request, $No) {
