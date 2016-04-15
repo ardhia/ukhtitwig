@@ -11,6 +11,7 @@ use App\Toko;
 use App\Testimoni;
 use App\Tutorial;
 use App\Notifikasi;
+use DB;
 
 class PagesController extends Controller
 {
@@ -26,9 +27,64 @@ class PagesController extends Controller
         $tutorial = Tutorial::get();
         $toko = Toko::get();
 
+
+        //Arsip Tutorial
+        $tahunTu = DB::table('tutorial')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        ->orderBy('created_at', 'desc')
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahunTu as $item){
+            $bulan = DB::table('tutorial')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->orderBy('created_at', 'desc')
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            foreach ($bulan as $itemdua) {
+                $link = Tutorial::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
+                        ->orderBy('created_at', 'desc')
+                        ->where(DB::raw('YEAR(created_at)'), $item->tahun)
+                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
+                        ->get();
+            $itemdua->link = $link;
+            }
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+
+        //Arsip Artikel
+        $tahunAr = DB::table('artikel')
+                        ->select (DB::raw("YEAR(created_at) as tahun"), DB::raw("count(*) as total "))
+                        ->groupBy(DB::raw("YEAR(created_at)"))
+                        ->orderBy('created_at', 'desc')
+                        //->groupBy MONTH('created_at');
+                        ->get();
+
+        foreach($tahunAr as $item){
+            $bulan = DB::table('artikel')
+                ->select(DB::raw('MONTH(created_at) as bulan'), DB::raw('count(*) as jumlah'))
+                ->groupBy(DB::raw('MONTH(created_at)'))
+                ->orderBy('created_at', 'desc')
+                ->where(DB::raw('YEAR(created_at)'), $item->tahun)->get();
+            foreach ($bulan as $itemdua) {
+                $link = Artikel::select('Judul', 'No')
+                        ->groupBy(DB::raw('Judul'))
+                        ->orderBy('created_at', 'desc')
+                        ->where(DB::raw('YEAR(created_at)'), $item->tahun)
+                        ->where(DB::raw('MONTH(created_at)'), $itemdua->bulan)
+                        ->get();
+            $itemdua->link = $link;
+            }
+            $item->bulan = $bulan;
+            //dd($item);
+        }
+        $arsip = $tahunTu->union($tahunAr)->get();
         //dd($notif);exit;
 
-    	return view('ukhti', ['user' => $user, 'notif' => $notif, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel]);
+    	return view('ukhti', ['user' => $user, 'notif' => $notif, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel, 'tahun' => $arsip]);
     }
 
     public function about () {
