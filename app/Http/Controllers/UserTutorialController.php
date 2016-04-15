@@ -16,9 +16,14 @@ class UserTutorialController extends Controller
     public function tampilUserTutorial (){
         $user = Auth::user();
         $tutorial =  Tutorial::Paginate(3);
-        $notif = Notifikasi::where('user_id', $user->id)->paginate(5);
+        $notif = NULL;
+        $count = NULL;
+        if (Auth::check()) {
+            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
+        }
 
 
-        return view('auth/user_tutorial', ['user' => $user, 'notif' => $notif, 'tutorial' => $tutorial]);
+        return view('auth/user_tutorial', ['user' => $user, 'notif' => $notif, 'tutorial' => $tutorial, 'count' => $count]);
 	}
 }

@@ -22,13 +22,15 @@ class TokoController extends Controller
 	public function tampilToko (){
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $daftartoko =  Toko::get();
 
-		return view('toko', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif]);
+		return view('toko', ['toko' => $daftartoko, 'user' => $user, 'notif' => $notif, 'count' => $count]);
 	}
 
 	//END
@@ -38,26 +40,30 @@ class TokoController extends Controller
 	public function user_insertToko (){
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         
         $toko =  DB::table('toko')->select('idToko', 'user_id', 'Judul', 'photoToko', 'harga', 'jb', 'ketToko')->get();
 
-		return view('auth\user_insertToko', ['toko' => $toko, 'user' => $user, 'notif' => $notif]);
+		return view('auth\user_insertToko', ['toko' => $toko, 'user' => $user, 'notif' => $notif, 'count' => $count]);
 	}
 
     public function user_editToko ($idToko){
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $isiToko = Toko::where('idToko', $idToko)->where('user_id', $user->id)->firstOrFail();
         //dd($isiToko, $user);
         //exit;
-        return view('auth/user_editToko', ['user' => $user, 'isiToko' => $isiToko, 'notif' => $notif]);
+        return view('auth/user_editToko', ['user' => $user, 'isiToko' => $isiToko, 'notif' => $notif, 'count' => $count]);
     }
 
 
@@ -135,8 +141,10 @@ class TokoController extends Controller
     public function tampilSearch (Request $request) {
         $user = Auth::user();
         $notif = NULL;
+        $count = NULL;
         if (Auth::check()) {
             $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $katagori= $request->get('jb');
@@ -144,7 +152,7 @@ class TokoController extends Controller
         $toko = Toko::where('jb', $katagori)->where('Judul',  'LIKE', '%' . $keywords . '%')->Paginate(9);
 
 
-        return view('searchToko', ['keywords' => $toko]);
+        return view('searchToko', ['keywords' => $toko, 'user' => $user, 'notif' => $notif, 'count' => $count]);
     }
 
 }
