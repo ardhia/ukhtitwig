@@ -27,4 +27,8 @@ class SubscribeController extends Controller
         return Redirect::to('/');
     		});
 	}
+
+    public function tampilReminder () {
+        return view('reminder');
+    }
 }

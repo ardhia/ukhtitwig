@@ -76,13 +76,15 @@ class ProfilUserController extends Controller
 
     public function prosesNotifikasi (Request $request, $No) {
         $user = Auth::user();
-        $redirect = Notifikasi::select('link')->where('No', $No);
+        $notif = Notifikasi::where('user_id', $user->id)
+                            ->where('No', $No)->first(); 
         $status = Notifikasi::where('user_id', $user->id)
                             ->where('No', $No)
                             ->update(['status' => true]);
         //dd($status->link);exit;
         //return Redirect::to([$redirect]);
-        return redirect()->route('/', [$redirect]);
+        //return redirect()->select([$redirect]);
+        return redirect()->to($notif->link);
     }
 
 }
