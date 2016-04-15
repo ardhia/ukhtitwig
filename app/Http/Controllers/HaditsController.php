@@ -33,11 +33,11 @@ class HaditsController extends Controller
                         ->get();
 
         foreach($Riwayat as $item){
-            $Isi_Hadits = DB::table('hadits')
-                ->select(DB::raw('Isi_Hadits'))
-                ->groupBy(DB::raw('Isi_Hadits'))
+            $judul = DB::table('hadits')
+                ->select(DB::raw('judul'))
+                ->groupBy(DB::raw('judul'))
                 ->where(DB::raw('Riwayat'), $item->Riwayat)->get();
-            $item->Isi_Hadits = $Isi_Hadits;
+            $item->judul = $judul;
             //dd($item);
         }
         //dd($Riwayat);

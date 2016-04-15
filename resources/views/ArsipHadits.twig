@@ -11,11 +11,11 @@
 								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
 								        	<div class="panel-body">
 									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
-										          	{% for Isi_Hadits in item.Isi_Hadits %}
+										          	{% for judul in item.judul %}
 										            	<div class="panel panel-default">
 											              	<div class="panel-heading">
 											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#">{{Isi_Hadits.Isi_Hadits|str_words(3)}}</a>
+											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#">{{judul.judul|str_words(3)}}</a>
 											                	</h4>
 											              	</div>
 										            	</div>

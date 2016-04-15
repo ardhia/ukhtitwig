@@ -24,10 +24,13 @@
 					{% for isi in hadits %}
 						<div id="artikel">
 							<div class="judul-artikel">
-							{{isi.Sumber_HR}}
+							{{isi.judul}}
 							</div>
 							<div class="out-artikel">
 							{{isi.Isi_Hadits}}
+							</div>
+							<div class="hr">
+							{{isi.Sumber_HR}}
 							</div>
 						</div>
 					{% endfor %}
