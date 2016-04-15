@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Registration routes...
 	Route::get('auth/register', 'Auth\AuthController@getRegister')->name('tampilkanSignUp');
-	Route::post('auth/register', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
+	Route::post('auth/register/{id}', 'Auth\AuthController@postRegister')->name('memprosesSignUp');
    
 	//Profil
 	Route::get('auth/profilU', ['middleware' => 'auth.basic', 'uses' => 'ProfilUserController@profilUser'])->name('profilUser');
