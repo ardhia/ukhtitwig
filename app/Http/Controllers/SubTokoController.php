@@ -127,7 +127,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb',  'Lainnya')->where('judulToko',  'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb',  'Lainnya')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchdll', ['keywords' => $table, 'user'=> $user, 'notif'=> $notif, 'count' => $count]);
     }
@@ -142,7 +142,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb', 'Aksesoris')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb', 'Aksesoris')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchaksesoris', ['keywords' => $table, 'user'=> $user, 'notif'=>$notif, 'count' => $count]);
     }
@@ -157,7 +157,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb', 'Kerudung')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb', 'Kerudung')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchkerudung', ['keywords'=> $table, 'user'=> $user, 'notif'=> $notif, 'count' => $count]);
     }
@@ -172,7 +172,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb', 'Sepatu')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb', 'Sepatu')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchsepatu', ['keywords'=> $table, 'user'=> $user, 'notif'=> $notif, 'count' => $count]);
     }
@@ -187,7 +187,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb', 'Makanan')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb', 'Makanan')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchmakanan', ['keywords'=> $table, 'user'=> $user, 'notif'=> $notif, 'count' => $count]);
     }
@@ -202,7 +202,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb', 'Makanan')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb', 'Makanan')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchtas', ['keywords'=> $table, 'user'=> $user, 'notif'=> $notif, 'count' => $count]);
     }
@@ -217,7 +217,7 @@ class SubTokoController extends Controller
         }
 
         $keywords= $request->get('keywords');
-        $table= DB::table('toko')->where('jb', 'Pakaian')->where('judulToko', 'LIKE', '%' . $keywords . '%')->get();
+        $table= DB::table('toko')->where('jb', 'Pakaian')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchpakaian',['keywords'=> $table, 'user'=> $user, 'notif'=>$notif, 'count' => $count]);
     }
