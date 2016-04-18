@@ -1459,50 +1459,13 @@ body {
 }
 
 .sign_title {
-	width: 100%;
+	width: 88%;
 	height: auto;
 	float: left;
 	color: #FF00ED;
 	font-size: 27px;
-	padding: 30px 4% 2px;
-}
-
-.out-logup1 {
-	width: 48%;
-	height: auto;
-	float: left;
-	margin: 30px 28% 0px 24%;
-}
-
-#daftar-logup {
-	width: 43%;
-	height: auto;
-	float: left;
-	margin: 10px 0px 10px 0px;
-	font-size: 20px;
-}
-
-.cinta {
-	margin: 27px;
-}
-
-.titik {
-	margin: 30px;
-}
-
-#titikdua{
-	width: 7%;
-	height: auto;
-	float: left;
-	margin: 10px 0px;
-}
-
-#kolom-logup {
-	width: 50%;
-	height: auto;
-	float: left;
-	margin: 10px 0px;
-	padding-top: 2%;
+	padding: 43px 6% 2px;
+	margin-bottom: 35px;
 }
 
 /*pesan*/
@@ -2076,11 +2039,7 @@ body {
 	color: #FFAEEE;
 	background: #fff;
 }
-.radiojk {
-	width: 13%;
-	height: 17px;
-	margin: 18px 0px;
-}
+
 .login-email {
 	width: 50%;
 	height: auto;
@@ -2118,47 +2077,22 @@ body {
 	color: #2A00FF;
 	border-radius: 8px;
 }
-.nama-logup {
-	width: 88%;
-	height: 25px;
-	margin: 9px;
-	border-radius: 5px;
-	font-family: "Handlee";
-}
-.nama-logup1 {
-	width: 88%;
-	height: 25px;
-	margin: 9px 9px 6px 9px;
-	border-radius: 5px;
-	font-family: "Handlee"; 
 
-}
-.tempat {
-	width: 45%;
-	margin: 5px 0px 4px 9px;
-	border-radius: 5px;
-	height: 25px;
-	font-family: "Handlee";
-}
-.date {
-	width: 40%;
-	border-radius: 5px;
-	height: 25px;
-	font-family: "Handlee";
-}
 .daftar {
-	width: 40%;
-	height: 40px;
-	margin: 68px 7% 15px;
-	font-size: 20px;
+	width: auto;
+	height: auto;
+	margin: 68px 7% 30px;
+	font-size: 18px;
 	border-radius: 8px;
 	background: #A3ECFF;
 	text-decoration: none;
 	color: #2A00FF;
-	border: solid 3px #05C1FF;
+	border: solid 1px #fff;
 	font-family: "Handlee";
 	display: block;
 	float: right;
+	padding: 3px 5%;
+	box-shadow: 1px 1px 1px 1px #aaaaaa;
 }
 
 .daftar:hover {
@@ -2372,7 +2306,7 @@ body {
 	border-radius: 4px;
 }
 
-.nama-testimoni {
+.testimoni {
 	width: 50%;
 	height: auto;
 	float: left;
@@ -3044,16 +2978,16 @@ tr:nth-child(even) {
 	font-size: 50px;
 }
 .out-regAdmin1 {
-	width: 96%;
+	width: 92%;
 	height: auto;
 	float: left;
-	margin: 0px 2%;
+	margin: 0px 4%;
 }
 .out-formReg{
 	width: 100%;
 	height: auto;
 	float: left;
-	margin-bottom: 10px;
+	margin-bottom: 14px;
 }
 #out-nameReg{
 	font-size: 18px;
@@ -3105,19 +3039,4 @@ tr:nth-child(even) {
 	width: 5%;
 	height: 15px;
 	margin-top: 10px;
-}
-
-#daftar-reg{
-	width: 20%;
-	height: 30px;
-	float: right;
-	margin: 20px 4%;
-	font-family: "Handlee";
-	border-radius: 8px;
-	background: #A3ECFF;
-	text-decoration: none;
-	color: #2A00FF;
-	border: solid 3px #05C1FF;
-	font-family: "Handlee";
-	display: block;
 }
