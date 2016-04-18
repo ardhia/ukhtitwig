@@ -11,7 +11,7 @@
     <div class="out-regUser">
         <div class="nama-registrasi">Sign Up</div>
         <div class="out-regAdmin1">
-        <form method="POST" action="{{route('memprosesSignUp', {id: user.id})}}">
+        <form method="POST" action="{{route('memprosesSignUp')}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="photoProfil" value="default.jpg">
                 <div class="out-formReg">
