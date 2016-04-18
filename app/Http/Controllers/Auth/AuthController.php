@@ -7,7 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-
+use Mail;
 class AuthController extends Controller
 {
     /*
@@ -85,5 +85,25 @@ class AuthController extends Controller
             'al_email' => $data['al_email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+
+    /*public function postRegister(Request $request, $id)
+    {
+
+        $user = User::findOrFail($id);
+
+        Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+            $m->from('ukhti19f16@gmail.com', 'Ukhti');
+
+            $m->to($user->email, $user->name)->subject('Your Reminder!');
+        });
+
+        return $this->register($request)->view(['user' => $user]);
+
+    }*/
+
+    public function tampilReminder(){
+        return view('reminder');
     }
 }

@@ -193,8 +193,9 @@ Route::group(['middleware' => ['web']], function () {
     |--------------------------------------------------------------------------
     */
 
-    Route::get('reminder', 'SubscribeController@tampilReminder')->name('emails.reminder');
-
+    Route::get('reminder', 'Auth\AuthController@tampilReminder')->name('emails.reminder');
+    //
+    Route::get('admin/register', 'AdminRegisterController@tampilRegisterAdmin')->name('registerAdmin');
     //Home About Profil
     Route::get('admin/profilA', ['middleware' => 'auth.basic', 'uses' => 'ProfilAdminController@tampilProfilAdmin'])->name('profilAdmin');
 

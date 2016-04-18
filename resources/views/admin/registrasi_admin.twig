@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="out-logup">
+    <div class="out-regAdmin">
+        <div class="nama-registrasi"> Admin</div>
+        <div class="out-regAdmin1">
+        <form method="POST" action="{{route()})}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="admin" value="1">
+            <div class="out-formReg">
+                <div id="out-nameReg">Nama Lengkap</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="text" name="name" id="kolom-reg" placeholder="Nama Lengkap">
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Username</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="text" name="username" id="kolom-reg" placeholder="Username">
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Tempat Tanggal Lahir</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="text" name="tempat_lahir" id="tempat-reg" placeholder="Tempat">
+                <input type="date" name="tanggal_lahir" id="tanggal-reg" >
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Jenis Kelamin</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="radio" name="jenis_kelamin" value="Perempuan" id="radio-reg">Perempuan
+                <input type="radio" name="jenis_kelamin" value="Laki-laki" id="radio-reg">Laki-laki
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Status</div>
+                <div id="ttkdua-reg">:</div>
+                <select name="status" id="kolom-regsts">
+                    <option value="lajang">Lajang</option>
+                    <option value="menikah">Menikah</option>
+                </select>
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Email</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="email" name="email" id="kolom-reg" placeholder="Email">
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Alternatif Email</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="email" name="al_email" id="kolom-reg" placeholder="Alternatif Email">
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Password</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="password" name="password" id="kolom-reg" placeholder="Password">
+            </div>
+            <div class="out-formReg">
+                <div id="out-nameReg">Konfirmasi Password</div>
+                <div id="ttkdua-reg">:</div>
+                <input type="password" name="password_confirmation" id="kolom-reg" placeholder="Konfirmasi Password">
+                <input type="submit" name="" id="daftar-reg" value="Daftar">
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
