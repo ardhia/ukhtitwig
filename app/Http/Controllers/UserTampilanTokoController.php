@@ -9,13 +9,13 @@ use App\User;
 use App\Http\Requests;
 use Redirect;
 use App\Notifikasi;
-use App\Artikel;
+use App\Toko;
 
-class UserArtikelController extends Controller
+class UserTampilanTokoController extends Controller
 {
-	public function tampilUserArtikel (){
-        $user = Auth::user();
-        $artikel =  Artikel::where('user_id', $user->id)->Paginate(3);
+    public function tampilanToko (){
+    	$user = Auth::user();
+        $toko =  Toko::where('user_id', $user->id)->Paginate(3);
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
@@ -24,6 +24,6 @@ class UserArtikelController extends Controller
         }
 
 
-        return view('auth/user_artikel', ['user' => $user, 'notif' => $notif, 'artikel' => $artikel, 'count' => $count]);
-	}
+    	return view('auth/user_tampilanToko', ['user' => $user, 'notif' => $notif, 'toko' => $toko, 'count' => $count]);
+    }
 }

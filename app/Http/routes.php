@@ -40,6 +40,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/user_tutorial', 'UserTutorialController@tampilUserTutorial')->name('userTutorial');
     //user_toko
     Route::get('auth/user_toko', 'UserTokoController@tampilUserToko')->name('userToko');
+    Route::get('auth/user_tampilToko', 'UserTampilanTokoController@tampilanToko')->name('user_tampilToko');
     
     //CRUD Toko
     Route::get('auth/profilU/user_insertToko', ['middleware' => 'auth.basic', 'uses' => 'TokoController@user_insertToko'])->name('profilU.user_insertToko');
