@@ -2885,10 +2885,10 @@ tr:nth-child(even) {
 	box-shadow: 0px 0px 2px 0px pink;
 }
 .user_judulTutorial{
-	width: 46%;
+	width: 66%;
 	height: auto;
 	float: left;
-	margin: 0px 25%;
+	margin: 0px 15%;
 	font-size: 62px;
 	color: brown;
 	font-family: "orange juice";

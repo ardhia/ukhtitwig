@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Toko</title>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+	<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+	<link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+</head>
+<body>
+		<div id="wrapper">
+			{% for item in toko %}
+			<div class="isicontent_user1">
+				<div class="user_photo"><img src="/uploadPhoto/toko/{{item.photoToko}}" width="100%" height="100%"></div>
+				<div class="userbungkus_toko">
+				<div class="userjudul_toko">{{item.Judul}}</div>
+				<div class="userharga_toko">Harga: Rp.{{item.harga}},-</div>
+				<div class="user_isinya1">Keterangan: {{item.ketToko}}</div>
+				</div>
+			</div>
+			{% endfor %}
+			<div class="paginate">{{ toko.render()|raw }}</div>
+		</div>
+</body>
+</html>
