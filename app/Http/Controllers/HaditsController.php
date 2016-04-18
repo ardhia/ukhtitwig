@@ -18,7 +18,7 @@ class HaditsController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
     	//$hadits =  DB::table('hadits')->select('Sumber_HR', 'Isi_Hadits')->Paginate(5);
@@ -50,7 +50,7 @@ class HaditsController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         $keywords = $request->get('keywords');

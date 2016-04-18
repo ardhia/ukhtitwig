@@ -737,6 +737,7 @@ body {
 	width: 100%;
 	height: auto;
 	float: left;
+	margin-bottom: 20px;
 }
 
 .judul {
@@ -756,6 +757,14 @@ body {
 	padding: 8px 4%;
 	background: rgba(198, 255, 251, 0.54);
 	border-radius: 8px;
+}
+
+.isi-arsip a {
+	color: #00C9FF;
+}
+
+.isi-arsip a:hover {
+	color: #FF5AD7;
 }
 
 .isi-ket {
