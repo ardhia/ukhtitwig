@@ -4,7 +4,12 @@
 					<div id="log">
 						<div id="namalog">
 							<ul>
-							  	<li><a href="{{route('profilUser')}}">@{{user.username}}</a>
+							  	<li>
+							  	{% if user.admin == false %}
+							  	    <a href="{{route('profilUser')}}">@{{user.username}}</a>
+							  	{% else %}
+							  	    <a href="{{route('profilAdmin')}}">@{{user.username}}</a>
+							  	{% endif %}
 							  		<ul>
 							  			<li><a href="{{route('about')}}">About Ukhti</a></li>
 							  			<li><a href="{{route('userToko')}}">Toko</a></li>

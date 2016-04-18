@@ -26,6 +26,7 @@ class UpdateUsersTable extends Migration
             $table->text('kutipanHadits');
             $table->text('statusUser');
             $table->text('contactUs');
+            $table->boolean('admin')->default(0);
         });
     }
 

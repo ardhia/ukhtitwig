@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKomentarArtikelTable extends Migration
+class UpdateKomentarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,9 @@ class CreateKomentarArtikelTable extends Migration
      */
     public function up()
     {
-        Schema::create('komentar_artikel', function(Blueprint $table){
-            $table->increments('No');
-            $table->string('nama');
-            $table->text('isi_komentar');
-            $table->integer('no_artikel')->unsigned();
-            $table->foreign('no_artikel')->references('No')->on('artikel');
+        Schema::table('komentar_artikel', function ($table) {
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
         });
     }
 

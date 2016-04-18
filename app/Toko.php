@@ -9,6 +9,6 @@ class Toko extends Model
     protected $table = 'toko';
 
     protected $fillable = [
-        'idToko', 'user_id', 'Judul', 'harga', 'jb', 'ketToko', 'photoToko', 'artikel',
+        'idToko', 'user_id', 'user_name', 'Judul', 'harga', 'jb', 'ketToko', 'photoToko', 'artikel',
     ];
 }

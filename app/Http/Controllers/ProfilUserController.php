@@ -13,6 +13,8 @@ use App\Toko;
 use App\Artikel;
 use App\Testimoni;
 use App\Notifikasi;
+use App\KomentarArtikel;
+use App\KomentarTutorial;
 use Redirect;
 
 class ProfilUserController extends Controller
@@ -25,11 +27,13 @@ class ProfilUserController extends Controller
     	$tutorial = Tutorial::where('user_id', $user->id)->get();
     	$toko =  Toko::where('user_id', $user->id)->get();
         $testimoni = Testimoni::where('user_id', $user->id)->get();
+        $KomentarTutorial = KomentarTutorial::where('user_id', $user->id)->get();
+        $KomentarArtikel = KomentarArtikel::where('user_id', $user->id)->get();
         $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
         $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         //dd($notif);exit;
 
-        return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'testimoni' => $testimoni, 'notif' => $notif, 'count' => $count]);
+        return view('auth/profilU', ['user' => $user, 'artikel' => $daftarartikel, 'tutorial' => $tutorial, 'toko' => $toko, 'testimoni' => $testimoni, 'notif' => $notif, 'count' => $count, 'KomentarArtikel' => $KomentarArtikel, 'KomentarTutorial' => $KomentarTutorial]);
     }
 
     public function getPhotoProfil ($id) {
