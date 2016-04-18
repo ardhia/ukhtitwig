@@ -197,7 +197,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => ['web', 'auth', 'admin']], function () {
         Route::get('/admin', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
 
-        //delete artikel
         Route::get('admin/artikel/{No}/deleteAdmin', 'ProfilAdminController@hapusArtikel')->name('hapusArtikel');
         Route::get('admin/tutorial/{No}/deleteAdmin', 'ProfilAdminController@hapusTutorial')->name('hapusTutorial');
         Route::get('admin/toko/{idToko}/deleteAdmin', 'ProfilAdminController@hapusToko')->name('hapusToko');
@@ -209,6 +208,4 @@ Route::group(['middleware' => ['web']], function () {
 
     });
     Route::get('reminder', 'SubscribeController@tampilReminder')->name('emails.reminder');
-
-
 });

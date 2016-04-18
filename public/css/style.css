@@ -2977,3 +2977,147 @@ tr:nth-child(even) {
 	border-radius: 8px;
 	box-shadow: 0px 0px 2px 0px pink;
 }
+
+.out-confirm{
+	width: 70%;
+	height: auto;
+	float: left;
+	margin: 50px 15%;
+	background: #5deeff;
+	border-radius: 10px;
+	box-shadow: -7px 7px 5px 0px #8ec1cc;
+}
+.title-confirm{
+	width: 90%;
+	height: auto;
+	float: left;
+	padding: 20px 5%;
+	margin: 50px 0px 0px 0px;
+	font-size: 60px;
+	text-align: center;
+	color: white;
+}
+.title-confirm1{
+	width: 80%;
+	height: auto;
+	float: left;
+	padding: 10px 10%;
+	color: white;
+	margin-top: 10px;
+	font-size: 40px;
+	text-align: center;
+}
+.masuk-confirm{
+	width: 56%;
+	height: 80px;
+	margin: 10px 22% 60px 22%;
+	font-size: 37px;
+	border-radius: 20px;
+	background: white; 
+	font-family: "Handlee";
+	color: #5deeff;
+	border: solid white;
+}
+.masuk-confirm:hover{
+	background: #5deeff;
+	color: white; 
+}
+
+.out-regAdmin{
+	width: 49%;
+	height: auto;
+	float: left;
+	margin: 8px 24%;
+}
+.out-regUser{
+	width: 49%;
+	height: auto;
+	float: left;
+	margin: 8px 24%;
+}
+.nama-registrasi{
+	width: 92%;
+	height: auto;
+	float: left;
+	margin: 10px 2% 10px 4%;
+	padding: 1%;
+	font-size: 50px;
+}
+.out-regAdmin1 {
+	width: 96%;
+	height: auto;
+	float: left;
+	margin: 0px 2%;
+}
+.out-formReg{
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 10px;
+}
+#out-nameReg{
+	font-size: 18px;
+	width: 40%;
+	height: auto;
+	float: left;
+	padding: 5px 1%;
+}
+#ttkdua-reg{
+	width: 2%;
+	height: auto;
+	float: left;
+	padding: 5px 1%;
+}
+#kolom-reg{
+	width: 48%;
+	height: auto;
+	float: left;
+	padding: 5px 1%;
+	border-radius: 6px;
+	font-family: "Handlee";
+}
+#kolom-regsts{
+	width: 50%;
+	height: auto;
+	float: left;
+	padding: 2px 1%;
+	border-radius: 6px;
+	font-family: "Handlee";
+}
+#tempat-reg {
+	width: 24%;
+	height: auto;
+	float: left;
+	padding: 5px 1%;
+	border-radius: 6px;
+	font-family: "Handlee";
+}
+#tanggal-reg{
+	width: 20%;
+	height: auto;
+	float: left;
+	padding: 5px 1%;
+	margin-left: 1%;
+	border-radius: 6px;
+}
+
+#radio-reg{
+	width: 5%;
+	height: 15px;
+	margin-top: 10px;
+}
+
+#daftar-reg{
+	width: 20%;
+	height: 30px;
+	float: right;
+	margin: 20px 4%;
+	font-family: "Handlee";
+	border-radius: 8px;
+	background: #A3ECFF;
+	text-decoration: none;
+	color: #2A00FF;
+	border: solid 3px #05C1FF;
+	font-family: "Handlee";
+	display: block;
+}
