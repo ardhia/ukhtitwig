@@ -1,28 +1,27 @@
-
-						  	<div class="panel-group" id="accordion">
-							  	{% for item in Riwayat %}
-							    	<div class="panel panel-default">
-								      	<div class="panel-heading">
-								        	<h4 class="panel-title">
-								          		<a data-toggle="collapse" data-parent="#accordion" href="#Riwayat-{{item.Riwayat}}">{{item.Riwayat}}</a>
-								        	</h4>
-								        	({{item.total}})
-								      	</div>
-								      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
-								        	<div class="panel-body">
-									          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
-										          	{% for judul in item.judul %}
-										            	<div class="panel panel-default">
-											              	<div class="panel-heading">
-											                	<h4 class="panel-title">
-											                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#">{{judul.judul|str_words(3)}}</a>
-											                	</h4>
-											              	</div>
-										            	</div>
-										            {% endfor %}
-									          	</div>
-								        	</div>
-								      	</div>
-							    	</div>
-							    {% endfor %}
-						  	</div>
+<div class="panel-group" id="accordion">
+  	{% for item in Riwayat %}
+    	<div class="panel panel-default">
+	      	<div class="panel-heading">
+	        	<h4 class="panel-title">
+	          		<a data-toggle="collapse" data-parent="#accordion" href="#Riwayat-{{item.Riwayat}}">{{item.Riwayat}}</a>
+	        	</h4>
+	        	({{item.total}})
+	      	</div>
+	      	<div id="Riwayat-{{item.Riwayat}}" class="panel-collapse collapse in">
+	        	<div class="panel-body">
+		          	<div class="panel-group" id="{{item.Riwayat}}-accordion">
+			          	{% for judul in item.judul %}
+			            	<div class="panel panel-default">
+				              	<div class="panel-heading">
+				                	<h4 class="panel-title">
+				                  		<a data-toggle="collapse" data-parent="#{{item.Riwayat}}-accordion" href="#">{{judul.judul|str_words(3)}}</a>
+				                	</h4>
+				              	</div>
+			            	</div>
+			            {% endfor %}
+		          	</div>
+	        	</div>
+	      	</div>
+    	</div>
+    {% endfor %}
+</div>

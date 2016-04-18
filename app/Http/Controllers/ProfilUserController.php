@@ -71,7 +71,7 @@ class ProfilUserController extends Controller
     public function tampilNotifikasi (Request $request) {
         $user = Auth::user();
         $notif = Notifikasi::where('user_id', $user->id)
-                        ->orderBy('created_at', 'desc')->get();
+                        ->orderBy('No', 'desc')->get();
         $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         //dd($notif);exit;
 

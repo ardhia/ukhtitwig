@@ -35,7 +35,6 @@
 		<div class="out-profil">
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="tableArtikel">
-					<div id="wrapper">
 					<div class="scroll">
 						<table border="1">
 							<tr>
@@ -59,10 +58,8 @@
 							{% endfor %}
 						</table>
 					</div>
-					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableTutorial">
-					<div id="wrapper">
 					<div class="scroll">
 						<table border="1">
 							<tr>
@@ -86,10 +83,8 @@
 							{% endfor %}
 						</table>
 					</div>
-					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableToko">
-					<div id="wrapper">
 					<div class="scroll">
 						<table border="1">
 							<tr>
@@ -114,7 +109,6 @@
 							</tr>
 							{% endfor %}
 						</table>
-					</div>
 					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="getKomentar">
@@ -166,7 +160,7 @@
 					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableSubscribe">
-					<div id="wrapper">
+					<a href="{{route('profilU.user_insertTutorial')}}"><button value="Sending" class="tambah">Sending</button></a>
 					<div class="scroll">
 						<table border="1">
 							<tr>
@@ -183,7 +177,6 @@
 							</tr>
 							{% endfor %}
 						</table>
-					</div>
 					</div>
 				</div>
   			</div>
