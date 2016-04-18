@@ -53,6 +53,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/profilU/user_insertArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@tampilUser_insertArtikel'])->name('profilU.user_insertArtikel');
     Route::get('auth/profilU/{No}/user_editArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@user_editArtikel'])->name('profilU.user_editArtikel');
     Route::get('auth/profilU/{No}/user_deleteArtikel', 'ArtikelController@deleteArtikel')->name('deleteArtikel');
+    Route::get('auth/profilU/{No}/user_deleteKomentarArtikel', 'KomentarController@deleteKomentarArtikel')->name('deleteKomentarArtikel');
     #
     Route::post('auth/profilU/user_insertArtikel/artikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_insertArtikel'])->name('prosesArtikel');
     Route::post('auth/profilU/{No}/user_editArtikel', ['middleware' => 'auth.basic', 'uses' => 'ArtikelController@prosesUser_editArtikel'])->name('prosesEditArtikel');
@@ -62,6 +63,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/profilU/user_insertTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_insertTutorial'])->name('profilU.user_insertTutorial');
     Route::get('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@user_editTutorial'])->name('profilU.user_editTutorial');
     Route::get('auth/profilU/{No}/user_deleteTutorial', 'TutorialController@deleteTutorial')->name('deleteTutorial');
+    Route::get('auth/profilU/{No}/user_deleteKomentarTutorial', 'KomentarController@deleteKomentarTutorial')->name('deleteKomentarTutorial');
     #
     Route::post('auth/profilU/user_insertTutorial/tutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_insertTutorial'])->name('prosesTutorial');
     Route::post('auth/profilU/{No}/user_editTutorial', ['middleware' => 'auth.basic', 'uses' => 'TutorialController@prosesUser_editTutorial'])->name('prosesEditTutorial');
@@ -192,30 +194,21 @@ Route::group(['middleware' => ['web']], function () {
     | Routes File Get Halaman Admin
     |--------------------------------------------------------------------------
     */
+    Route::group(['middleware' => ['web', 'auth', 'admin']], function () {
+        Route::get('/admin', 'ProfilAdminController@tampilProfilAdmin')->name('profilAdmin');
 
+        //delete artikel
+        Route::get('admin/artikel/{No}/deleteAdmin', 'ProfilAdminController@hapusArtikel')->name('hapusArtikel');
+        Route::get('admin/tutorial/{No}/deleteAdmin', 'ProfilAdminController@hapusTutorial')->name('hapusTutorial');
+        Route::get('admin/toko/{idToko}/deleteAdmin', 'ProfilAdminController@hapusToko')->name('hapusToko');
+        Route::get('admin/subscribe/{No}/deleteAdmin', 'ProfilAdminController@hapusSubscribe')->name('hapusSubscribe');
+        Route::get('admin/profilU/{No}/hapusKomentarArtikel', 'ProfilAdminController@hapusKomentarArtikel')->name('hapusKomentarArtikel');
+        Route::get('admin/profilU/{No}/hapusKomentarTutorial', 'ProfilAdminController@hapusKomentarTutorial')->name('hapusKomentarTutorial');
+        Route::get('admin/profilU/{user_id}/hapusAllKomentarArtikel', 'ProfilAdminController@hapusAllKomentarArtikel')->name('hapusAllKomentarArtikel');
+        Route::get('admin/profilU/{user_id}/hapusAllKomentarTutorial', 'ProfilAdminController@hapusAllKomentarTutorial')->name('hapusAllKomentarTutorial');
+
+    });
     Route::get('reminder', 'SubscribeController@tampilReminder')->name('emails.reminder');
 
-    //Home About Profil
-    Route::get('admin/profilA', ['middleware' => 'auth.basic', 'uses' => 'ProfilAdminController@tampilProfilAdmin'])->name('profilAdmin');
-
-    //delete artikel
-    Route::get('admin/artikel/{No}', ['middleware' => 'auth.basic', 'uses' => 'ProfilAdminController@hapusArtikel'])->name('hapusArtikel');
-    //delete tutorial
-    Route::get('admin/tutorial/{No}', ['middleware' => 'auth.basic', 'uses' => 'ProfilAdminController@hapusTutorial'])->name('hapusTutorial');
-    //delete toko
-    Route::get('admin/toko/{No}', ['middleware' => 'auth.basic', 'uses' => 'ProfilAdminController@hapusToko'])->name('hapusToko');
-    //delete subscribe
-    Route::get('admin/subscribe/{No}', ['middleware' => 'auth.basic', 'uses' => 'ProfilAdminController@hapusSubscribe'])->name('hapusSubscribe');
-
-    //table Artikel
-    Route::get('admin/tableArtikel', ['middleware' => 'auth.basic', 'uses' => 'TableArtikelController@tampilTableArtikel'])->name('tableArtikel');
-    //table Tutorial
-    Route::get('admin/tableTutorial', ['middleware' => 'auth.basic', 'uses' => 'TableTutorialController@tampilTableTutorial'])->name('tableTutorial');
-    //tableToko
-    Route::get('admin/tableToko', ['middleware' => 'auth.basic', 'uses' => 'TableTokoController@tampilTableToko'])->name('tableToko');
-    //tableUser
-    Route::get('admin/tableUser', ['middleware' => 'auth.basic', 'uses' => 'TableUserController@tampilTableUser'])->name('tableUser');
-    //tableSubscribe
-    Route::get('admin/tableSubscribe', ['middleware' => 'auth.basic', 'uses' => 'TableSubscribeController@tampilTableSubscribe'])->name('tableSubscribe');
 
 });

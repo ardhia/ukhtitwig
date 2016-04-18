@@ -12,13 +12,17 @@
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="navuser">
+	{% include 'userLog' %}
+	<div id="navadmin">
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active">
 				<a href="#tableArtikel" aria-controls="tableArtikel" role="tab" data-toggle="tab">Artikel</a>
 			</li>
 			<li role="presentation">
 				<a href="#tableTutorial" aria-controls="tableTutorial" role="tab" data-toggle="tab">Tutorial</a>
+			</li>
+		    <li role="presentation">
+		    	<a href="#getKomentar" aria-controls="getKomentar" role="tab" data-toggle="tab">Komentar</a>
 			</li>
 			<li role="presentation">
 				<a href="#tableToko" aria-controls="tableToko" role="tab" data-toggle="tab">Toko</a>
@@ -36,7 +40,7 @@
 						<table border="1">
 							<tr>
 								<th>No</th>
-								<th>Creator</th>
+								<th>Author</th>
 								<th>Judul Artikel</th>
 								<th>Photo</th>
 								<th>Isi Artikel</th>
@@ -45,12 +49,12 @@
 							{% for table in artikel %}
 							<tr>
 								<td>{{table.No}}</td>
-								<td>{{table.email}}</td>
+								<td>{{table.user_name}}</td>
 								<td>{{table.Judul}}</td>
 								<td>{{table.Photo}}</td>
 								<td>{{table.Isi|raw }}</td>
 								<td>
-								<a href="{{route('hapusArtikel', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></td></a>
+								<a href="{{route('hapusArtikel', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></a></td>
 							</tr>
 							{% endfor %}
 						</table>
@@ -63,7 +67,7 @@
 						<table border="1">
 							<tr>
 								<th>No</th>
-								<th>Creator</th>
+								<th>Author</th>
 								<th>Judul Tutorial</th>
 								<th>Isi Tutorial</th>
 								<th>Action</th>
@@ -71,13 +75,13 @@
 							{% for table in tutorial %}
 							<tr>
 								<td>{{table.No}}</td>
-								<td>{{table.email}}</td>
+								<td>{{table.user_name}}</td>
 								<td>{{table.Judul}}</td>
 								<td>
 								{{table.Isi|raw }}
 								</td>
 								<td>
-								<a href="{{route('hapusTutorial', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></td></a>
+								<a href="{{route('hapusTutorial', {No: table.No})}}"><button value="Delete" class="ced">Delete</button></a></td>
 							</tr>
 							{% endfor %}
 						</table>
@@ -90,27 +94,75 @@
 						<table border="1">
 							<tr>
 								<th>No</th>
-								<th>Creator</th>
+								<th>Author</th>
 								<th>Judul Toko</th>
 								<th>Harga</th>
 								<th>Jenis Barang</th>
 								<th>Keterangan Barang</th>
 								<th>Action</th>
 							</tr>
-							{% for table in tutorial %}
+							{% for table in toko %}
 							<tr>
 								<td>{{table.idToko}}</td>
-								<td>{{table.email}}</td>
+								<td>{{table.user_name}}</td>
 								<td>{{table.Judul}}</td>
 								<td>{{table.harga}}</td>
 								<td>{{table.jb|raw }}</td>
 								<td>{{table.ketToko|raw }}</td>
 								<td>
-								<a href="{{route('hapusToko', {No: table.idToko})}}"><button value="Delete" class="tk">Delete</button></td></a>
+								<a href="{{route('hapusToko', {idToko: table.idToko})}}"><button value="Delete" class="tk">Delete</button></a></td>
 							</tr>
 							{% endfor %}
 						</table>
 					</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="getKomentar">
+				    <div class="scroll1">
+				   		Komentar Artikel
+						<table border="1">
+							<tr>
+								<th>User Id</th>
+								<th>Nama</th>
+								<th>Komentar</th>
+								<th>Judul Artikel</th>
+								<th>Action</th>
+							</tr>
+							{% for table in KomentarArtikel %}
+							<tr>
+								<td>{{table.user_id}}</td>
+								<td>{{table.nama}}</td>
+								<td>{{table.isi_komentar}}</td>
+								<td>{{table.Judul}}</td>
+								<td>
+									<a href="{{route('hapusKomentarArtikel', {No: table.No})}}" class="linkcrud">Delete</a>
+								</td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+				    <div class="scroll1">
+				   		Komentar Tutorial
+						<table border="1">
+							<tr>
+								<th>User Id</th>
+								<th>Nama</th>
+								<th>Komentar</th>
+								<th>Judul Tutorial</th>
+								<th>Action</th>
+							</tr>
+							{% for table in KomentarTutorial %}
+							<tr>
+								<td>{{table.user_id}}</td>
+								<td>{{table.nama}}</td>
+								<td>{{table.isi_komentar}}</td>
+								<td>{{table.Judul}}</td>
+								<td>
+									<a href="{{route('hapusKomentarTutorial', {No: table.No})}}" class="linkcrud">Delete</a>
+								</td>
+							</tr>
+							{% endfor %}
+						</table>
 					</div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="tableSubscribe">

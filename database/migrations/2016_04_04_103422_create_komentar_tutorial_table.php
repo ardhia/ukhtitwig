@@ -18,6 +18,8 @@ class CreateKomentarTutorialTable extends Migration
             $table->text('isi_komentar');
             $table->integer('no_tutorial')->unsigned();
             $table->foreign('no_tutorial')->references('No')->on('tutorial');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

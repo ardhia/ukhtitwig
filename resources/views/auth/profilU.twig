@@ -75,6 +75,9 @@
 						    	<a href="#getTestimoni" aria-controls="getTestimoni" role="tab" data-toggle="tab">Testimoni</a>
 						    </li>
 						    <li role="presentation">
+						    	<a href="#getKomentar" aria-controls="getKomentar" role="tab" data-toggle="tab">Komentar</a>
+							</li>
+						    <li role="presentation">
 						    	<a href="#getToko" aria-controls="getToko" role="tab" data-toggle="tab">Toko</a>
 						    </li>
 						    <li role="presentation">
@@ -105,6 +108,50 @@
 											<td><img src="/uploadPhoto/testimoni/{{table.Photo}}" width="50px" height="40px"></td>
 											<td>
 												<a href="{{route('deleteTestimoni', {No: table.No})}}" class="linkcrud">Delete</a>
+											</td>
+										</tr>
+										{% endfor %}
+									</table>
+								</div>
+							</div>
+						    <div role="tabpanel" class="tab-pane" id="getKomentar">
+							    <div class="scroll1">
+						    		Komentar Artikel
+									<table border="1">
+										<tr>
+											<th>Nama</th>
+											<th>Komentar</th>
+											<th>Judul Artikel</th>
+											<th>Action</th>
+										</tr>
+										{% for table in KomentarArtikel %}
+										<tr>
+											<td>{{table.nama}}</td>
+											<td>{{table.isi_komentar}}</td>
+											<td>{{table.Judul}}</td>
+											<td>
+												<a href="{{route('deleteKomentarArtikel', {No: table.No})}}" class="linkcrud">Delete</a>
+											</td>
+										</tr>
+										{% endfor %}
+									</table>
+								</div>
+							    <div class="scroll1">
+						    		Komentar Tutorial
+									<table border="1">
+										<tr>
+											<th>Nama</th>
+											<th>Komentar</th>
+											<th>Judul Tutorial</th>
+											<th>Action</th>
+										</tr>
+										{% for table in KomentarTutorial %}
+										<tr>
+											<td>{{table.nama}}</td>
+											<td>{{table.isi_komentar}}</td>
+											<td>{{table.Judul}}</td>
+											<td>
+												<a href="{{route('deleteKomentarTutorial', {No: table.No})}}" class="linkcrud">Delete</a>
 											</td>
 										</tr>
 										{% endfor %}

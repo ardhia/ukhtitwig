@@ -11,9 +11,13 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('signIn')->insert([
-			'email' =>  'ardhia.marliana@gmail.com',
-			'password' =>  'abcd',
+        DB::table('users')->insert([
+            'id' => '0',
+            'name' => 'Admin Ukhti',
+            'username' => 'ukhti_19',
+			'email' =>  'ukhti19f16@gmail.com',
+			'password' =>  'uWsars19.',
+            'admin' => '1',
         	]);
     }
 }

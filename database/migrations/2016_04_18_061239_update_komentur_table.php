@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubscribeTable extends Migration
+class UpdateKomenturTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateSubscribeTable extends Migration
      */
     public function up()
     {
-       Schema::create('subscribe', function(Blueprint $table){
-        $table->increments('Id');
-        $table->string('email')->unique();
-        $table->timestamps();
-
-       });
+        Schema::table('komentar_tutorial', function ($table) {
+            $table->text('Judul');
+        });
     }
 
     /**

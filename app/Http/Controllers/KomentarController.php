@@ -25,10 +25,11 @@ class KomentarController extends Controller
         ]);
         $tutorial = Tutorial::where('No', $No)
                     ->first();
+
         $komentar = new KomentarTutorial;
         $komentar = DB::table('komentar_tutorial')
                     ->where('no_tutorial', $No)
-                    ->insert(['nama' => $request->input('nama'), 'isi_komentar' => $request->input('isi_komentar'), 'no_tutorial' => $No]);
+                    ->insert(['nama' => $request->input('nama'), 'isi_komentar' => $request->input('isi_komentar'), 'no_tutorial' => $No, 'user_id' => $tutorial->user_id, 'Judul' => $tutorial->Judul]);
 
         $notif = new Notifikasi;
         $notif = Notifikasi::where('user_id', $tutorial->user_id)
@@ -48,7 +49,7 @@ class KomentarController extends Controller
         $komentar = new KomentarTutorial;
         $komentar = DB::table('komentar_artikel')
                     ->where('no_artikel', $No)
-                    ->insert(['nama' => $request->input('nama'), 'isi_komentar' => $request->input('isi_komentar'), 'no_artikel' => $No]);
+                    ->insert(['nama' => $request->input('nama'), 'isi_komentar' => $request->input('isi_komentar'), 'no_artikel' => $No, 'user_id' => $artikel->user_id, 'Judul' => $artikel->Judul]);
                     
 
         $notif = new Notifikasi;
@@ -57,4 +58,19 @@ class KomentarController extends Controller
 
         return redirect()->route('artikel.isi-artikel', ['no_artikel' => $No]);
     }
+
+    public function deleteKomentarTutorial ($No){
+        $user = Auth::user();
+        $delete = DB::table('komentar_tutorial')->where('No', $No)->where('user_id', $user->id)->delete();
+
+        return Redirect::to('/auth/profilU');
+    }
+
+    public function deleteKomentarArtikel ($No){
+        $user = Auth::user();
+        $delete = DB::table('komentar_artikel')->where('No', $No)->where('user_id', $user->id)->delete();
+
+        return Redirect::to('/auth/profilU');
+    }
+
 }
