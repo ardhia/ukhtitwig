@@ -29,7 +29,7 @@ class ProfilUserController extends Controller
         $testimoni = Testimoni::where('user_id', $user->id)->get();
         $KomentarTutorial = KomentarTutorial::where('user_id', $user->id)->get();
         $KomentarArtikel = KomentarArtikel::where('user_id', $user->id)->get();
-        $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+        $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
         $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         //dd($notif);exit;
 

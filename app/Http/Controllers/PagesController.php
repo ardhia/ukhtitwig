@@ -22,11 +22,13 @@ class PagesController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
-        $artikel = Artikel::get();
-        $tutorial = Tutorial::get();
+        $artikel = Artikel::orderBy('created_at', 'desc')->get();
+        $tutorial = Tutorial::orderBy('created_at', 'desc')->get();
+        $artikel1 = Artikel::orderBy('created_at', 'desc')->Paginate(3);
+        $tutorial1 = Tutorial::orderBy('created_at', 'desc')->Paginate(3);
         $toko = Toko::get();
 
 
@@ -86,7 +88,7 @@ class PagesController extends Controller
         $arsip = $tahunTu->union($tahunAr)->get();*/
         //dd($notif);exit;
 
-    	return view('ukhti', ['user' => $user, 'notif' => $notif, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel /*,'tahun' => $arsip*/, 'count' => $count]);
+    	return view('ukhti', ['user' => $user, 'notif' => $notif, 'toko' => $toko, 'tutorial' => $tutorial, 'artikel' => $artikel /*,'tahun' => $arsip*/, 'count' => $count, 'tutorial1' => $tutorial1, 'artikel1' => $artikel1]);
     }
 
     public function about () {
@@ -94,7 +96,7 @@ class PagesController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -106,7 +108,7 @@ class PagesController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
         $testimoni = Testimoni::where('user_id', $id)->get();

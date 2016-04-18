@@ -16,7 +16,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -31,7 +31,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -46,7 +46,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -61,7 +61,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -76,7 +76,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -91,7 +91,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -106,7 +106,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -122,7 +122,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -137,7 +137,7 @@ class SubTokoController extends Controller
         $notif = NULL;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -152,12 +152,12 @@ class SubTokoController extends Controller
         $notif = Null;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
         $keywords= $request->get('keywords');
-        $table = DB::table('toko')->where('jb', 'Kerudung')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
+        $table = DB::table('toko')->where('jb', 'Kerudung')->orderBy('No', 'desc')->where('Judul', 'LIKE', '%' . $keywords . '%')->get();
 
         return view('searchkerudung', ['keywords'=> $table, 'user'=> $user, 'notif'=> $notif, 'count' => $count]);
     }
@@ -167,7 +167,7 @@ class SubTokoController extends Controller
         $notif = Null;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -182,7 +182,7 @@ class SubTokoController extends Controller
         $notif = Null;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -197,7 +197,7 @@ class SubTokoController extends Controller
         $notif = Null;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
@@ -212,7 +212,7 @@ class SubTokoController extends Controller
         $notif = Null;
         $count = NULL;
         if (Auth::check()) {
-            $notif = Notifikasi::where('user_id', $user->id)->Paginate(5);
+            $notif = Notifikasi::where('user_id', $user->id)->orderBy('No', 'desc')->Paginate(5);
             $count= Notifikasi::select( DB::raw("count(*) as total "))->where('user_id', $user->id)->where('status', false)->first();
         }
 
