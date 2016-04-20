@@ -25,12 +25,12 @@
 							<div id="slider" class="nivoSlider">
 								{% for item in artikel1 %}
 									<a href="{{route('artikel.isi-artikel', {No: item.No})}}">
-										<img id="js" src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%">
+										<img id="isi-js" src="/uploadPhoto/artikel/{{item.Photo}}" width="100%" height="100%">
 									</a>
 								{% endfor %}
 								{% for item in tutorial1 %}
 									<a href="{{route('tutorial.isi-tutorial', {No: item.No})}}">
-										<img id="js" src="/uploadPhoto/tutorial/{{item.Photo}}" width="100%" height="100%">
+										<img id="isi-js" src="/uploadPhoto/tutorial/{{item.Photo}}" width="100%" height="100%">
 									</a>
 								{% endfor %}
 							</div>

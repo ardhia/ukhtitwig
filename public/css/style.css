@@ -450,6 +450,13 @@ body {
 	float: left;
 }
 
+#isi-js {
+	width: 94%;
+	height: 400px;
+	margin: 0px 3%;
+	float: left;
+}
+
 #artikel {
 	width: 90%;
 	height: auto;

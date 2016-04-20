@@ -29,7 +29,7 @@
 				    <div class="isi-notsearch">Maaf, kata yang anda cari tidak ada. Coba menggunakan kata kunci lain.</div>
 				{% else %}
 					{% for item in keywords %}
-					<a href=""><div class="isi-search">
+					<a href="{{route('artikel.isi-artikel', {No: item.No})}}"><div class="isi-search">
 					    {{item.Judul|str_words (10)}}
 					</div></a>
 					{% endfor %}
